@@ -30,7 +30,7 @@ Depending on your level of customization, {{site.data.keyword.cloud_notm}} might
 {: #customize-begin}
 
 1. Create a repository to store the customized deployable architecture, for example, a GitHub repository. For more information, see [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository){: external}.
-1. Make sure that you have an editor of your choice to modify the deployable architecture, for example, Virtual Studio Code. For more information, see [Virtual Studio Code](https://code.visualstudio.com/){: external}.
+1. Make sure that you have an editor of your choice to modify the deployable architecture, for example, Visual Studio Code. For more information, see [Visual Studio Code](https://code.visualstudio.com/){: external}.
 1. Make sure that you have tools of your choice to test your deployable architecture and ensure that it works. For example, you can use Terraform runtime, which supplies the Terraform command line.
 
 ## Finding a customizable deployable architecture
