@@ -1,0 +1,75 @@
+{
+    "title": "Running secure enterprise workloads",
+    "lastupdated": "2023-04-17",
+    "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
+    "section_recommended": [
+      {
+        "title": "Setting up an enterprise",
+        "description": "Learn how to create an enterprise, add accounts and organize them in account groups, invite users, and explore subscriptions.",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-enterprise-tutorial"
+      },
+      {
+        "title": "Using projects for IaC deployments",
+        "description": "Learn how to manage resources and Infrastructure as Code (IaC) deployments with projects, which enable teams to configure, deploy, and monitor deployments by using DevOps best practices.",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-understanding-projects"
+      },
+      {
+        "title": "Use DevSecOps to set up a secure software supply chain",
+        "description": "Leverage DevSecOps toolchains to automate the integration of security at every phase of the software development lifecycle.",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-secure-software-supply-chain"
+      },
+      {
+        "title": "Ensure continuous compliance and stay audit-ready",
+        "description": "Leverage IBM Cloud tools to ensure the workloads deployed in your enterprise always meet your regulatory and compliance standards.",
+        "href": "/docs/secure-enterprise?topic=secure-continuous-compliance"
+      },
+      {
+        "title": "Customize and extend IBM Cloud deployable architectures",
+        "description": "Start with an IBM Cloud deployable architecture and customize it to meet your needs.",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog"
+      },
+      {
+        "title": "Onboard approved software and deployable architectures to private catalogs",
+        "description": "You can customize what products are available from the catalog for users in your enterprise to ensure that only approved architectures that adhere to your compliance standards are deployed.",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-onboard-custom"
+      }
+    ],
+    "section_videos": [
+      {
+        "title": "Introducing IBM Cloud enterprises",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise#watch-and-learn",
+        "thumbnail": "/images/landing-Introducing-IBM-Cloud-enterprises.png"
+      },
+      {
+        "title": "IBM Cloud Console Guide: Getting Access - Role Overview",
+        "href": "/docs/account?topic=account-cloudaccess#watch-iamaccess",
+        "thumbnail": "/images/landing-Getting-Access-Role-Overview.png"
+      }
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/depmodels/cloud/gettingstarted/",
+      "architecture": "https://www.ibm.com/cloud/architecture/architectures/public-cloud",
+      "training": "https://www.ibm.com/training/cloud",
+      "community": "https://community.ibm.com/community/user/cloud/home"
+    },
+    "section_updates": {
+      "view_more": "/docs/overview?topic=overview-whatsnew",
+      "tiles": [
+        {
+          "date": "17 April 2023",
+          "title": "Check out the new deployable architectures in the catalog",
+          "description": "IBM Cloud provides deployable architectures in the IBM Cloud Catalog, which are products that provide automation for the deployment of common architectural patterns that combine one or more cloud resources and are designed for scalability and modularity. Go to the catalog, and filter by Deployable architectures to review the growing catalog of options."
+        },
+        {
+          "date": "17 April 2023",
+          "title": "IBM Cloud projects for automated IaC deployments",
+          "description": "Configure, deploy, and monitor deployments by using DevOps best practices with projects. With projects, you can manage Infrastructure as Code at scale and ensure that its configuration is always valid, secure, and compliant."
+        },
+        {
+          "date": "17 April 2023",
+          "title": "Onboard customized deployable architectures for your enterprise users",
+          "description": "You can customize IBM Cloud provided deployable architectures to meet your enterprise’s needs, and then leverage private catalogs to make only approved and compliant architectures available for your enterprise developers to deploy."
+        }
+      ]
+    }
+  }

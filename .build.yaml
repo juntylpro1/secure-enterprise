@@ -1,0 +1,7 @@
+includes:
+  - https://github.ibm.com/cloud-docs/billing-usage
+  - https://github.ibm.com/cloud-docs/account
+  - https://github.ibm.com/cloud-docs/security-compliance
+  - https://github.ibm.com/cloud-docs/cli
+  - https://github.ibm.com/cloud-docs/devsecops
+  - https://github.ibm.com/cloud-docs/icons
