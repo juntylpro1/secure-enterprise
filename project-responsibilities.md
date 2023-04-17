@@ -57,7 +57,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Accessing projects| {{site.data.keyword.IBM_notm}} provides the ability to control user access to projects.  | Use Identity and Access Management (IAM) to [assign users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project). |
-|Authorize a project to deploy a configuration| {{site.data.keyword.IBM_notm}} provides the ability to authorize a project to deploy a configuration.  | Choose an authentication method to authorize a project to deploy in an account. It’s recommended to use a trusted profile, but you can use an API key or an existing secret to [authorize a project to deploy](/docs/secure-enterprise?topic=secure-enterprise-authorize-project) in an account.  |
+|Authorize a project to deploy a configuration| {{site.data.keyword.IBM_notm}} provides the ability to authorize a project to deploy a configuration.  | Choose an authentication method to authorize a project to deploy in an account. Use an API key or an existing secret to [authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project) in an account. |
 {: row-headers}
 {: caption="Table 3. Responsibilites for identity and access management" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or IBM might be responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}

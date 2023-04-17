@@ -36,7 +36,10 @@ When you configure your deployable architecture, you are required to add an auth
 ### Using trusted profiles
 {: #best-practice-tp}
 
-Deploying projects requires cross-account access and coordination between administrators in the enterprise account and child accounts. The Projects service in the enterprise account needs access to your account to deploy a deployable architecture configuration. You can use trusted profiles to authorize deployments in your account. For more information about creating a trusted profile for your project, see [Using trusted profiles to authorize projects](/docs/secure-enterprise?topic=secure-enterprise-tp-project).
+Some services cannot fully configure and deploy architectures by using trusted profiles. In the future, projects can be directly authorized by using a trusted profile. For now, [use an API key or secret to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project). For more information, see [Known issues and limitations for projects](/docs/secure-enterprise?topic=secure-enterprise-known-issues#auth-known-issue).
+{: important}
+
+You can deploy an architecture in your own account or in another account by using trusted profiles. Depending on your organization, deploying an architecture might require access to another account by using a trusted profile and coordinating with administrators in multiple accounts. If the Project service in another account needs access to your account to deploy an architecture, use trusted profiles and service IDs to authorize deployments in your account. For more information about creating a trusted profile for your project, see [Using trusted profiles to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-tp-project).
 
 ### Using {{site.data.keyword.secrets-manager_full}}
 {: #best-practice-secrets}

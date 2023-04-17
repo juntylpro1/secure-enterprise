@@ -40,7 +40,7 @@ To create a customized configuration, complete the following steps:
 
 1. From the **Select inputs** panel, enter values for the required fields for the deployable architecture configuration.
 
-    You must select an authentication method for the project to deploy your configuration. You can use a trusted profile, add an API key by using {{site.data.keyword.secrets-manager_full}}, or add your API key to the `ibmcloud_api_key` field in your configuration. This authorizes the project to deploy to an account and is required to deploy your configuration. For more information, see [Authorizing a project to deploy to an account](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+    You must select an authentication method for the project to deploy your configuration. Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to an account and is required to deploy your configuration. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
     {: note}
 
 1. Optional: You can add values by going to the **Optional** panel.
