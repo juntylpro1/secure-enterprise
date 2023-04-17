@@ -35,9 +35,6 @@ The following list includes the actions that users can take when they are assign
 
 In addition to access on the Project service, you must be assigned the following access on the project tooling resources within the account:
 
-Account owners must assign themselves access on the project tooling services. The following access is not automatically granted to account owners.
-{: tip}
-
 * The Editor and Manager role on the {{site.data.keyword.bplong}} service
 * The Viewer role on the resource group for the project
 
