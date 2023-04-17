@@ -88,10 +88,18 @@ You can also see the template in a swagger format. For more information, see [Ca
                     "usage": "USAGE',
                     "compliance": [
                         {
+                        "authority": "SCC VERSION",
+                        "profiles": [
+                            {
+                                "profile_name: "PROFILE NAME",
+                                "profile_version": "PROFILE VERSION"
+                            }
+                        ],
                         "controls": [
                             {
                                 "profile_name": "PROFILE NAME",
-                                "control_id": "CONTROL ID"
+                                "profile_version": "PROFILE VERSION",
+                                "control_name": "CONTROL NAME"
                             }
                         ]
                         }
@@ -298,11 +306,29 @@ usage
 compliance
 :  Section header that indicated that the architecture is compliant.
 
+You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
+{: important}
+
+    authority
+    :   The version of Security and Compliance Center that you are adding controls from.
+
+    profiles
+    :   Section header that indicates that the variation has profiles. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
+
+        profile_name
+        :   The name of the claimed profile. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+
+        profile_version
+        :   The version of the profile. For example, `1.0.0. You can find the profile name in {{site.data.keyword.compliance_short}}.
+
     controls
-    :   Section header that indicates that the variation has controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name` and `control_id`. You can view predefined profiles or create a custom one in the {{site.data.keyword.compliance_full}}.
+    :   Section header that indicates that the variation has controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name`, `profile_version`, and `control_name`. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
 
         profile_name
         :   The profile name of the claimed control. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+
+        profile_version
+        :   The version of the profile. For example, `1.0.0. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
         control_id
         :   The ID of the claimed control. You can find the ID in {{site.data.keyword.compliance_short}}.

@@ -4,7 +4,7 @@ copyright:
    years: 2023
 lastupdated: "2023-04-17"
 
-keywords: deployable architecture, custom, private catalog
+keywords: deployable architecture, custom, private catalog, catalog manifest
 
 subcollection: secure-enterprise
 
@@ -23,7 +23,7 @@ After you customize a [deployable architecture](#x10293733){: term} in the {{sit
 If you used a customization bundle from an {{site.data.keyword.cloud_notm}} deployable architecture, you can [review and use the automation options](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog#included-pipelines) available for using GitHub Actions or an {{site.data.keyword.cloud_notm}} Toolchain to onboard to a private catalog and manage the lifecycle of your product.
 {: tip}
 
-1. Customize your deployable architecture, which includes a manifest `ibm_catalog.json` file in customization bundle. The JSON file is used to automatically import product and version information instead of manually entering it in the console. For more information, see [Importing product data to automate onboarding to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
+1. Customize your deployable architecture, which includes a manifest `ibm_catalog.json` file in a customization bundle. The JSON file is used to automatically import product and version information instead of manually entering it in the console. For more information, see [Customizing an {{site.data.keyword.cloud_notm}} deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog).
 1. Create a release of your repository. For more information, see [Creating a release](/docs/sell?topic=sell-source-repo-setup#create-release).
 1. Make sure that you install the {{site.data.keyword.cloud_notm}} CLI and Catalogs management CLI plug-in. For more information, see [Catalogs management CLI plug-in](/docs/cli?topic=cli-manage-catalogs-plugin).
 1. Verify that you're assigned the correct access. You need the following {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles:
@@ -108,7 +108,7 @@ Review the version details and configure the input variables.
 
 1. Select your deployable architecture from the Version list.
 1. From the Configure version tab, you can review your version details.
-1. Optional: If you have multiple variations for a deployable architecture, click the **Edit** icon for the variation. Ensure that the display name and display order that is used for ordering the drop-down list, are what you want from your customer's perspective. For example, it might be helpful to order variations small to large or from least expensive to most expensive. Click **Save** when you're done.
+1. Optional: If you have multiple variations for a deployable architecture, click the **Edit** icon for the variation. Ensure that the display name and display order that is used for ordering the drop-down list are what you want from your customer's perspective. For example, it might be helpful to order variations small to large or from least expensive to most expensive. Click **Save** when you're done.
 1. When you are ready to continue, click **Next**.
 
 ### Reviewing the version details by using the CLI
@@ -194,7 +194,7 @@ After you review the version details, you're ready to configure the input variab
 {: #custom-solution-access-ui}
 {: ui}
 
-Let users know the service and platform access roles that are needed to install your product. The IAM access that you add is required for users to install your product. If you have included IAM access information in your catalog manifest file, the information was imported during onboarding. If not, you can add new access. For more information, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles).
+Let users know the service and platform access roles that are needed to install your product. The IAM access that you add is required for users to install your product. If you included IAM access information in your catalog manifest file, the information was imported during onboarding. If not, you can add new access. For more information, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles).
 
 #### Adding new IAM access
 {: #custom-solution-new-access}
@@ -357,18 +357,13 @@ Only controls that are supported by the {{site.data.keyword.compliance_short}} a
 {: #custom-tf-add-controls-ui}
 {: ui}
 
-If you included a catalog manifest file in your repository, compliance controls are automatically imported into the private catalog. If not, complete the following steps:
-
-1. Click **Add controls**.
-1. Choose a profile.
-1. Select the controls that you want to add to your version.
-1. Click **Add**.
+You must include compliance information in your catalog manifest JSON file to add profiles and controls to your product. For more information, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
 
 ### Adding compliance controls by using the CLI
 {: #custom-tf-add-controls-cli}
 {: cli}
 
-If you included a catalog manifest file in your repository, compliance controls are automatically imported into the private catalog. If not, you can review the controls that were added from your readme file and add additional controls by using the console. To see the steps, see [Adding compliance controls by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-tf-add-controls-ui).
+You must include compliance information in your catalog manifest JSON file to add profiles and controls to your product. To see the steps, see [Adding compliance controls by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-tf-add-controls-ui).
 
 ### Applying {{site.data.keyword.compliance_short}} scans by using the console
 {: #custom-tf-scc-scan-ui}

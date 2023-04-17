@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-17"
 
 keywords: customize, deployable architecture, bundle, manifest
 
@@ -16,40 +16,40 @@ subcollection: secure-enterprise
 # Customizing an {{site.data.keyword.cloud_notm}} deployable architecture
 {: #customize-from-catalog}
 
-You can extend and customize an {{site.data.keyword.cloud}} [deployable architecture](#x10293733){: term} with the {{site.data.keyword.IBM}}-curated customization bundle. With the customization bundle, you can edit the deployable architecture on your local computer, use your own pipelines to test, and extend your own products to fit your enterprise's needs. To customize an architecture, you must have familiarity with Terraform.
+You can take advantage of a {{site.data.keyword.IBM}}-curated customization bundle to extend and customize an {{site.data.keyword.cloud}} [deployable architecture](#x10293733){: term}. Each deployable architecture provides its own customization bundle. With the bundle, you can edit the deployable architecture on your local computer, use your own pipelines to test, and extend your own products to fit your enterprise's needs. To customize an architecture, you must have familiarity with Terraform.
 {: shortdesc}
-
-The following guidance provides an overview of the customization bundle and some examples of customization that you can do. It is not all inclusive and you can make any changes that you need. After you modify the architecture, you can add it to a private catalog and use {{site.data.keyword.IBM_notm}}'s tools to check for vulnerabilities, ensure security and compliance, and share the architecture with your enterprise.
 
 The customization bundle also includes an `automation` directory that includes starter scripts to help you manage the lifecycle of your customized deployable architecture from onboarding and validation to publishing it to a private catalog on {{site.data.keyword.cloud_notm}}. Currently, two pipeline methods are included in this directory: GitHub actions or a Toolchain from {{site.data.keyword.cloud_notm}}.
 
-Depending on your level of customization, {{site.data.keyword.cloud_notm}} might not support the deployable architecture. The components of the architecture supplied in the customization bundle are supported by {{site.data.keyword.cloud_notm}}, but any customized code to extend is not.
+The following guidance provides an overview of the customization bundle and some examples of customization that you can do. It is not all inclusive and you can make any changes that you need. After you modify the architecture, you can add it to a private catalog and use {{site.data.keyword.IBM_notm}}'s tools to check for vulnerabilities, ensure security and compliance, and share the architecture with your enterprise.
+
+Depending on your level of customization, {{site.data.keyword.cloud_notm}} might not support the deployable architecture. The components of the architecture that are supplied in the customization bundle are supported by {{site.data.keyword.cloud_notm}}, but any customized code that's used to extend is not.
 {: important}
 
 ## Before you begin
 {: #customize-begin}
 
-1. Create a repository to store the customized deployable architecture. For example, a GitHub repository. For more information, see [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository){: external}.
-1. Make sure that you have an editor of your choice to modify the deployable architecture. For example, Virtual Studio Code. For more information, see [Virtual Studio Code](https://code.visualstudio.com/){: external}.
+1. Create a repository to store the customized deployable architecture, for example, a GitHub repository. For more information, see [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository){: external}.
+1. Make sure that you have an editor of your choice to modify the deployable architecture, for example, Virtual Studio Code. For more information, see [Virtual Studio Code](https://code.visualstudio.com/){: external}.
 1. Make sure that you have tools of your choice to test your deployable architecture and ensure that it works. For example, you can use Terraform runtime, which supplies the Terraform command line.
 
 ## Finding a customizable deployable architecture
 {: #customize-find}
 
-{{site.data.keyword.cloud_notm}} provides multiple deployable architectures that you can use as-is or customize. To find an architecture, complete the following steps:
+{{site.data.keyword.cloud_notm}} provides multiple deployable architectures that you can use as-is or you can customize. To find an architecture, complete the following steps:
 
 1. In the [{{site.data.keyword.cloud_notm}} catalog](/catalog#reference_architecture){: external}, select a deployable architecture.
-1. Select **Review deployment options** > **Customize locally** > **Start customizing** to download a customization bundle.
+1. Download the customization bundle by selecting **Review deployment options** > **Customize locally** > **Start customizing**.
 
 ## Customizing the deployable architecture
 {: #customize-bundle}
 
-When you download the customization bundle, you receive a set of functional files that are designed to help you get started with customization.
+When you download the customization bundle, you receive a set of files that are designed to help you get started with customization.
 
 ### `ibm_catalog.json`
 {: #customize-JSON}
 
-The `ibm_catalog.json` is a manifest JSON file that is used to automatically import version information into a private catalog. With a catalog manifest file, you can avoid manually entering version metadata through the console. To view how to set up an `ibm_catalog.json` file and the values that you can include, see [Automating the product version onboarding process to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
+The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information into a private catalog. With a catalog manifest file, you can avoid manually entering version metadata through the console. To view how to set up an `ibm_catalog.json` file and the values that you can include, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
 
 ### `main.tf`
 {: #customize-main}
@@ -75,10 +75,7 @@ module "landing-zone" {
 ### `outputs.tf`
 {: #customize-outputs}
 
-The `outputs.tf` file is prebuilt with available output values that you can choose to include in your deployable architecture. The values are commented out and you can include the values by removing the `#` from the value. To include certain values, complete the following steps.
-
-You can add more output variables to the file.
-{: note}
+The `outputs.tf` file contains available output values that you can include in your deployable architecture. The values are commented out, but you can include the values by removing the `#` symbol from the value. Also, you can add more output variables to the file. To include certain values, complete the following steps.
 
 1. Open the `outputs.tf` file.
 2. Remove the `#`s from any output value that you want to include.
@@ -86,7 +83,8 @@ You can add more output variables to the file.
 #### Example of `outputs.tf`
 {: #customie-outputs-example}
 
-The following example includes the `vsi_names value` and excludes the `transit_gateway_name` value:
+The following example includes the `vsi_names` value and excludes the `transit_gateway_name` value:
+
 
 ```bash
 output "vsi_names" {
@@ -107,9 +105,9 @@ output "vsi_names" {
 ### `provider.tf`
 {: #customize-provider}
 
-The `provider.tf` file contains required information about which provider, API key, and region that consumers need to use.
+The `provider.tf` file contains required information about which provider, API key, and region that users are required to use.
 
-This information is pulled in from the `variables.tf` file. If you need to make changes, best practice is to update the [`varaiables.tf`](#customize-variables) file.
+This information is pulled in from the `variables.tf` file. If you need to make changes, update the [`varaiables.tf`](#customize-variables) file.
 {: important}
 
 #### Example of a `provider.tf` file
@@ -133,7 +131,7 @@ The readme file contains background and usage information about the deployable a
 ### `variables.tf`
 {: #customize-variables}
 
-The `variables.tf` file is prebuilt with only the required variables for the deployable architecture. You can add any additional variables that you need.
+The `variables.tf` file includes the required variables for the deployable architecture. You can add any additional variables that you need.
 
 ### `version.tf`
 {: #customize-version}
@@ -147,9 +145,9 @@ The `version.tf` file stores information about the Terraform version and provide
 ## Testing your customized deployable architecture
 {: #customize-test}
 
-Before you onboard your customized deployable architecture to a private catalog, it is best practice to test your customization and ensure that the architecture runs as intended. To test your architecture with the Terraform command line, complete the following steps:
+Before you onboard your customized deployable architecture to a private catalog, test your customization and ensure that the architecture runs as intended. To test your architecture with the Terraform command line, complete the following steps:
 
-1. After you finish customizing the architecture, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
+1. After you customize the architecture, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
 
    ```terraform
    terraform init
@@ -180,9 +178,10 @@ If your tests were successful, you can prepare to onboard your architecture to a
 ## Leveraging automation to share to a private catalog
 {: #included-pipelines}
 
-The customization bundle has an `automation` directory that includes a couple of options for starter pipelines. These pipelines can be used to automate the lifecycle of your customized products that you share by using a private catalog on {{site.data.keyword.cloud_notm}}. This includes managing the onboarding, validation, and sharing of the deployable architecture version to a private catalog. `README` files are included for each pipeline option that provide details on how to leverage it. For more information about each, you can review details about [GitHub Actions](https://github.com/features/actions){: external} and [Creating a toolchain](https://cloud.ibm.com/devops/setup/deploy?repository=https%3A%2F%2Fus-east.git.cloud.ibm.com%2Fopen-toolchain%2Fiac-compliance-ci-toolchain&env_id=ibm:yp:us-east){: external}.
+The customization bundle has an `automation` directory that includes a couple of options for starter pipelines. These pipelines can be used to automate the lifecycle of your customized products that you share by using a private catalog on {{site.data.keyword.cloud_notm}}. This includes managing the onboarding, validation, and sharing of the deployable architecture version to a private catalog. `README` files are included for each pipeline option that provide details on how to leverage it. For more information about each one, see [GitHub Actions](https://github.com/features/actions){: external} and [Creating a toolchain](https://cloud.ibm.com/devops/setup/deploy?repository=https%3A%2F%2Fus-east.git.cloud.ibm.com%2Fopen-toolchain%2Fiac-compliance-ci-toolchain&env_id=ibm:yp:us-east){: external}.
 
 ## Next steps
 {: #customize-next}
 
-The scripts that are provided in the customization bundle help you to automate the onboarding process to a private catalog for sharing your product with other users. However, if you'd like to use the console or CLI to onboard your deployable architecture, see [onboarding your customized deployable architecture to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) for step-by-step guidance. By using private catalogs, you can make sure members of your enterprise use approved architectures that they can deploy by using [projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects).
+The scripts that are provided in the customization bundle help you to automate the onboarding process to a private catalog for sharing your product with other users. However, if you'd like to use the console or CLI to onboard your deployable architecture, see [onboarding your customized deployable architecture to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) for step-by-step guidance. By using private catalogs, members of your enterprise are required to use approved architectures that they can deploy by using [projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects).
+
