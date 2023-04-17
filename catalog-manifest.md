@@ -255,10 +255,10 @@ features
 :   Section header for details that highlight the processes, abilities, and results of the product.
 
     title
-    :    The name of the feature.
+    :   The name of the feature.
 
     description
-    :    A concise description of the feature.
+    :   A concise description of the feature.
 
 ### module_info
 {: #value-module}
@@ -301,10 +301,10 @@ working_directory
 :   The path from the root of your repository to the variation. For example, `examples/basic`.
 
 usage
-: Information on how to embed the architecture or run it locally.
+:   Information on how to embed the architecture or run it locally.
 
 compliance
-:  Section header that indicated that the architecture is compliant.
+:   Section header that indicated that the architecture is compliant.
 
 You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
 {: important}
@@ -356,22 +356,22 @@ iam_permissions (optional)
     resources
     :   The resources for a permission.
 
-       name
-       :   The name of the resource.
+        name
+        :   The name of the resource.
 
-       description
-       :   A description of the resource.
+        description
+        :   A description of the resource.
 
-       role_crns
-       :   Section header to indicate a list of access roles. For example:
+        role_crns
+        :   Section header to indicate a list of access roles. For example:
 
-       ```text
-       "role_crns": [
+        ```text
+        "role_crns": [
         "ROLE",
         "ROLE"
         ]
-       ```
-       {: codeblock}
+        ```
+        {: codeblock}
 
 architecture
 :   Information about the variation's architecture that includes an architecture description, features, and an architecture diagram.
@@ -475,8 +475,8 @@ configuration
         associations
         :   Section header for parameters that are associated with the configuration.
 
-           parameters
-           :   List of parameters.
+            parameters
+            :   List of parameters.
 
 terraform_version
 :   The Terraform version needed to validate and install the version. Setting this value overrides what is specified in the source code.
@@ -484,11 +484,11 @@ terraform_version
 outputs
 :   Section header for information about output values.
 
-   key
-   :   Specifies the output value.
+    key
+    :   Specifies the output value.
 
-   description
-   :   A short summary of the output value.
+    description
+    :   A short summary of the output value.
 
 install_type
 :   Specifies whether a deployable architecture is full stack or extension. Architectures listed as extensions require prerequisites.
