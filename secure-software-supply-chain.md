@@ -18,7 +18,7 @@ subcollection: secure-enterprise
 With the [DevSecOps](#x9892260){: term} tools and services available through {{site.data.keyword.cloud}}, you can take advantage of using a verified secure software supply chain for developing and deploying your application code. Your agile development practices require rapid application deployment, but at the same time, you need to ensure that your applications are secure.
 {: shortdesc}
 
-DevSecOps requires automating security and compliance controls as part of continuous integration and continuous delivery processes. Evidence is also collected so you can easily demonstrate to auditors that necessary controls are being met. By using [DevSecOps with {{site.data.keyword.contdelivery_short}}](/docs/devsecops?topic=devsecops-devsecops_intro), you can implement a shift-left approach by preventing new vulnerabilities from reaching production, ensure frequent updates to production with quality and control, and collect evidence for handling security audits.\
+DevSecOps requires automating security and compliance controls as part of continuous integration and continuous delivery processes. Evidence is also collected so you can easily demonstrate to auditors that necessary controls are being met. By using [DevSecOps with {{site.data.keyword.contdelivery_short}}](/docs/devsecops?topic=devsecops-devsecops_intro), you can implement a shift-left approach by preventing new vulnerabilities from reaching production, ensure frequent updates to production with quality and control, and collect evidence for handling security audits.
 
 Learn more about the background of [agile, DevOps, and DevSecOps](/docs/devsecops?topic=devsecops-devsecops_intro#devsecops-background).
 

@@ -117,4 +117,4 @@ Projects support sending the needs attention notifications to the {{site.data.ke
 ## Getting started with projects
 {: #tutorial-next}
 
-Now that you've learned about the basics of a project, check out how to [Configure and deploy a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-config-project) to start building and review the [Enterprise account architecture] white paper to ensure that your account is set up according to {{site.data.keyword.cloud_notm}} best practices.
+Now that you've learned about the basics of a project, check out how to [Configure and deploy a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-config-project) to start building and review the [Enterprise account architecture](/docs/enterprise-account-architecture) white paper to ensure that your account is set up according to {{site.data.keyword.cloud_notm}} best practices.
