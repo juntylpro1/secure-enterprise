@@ -1,0 +1,240 @@
+---
+toc:
+  properties:
+    subcollection: secure-enterprise
+    category: platform_services
+    audience: platform
+    href: /docs/secure-enterprise
+    console-page: /
+    product-page: https://ibm.com/cloud
+    path: secure-enterprise
+    label: Running secure enterprise workloads
+
+  entries:
+  - navgroup:
+      id: learn
+      topics:
+      - enterprises.md
+      - include: ../billing-usage/enterprise.md
+      - index.md
+      - secure-software-supply-chain.md
+      - compliance-continuous.md
+      - topicgroup:
+          label: Learning about access management
+          topics:
+          - include: ../account/iam-whatis.md
+          - include: ../account/iam-identities
+          - include: ../account/iam-access-concepts.md
+          - include: ../account/iam-policies-overview.md
+          - include: ../account/iam-roles-overview.md
+          - include: ../account/iam-mappings.md
+          - include: ../account/context-restrictions-what-is.md
+      - topicgroup:
+          label: Best practices
+          topics:
+          - bp_enterprise.md
+          - bp-enterprise-access.md
+          - bp_projects.md
+          - include: ../security-compliance/best-practices.md
+
+  - navgroup:
+      id: tutorial
+      topics:
+      - enterprise-tutorial.md
+      - topicgroup:
+          label: Managing resource access
+          topics:
+            - include: ../account/iam-quickstart.md
+            - include: ../account/tagging-resources-tutorial.md
+            - include: ../account/trustedprofile-fed-tutorial.md
+            - include: ../account/context-restrictions-tutorial.md
+
+  - navgroup:
+      id: howto
+      topics:
+      - topicgroup:
+          label: Centrally managing accounts with enterprises
+          topics:
+          - enterprise-create.md
+          - enterprise-add-accounts.md
+          - enterprise-organize-accounts.md
+          - enterprise-update-group-contact.md
+          - topicgroup:
+              label: Managing enterprise billing
+              topics:
+              - include: ../billing-usage/enterprise-usage.md
+              - include: ../billing-usage/enterprise-report.md
+      - topicgroup:
+          label: Managing access
+          topics:
+          - enterprise-access.md
+          - topicgroup:
+              label: Assigning access
+              topics:
+                - enterprise-assign-access.md
+                - access-project.md
+                - include: ../account/catalog-access-reqs.md
+                - include: ../account/iam-groups.md
+                - include: ../account/iam-cross-acct-restriction.md
+                - include: ../account/iam-authorizations.md
+                - include: ../account/iam-audit-policies.md
+          - topicgroup:
+              label: Administering trusted profiles
+              topics:
+              - include: ../account/trustedprofile-create.md
+              - include: ../account/trustedprofile-update.md
+              - include: ../account/trustedprofile-remove.md
+          - topicgroup:
+              label: Controlling context-based restrictions
+              topics:
+              - include: ../account/context-restrictions-create.md
+              - include: ../account/context-restrictions-update.md
+              - include: ../account/context-restrictions-remove.md
+      - topicgroup:
+          label: Deploying architectures with projects
+          topics:
+          - create-project.md
+          - topicgroup:
+              label: Authorizing deployments
+              topics:
+              - topic: authorize-project.md
+                navtitle: Using an API key or secret
+              - topic: tp-projects.md
+                navtitle: Using trusted profiles
+          - config-project.md
+          - override-failed-validations.md
+          - cost-estimate.md
+          - topicgroup:
+              label: Managing your project lifecycle
+              topics:
+              - attention-items.md
+              - status-project.md
+          - delete-project.md
+      - topicgroup:
+          label: Customizing a deployable architecture
+          topics:
+          - manual-customize.md
+      - topicgroup:
+          label: Leveraging private catalogs for enterprise products
+          topics:
+          - include: ../account/cm-video.md
+          - include: ../account/catalog-enterprise-filters.md
+          - topicgroup:
+              label: Onboarding deployable architectures to a private catalog
+              topics:
+              - topic: catalog-manifest.md
+                navtitle: Specifying product metadata
+              - onboard-custom.md
+              - include: ../account/catalog-enterprise-share.md
+              - catalog-access-reqs.md
+      - topicgroup:
+          label: Ensuring continuous compliance
+          topics:
+          - compliance-enterprise.md
+          - continuous-app-compliance.md
+      - topicgroup:
+          label: Logging and monitoring
+          topics:
+            - at-events.md
+            - event-notifications-events.md
+            - include: ../account/monitoring.md
+
+  - navgroup:
+      id: reference
+      topics:
+      - project-json.md
+      - project-responsibilities.md
+      - architecture-workload-isolation.md
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics:
+            - zero_downtime.md
+            - ha-dr.md
+      - topicgroup:
+          label: API reference
+          topics:
+          - link:
+              label: Catalog Management
+              href: https://{DomainName}/apidocs/resource-catalog/private-catalog
+          - link:
+              label: Enterprise Billing Units
+              href: https://{DomainName}/apidocs/enterprise-apis/billing-unit
+          - link:
+              label: Enterprise Management
+              href: https://{DomainName}/apidocs/enterprise-apis/enterprise
+          - link:
+              label: Enterprise Usage Reports
+              href: https://{DomainName}/apidocs/enterprise-apis/resource-usage-reports
+          - link:
+              label: IAM Access Groups
+              href: https://{DomainName}/apidocs/iam-access-groups
+          - link:
+              label: IAM Identity Services
+              href: https://{DomainName}/apidocs/iam-identity-token-api
+          - link:
+              label: IAM Policy Management
+              href: https://{DomainName}/apidocs/iam-policy-management
+          - iam-policies-change-log.md
+          - link:
+              label: Projects
+              href: https://{DomainName}/apidocs/projects
+          - link:
+              label: User Management
+              href: https://{DomainName}/apidocs/user-management
+      - topicgroup:
+          label: Command reference
+          topics:
+          - include: ../cli/plugins/catalogs/manage-catalogs.md
+          - include: ../cli/reference/ibmcloud/cli_enterprise.md
+          - include: ../cli/reference/ibmcloud/cli_api_policy.md
+          - include: ../cli/plugins/projects/projects-cli.md
+          - include: ../cli/reference/ibmcloud/cli_catalog.md
+          - include: ../cli/reference/ibmcloud/cli_resource_group.md
+      - topicgroup:
+          label: Terraform reference
+          links:
+          - link:
+              label: Catalog Management
+              href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cm_catalog
+          - link:
+              label: Enterprise Management
+              href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/enterprise
+          - link:
+              label: Global Tagging
+              href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/resource_tag
+          - link:
+              label: Identity and Access Management (IAM)
+              href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group
+          - link:
+              label: Resource Management
+              href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/resource_group
+
+  - navgroup:
+      id: help
+      topics:
+      - known-issues.md
+      - faqs-projects.md
+      - faqs-enterprise.md
+      - topicgroup:
+          label: Troubleshooting enterprise accounts
+          topics:
+          - ts-view-enterprise.md
+          - ts-import-enterprise.md
+          - ts-create-enterprise-acct.md
+          - ts-subscriptions-enterprise.md
+          - ts-enterprise-apply.md
+      - topicgroup:
+          label: Troubleshooting projects
+          topics:
+          - ts-project-access.md
+          - ts-project-create.md
+          - ts-project-delete.md
+          - ts-project-deploy.md
+          - ts-failure-validate.md
+          - ts-needs-attention.md
+          - ts-deploy.md
+          - ts-destroy-fail.md
+          - ts-terraform.md
+          - ts-resources-list.md
+          - ts-resource-status.md
+      - get-help.md
