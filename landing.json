@@ -21,7 +21,7 @@
       {
         "title": "Ensure continuous compliance and stay audit-ready",
         "description": "Leverage IBM Cloud tools to ensure the workloads deployed in your enterprise always meet your regulatory and compliance standards.",
-        "href": "/docs/secure-enterprise?topic=secure-continuous-compliance"
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance"
       },
       {
         "title": "Customize and extend IBM Cloud deployable architectures",
