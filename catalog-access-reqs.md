@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-04-17"
 
 keywords: catalog, private catalogs, IAM access, roles, private catalog service, access groups, permissions, IAM, catalog management, access group
 
-subcollection: account
+subcollection: secure-enterprise
 
 ---
 
