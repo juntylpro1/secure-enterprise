@@ -306,8 +306,8 @@ usage
 compliance
 :   Section header that indicated that the architecture is compliant.
 
-You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
-{: important}
+    You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
+    {: important}
 
     authority
     :   The version of Security and Compliance Center that you are adding controls from.
