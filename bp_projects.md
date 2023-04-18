@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-04-18"
 
 keywords: best practice projects, manage projects
 
@@ -56,7 +56,7 @@ Typically a single {{site.data.keyword.secrets-manager_short}} instance is used 
 ## Organizing your configurations
 {: #best-practice-config}
 
-Consider organizing all of the related configurations into a single project. This way, you can manage the deployments from one location and help ensure they're managed, secure, and compliant. This might consist of one or more deployable architectures to create the necessary infrastructure, which then needs to be replicated to support multiple regions and environments such as development, test, and production.
+Consider organizing all of the related configurations into a single project. This way, you can manage the deployments from one location and help ensure they're secure and compliant. This might consist of one or more deployable architectures to create the necessary infrastructure, which then needs to be replicated to support multiple regions and environments such as development, test, and production.
 
 Use a naming convention for your configurations so that users can understand the function of each configuration. For example, in a deployment that uses a VPC base deployable architecture and a Kubernetes Cluster deployable architecture that relies on the VPC base, you might name your configurations as follows:
 
@@ -78,7 +78,7 @@ You can duplicate the development configuration in the `project.json` file and m
 ## Creating access groups for projects
 {: #access-project-bp}
 
-Access to projects is controlled by Identity and Access Management (IAM). It's recommended to create two or three access groups per project and assign users that work on the project to one of those access groups. For example, you might create a *ProjectName*-Reader access group that provides read-only access to the project for users who need to monitor costs or availability and a *ProjectName*-Writer access group for ops users who need to make changes to a project and deploy resources. If needed, you can create two writer access groups, one for users who can add configs and complete input values and a second for users who can deploy resources.
+Access to projects is controlled by Identity and Access Management (IAM). It's recommended to create two or three access groups per project and assign users that work on the project to one of those access groups. For example, you might create a *ProjectName*-Reader access group that provides read-only access to the project for users who need to monitor costs or availability and a *ProjectName*-Writer access group for operations users who need to make changes to a project and deploy resources. If needed, you can create two writer access groups, one for users who can add configs and complete input values and a second for users who can deploy resources.
 
 | Access group | Roles |
 |--------------|-------|
@@ -92,7 +92,7 @@ To create new projects, users must be assigned specific access on the project to
 ## Monitoring needs attention items
 {: #need-att-bp}
 
-Needs attention items are best used to monitor validation, approvals, failures, and version updates. By checking the needs attention items consistently, you can ensure that your project and configuration are up-to-date and compliant.
+Needs attention items are best used to monitor validation, approvals, failures, and version updates. By checking the needs attention items regularly, you can ensure that your project and configuration are up-to-date and compliant.
 
 ## Adding tags to projects
 {: #project-tags}
