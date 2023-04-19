@@ -27,7 +27,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Monitor the status of a deployable architecture | {{site.data.keyword.IBM_notm}} provides the ability for customers to monitor the lifecycle of the deployable architecture.  | Use the [needs attention widget](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects) or enable Event Notifications to monitor events that specifically impact the lifecycle of your deployable architecture.  |
+|Monitor the status of a deployable architecture | {{site.data.keyword.IBM_notm}} provides the ability for customers to monitor the lifecycle of the deployable architecture.  | Use the [needs attention widget](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects) or [enable Event Notifications](/docs/secure-enterprise?topic=secure-enterprise-event-notifications-events) to monitor events that specifically impact the lifecycle of your deployable architecture.  |
 |Monitor the status of a product spun up by your deployable architecture | IBM provides the ability for customers to monitor the lifecycle of the instances. | Use the resource list, service instance pages, or the [Status](https://cloud.ibm.com/status){: external} page to monitor events that specifically impact your service instance. |
 {: row-headers}
 {: caption="Table 1. Responsibilites for incident and operations" caption-side="bottom"}
