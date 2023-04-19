@@ -42,7 +42,7 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 |Task  | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Creation of the IBM Cloud deployable architectures | {{site.data.keyword.IBM_notm}} provides the base pattern as a deployable architecture for instantiation through Terraform.  | N/A  |
-|IBM Cloud Terraform Provider | {{site.data.keyword.IBM_notm}} publishes Terraform provider of all Terraform enabled services on IBM Cloud.  | N/A  |
+| Must use supported version of [IBM Cloud Terraform Provider](/docs/secure-enterprise?topic=secure-enterprise-responsibilities-deployable-architectures#change-management-da). | {{site.data.keyword.IBM_notm}} publishes Terraform provider of all Terraform enabled services on IBM Cloud.  | Customers should use the latest major version. Terraform Providers version requirements are documented within the `version.tf` file for each deployable architecture. |
 |Third-party Terraform Providers used within templates | N/A  | Customer is responsible for any use of third-party Terraform code that is used with the deployable architecture.  |
 |Running default configuration (out of the box)| {{site.data.keyword.IBM_notm}} provides the ability for customers to create and deploy configurations of deployable architectures by using projects, Terraform-as-a-service, or the projects CLI.  | Use projects to [configure and deploy a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-config-project).  |
 |Running templates locally by using Terraform directly | N/A  | Customer can run the deployable architecture on their local system.  |
