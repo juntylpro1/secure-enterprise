@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-04-21"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes
 
@@ -38,32 +38,52 @@ The input's attribute allows variables to be imported from any number of outputs
 
 To create a customized configuration, complete the following steps:
 
-1. From the **Select inputs** panel, enter values for the required fields for the deployable architecture configuration.
+1. From the **Security** panel, select the authentication method that you want to use to deploy to your target account.
 
-    You must select an authentication method for the project to deploy your configuration. Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to an account and is required to deploy your configuration. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+    You must select an authentication method for the project to deploy your architecture. Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to a target account and is required to deploy your configuration. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
     {: note}
 
+1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or **Select from {{site.data.keyword.compliance_short}}** if you have a {{site.data.keyword.compliance_short}} attachment set up in your target account.
+
+    If you choose the **Architecture default** controls, the scan uses a [specific set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals). Controls that the owner of the deployable architecture added that are also supported by {{site.data.keyword.cloud_notm}} projects are checked. Any extra controls that are not included in the list of supported {{site.data.keyword.compliance_short}} rules are not checked when you validate your configuration. If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used. {: #cra-validate-failure}
+
+    To view the list of added controls, go the [{{site.data.keyword.cloud_notm}} catalog](/catalog){: external} and select the deployable architecture that you're configuring. The Security & compliance tab lists all of the controls that were added to the deployable architecture.
+    {: tip}
+
+    If you choose **Select from {{site.data.keyword.compliance_short}}** you must then select the {{site.data.keyword.compliance_short}} profile and version, followed by the attachment you want to use during validation. The attachment must be created in the target account that you want to deploy to. For more information on creating the {{site.data.keyword.compliance_short}} profile and attachment, see [Evaluating resource configuration with {{site.data.keyword.compliance_long}}](/docs/secure-enterprise?topic=secure-enterprise-security-compliance-scanning).
+
+1. From the **Required** panel, enter values for the required fields for the deployable architecture configuration.
 1. Optional: You can add values by going to the **Optional** panel.
 1. Click **Save**.
 1. Click **Validate**. The modal that is displayed provides more details about your in-progress validation.
 
-   When you validate your configuration, {{site.data.keyword.cloud_notm}} projects run a Code Risk Analyzer scan that includes a [specific set of {{site.data.keyword.compliance_short}} goals](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals). Controls that the owner of the deployable architecture added that are also supported by {{site.data.keyword.cloud_notm}} projects are checked. Any extra controls that are not included in the list of supported {{site.data.keyword.compliance_short}} goals are not checked when you validate your configuration. If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} goals is used. {: #cra-validate-failure}
-
-   To view the list of added controls, go the [{{site.data.keyword.cloud_notm}} catalog](/catalog){: external} and select the deployable architecture that you're configuring. The Security & compliance tab lists all of the controls that were added to the deployable architecture.
-   {: tip}
-
-   If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail). Or, an administrator can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration will not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
+   If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail). Or, an administrator on the projects service can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration will not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
 
 During the configuration and deployment process, monitor your [needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects). The widget reflects any issue that occurs in your configurations.
+{: remember}
+
+## Approving changes
+{: #approve-changes}
+
+After you validate your configuration, the changes must be approved by an editor or administrator on the projects service. Complete the following steps to approve changes:
+
+1. From the projects list, select a project.
+1. Check that there aren't any outstanding needs attention items on the **Overview** tab in your project. Needs attention items can block your ability to deploy.
+1. Go to the **Configurations** tab, and select a deployable architecture configuration.
+1. Click **Edit**.
+1. Click **View last validation**.
+1. Add a comment providing more details about the approval, and click **Approve**.
+
+If your validation failed due to the Code Risk Analyzer scan, an administrator on the projects service can [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway.
 {: remember}
 
 ## Deploying your configuration
 {: #deploy-config}
 
-After you validate your configuration, you can deploy it to your target account.
+After you validate your configuration, and the changes are approved, you can deploy your configuration to your target account. You can deploy to any account that has authorized your project for deployments. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
 
+1. From the **Configurations** tab in your project, click on the name of your configuration. Then, click **Edit**.
 1. Review the input values and make any necessary changes.
-1. Check that there aren't any outstanding needs attention items. Needs attention items can block your ability to deploy.
 1. Click **Deploy**. This action includes preparing your resources to deploy, which can take a few minutes. You are notified when the deployment is successful.
 1. Review the outputs from the deployable architecture.
 
