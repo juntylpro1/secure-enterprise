@@ -77,17 +77,17 @@ After you validate your configuration, the changes must be approved by an editor
 If your validation failed due to the Code Risk Analyzer scan, an administrator on the projects service can [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway.
 {: remember}
 
-## Deploying your configuration
+## Deploying your architecture
 {: #deploy-config}
 
-After you validate your configuration, and the changes are approved, you can deploy your configuration to your target account. You can deploy to any account that has authorized your project for deployments. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+After your configuration updates are validated and approved, you can deploy your architecture to your target account. You can deploy to any account that has authorized your project for deployments. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
 
-1. From the **Configurations** tab in your project, click the name of your configuration > **Edit**.
+1. From the **Configurations** tab in your project, click the name of your deployable architecture configuration > **Edit**.
 1. Review the input values and make any necessary changes.
 1. Click **Deploy**. This action includes preparing your resources to deploy, which can take a few minutes. You are notified when the deployment is successful.
 1. Review the outputs from the deployable architecture.
 
-If any additional changes to the configuration are needed, or if a new version of the deployable architecture is available, you must deploy your configuration again. You must also deploy your configuration again [if there is any drift detected](/docs/schematics?topic=schematics-drift-note&interface=ui#drift-ui) in your {{site.data.keyword.bpshort}} workspace.
+If any additional changes are needed, or if a new version of the deployable architecture is available, you must deploy your architecture again. You must also deploy your architecture again [if there is any drift detected](/docs/schematics?topic=schematics-drift-note&interface=ui#drift-ui) in your {{site.data.keyword.bpshort}} workspace.
 
 ## Viewing resources
 {: #resources-project}
@@ -101,4 +101,4 @@ View your resources that are tied to the deployable architecture configuration b
 ## Reviewing output values
 {: #project-output-values}
 
-Output values populate after the configuration is deployed. They provide important information about your created resources. After the deployment is successful, you can go to the **Output** tab to view the outputs for your configuration.
+Output values populate after the architecture is deployed, and they provide important information about your created resources. After the deployment is successful, you can go to the **Output** tab to view the outputs.
