@@ -58,12 +58,12 @@
         {
           "date": "25 April 2023",
           "title": "Customized compliance validation",
-          "description": "Users can specify a Security and Compliance Center attachment to validate deployable architectures they are configuring in a project. The default controls from the deployable architecture can still be used for validation as well."
+          "description": "In addition to using default controls, you can specify a Security and Compliance Center attachment to validate deployable architectures that you're configuring in a project."
         },
         {
           "date": "25 April 2023",
-          "title": "Validate and deploy architectures that were onboarded from private repositories",
-          "description": "Previously, only deployable architectures that were onboarded by using a public GitHub repository were supported. Now, projects users can validate and deploy architectures that were onboarded to the catalog by using a private or public GitHub repository."
+          "title": "Support for deployable architectures onboarded from private or public GitHub repositories",
+          "description": "You can now deploy architectures that are onboarded to the catalog from either a private or public GitHub repository. Previously, only deployable architectures onboarded from a public GitHub repository were supported."
         },
         {
           "date": "17 April 2023",
