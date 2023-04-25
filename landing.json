@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2023-04-17",
+    "lastupdated": "2023-04-25",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -56,19 +56,19 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
+          "date": "25 April 2023",
+          "title": "Customized compliance validation",
+          "description": "In addition to using default controls, you can specify a Security and Compliance Center attachment to validate deployable architectures that you're configuring in a project."
+        },
+        {
+          "date": "25 April 2023",
+          "title": "Support for deployable architectures onboarded from private or public GitHub repositories",
+          "description": "You can now deploy architectures that are onboarded to the catalog from either a private or public GitHub repository. Previously, only deployable architectures onboarded from a public GitHub repository were supported."
+        },
+        {
           "date": "17 April 2023",
           "title": "Check out the new deployable architectures in the catalog",
           "description": "IBM Cloud provides deployable architectures in the IBM Cloud Catalog, which are products that provide automation for the deployment of common architectural patterns that combine one or more cloud resources and are designed for scalability and modularity. Go to the catalog, and filter by Deployable architectures to review the growing catalog of options."
-        },
-        {
-          "date": "17 April 2023",
-          "title": "IBM Cloud projects for automated IaC deployments",
-          "description": "Configure, deploy, and monitor deployments by using DevOps best practices with projects. With projects, you can manage Infrastructure as Code at scale and ensure that its configuration is always valid, secure, and compliant."
-        },
-        {
-          "date": "17 April 2023",
-          "title": "Onboard customized deployable architectures for your enterprise users",
-          "description": "You can customize IBM Cloud provided deployable architectures to meet your enterprise’s needs, and then leverage private catalogs to make only approved and compliant architectures available for your enterprise developers to deploy."
         }
       ]
     }
