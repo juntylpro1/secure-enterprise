@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2023-04-24",
+    "lastupdated": "2023-04-25",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -56,12 +56,12 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
-          "date": "24 April 2023",
+          "date": "25 April 2023",
           "title": "Customized compliance validation",
           "description": "Users can specify a Security and Compliance Center attachment to validate deployable architectures they are configuring in a project. The default controls from the deployable architecture can still be used for validation as well."
         },
         {
-          "date": "24 April 2023",
+          "date": "25 April 2023",
           "title": "Validate and deploy architectures that were onboarded from private repositories",
           "description": "Previously, only deployable architectures that were onboarded by using a public GitHub repository were supported. Now, projects users can validate and deploy architectures that were onboarded to the catalog by using a private or public GitHub repository."
         },
