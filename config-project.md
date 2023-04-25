@@ -45,7 +45,11 @@ To create a customized configuration, complete the following steps:
 
 1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account.
 
-    If you select **Architecture default**, the scan uses a [specific set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals). The set of supported rules include controls added by the owner of the deployable architecture, and these controls are also checked. Any extra controls that are not included in the list of supported rules are not checked when you validate your configuration. If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used. {: #cra-validate-failure}
+    If you select **Architecture default**:
+    * The scan uses the default controls that the owner of the deployable architecture added when they onboarded it.
+    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals) are checked.
+    * Any extra controls that the architecture owner added that are not included in the list of supported rules are not checked when you validate your configuration.
+    * If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used. {: #cra-validate-failure}
 
     To view the list of added controls, go the [{{site.data.keyword.cloud_notm}} catalog](/catalog){: external} and select the deployable architecture that you're configuring. The Security & compliance tab lists all of the controls that were added to the deployable architecture.
     {: tip}
