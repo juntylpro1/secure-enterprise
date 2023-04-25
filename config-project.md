@@ -38,19 +38,19 @@ The input's attribute allows variables to be imported from any number of outputs
 
 To create a customized configuration, complete the following steps:
 
-1. From the **Security** panel, select the authentication method that you want to use to deploy to your target account.
+1. From the **Security** panel, select the authentication method that you want to use to deploy your architecture.
 
-    You must select an authentication method for the project to deploy your architecture. Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to a target account and is required to deploy your configuration. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+    Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to a target account and is required to deploy your configuration. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
     {: note}
 
-1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or **Select from {{site.data.keyword.compliance_short}}** if you have a {{site.data.keyword.compliance_short}} attachment set up in your target account.
+1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account.
 
-    If you choose the **Architecture default** controls, the scan uses a [specific set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals). Controls that the owner of the deployable architecture added that are also included in the set of supported {{site.data.keyword.compliance_short}} rules are checked. Any extra controls that are not included in the list of supported rules are not checked when you validate your configuration. If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used. {: #cra-validate-failure}
+    If you select **Architecture default**, the scan uses a [specific set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals). The set of supported rules include controls added by the owner of the deployable architecture, and these controls are also checked. Any extra controls that are not included in the list of supported rules are not checked when you validate your configuration. If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used. {: #cra-validate-failure}
 
     To view the list of added controls, go the [{{site.data.keyword.cloud_notm}} catalog](/catalog){: external} and select the deployable architecture that you're configuring. The Security & compliance tab lists all of the controls that were added to the deployable architecture.
     {: tip}
 
-    If you choose **Select from {{site.data.keyword.compliance_short}}** you must already have an instance of the service and previously created an attachment through {{site.data.keyword.compliance_short}} in the target account that you want to deploy to. For help creating an attachment, see [Evaluating resource configuration with {{site.data.keyword.compliance_long}}](/docs/secure-enterprise?topic=secure-enterprise-security-compliance-scanning).
+    If you select **Select from {{site.data.keyword.compliance_short}}**, you must have an instance of the service and an attachment through {{site.data.keyword.compliance_short}} in the target account that you want to deploy to. For help creating an attachment, see [Evaluating resource configuration with {{site.data.keyword.compliance_long}}](/docs/secure-enterprise?topic=secure-enterprise-security-compliance-scanning).
 
 1. From the **Required** panel, enter values for the required fields for the deployable architecture configuration.
 1. Optional: You can add values by going to the **Optional** panel.
