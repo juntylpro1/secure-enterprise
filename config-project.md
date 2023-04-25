@@ -82,7 +82,7 @@ If your validation failed due to the Code Risk Analyzer scan, an administrator o
 
 After you validate your configuration, and the changes are approved, you can deploy your configuration to your target account. You can deploy to any account that has authorized your project for deployments. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
 
-1. From the **Configurations** tab in your project, click on the name of your configuration. Then, click **Edit**.
+1. From the **Configurations** tab in your project, click the name of your configuration > **Edit**.
 1. Review the input values and make any necessary changes.
 1. Click **Deploy**. This action includes preparing your resources to deploy, which can take a few minutes. You are notified when the deployment is successful.
 1. Review the outputs from the deployable architecture.
