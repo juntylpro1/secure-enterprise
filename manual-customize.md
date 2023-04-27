@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-04-27"
 
 keywords: customize, deployable architecture, bundle, manifest
 
@@ -107,7 +107,7 @@ output "vsi_names" {
 
 The `provider.tf` file contains required information about which provider, API key, and region that users are required to use.
 
-This information is pulled in from the `variables.tf` file. If you need to make changes, update the [`varaiables.tf`](#customize-variables) file.
+This information is pulled in from the `variables.tf` file. If you need to make changes, update the [`variables.tf`](#customize-variables) file.
 {: important}
 
 #### Example of a `provider.tf` file
