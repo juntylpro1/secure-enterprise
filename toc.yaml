@@ -118,7 +118,7 @@ toc:
           label: Leveraging private catalogs for enterprise products
           topics:
           - include: ../account/cm-video.md
-          - include: ../account/catalog-enterprise-filters.md
+          - catalog-enterprise-filters.md
           - topicgroup:
               label: Onboarding deployable architectures to a private catalog
               topics:
