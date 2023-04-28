@@ -23,7 +23,7 @@ toc:
           label: Learning about access management
           topics:
           - include: ../account/iam-whatis.md
-          - include: ../account/iam-identities
+          - include: ../account/iam-identities.md
           - include: ../account/iam-access-concepts.md
           - include: ../account/iam-policies-overview.md
           - include: ../account/iam-roles-overview.md
@@ -227,9 +227,9 @@ toc:
           label: Troubleshooting projects
           topics:
           - ts-project-access.md
-          - ts-project-create.md
+          - ts-projects-create.md
           - ts-project-delete.md
-          - ts-project-deploy.md
+          - ts-projects-deploy.md
           - ts-failure-validate.md
           - ts-needs-attention.md
           - ts-deploy.md
