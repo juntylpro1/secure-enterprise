@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-04-28"
 
 keywords: project access, iam projects, assigning project access, assign access, access project
 
@@ -29,7 +29,7 @@ The following list includes the actions that users can take when they are assign
 |-------------|---------------------|---------------------|
 | Viewer | Viewers can perform read-only actions within a project. | View a project (including the project.json) \n \n Find a project by using Global Search |
 | Operator | Operators can perform the same actions as viewers, with more permissions beyond the viewer role, including planning project deployments | All viewer project permissions \n \n Validate a configuration \n \n Edit a configuration |
-| Editor | Editors can perform the same actions as operators, with more permissions beyond the operator role, including creating projects and deploying resources. | All viewer and operator project permissions \n \n Create a project \n \n Edit a project \n \n Delete a project \n \n Create a configuration \n \n  Discard a draft configuration \n \n Deploy configuration changes \n \n Destroy resources  |
+| Editor | Editors can perform the same actions as operators, with more permissions beyond the operator role, including creating projects and deploying resources. | All viewer and operator project permissions \n \n Create a project \n \n Edit a project \n \n Delete a project \n \n Create a configuration \n \n  Discard a draft configuration \n \n Approve configuration changes \n \n Deploy configuration changes \n \n Destroy resources  |
 | Administrator | Administrators can perform the same actions as editors, with more permissions beyond the editor role, including updating project statuses and planning new or changed project deployments. | All viewer, operator, and editor project permissions \n \n Force approve changes that failed validation |
 {: caption="Table 1. Access roles for projects" caption-side="top"}
 
