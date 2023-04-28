@@ -126,7 +126,6 @@ toc:
                 navtitle: Specifying product metadata
               - onboard-custom.md
               - include: ../account/catalog-enterprise-share.md
-              - catalog-access-reqs.md
       - topicgroup:
           label: Ensuring continuous compliance
           topics:
