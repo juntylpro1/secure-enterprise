@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-05-01"
 
 subcollection: secure-enterprise
 
@@ -51,8 +51,8 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 | Fixes, new features, and updates to the next major deployable architecture release  | {{site.data.keyword.IBM_notm}} provides regular updates, bug fixes, and new features in a continuous delivery model that is apparent to the customer. {{site.data.keyword.IBM_notm}} provides a migration path when possible. | N/A |
 | Keep deployed services and resources up to date | N/A | Apply fixes and updates to the compute resources that are created from the deployable architecture. These resources are not updated through the deployable architecture unless otherwise indicated. |
 | Issues found in IBM-provided versions of Terraform modules | {{site.data.keyword.IBM_notm}} provides a way for customers to open issues. If the issue is with a deployable architecture, open a case. If the issue is with a module, open an issue in the module [GitHub repo](https://github.com/terraform-ibm-modules){: external}. | Customer provides information to reproduce any problem. |
-| Issues with IBM Container images | {{site.data.keyword.IBM_notm}} provides a way for customers to open issues. | Customer provides information to reproduce any problem. |
-| Issues with third party and open source Container Images | N/A | Customer resolves with third-party vendor or open source community. |
+| Issues with IBM container images | {{site.data.keyword.IBM_notm}} provides a way for customers to open issues. | Customer provides information to reproduce any problem. |
+| Issues with third party and open source container images | N/A | Customer resolves with third-party vendor or open source community. |
 | Issues with {{site.data.keyword.cloud_notm}}-provided stock operating system images | N/A | Customer must get a compatible stock image from the vendor. |
 | Issues with the services that the Terraform creates from a deployable architecture | {{site.data.keyword.cloud_notm}} resolves issues with the services. | N/A |
 | {{site.data.keyword.cloud_notm}} resource outages or issues that occur during automated template execution by using {{site.data.keyword.cloud_notm}} Terraform Provider | IBM reports outages for any cloud resources on the [Status](https://cloud.ibm.com/status){: external} page. | Customers can redeploy after issue is resolved.|
