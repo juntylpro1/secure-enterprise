@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-28"
+lastupdated: "2023-05-03"
 
 keywords: project access, iam projects, assigning project access, assign access, access project
 
@@ -20,10 +20,10 @@ subcollection: secure-enterprise
 Projects are controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). As an administrator on a project, you can grant users access to view and edit projects, approve changes, and deploy or destroy configuration resources.
 {: shortdesc}
 
-## Actions and roles for the project service
+## Actions and roles for the {{site.data.keyword.cloud_notm}} Projects service
 {: #service-access-projects}
 
-The following list includes the actions that users can take when they are assigned a specific role on the project service. Review the following information to make sure that you are assigning the correct level of access to your users.
+The following list includes the actions that users can take when they are assigned a specific role on the {{site.data.keyword.cloud_notm}} Projects service. Review the following information to make sure that you are assigning the correct level of access to your users.
 
 | Role | Definition |Project Permissions |
 |-------------|---------------------|---------------------|
@@ -33,7 +33,7 @@ The following list includes the actions that users can take when they are assign
 | Administrator | Administrators can perform the same actions as editors, with more permissions beyond the editor role, including updating project statuses and planning new or changed project deployments. | All viewer, operator, and editor project permissions \n \n Force approve changes that failed validation |
 {: caption="Table 1. Access roles for projects" caption-side="top"}
 
-In addition to access on the Project service, you must be assigned the following access on the project tooling resources within the account:
+In addition, you must be assigned the following access on the project tooling resources within the account:
 
 * The Editor and Manager role on the {{site.data.keyword.bplong}} service
 * The Viewer role on the resource group for the project
@@ -41,7 +41,7 @@ In addition to access on the Project service, you must be assigned the following
 ## Assigning access in the console
 {: #console-project-service}
 
-To assign access to the project service, complete the following steps:
+To assign access to the {{site.data.keyword.cloud_notm}} Projects service, complete the following steps:
 
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**, and then select **Access groups**.
 1. Select the access group that you want to assign access to, then go to **Access** > **Assign access**.

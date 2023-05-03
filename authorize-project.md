@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2023
 
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-03"
 
 
 keywords: authorizing a project, add project to account, project secrets, project API key, authenticate, authentication for a project
@@ -31,7 +31,7 @@ Though it is possible to add your API key directly into your configuration, it i
 
 1. Make sure that you are assigned the required permissions to create the project tooling resources within the account in addition to permission to create projects:
 
-* The Editor role on the Project service.
+* The Editor role on the {{site.data.keyword.cloud_notm}} Projects service.
 * The Editor and Manager role on the {{site.data.keyword.bplong}} service.
 * The Viewer role on the resource group for the project.
 

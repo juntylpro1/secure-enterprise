@@ -4,7 +4,7 @@ copyright:
 
   years: 2023
 
-lastupdated: "2023-04-14"
+lastupdated: "2023-05-03"
 
 keywords: trusted profile, projects trusted profile, authorization, project auth, project security
 
@@ -30,7 +30,7 @@ The project uses the trusted profile to create a service ID with the same permis
 
 You can deploy an architecture in your own account or in another account by using trusted profiles.
 
-Depending on your organization, deploying an architecture might require access to another account by using a trusted profile and coordinating with administrators in multiple accounts. If the Project service in another account needs access to your account to deploy an architecture, use trusted profiles and service IDs to authorize deployments in your account.
+Depending on your organization, deploying an architecture might require access to another account by using a trusted profile and coordinating with administrators in multiple accounts. If the {{site.data.keyword.cloud_notm}} Projects service in another account needs access to your account to deploy an architecture, use trusted profiles and service IDs to authorize deployments in your account.
 
 ## Before you begin
 {: #before-tp-project}
@@ -126,10 +126,10 @@ View the catalog page for specific access roles that are required for a given de
 
 After you create the trusted profile, it auto-generates a service ID. The service ID name begins with `iam-Profile`, ends with `platform-project-access`, and includes the ID of the trusted profile in between. If the service ID is ever deleted, it's re-created the next time that the trusted profile is used.
 
-## Coordinating with the administrator on the Project service
+## Coordinating with the administrator on the {{site.data.keyword.cloud_notm}} Projects service
 {: #coordinate-projects}
 
-The project user who edits the architecture configuration needs identifying information for the trusted profile that you created to complete the authorization. Users need the Operator role or higher on the Project service to edit a configuration.
+The project user who edits the architecture configuration needs identifying information for the trusted profile that you created to complete the authorization. Users need the Operator role or higher on the {{site.data.keyword.cloud_notm}} Projects service to edit a configuration.
 
 To retrieve the trusted profile ID value, complete the following steps.
 

@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2023
 
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-03"
 
 keywords: project access, project, project cost, project estimate, project users
 
@@ -35,7 +35,7 @@ As an enterprise, you use projects to ensure that the configuration of your depl
 
 To add a user to a project, they must be a member of your account with correct IAM access roles assigned.
 
-To assign access to the project service, complete the following steps:
+To assign access to the {{site.data.keyword.cloud_notm}} Projects service, complete the following steps:
 
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**, and then select **Users**.
 1. Click the user or access group that you want to assign access, then go to **Access** > **Assign access**.
@@ -45,7 +45,7 @@ To assign access to the project service, complete the following steps:
 1. Click **Add** to add your policy configuration to your policy summary.
 1. Click **Assign**.
 
-In addition to access to the project service, users must be assigned the Editor and Manager role on the {{site.data.keyword.bpshort}} service and the Viewer role on the resource group for the project.
+In addition, users must be assigned the Editor and Manager role on the {{site.data.keyword.bpshort}} service and the Viewer role on the resource group for the project.
 
 ## How do I estimate project costs?
 {: #project-cost}
@@ -59,4 +59,4 @@ During the validation process, the starting costs for the project are estimated.
 {: faq}
 {: support}
 
-Any user that is a member of your account that is assigned access to the project service, {{site.data.keyword.bpshort}}, and the resource group for your project can access your project.
+Any user that is a member of your account that is assigned access to the {{site.data.keyword.cloud_notm}} Projects service, {{site.data.keyword.bpshort}}, and the resource group for your project can access your project.

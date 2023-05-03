@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-07"
+lastupdated: "2023-05-03"
 
 keywords: add project, create project, set project
 
@@ -28,7 +28,7 @@ You can create a project by going to the **Navigation menu** icon ![Navigation M
 
 Resources are created in the project account for the user. You must have permission to create a project and permission to create the project tooling resources within the account. Make sure that you have the following access:
 
-* The Editor role on the Project service.
+* The Editor role on the {{site.data.keyword.cloud_notm}} Projects service.
 * The Editor and Manager role on the {{site.data.keyword.bplong}} service
 * The Viewer role on the resource group for the project
 
@@ -63,12 +63,10 @@ You can also add a deployable architecture to a project directly from the catalo
 
 Check out the steps on how to [configure and deploy a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-config-project) when you're ready to deploy resources from a deployable architecture from a project.
 
-<!--Check out the [Project tutorial](/docs/secure-enterprise?topic=secure-enterprise-project-getting-started) for the complete end to end flow of creating, configuring, and deploying architectures with projects.-->
-
 ## Exporting the project JSON
 {: #json-export}
 
-As a user that’s working with projects, you can export the project JSON to manually manage the project in your own public or private repository. For example, you might want to push updates to the JSON by calling the project API using CLI commands or by using your own CICD tools. You might also export the JSON as a way to backup the project information outside of the project service.
+As a user that’s working with projects, you can export the project JSON to manually manage the project in your own public or private repository. For example, you might want to push updates to the JSON by calling the project API using CLI commands or by using your own CICD tools. You might also export the JSON as a way to backup the project information outside of the {{site.data.keyword.cloud_notm}} Projects service.
 
 To export the project JSON, complete the following steps:
 1. In the {{site.data.keyword.cloud_notm}} console, click the **Navigation menu** icon ![Navigation Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects**.
