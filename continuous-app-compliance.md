@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-03"
 
 keywords:
 
@@ -15,10 +15,7 @@ subcollection: secure-enterprise
 # Enabling continuous compliance in your application software development cycle
 {: #compliant-software-development}
 
-Taking advantage of DevSecOps to automate the integration of security at every phase of your enterprise application development lifecycle addresses security issues as they emerge, making them easier, faster, and less expensive to fix. By using [{{site.data.keyword.cloud}} DevSecOps with {{site.data.keyword.contdelivery_short}}](/docs/devsecops?topic=devsecops-devsecops_intro), you can take advantage of the two main benefits of using DevSecOps, which are speed and security.
-{: shortdesc}
-
-<!--You can use the DevSecOps deployable architecture, [DevSecOps Application Lifecycle Management (ALM)](TBD), in the catalog to set up your application development team for success in just minutes.-->
+Taking advantage of DevSecOps to automate the integration of security at every phase of your enterprise application development lifecycle addresses security issues as they emerge, making them easier, faster, and less expensive to fix. By using the [DevSecOps Application Lifecycle Management](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-overview) deployable architecture, you can take advantage of the two main benefits of using DevSecOps, which are speed and security.
 
 Throughout the development cycle, the code is reviewed, scanned, and tested for security issues. This integrated security allows your team to catch issues early, and reduces duplicative reviews and unnecessary rebuilds, resulting in more secure code that is delivered faster. As DevSecOps integrates vulnerability scanning and patching into the development and release cycle, the ability to identify and patch common vulnerabilities and exposures (CVE) is increased. This limits the window a threat actor has to take advantage of vulnerabilities in public-facing production systems. Additionally, continuous compliance with periodic scanning of applications in production is included.
 
@@ -29,15 +26,11 @@ Review the following sections to get an overview of the essential steps for ensu
 ## Setting up your secure software development architecture
 {: #setup-devsecops}
 
-<!--The DevSecOps Application Lifecycle Management deployable architecture streamlines the process -->
-
-You can review the [DevSecOps architecture](/docs/devsecops?topic=devsecops-cd-devsecops-arch) and use the [Deploy a secure app with DevSecOps tutorial](/docs/devsecops?topic=devsecops-tutorial-cd-devsecops) to set up your secure software supply chain by using a set of continuous integration (CI), continuous deployment (CD), and continuous compliance (CC) toolchain templates. These templates use a collection of tool integrations and customizable reference Tekton pipelines for build, scan, test, change management, and deploy applications.
+The DevSecOps Application Lifecycle Management deployable architecture streamlines the process to set up your secure software supply chain by using a set of continuous integration (CI), continuous deployment (CD), and continuous compliance (CC) toolchain templates. These templates use a collection of tool integrations and customizable reference Tekton pipelines for build, scan, test, change management, and deploy applications.
 
 The Tekton pipelines provide a framework of custom scripts that you can use to ensure the compliant and automated orchestration of code and configuration changes. The pipelines maintain a GitOps release inventory, while they collect and store evidence that can be used to generate auditable change requests. Additionally, the continuous compliance pipeline periodically scans the deployed artifacts and associated source code repositories for vulnerabilities.
 
-<!--For more information about configuring the deployable architecture to fit your needs, see the [DevSecOps deployment guide](TBD).
-You can use a [project](/docs/secure-enterprise?topic=secure-enterprise-setup-project) to deploy this architecture in all of your application development environments, so that your development team can take a shift-left approach by identifying security risks and exposures early, so that they are addressed before code ever reaches production.-->
-
+For more information about configuring the deployable architecture to fit your needs, see the [DevSecOps deployment guide](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-dep). You can use a [project](/docs/secure-enterprise?topic=secure-enterprise-setup-project) to deploy this architecture in all of your application development environments, so that your development team can take a shift-left approach by identifying security risks and exposures early, so that they are addressed before code ever reaches production.
 
 ## Ensuring continuous compliance with the CC pipeline
 {: #cc-pipeline}
