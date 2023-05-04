@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-04"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -88,24 +88,29 @@ You can also see the template in a swagger format. For more information, see [Ca
                     "usage": "USAGE',
                     "compliance": [
                         {
-                        "authority": "SCC VERSION",
+                        "authority": "scc-v3",
                         "profiles": [
                             {
-                                "profile_name: "PROFILE NAME",
+                                "profile_name": "PROFILE NAME",
                                 "profile_version": "PROFILE VERSION"
                             }
                         ],
                         "controls": [
                             {
-                                "profile_name": "PROFILE NAME",
-                                "profile_version": "PROFILE VERSION",
-                                "control_name": "CONTROL NAME"
+                                "profile": {
+                                    "name": "PROFILE NAME",
+                                    "version": "PROFILE VERSION"
+                                },
+                                "names": [
+                                "CONTROL NAME",
+                                "CONTROL NAME"
+                                ]
                             }
                         ]
-                        }
-                    ]
-                }
-            ],
+                    }
+                ]
+             }
+        ],
                     "iam_permissions": [
                         {
                          "service_name": "SERVICE PROGRAMMATIC NAME",
@@ -304,7 +309,7 @@ usage
 :   Information on how to embed the architecture or run it locally.
 
 compliance
-:   Section header that indicated that the architecture is compliant.
+:   Section header that indicates that the architecture is compliant.
 
     You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
     {: important}
@@ -313,7 +318,7 @@ compliance
     :   The version of Security and Compliance Center that you are adding controls from.
 
     profiles
-    :   Section header that indicates that the variation has profiles. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
+    :   Section header that indicates that the variation has claimed a profile. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
 
         profile_name
         :   The name of the claimed profile. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
@@ -322,16 +327,26 @@ compliance
         :   The version of the profile. For example, `1.0.0. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
     controls
-    :   Section header that indicates that the variation has controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name`, `profile_version`, and `control_name`. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
+    :   Section header that indicates that the variation has claimed controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `name`, profile `name`, and profile `version`. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
 
-        profile_name
-        :   The profile name of the claimed control. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+        profile
+        :    Section header that indicates that you are adding controls from a specific profile.
 
-        profile_version
-        :   The version of the profile. For example, `1.0.0. You can find the profile name in {{site.data.keyword.compliance_short}}.
+            name
+            :   The profile name of the claimed control. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
-        control_id
-        :   The ID of the claimed control. You can find the ID in {{site.data.keyword.compliance_short}}.
+            version
+            :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+
+        names
+        :   Section header to indicate a list of claimed controls. For example:
+
+        ```text
+        "names": [
+           "CM-7(b)",
+           "AC-2(a)"
+         ]
+        ```
 
     If you have included controls in your readme and your catalog manifest file, the manifest file takes precedence. It is best practice to make sure the controls listed in your catalog manifest file match the controls in your readme file.
     {: note}
