@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-08"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -63,8 +63,8 @@ You can also see the template in a swagger format. For more information, see [Ca
             "support_details": "SUPPORT DETAILS",
             "features": [
                 {
-                "title": "TITLE",
-                "description": "DESCRIPTION",
+                    "title": "TITLE",
+                    "description": "DESCRIPTION"
                 }
             ],
             "module_info": [
@@ -75,7 +75,7 @@ You can also see the template in a swagger format. For more information, see [Ca
                         "name": "PRODUCT PROGRAMMTIC NAME",
                         "kind": "VERSION'S FORMAT KIND",
                         "version": "VERSION NUMBER",
-                        "flavors": ["FLAVOR"],
+                        "flavors": ["FLAVOR"]
                     }
                 ]
             }
@@ -85,11 +85,10 @@ You can also see the template in a swagger format. For more information, see [Ca
                     "label": "LABEL",
                     "name": "VARIATION'S PROGRAMMATIC NAME",
                     "working_directory": "PATH",
-                    "usage": "USAGE',
-                    "compliance": [
-                        {
+                    "usage": "USAGE",
+                    "compliance": {
                         "authority": "scc-v3",
-                        "profiles": [
+                        "profiles":[
                             {
                                 "profile_name": "PROFILE NAME",
                                 "profile_version": "PROFILE VERSION"
@@ -102,15 +101,12 @@ You can also see the template in a swagger format. For more information, see [Ca
                                     "version": "PROFILE VERSION"
                                 },
                                 "names": [
-                                "CONTROL NAME",
-                                "CONTROL NAME"
+                                    "CONTROL NAME",
+                                    "CONTROL NAME"
                                 ]
                             }
                         ]
-                    }
-                ]
-             }
-        ],
+                    },
                     "iam_permissions": [
                         {
                          "service_name": "SERVICE PROGRAMMATIC NAME",
@@ -122,11 +118,9 @@ You can also see the template in a swagger format. For more information, see [Ca
                                 {
                                     "name": "NAME",
                                     "description": "DESCRIPTION",
-                                    "role_crns": "[
-                                        {
-                                            "ROLE",
-                                            "ROLE"
-                                        }
+                                    "role_crns": [
+                                        "ROLE1",
+                                        "ROLE2"
                                     ]
                                 }
                             ]
@@ -134,30 +128,30 @@ You can also see the template in a swagger format. For more information, see [Ca
                     ],
                     "architecture":[
                         {
-                        "features": [
-                            {
-                                "title": "FEATURE NAME",
-                                "description": "FEATURE DESCRIPTION"
-                            }
-                        ],
-                        "diagrams": [
-                            {
-                                "diagram": {
-                                    "url": "URL"
-                                    "api_url": "API URL",
-                                    "url_proxy": {
+                            "features": [
+                                {
+                                    "title": "FEATURE NAME",
+                                    "description": "FEATURE DESCRIPTION"
+                                }
+                            ],
+                            "diagrams": [
+                                {
+                                    "diagram": {
                                         "url": "URL",
-                                        "sha": "SHA"
+                                        "api_url": "API URL",
+                                        "url_proxy": {
+                                            "url": "URL",
+                                            "sha": "SHA"
+                                        },
+                                        "caption": "DIAGRAM LABEL",
+                                        "type": "TYPE",
+                                        "thumbnail_url": "THUMBNAIL URL"
                                     }
-                                    "caption": "DIAGRAM LABEL",
-                                    "type": "TYPE",
-                                    "thumbnail_url": "THUMBNAIL URL"
-                                },
-                            }
-                        ]
-                        "description": "DIAGRAM DESCRIPTION"
-                            }
-                        ],
+                                }
+                            ],
+                            "description": "DIAGRAM DESCRIPTION"
+                        }
+                    ],
                     "dependencies": [
                         {
                             "catalog_id": "ID",
@@ -172,16 +166,14 @@ You can also see the template in a swagger format. For more information, see [Ca
                     "configuration": [
                         {
                             "key": "KEY",
-                            "type": "TYPE"'
+                            "type": "TYPE",
                             "default_value": "DEFAULT VALUE",
                             "display_name": "DISPLAY NAME",
                             "value_constraint": "CONSTRAINT",
                             "description": "DESCRIPTION",
                             "required": "REQUIRED",
                             "options": [
-                                {
-                                    "OPTION"
-                                }
+                                "OPTION"
                             ],
                             "hidden": "HIDDEN",
                             "custom_config":
@@ -203,8 +195,10 @@ You can also see the template in a swagger format. For more information, see [Ca
                         }
                     ],
                     "install_type": "INSTALL TYPE"
-                    }
-                ]
+                }
+            ]
+        }
+    ]
 }
 
 ```
@@ -324,7 +318,7 @@ compliance
         :   The name of the claimed profile. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
         profile_version
-        :   The version of the profile. For example, `1.0.0. You can find the profile name in {{site.data.keyword.compliance_short}}.
+        :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
     controls
     :   Section header that indicates that the variation has claimed controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `name`, profile `name`, and profile `version`. You can view predefined profiles in the {{site.data.keyword.compliance_full}}.
