@@ -75,7 +75,6 @@ toc:
                 - access-project.md
                 - include: ../account/catalog-access-reqs.md
                 - include: ../account/iam-groups.md
-                - include: ../account/iam-cross-acct-restriction.md
                 - include: ../account/iam-authorizations.md
                 - include: ../account/iam-audit-policies.md
           - topicgroup:
