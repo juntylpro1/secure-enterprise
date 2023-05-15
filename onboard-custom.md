@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-15"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -182,7 +182,7 @@ After you review the version details, you're ready to configure the input variab
    ```
    {: codeblock}
 
-1. In the `offering.json` file, Add your input variables to the `configuration` array within a version and save the file.
+1. In the `offering.json` file, add your input variables to the `configuration` array within a version and save the file.
 1. Run the [`ibmcloud catalog offering update`](/docs/cli?topic=cli-manage-catalogs-plugin#update-offering) command to update your product:
 
    ```sh
