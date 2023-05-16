@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-16"
 
 keywords: known issues, known limitations
 
@@ -45,4 +45,4 @@ The projects API, SDK, and Terraform functionalities are beta for this release. 
 ## Resource tagging
 {: #project-tagging-known-issue}
 
-Resources that are created by deploying from a project are automatically given service tags. These tags are only visible by using the command-line interface (CLI) or API and are not currently available in usage reports.
+Resources that are created by deploying from a project are automatically given service tags. These tags are only visible by using the command-line interface (CLI) or API and are not currently available in usage reports. You can use the [`ibmcloud resource search`](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#ibmcloud-resource-tag-search) command to retrieve the resources created by configurations in a project based on the service tag.
