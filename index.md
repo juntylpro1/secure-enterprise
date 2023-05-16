@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-13"
+lastupdated: "2023-05-16"
 
 keywords: configurations, deployments, project components, understanding projects, projects, deployable architecture, needs attention, project dashboard
 
@@ -22,14 +22,14 @@ subcollection: secure-enterprise
 
 ![The diagram shows the flow that a user would take when working with projects. The information is conveyed in the surrounding text.](images/projects-flow.svg){: caption="Figure 1. Understanding the projects workflow." caption-side="bottom"}
 
-After choosing a [deployable architecture](#x10293733){: term} from the catalog, you can add its configuration to a new or existing project, and configure it to your enterprise's needs. Before you use the configuration to deploy resources to a specific environment, validation is performed on your code by completing commit checks, vulnerability scans, and cost estimations, so you that your team has all of the essential information that it needs before deploying. And, if the validation fails, the team can work to update the configuration and run the validation again until it passes. With an approval, resources can be deployed and monitored by using {{site.data.keyword.bplong}}. Then, if an update to the deployable architecture becomes available, your team is notified within your project and can update the version on your schedule.
+After choosing a [deployable architecture](#x10293733){: term} from the catalog, you can add its configuration to a new or existing project, and configure it to your enterprise's needs. Before you use the configuration to deploy resources to a specific environment, validation is performed on your code by completing commit checks, vulnerability scans, and cost estimations, so that your team has all of the essential information that it needs before deploying. And, if the validation fails, the team can work to update the configuration and run the validation again until it passes. With an approval, resources can be deployed and monitored by using {{site.data.keyword.bplong}}. Then, if an update to the deployable architecture becomes available, your team is notified within your project and can update the version on your schedule.
 
 ## Benefits of projects
 {: #project-benefits}
 
-Projects help manage IaC at scale. They help ensure that the IaC and its configuration are always valid, secure, and compliant. Because a single project can deploy to different accounts, projects allow users to group related resources across accounts for better collaboration, organization, and user management. Users can get started more efficiently on {{site.data.keyword.cloud_notm}} by using projects to create resources by using deployable architectures that help build complex cloud infrastructures that are designed to meet high-availability, scalability, resiliency, and business continuity and disaster recovery (BC/DR) requirements.
+Projects help manage IaC at scale. They help ensure that the IaC and its configuration are always valid, secure, and compliant. Because a single project can deploy to different accounts, projects allow users to group related resources across accounts for better collaboration, organization, and user management. Users can get started more efficiently on {{site.data.keyword.cloud_notm}} by using projects to create resources by using deployable architectures that help build complex cloud infrastructures that are designed to meet high-availability, scalability, resiliency, and business continuity and disaster recovery (BC/DR) requirements. A project is a useful tool for many reasons.
 
-* A project is a useful tool for many reasons. You can associate a set of deployable architectures, their configurations, and the resulting resources in a single interface. This helps you to manage your resources in a more secure and repeatable way, while simultaneously managing cost, status, and team activity.
+* You can associate a set of deployable architectures, their configurations, and the resulting resources in a single interface. This helps you to manage your resources in a more secure and repeatable way, while simultaneously managing cost, status, and team activity.
 * Projects offer a secure solution supply chain by ensuring that only approved deployable architectures are used to deploy resources and by leveraging trusted profiles to provide secure authorization that doesn't require key rotation and can't be misplaced.
 * Projects provide governance over the configuration of IaC by ensuring that configuration changes are tracked, approved, and subject to automated validation and compliance checks.
 * Projects help ensure that security and compliance issues are addressed by notifying project users of new versions and helping them get deployed in a timely manner.
@@ -81,7 +81,7 @@ Projects provide governance and management for deployable architecture, which ar
 ### Project tooling
 {: #tooling-projects}
 
-Projects have internal versioned configuration storage and validation pipelines to support project goverance. Projects also leverage {{site.data.keyword.bpshort}} workspaces to store the Terraform state for each configuration and to run the automation. These workspaces are in the region and resource group that you specify when you create the project. The resources are also tagged with the project that created them, making it easier to identify among other cloud resources.
+Projects have internal versioned configuration storage and validation pipelines to support project governance. Projects also leverage {{site.data.keyword.bpshort}} workspaces to store the Terraform state for each configuration and to run the automation. These workspaces are in the region and resource group that you specify when you create the project. The resources are also tagged with the project that created them, making it easier to identify among other cloud resources.
 
 Don't delete or directly modify these workspaces. This can cause projects to lose track of the configuration state that can lead to creation of duplicate resources and other issues.
 {: note}
@@ -89,7 +89,7 @@ Don't delete or directly modify these workspaces. This can cause projects to los
 ### Trusted profiles
 {: #tp-project-index}
 
-Trusted profiles authorize cross-account access for applications. Because trusted profiles can generate unique and temporary service ID API keys that exist only during the lifecycle of the operation, projects use them as the secure and compliant way to authorize a configuration to deploy. Unlike other authentication methods, trusted profiles don't require key rotation. [Create a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project#create-projects-tp) that can manage API keys for the service ID in your account, which deploys deployable architecture.
+Trusted profiles authorize cross-account access for applications. Because trusted profiles can generate temporary service ID API keys that exist only during the lifecycle of the operation, projects use them as the secure and compliant way to authorize a configuration to deploy. Unlike other authentication methods, trusted profiles don't require key rotation. [Create a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project#create-projects-tp) that can manage API keys for the service ID in your account, which deploys deployable architecture.
 
 ### {{site.data.keyword.secrets-manager_short}}
 {: #secrets-project}
@@ -109,7 +109,7 @@ You're not charged while customizing a deployable architecture. You begin to inc
 ### Needs attention items
 {: #notifications-projects}
 
-Projects monitor configurations by checking to ensure that it passes various automated tests, receives approval, and is updated when new versions are available from the catalog. When the project needs attention from the user for one of these reasons, the key operational information is displayed on the project dashboard as a Needs attention item. For more information on how to address each type of needs attention notification, see [Viewing needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects).
+Projects monitor configurations by checking to ensure that it passes various automated tests, receives approval, and is updated when new versions are available from the catalog. When the project needs attention from the user for one of these reasons, the key operational information is displayed on the project dashboard as a needs attention item. For more information on how to address each type of needs attention notification, see [Viewing needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects).
 
 Projects support sending the needs attention notifications to the {{site.data.keyword.en_full}} service, allowing them to be filtered and routed as wanted to Slack, email, and other systems.
 {: note}
