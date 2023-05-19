@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-19"
 
 keywords: configurations, deployments, project components, understanding projects, projects, deployable architecture, needs attention, project dashboard
 
@@ -76,12 +76,12 @@ Typically, a project holds several configurations of each architecture. An archi
 ### Deployable architectures
 {: #deployable-architectures}
 
-Projects provide governance and management for deployable architecture, which are infrastructure as code templates. Projects work with the {{site.data.keyword.cloud_notm}} catalog to ensure that only approved deployable architectures are deployed. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
+Projects provide governance and management for deployable architecture, which are infrastructure as code templates. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
 
 ### Project tooling
 {: #tooling-projects}
 
-Projects have internal versioned configuration storage and validation pipelines to support project governance. Projects also leverage {{site.data.keyword.bpshort}} workspaces to store the Terraform state for each configuration and to run the automation. These workspaces are in the region and resource group that you specify when you create the project. The resources are also tagged with the project that created them, making it easier to identify among other cloud resources.
+Projects have internal versioned configuration storage and validation pipelines to support project governance. Projects also leverage {{site.data.keyword.bpshort}} workspaces to store the Terraform state for each configuration and to run the automation. These workspaces are in the region and resource group that you specify when you create the project. The {{site.data.keyword.bpshort}} workspace is also tagged with the project name, making it easier to identify that workspace among other ones.
 
 Don't delete or directly modify these workspaces. This can cause projects to lose track of the configuration state that can lead to creation of duplicate resources and other issues.
 {: note}
