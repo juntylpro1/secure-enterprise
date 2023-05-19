@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2023
 lastupdated: "2023-05-03"
 
-keywords: best practice projects, manage projects
+keywords: best practice projects, manage projects, project
 
 subcollection: secure-enterprise
 
