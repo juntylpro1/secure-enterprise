@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-23"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -78,12 +78,10 @@ Complete the following steps to import your deployable architecture to a private
     If you want to import from a private repository, you can use a personal access token by adding `[--token TOKEN]` to your command.
     {: important}
 
-1. Run the [ibmcloud catalog offering add-category](/docs/cli?topic=cli-manage-catalogs-plugin#add-category-offering) command to add a category to your product.
+1. Run the [ibmcloud catalog offering add-category](/docs/cli?topic=cli-manage-catalogs-plugin#add-category-offering) command to add a category to your product. If no category is selected, the **Developer tools** category is added by default for new products.
 
-If no category is selected, the **Developer tools** category is added by default for new products.
-
-If you included a category in a catalog manifest file, you can skip this step.
-{: note}
+    If you included a category in a catalog manifest file, you can skip this step.
+    {: note}
 
     ```bash
     ibmcloud catalog offering add-category --catalog CATALOG_NAME [--offering OFFERING] [--category CATEGORY]
