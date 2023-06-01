@@ -6,7 +6,7 @@ lastupdated: "2023-04-18"
 
 subcollection: secure-enterprise
 
-keywords: project json, project metadata, JSON config, project config, export JSON
+keywords: project json, project metadata, JSON config, project config, export JSON, json
 
 ---
 
