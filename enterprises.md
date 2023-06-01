@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-06-01"
 
 keywords: enterprise, enterprise account, multiple accounts, organization, hierarchy
 
@@ -80,7 +80,7 @@ The level of support that is assigned to an {{site.data.keyword.Bluemix_notm}} e
 ## Resource management
 {: #enterprise-resources}
 
-Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups and services in Cloud Foundry orgs and spaces. Account groups can't contain resources. For more information, see [Managing resources](/docs/account?topic=account-manage_resource).
+Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups. Account groups can't contain resources. For more information, see [Managing resources](/docs/account?topic=account-manage_resource).
 
 ![A diagram that shows that resources are contained in accounts in the enterprise.](images/enterprise-resources.svg "Resources are tied to the account in the enterprise, just like a stand-alone account."){: caption="Figure 3. Resources in an enterprise" caption-side="bottom"}
 
