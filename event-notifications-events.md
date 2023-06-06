@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-06-06"
 
 keywords: project events, needs attention, project attention, attention events
 
@@ -38,6 +38,8 @@ The following table lists the projects events.
 | `check.pipeline.ready`           | Changes require approval. An event is generated when the latest changes require approval. |
 | `config.version.available`           | A version update is available. An event is generated when a new version of a deployable architecture is available. |
 | `config.defn.updated`           | Changes are ready to deploy. An event is generated when a configuration is updated in the project. |
+| `config.install-job.succeeded`           | Deployment complete. An event is generated when a configuration is successfully deployed. |
+| `config.uninstall-job.succeeded`           | Destroy resources complete. An event is generated when deployed resources are successfully destroyed. |
 {: caption="Table 1. Actions that generate event notifications in projects" caption-side="bottom"}
 
 ## Enabling notifications
