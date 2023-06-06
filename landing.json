@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2023-06-05",
+    "lastupdated": "2023-06-06",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -56,12 +56,12 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
-          "date": "05 June 2023",
+          "date": "06 June 2023",
           "title": "New event notifications added for projects",
           "description": "You can now send out notifications when a deployment is complete or when resources are successfully destroyed."
         },
         {
-          "date": "05 June 2023",
+          "date": "06 June 2023",
           "title": "Support for access management tags in the projects UI",
           "description": "You can now add, edit, and delete access management tags directly in the projects UI. Previously, you could manage these tags only by using the command-line interface (CLI) or API."
         },
