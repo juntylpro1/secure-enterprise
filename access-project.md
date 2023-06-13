@@ -29,7 +29,7 @@ The following list includes the actions that users can take when they are assign
 |-------------|---------------------|---------------------|
 | Viewer | Viewers can perform read-only actions within a project. | View a project (including the project.json) \n \n Find a project by using Global Search |
 | Operator | Operators can perform the same actions as viewers, with more permissions beyond the viewer role, including planning project deployments | All viewer project permissions \n \n Validate a configuration \n \n Edit a configuration |
-| Editor | Editors can perform the same actions as operators, with more permissions beyond the operator role, including creating projects and deploying resources. | All viewer and operator project permissions \n \n Create a project \n \n Edit a project \n \n Delete a project \n \n Create a configuration \n \n  Discard a draft configuration \n \n Approve configuration changes \n \n Deploy configuration changes \n \n Destroy resources  |
+| Editor | Editors can perform the same actions as operators, with more permissions beyond the operator role, including creating projects and deploying resources. | All viewer and operator project permissions \n \n Create a project \n \n Edit a project \n \n Edit project settings \n \n Delete a project \n \n Create a configuration \n \n  Discard a draft configuration \n \n Approve configuration changes \n \n Deploy configuration changes \n \n Destroy resources  |
 | Administrator | Administrators can perform the same actions as editors, with more permissions beyond the editor role, including updating project statuses and planning new or changed project deployments. | All viewer, operator, and editor project permissions \n \n Force approve changes that failed validation |
 {: caption="Table 1. Access roles for projects" caption-side="top"}
 
@@ -37,6 +37,9 @@ In addition, you must be assigned the following access on the project tooling re
 
 * The Editor and Manager role on the {{site.data.keyword.bplong}} service
 * The Viewer role on the resource group for the project
+
+An administrator on the {{site.data.keyword.cloud_notm}} Projects service must grant access between the Projects service and the {{site.data.keyword.bpshort}} service in the account that contains the project. This access is granted automatically the first time that an administrator creates a project.
+{: important}
 
 ## Assigning access in the console
 {: #console-project-service}

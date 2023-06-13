@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-06-13"
 
 keywords: best practice projects, manage projects, project
 
@@ -106,6 +106,6 @@ Tags are not case-sensitive, and the maximum length of a tag is 128 characters. 
 
 When you deploy your configuration, resources that are created can be managed as a group within your project. These resources are created based on the Terraform plan and can be managed individually in your {{site.data.keyword.bpshort}} workspace.
 
-Although you can destroy individual resources from the {{site.data.keyword.bpshort}} workspace, doing so is not recommended for resources that are created by using a project, as it leads to drift. Instead, you can destroy all of the resources that are associated with a configuration at once from the project UI with a single click. Doing so removes the deployment from whatever target environment that your configuration was deployed to.
+Although you can destroy individual resources from the {{site.data.keyword.bpshort}} workspace, doing so is not recommended for resources that are created by using a project, as it leads to drift. Instead, you can destroy all of the resources that are associated with a configuration at once from the project UI with a single click. Doing so removes the deployment from whatever target environment that your configuration was deployed to. Destroying resources without deleting the configuration can be helpful if you need to deploy your configuration again in the future.
 
-In a project, when you delete a configuration, you can choose to destroy all of the resources that are associated with that configuration. You can also destroy the resources that are associated with a configuration without deleting the configuration. Doing so can be helpful if you need to deploy your configuration again in the future.
+By default, when you delete a project or a configuration, any resources that were deployed are destroyed automatically. It's recommended to keep this setting enabled, but you can disable it by opening your project and going to **Manage** > **Settings**. If you disable that setting, resources remain deployed when you delete a configuration or a project, but you lose the ability to easily manage those resources within the project. Deployed resources can continue accruing costs to your target account if they remain available after a project or configuration is deleted.
