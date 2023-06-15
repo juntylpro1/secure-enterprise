@@ -17,7 +17,7 @@ subcollection: secure-enterprise
 # Deleting a project
 {: #delete-project}
 
-You can delete a project at any time. When you delete a project, destroy any resources that were deployed by configurations within the project to avoid additional costs.
+When you delete a project, destroy any resources that were deployed by configurations within the project to avoid additional costs.
 {: shortdesc}
 
 By default, when you delete a project, any resources that were deployed are destroyed automatically. Confirm that this setting is enabled by opening your project and going to **Manage** > **Settings**. If this setting is disabled and you delete your project, the resources remain deployed, but you lose the ability to manage them easily with your project. Deployed resources continue accruing costs in your target account.
