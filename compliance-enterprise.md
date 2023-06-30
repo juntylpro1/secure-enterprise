@@ -4,7 +4,7 @@ copyright:
 
   years: 2023
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-06-30"
 
 keywords:
 
@@ -31,7 +31,7 @@ Before you get started, be sure that you have the following prerequistes:
 
 - Resources in your account to evaluate.
 - An [{{site.data.keyword.cos_full_notm}} bucket](/docs/security-compliance?topic=security-compliance-storage) for results storage.
-- The [proper access](/docs/security-compliance?topic=security-compliance-assign-access) to perform scans.
+- The [proper access](/docs/security-compliance?topic=security-compliance-assign-roles) to perform scans.
 
 Scanning your resources does not ensure regulatory compliance. An evaluation provides a point in time statement of your current posture for a specific resource. It is your responsibility to review and interpret the results to ensure that your organization is adhering to the controls that are required for your industry.
 {: important}
