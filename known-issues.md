@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-05-16"
+lastupdated: "2023-06-30"
 
 keywords: known issues, known limitations
 
@@ -25,7 +25,7 @@ Known issues and limitations include configuration management and user access to
 
 Authorizing users to work in a project is complex as it requires users to be authorized to work with projects, toolchains, {{site.data.keyword.bplong}}, and other tools in IAM. For more information about access, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
-Authorizing projects to deploy to a target account is managed by passing an API key into the deployable architecture. Projects can be directly authorized by using a trusted profile, but trusted profiles are not currently supported by all services. API keys will continue to be supported, but a trusted profile is the preferred method for authorizing deployment to target accounts. For more information, see [Authorizing projects to deploy](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+Authorizing projects to deploy to a target account is managed by passing an API key into the deployable architecture. [Projects can be directly authorized by using a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project), but trusted profiles are not currently supported by all services. [API keys will continue to be supported](/docs/secure-enterprise?topic=secure-enterprise-authorize-project), but a trusted profile is the preferred method for authorizing deployment to target accounts.
 
 ## Configuration management
 {: #configuration-known-issue}
