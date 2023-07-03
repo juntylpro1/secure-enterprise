@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-05-31"
+lastupdated: "2023-07-03"
 
 keywords: configurations, deployments, project components, understanding projects, projects, deployable architecture, needs attention, project dashboard
 
@@ -83,7 +83,7 @@ Projects provide governance and management for deployable architectures, which a
 
 Projects have internal versioned configuration storage and validation pipelines to support project governance. Projects also leverage {{site.data.keyword.bpshort}} workspaces to store the Terraform state for each configuration and to run the automation. These workspaces are in the region and resource group that you specify when you create the project. The {{site.data.keyword.bpshort}} workspace is also tagged with the project name, making it easier to identify that workspace among other ones.
 
-Don't delete or directly modify these workspaces. This can cause projects to lose track of the configuration state that can lead to creation of duplicate resources and other issues.
+Don't delete or directly modify these workspaces. This can cause projects to lose track of the configuration state that can lead to creation of duplicate resources and other issues. To prevent users from modifying workspaces, administrators on the Projects service should not grant users access to the {{site.data.keyword.bpshort}} service.
 {: note}
 
 ### Trusted profiles
