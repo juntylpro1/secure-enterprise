@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-06-13"
+lastupdated: "2023-07-06"
 
 keywords: project access, iam projects, assigning project access, assign access, access project
 
@@ -35,11 +35,7 @@ The following list includes the actions that users can take when they are assign
 
 In addition, you must be assigned the following access on the project tooling resources within the account:
 
-* The Editor and Manager role on the {{site.data.keyword.bplong}} service
-* The Viewer role on the resource group for the project
-
-An administrator on the {{site.data.keyword.cloud_notm}} Projects service must grant access between the Projects service and the {{site.data.keyword.bpshort}} service in the account that contains the project. This access is granted automatically the first time that an administrator creates a project.
-{: important}
+* The Viewer role on the resource group for the project, which allows a resource group for the project to be selected to deploy the tooling services.
 
 ## Assigning access in the console
 {: #console-project-service}
@@ -58,13 +54,48 @@ To assign access to the {{site.data.keyword.cloud_notm}} Projects service, compl
 It's a best practice to [assign access to an access group](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises#bp-enterprise-access-include-how_access) and then add users to the access group, instead of assigning access to users one by one. However, you can assign access to a single user by going to **Manage** > **Access (IAM)** > **Users** and selecting the user you want to assign access to.
 {: tip}
 
-## Access to the project tooling services
+## Granting access between the Projects service and other {{site.data.keyword.cloud_notm}} services
 {: #user-create-role}
 
-To create projects, users must have extra IAM privileges on the project tooling services.
+Before a project can validate or deploy configurations, the Projects service must be authorized in your account to communicate with other {{site.data.keyword.cloud_notm}} services. The following table lists the required authorizations. An IAM administrator or a user with the required roles on those services can automatically grant authorizations by creating a project in your account, or they can [create the service to service authorizations manually](/docs/secure-enterprise?topic=secure-enterprise-serviceauth&interface=ui). This authorization is only required once.
 
-| Service | Role | Description|
-|-------------|---------------------|---------------------|
-| {{site.data.keyword.bpshort}} | Editor & Manager | Allows a {{site.data.keyword.bpshort}} workspace to be created to deploy the other tooling services and additional workspaces to be created for each configuration. |
-| Resource Group | Viewer | Allows a resource group for the project to be selected to deploy the tooling services. |
-{: caption="Table 2. Access roles for project creators" caption-side="top"}
+| Role | Source | Target | Source account |
+| ------------- | --------------------- | --------------------- | --------------------- |
+| Manager and Administrator | {{site.data.keyword.cloud_notm}} Projects service | {{site.data.keyword.bpshort}} service | This account |
+| Viewer | {{site.data.keyword.cloud_notm}} Projects service | Resource-controller service | This account |
+| Viewer | {{site.data.keyword.cloud_notm}} Projects service | Catalog Management service | This account |
+| Viewer and SecretsReader| {{site.data.keyword.cloud_notm}} Projects service | {{site.data.keyword.secrets-manager_short}} service | This account |
+{: caption="Table 2. Projects service to service authorizations " caption-side="top"}
+
+The resource-controller service can't be authorized manually by using the UI. A user with the required role on the resource-controller service can automatically grant this authorization by creating a project, or they can [create the authorization manually by using Terraform](/docs/secure-enterprise?topic=secure-enterprise-serviceauth&interface=terraform#auth-terra).
+{: important}
+
+The following Terraform example creates the authorizations between the Projects service and the resource-controller, {{site.data.keyword.bpshort}}, Catalog Management, and {{site.data.keyword.secrets-manager_short}} services:
+
+   ```terraform
+  resource "ibm_iam_authorization_policy" "rc" {
+    source_service_name = "project"
+    target_service_name = "resource-controller"
+    roles = ["Viewer"]
+    description = "created by terraform"
+}
+  resource "ibm_iam_authorization_policy" "sc" {
+    source_service_name = "project"
+    target_service_name = "schematics"
+    roles = ["Manager", "Administrator"]
+    description = "created by terraform"
+}
+  resource "ibm_iam_authorization_policy" "gc" {
+    source_service_name = "project"
+    target_service_name = "globalcatalog-collection"
+    roles = ["Viewer"]
+    description = "created by terraform"
+}
+  resource "ibm_iam_authorization_policy" "sm" {
+    source_service_name = "project"
+    target_service_name = "secrets-manager"
+    roles = ["Viewer", "SecretsReader"]
+    description = "created by terraform"
+}
+   ```
+   {: codeblock}
