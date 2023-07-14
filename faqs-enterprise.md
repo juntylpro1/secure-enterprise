@@ -40,6 +40,12 @@ No, your {{site.data.keyword.cloud_notm}} account does not become the enterprise
 
 No, your {{site.data.keyword.cloud_notm}} account can be a part of only one enterprise account. When you create an enterprise, your account is added to the enterprise hierarchy. See [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise) for more information.
 
+## Can an existing enterprise be a child of another enterprise?
+{: #multiple-enterprise}
+{: faq}
+
+No, an existing {{site.data.keyword.cloud_notm}} enterprise account can't be imported into another enterprise. 
+
 ## How do I add child accounts to my enterprise?
 {: #enterprise-add-account}
 {: faq}
