@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-07-14"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -86,6 +86,10 @@ You can also see the template in a swagger format. For more information, see [Ca
                     "name": "VARIATION'S PROGRAMMATIC NAME",
                     "working_directory": "PATH",
                     "usage": "USAGE",
+                    "license": {
+                        "name": "LICENSE NAME",
+                        "url": "LICENSE URL"
+                    },
                     "compliance": {
                         "authority": "scc-v3",
                         "profiles":[
@@ -301,6 +305,15 @@ working_directory
 
 usage
 :   Information on how to embed the architecture or run it locally.
+
+licenses
+:   Information about the end-user license agreements that users are required to accept when they install the product. The license agreements are in addition to the {{site.data.keyword.cloud_notm}} Services Agreement.
+
+    name
+    :   The license name.
+
+    url
+    :   A URL to where the user can access the license agreement.
 
 compliance
 :   Section header that indicates that the architecture is compliant.
