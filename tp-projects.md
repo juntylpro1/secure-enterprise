@@ -4,7 +4,7 @@ copyright:
 
   years: 2023
 
-lastupdated: "2023-05-03"
+lastupdated: "2023-07-20"
 
 keywords: trusted profile, projects trusted profile, authorization, project auth, project security
 
@@ -87,9 +87,9 @@ Complete the following steps:
 ### Granting wide-ranging access
 {: #serviceid-access-wide}
 
-Grant the trusted profile Administrator access to everything in the account by assigning two policies. Consider this option if you plan to deploy many deployable architectures to the same target account. You can use the same trusted profile for different deployable architectures across projects, eliminating the need to continuously update the trusted profile's access policies.
+Grant the trusted profile Administrator access to everything in the account by assigning two policies. Consider this option if you plan to deploy many deployable architectures to the same target account. Deployable architectures usually require extensive privileges in the target account since they typically deploy and configure a wide range of services and IAM policies on those services. You can use the same trusted profile for different deployable architectures across projects, eliminating the need to continuously update the trusted profile's access policies.
 
-It's secure and convenient to give the trusted profile a wide range of access because projects have many [governance checks](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects#project-use) already in place, including pre-deployment validation and a required approval process. By granting Administrator access now, you don't need to update the policy for the multiple deployable architectures that you might use that require different levels of access.
+It's secure and convenient to give the trusted profile a wide range of access because the profile contains only a platform service, and not users. Projects also have many [governance checks](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects#project-use) already in place, including pre-deployment validation and a required approval process. By granting Administrator access now, you don't need to update the policy for the multiple deployable architectures that you might use that require different levels of access. This is more secure than directly authorizing a user to have any privileges in the target account.
 {: note}
 
 1. To create the first policy, select **All Identity and Access enabled services** and click **Next**.
