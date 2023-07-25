@@ -177,6 +177,7 @@ toc:
           - link:
               label: Projects
               href: https://{DomainName}/apidocs/projects
+          - projects-api-change-log.md
           - link:
               label: User Management
               href: https://{DomainName}/apidocs/user-management

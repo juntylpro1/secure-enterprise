@@ -56,19 +56,19 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
-          "date": "06 June 2023",
-          "title": "New event notifications added for projects",
-          "description": "You can now send out notifications when a deployment is complete or when resources are successfully destroyed."
+          "date": "25 July 2023",
+          "title": "Projects integration with Schematics and general improvements",
+          "description": "Projects are integrated more seamlessly with Schematics, as users can now view the Schematics logs directly from their project during validation and deployment. Today's release also includes system improvements to deleting a project. A recent update to the Code Risk Analyzer might result in fewer validation errors for deployable architectures that include Event Streams resources."
         },
         {
-          "date": "06 June 2023",
+          "date": "06 July 2023",
+          "title": "Projects API response models update",
+          "description": "The response models for all methods now enforce a lower snake case format in state values. This format needs to be expected in the response when you are calling the project and configuration endpoints. This update is a breaking change."
+        },
+        {
+          "date": "02 June 2023",
           "title": "Support for access management tags in the projects UI",
           "description": "You can now add, edit, and delete access management tags directly in the projects UI. Previously, you could manage these tags only by using the command-line interface (CLI) or API."
-        },
-        {
-          "date": "25 April 2023",
-          "title": "Customized compliance validation",
-          "description": "In addition to using default controls, you can specify a Security and Compliance Center attachment to validate deployable architectures that you're configuring in a project."
         }
       ]
     }
