@@ -57,8 +57,8 @@
       "tiles": [
         {
           "date": "25 July 2023",
-          "title": "Projects integration with Schematics and general improvements",
-          "description": "Projects are integrated more seamlessly with Schematics, as users can now view the Schematics logs directly from their project during validation and deployment. Today's release also includes system improvements to deleting a project. A recent update to the Code Risk Analyzer might result in fewer validation errors for deployable architectures that include Event Streams resources."
+          "title": "Projects integration with IBM Cloud Schematics and general improvements",
+          "description": "Projects are integrated more seamlessly with Schematics, as users can now view the Schematics logs directly from their project during validation and deployment. This release also includes system improvements to deleting a project. A recent update to the Code Risk Analyzer might result in fewer validation errors for deployable architectures that include Event Streams resources."
         },
         {
           "date": "06 July 2023",
