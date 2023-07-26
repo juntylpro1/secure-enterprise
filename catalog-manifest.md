@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-07-26"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -86,10 +86,12 @@ You can also see the template in a swagger format. For more information, see [Ca
                     "name": "VARIATION'S PROGRAMMATIC NAME",
                     "working_directory": "PATH",
                     "usage": "USAGE",
-                    "license": {
-                        "name": "LICENSE NAME",
-                        "url": "LICENSE URL"
-                    },
+                    "license": [
+                        {
+                            "name": "LICENSE NAME",
+                            "url": "LICENSE URL"
+                        }
+                    ],
                     "compliance": {
                         "authority": "scc-v3",
                         "profiles":[
