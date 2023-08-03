@@ -48,6 +48,10 @@ toc:
             - include: ../account/tagging-resources-tutorial.md
             - include: ../account/trustedprofile-fed-tutorial.md
             - include: ../account/context-restrictions-tutorial.md
+      - topicgroup:
+          label: Customizing deployable architectures
+          topics:
+            - custom-basic.md
 
   - navgroup:
       id: howto
