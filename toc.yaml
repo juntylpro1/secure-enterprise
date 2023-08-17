@@ -14,22 +14,28 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - enterprises.md
-      - include: ../billing-usage/enterprise.md
-      - deployable-architecture.md
-      - index.md
-      - secure-software-supply-chain.md
-      - compliance-continuous.md
       - topicgroup:
-          label: Learning about access management
+          label: Learn about enterprise accounts
           topics:
-          - include: ../account/iam-whatis.md
-          - include: ../account/iam-identities.md
-          - include: ../account/iam-access-concepts.md
-          - include: ../account/iam-policies-overview.md
-          - include: ../account/iam-roles-overview.md
-          - include: ../account/iam-mappings.md
-          - include: ../account/context-restrictions-what-is.md
+            - enterprises.md
+            - include: ../billing-usage/enterprise.md
+      - topicgroup:
+          label: Learn about access management
+          topics:
+            - include: ../account/iam-whatis.md
+            - include: ../account/iam-identities.md
+            - include: ../account/iam-access-concepts.md
+            - include: ../account/iam-policies-overview.md
+            - include: ../account/iam-roles-overview.md
+            - include: ../account/iam-mappings.md
+            - include: ../account/context-restrictions-what-is.md
+      - topicgroup:
+          label: Learn about deploying compliant workloads
+          topics:
+            - compliance-continuous.md
+            - deployable-architecture.md
+            - index.md
+            - secure-software-supply-chain.md
       - topicgroup:
           label: Best practices
           topics:
