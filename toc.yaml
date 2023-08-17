@@ -16,6 +16,7 @@ toc:
       topics:
       - enterprises.md
       - include: ../billing-usage/enterprise.md
+      - deployable-architecture.md
       - index.md
       - secure-software-supply-chain.md
       - compliance-continuous.md
