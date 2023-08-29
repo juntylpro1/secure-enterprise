@@ -4,7 +4,7 @@ copyright:
 
   years: 2019, 2023
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-05"
 
 keywords: enterprise access
 
@@ -18,10 +18,12 @@ subcollection: secure-enterprise
 # User management for enterprises
 {: #enterprise-access-management}
 
-{{site.data.keyword.cloud}} enterprises are valuable for large companies or organizations that need to group a set of accounts while still maintaining a separation and isolation between the accounts for different departments or teams. The management of users and their access to resources in each account remains entirely separate even when the accounts are added and organized in an enterprise.
+{{site.data.keyword.cloud}} enterprises are valuable for large companies or organizations that need to group a set of accounts while still maintaining a separation and isolation between the accounts for different departments or teams. For more information about enterprises, see [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise)
 {: shortdesc}
 
-See [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise) for more information about enterprises.
+With the correct access in an enterprise account, you can use enterprise-managed IAM templates to centrally administer IAM resources, like access groups, trusted profiles, and settings, for child accounts. Users who have the Template Administrator and Template Assignment Administrator roles on **All IAM Account Management services** can efficiently manage access to IAM-enabled resources in child accounts. Plus, as an IAM administrator in child accounts, you can still create your own IAM resources to stay flexible with your needs.
+
+Assigning IAM resources to accounts and account groups is an efficient way to grant standardized access to users in child accounts and reduce policy drift. For more information, see [How enterprise-managed IAM access works](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises&interface=ui#how-enterprise-iam).
 
 The user list for each child account in an enterprise is accessible only to users in that child account. This means the users who are invited to the enterprise and the users who are invited to the accounts within the enterprise remain entirely separate. This is beneficial because you can add multiple accounts to an enterprise and organize them as needed into account groups, but keep the user lists restricted from other accounts.
 

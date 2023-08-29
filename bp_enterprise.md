@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-05"
 
 keywords: enterprise, enterprise resources, enterprise account, best practices, setting up an enterprise
 
@@ -46,7 +46,7 @@ For example, your company might create accounts for each team, with resource gro
 
 However you choose to structure your enterprise, be as consistent as possible to simplify enterprise management. Because it's easy to create and keep track of new accounts, it can be tempting to create many separate accounts as users request them. However, each account introduces more management overhead. As you plan how to structure your enterprise, keep in mind the following points:
 
-- For each account that you create, users must be invited and their access must be managed separately.
+- For each account that you create, users must be invited and their access must be managed separately or with [enterprise-managed IAM templates](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises).
 - An inconsistent structure can make it harder to determine who to give access within each account and which teams are using resources.
 - Users can collaborate on resources and services within an individual account only. Resources can't be moved between accounts.
 
@@ -56,6 +56,9 @@ However you choose to structure your enterprise, be as consistent as possible to
 As always, follow the best practice for assigning the minimal number of access policies and levels of access. By using these techniques, you spend less time assigning access to users and more time on developing in {{site.data.keyword.cloud_notm}} while ensuring that you don't provide too much access to users who don't need it.
 
 Access groups are a useful tool for assigning access to a group of users and service IDs that all need the same access. By using access groups, you can streamline access management by assigning the minimal number of access policies to groups of users. As an example, if you have five users that you want to manage all of the billing and account management-related tasks for the enterprise, you can add them to an `Administrators` access group. In the access group, you can assign two policies: one with the administrator role on the Billing account management service and one with the administrator role on all account management services in the account. As users change job responsibilities or teams, you can add or remove users from the access group instead of adding or removing the same policies from the individual users. See [Assigning enterprise access](/docs/secure-enterprise?topic=secure-enterprise-assign-access-enterprise) for more information.
+
+Ensure consistency and reduce policy drift among common access groups by using enterprise-managed access group templates. For more information about centrally managing IAM access across your organization, see [Best practices for assigning access](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises).
+
 
 ## Working with resources in an enterprise
 {: #child-resources-enterprise}

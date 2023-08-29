@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-05"
 
 keywords: enterprise, add account, import account, create account
 
@@ -220,6 +220,7 @@ You can create new accounts within your enterprise. The accounts are created as 
 1. Enter a name for the account that's unique within the enterprise. Because it's one of many accounts, a unique, descriptive name helps you understand the purpose of the account at a glance.
 1. If you want to assign a different user as the account owner, enter their IBMid in the **Owner** field. The account owner has full access to manage the account.
 1. If you want to add the account to an account group, select the account group to be its parent. The parent that you choose determines where in the enterprise hierarchy the account exists.
+1. Turn on **Enterprise-managed IAM** to centrally manage access and security settings in the new account. For more information, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in).
 1. Click **Create**.
 
 After you create the account, the account owner can log in to the account to invite other users and manage their access.
@@ -258,6 +259,7 @@ curl -X POST "https://enterprise.cloud.ibm.com/v1/accounts
   "crn:v1:bluemix:public:enterprise::a/$ENTERPRISE_ACCOUNT_ID::account-group:$ACCOUNT_GROUP_ID",
   "name": "Example Account",
   "owner_iam_id": "$OWNER_IAM_ID"
+  "traits": { "enterprise_iam_managed": true }
 }'
 ```
 {: codeblock}
@@ -325,6 +327,9 @@ fmt.Println(string(b))
 {: codeblock}
 {: go}
 
+For more information about the `enterprise_iam_managed` trait, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in).
+{: curl}
+
 ### Creating accounts by using Terraform
 {: #create-account-terraform}
 {: terraform}
@@ -338,11 +343,15 @@ Use the following steps to create accounts by using Terraform:
     parent = "parent"
     name = "name"
     owner_iam_id = "owner_iam_id"
+    traits {
+        mfa = "NONE"
+        enterprise_iam_managed = true
+      }
     }
    ```
    {: codeblock}
 
-   You can specify the ID of an account owner on the `owner_iam_id` option. For more information, see the argument reference details on the [Terraform Enterprise Management](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/enterprise_account){: external} page.
+   You can specify the ID of an account owner on the `owner_iam_id` option. You can also specify the multifactor authentication setting and turn on enterprise-managed IAM to centrally administer access in the account. For more information, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in) and the argument reference details on the [Terraform Enterprise Management](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/enterprise_account){: external} page.
 
 1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
 

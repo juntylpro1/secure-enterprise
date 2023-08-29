@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-05"
 
 keywords: enterprise, enterprise account, create enterprise, set up enterprise, enterprise users, enterprise access, enterprise tutorial
 
@@ -105,6 +105,7 @@ Complete the following steps to create the example Web account in your enterpris
 1. Enter `Web` as the name of the account.
 1. If you want to assign a different user as the account owner, enter their IBMid in the **Owner** field. The account owner has full access to manage the account.
 1. Select **Marketing** as the parent of this account.
+1. Turn on **Enterprise-managed IAM** to centrally manage access and security settings in the new account. For more information, see [Creating secure accounts in an enterprise](/docs/secure-enterprise?topic=secure-enterprise-enterprise-iam-settings-tutorial).
 1. Click **Create**.
 
 After you create the account, the account owner can log in to the account to invite other users and manage their access.
