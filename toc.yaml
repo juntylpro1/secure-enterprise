@@ -261,4 +261,10 @@ toc:
           - ts-terraform.md
           - ts-resources-list.md
           - ts-resource-status.md
+      - topicgroup:
+           label: Troubleshooting enterprise IAM templates
+           topics:
+           - ts-access-ent-iam-templates.md
+           - ts-access-child-accts.md
+           - ts-iam-template-fail.md
       - get-help.md
