@@ -160,6 +160,7 @@ toc:
             - at-events.md
             - event-notifications-events.md
             - include: ../account/monitoring.md
+            - iam-monitor-ent-template.md
 
   - navgroup:
       id: reference
