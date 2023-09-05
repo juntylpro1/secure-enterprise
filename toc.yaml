@@ -89,6 +89,19 @@ toc:
                 - include: ../account/iam-authorizations.md
                 - include: ../account/iam-audit-policies.md
           - topicgroup:
+              label: Centrally managing access in child accounts
+              topics:
+              - iam-enterprise-opt-in.md
+              - topic: iam-ag-template-create.md
+                navtitle: Creating access group templates
+              - topic: iam-tp-template-create.md
+                navtitle: Creating trusted profile templates
+              - topic: iam-settings-template-create.md
+                navtitle: Creating settings templates
+              - topic: iam-policy-template-create.md
+                navtitle: Creating policy templates
+              - topic: iam-template-versions.md
+          - topicgroup:
               label: Administering trusted profiles
               topics:
               - include: ../account/trustedprofile-create.md
@@ -248,4 +261,10 @@ toc:
           - ts-terraform.md
           - ts-resources-list.md
           - ts-resource-status.md
+      - topicgroup:
+           label: Troubleshooting enterprise IAM templates
+           topics:
+           - ts-access-ent-iam-templates.md
+           - ts-access-child-accts.md
+           - ts-iam-template-fail.md
       - get-help.md

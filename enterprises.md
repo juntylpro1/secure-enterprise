@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-01"
+lastupdated: "2023-09-05"
 
 keywords: enterprise, enterprise account, multiple accounts, organization, hierarchy
 
@@ -16,13 +16,14 @@ subcollection: secure-enterprise
 # What is an enterprise?
 {: #what-is-enterprise}
 
-{{site.data.keyword.Bluemix}} [enterprises](#x2026915){: term} provide a way to centrally manage billing and resource usage across multiple accounts. Within an enterprise, you create a multitiered hierarchy of accounts, with billing and payments for all accounts managed at the enterprise level.
+{{site.data.keyword.Bluemix}} [enterprises](#x2026915){: term} provide a way to centrally manage billing, resource usage, and identity and access management (IAM) across multiple accounts. Within an enterprise, you create a multitiered hierarchy of accounts, with billing, payments, and enterprise-managed IAM for all accounts managed at the enterprise level.
 {: shortdesc}
 
 When compared to using multiple stand-alone accounts, enterprises offer the following key benefits:
 - Centralized account management: View your entire enterprise hierarchy at a glance, without needing to switch accounts. You can add existing accounts or create new accounts directly within the enterprise.
 - Consolidated subscription billing: Track your subscriptions and credit spending for all accounts from a single view. Your subscription credit is pooled and shared among accounts in the enterprise.
 - Top-down usage reporting: From your enterprise account, you can view usage of all accounts in your enterprise, which is organized by account group.
+- Enterprise-managed IAM: From your enterprise account, you can create templates for IAM resources, like access groups, trusted profiles, and IAM settings, and assign them to account groups and child accounts. This way, you create a more secure and standardized IAM strategy in your enterprise.
 
 ## Watch and learn
 {: #watch-and-learn}
@@ -47,7 +48,7 @@ Whether you prefer to manage your cloud through the {{site.data.keyword.cloud_no
 {: #enterprise-hierarchy}
 
 At its core, an enterprise consists of three main building blocks:
-- The enterprise account, which serves as the parent account to all other accounts in the enterprise. The enterprise account manages billing for the entire enterprise, with usage costs from all accounts that are rolled up and paid from the enterprise account.
+- The enterprise account, which serves as the parent account to all other accounts in the enterprise. The enterprise account manages billing for the entire enterprise, with usage costs from all accounts that are rolled up and paid from the enterprise account. With enterprise-managed IAM, you can also build out IAM best practices from the top down by assigning to child accounts IAM resources, such as access groups, trusted profiles, and IAM settings, all to your organization's specification.
 - Account groups, which you can use to organize related accounts. Account groups can't contain resources themselves, but you can view costs for resource usage from the accounts that they contain.
 - Accounts, which are just like stand-alone {{site.data.keyword.Bluemix_notm}} accounts in that they contain resources and resource groups, Cloud Foundry orgs and spaces, and independent access permissions. However, one major difference is that each account in an enterprise doesn't manage its own billing or payments because these are handled at the enterprise account level.
 
@@ -102,9 +103,10 @@ Enterprises keep user and access management isolated between the enterprise and 
 
 The user lists for each account are only visible to the users who are invited to that account. Just because a user is invited and given access to manage the entire enterprise, it doesn't mean that they can view the users who are invited to each child account. User management in each enterprise and each account is entirely separate and must be managed by the account owner or a user given the Administrator role on the User management account management service in the specific account.
 
-Similar to how user management is entirely separate in each account and the enterprise itself, so is access management. This separation means that users who manage your enterprise can't access account resources within the child accounts unless you specifically enable them to. For example, your financial officer can have the Administrator role on the Billing account management service within the enterprise account, which provides them access to billing and payment information and usage data down to the resource type. But, unless they are invited to a child account and are assigned access to the Billing account management service for that account, they can't view offers or update spending limits for the child account.
+Similar to how user management is entirely separate in each account and the enterprise itself, so is access management. This separation means that users who manage your enterprise can't access account resources within the child accounts unless you specifically enable them to. For example, your financial officer can have the Administrator role on the Billing account management service within the enterprise account, which provides them access to billing and payment information and usage data down to the resource type. But, unless they are invited to a child account and are assigned access to the Billing account management service for that account, they can't view offers or update spending limits for the child account. For more information, see [User management for enterprises](/docs/secure-enterprise?topic=secure-enterprise-enterprise-access-management).
 
-For more information, see [User management for enterprises](/docs/secure-enterprise?topic=secure-enterprise-enterprise-access-management).
+Enterprise users with the correct acccess can assign IAM resources, like access groups, to child accounts by using enterprise-managed IAM templates. This way, you can centrally manage your IAM strategy across your organization. For more information, see [How enterprise-managed IAM access works](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises&interface=ui).
+{: note}
 
 ## How can I use an enterprise?
 {: #enterprise-use-cases}

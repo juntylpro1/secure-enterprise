@@ -4,9 +4,9 @@ copyright:
 
   years: 2019, 2023
 
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-05"
 
-keywords: enterprise policy, enterprise access, assign enterprise access, enterprise service
+keywords: enterprise policy, enterprise access, assign enterprise access, enterprise service, enterprise IAM, enterprise-managed, IAM templates
 
 subcollection: secure-enterprise
 
@@ -29,6 +29,8 @@ Access to manage the [enterprise](/docs/secure-enterprise?topic=secure-enterpris
 * Import existing accounts to the enterprise
 * Update the enterprise name or domain
 * View usage reports for the enterprise, a specific account group, accounts within account groups, or a specific account
+* Create enterprise-managed IAM templates
+* Assign enterprise-managed IAM templates to child accounts
 
 A policy that gives a user access to the enterprise service can either be assigned on the entire enterprise or only on a specific account group or single account.
 {: tip}
@@ -101,6 +103,17 @@ For a user to manage security and compliance through {{site.data.keyword.complia
 
 To create the cutom role with the appropriate permissions, see [Assigning access](/docs/security-compliance?topic=security-compliance-assign-roles)
 
+### Creating and assigning enterprise-managed IAM templates
+{: #templates-roles}
+
+To create enterprise-managed IAM templates, you must assign the Template Administrator role for **All IAM Account Management services**.
+
+To assign enterprise-managed IAM templates to child accounts, you must assign the Template Assignment Administrator role for **All IAM Account Management services** and policy with at least the Viewer role on the **Enterprise service**.
+
+By default, no users have these permissions, including the account owner.
+{: note}
+
+For details about the actions users can take for each role, see [Actions and roles for account management services](/docs/account?topic=account-account-services#enterprise-account-management).
 
 ## Assigning access in the console
 {: #enterprise-access-console}

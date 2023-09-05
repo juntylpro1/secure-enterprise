@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-05"
 
 keywords: enterprise, create account group, organize accounts, move accounts, account group, change contact, account group contact
 
@@ -277,3 +277,13 @@ if err != nil {
 
 
 For detailed information about the API, see [Enterprise Management API](/apidocs/enterprise-apis/enterprise){: external}.
+
+### Moving accounts with enterprise-managed IAM tempalte assignments
+{: #moving-template-assignment}
+
+{{site.data.content.move-account}}
+
+An inactive assignment occurs when it is superseded by a higher-level assignment or when a new version of the template is assigned, rendering the previous version inactive.
+{: tip}
+
+For more information, see [Moving an account](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#move-account).
