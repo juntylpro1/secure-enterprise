@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-06-30"
+lastupdated: "2023-09-08"
 
 keywords: known issues, known limitations
 
@@ -14,16 +14,16 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Known issues and limitations for projects
+# Known issues and limitations
 {: #known-issues}
 
-Known issues and limitations include configuration management and user access to projects.
+Known issues and limitations include configuration management, user access to projects, and identity and access management (IAM) limits.
 {: shortdesc}
 
 ## Authorization
 {: #auth-known-issue}
 
-Authorizing users to work in a project is complex as it requires users to be authorized to work with projects, toolchains, {{site.data.keyword.bplong}}, and other tools in IAM. For more information about access, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
+To work in a project, users must have access to the {{site.data.keyword.cloud_notm}} Projects service, the resource group for the project, and {{site.data.keyword.bplong}}. For more information about access, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
 Authorizing projects to deploy to a target account is managed by passing an API key into the deployable architecture. [Projects can be directly authorized by using a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project), but trusted profiles are not currently supported by all services. [API keys will continue to be supported](/docs/secure-enterprise?topic=secure-enterprise-authorize-project), but a trusted profile is the preferred method for authorizing deployment to target accounts.
 
@@ -45,4 +45,10 @@ The projects API, SDK, and Terraform functionalities are beta for this release. 
 ## Resource tagging
 {: #project-tagging-known-issue}
 
-Resources that are created by deploying from a project are automatically given service tags. These tags are only visible by using the command-line interface (CLI) or API and are not currently available in usage reports. You can use the [`ibmcloud resource search`](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#ibmcloud-resource-tag-search) command to retrieve the resources created by configurations in a project based on the service tag.
+Resources that are created by deploying from a project are automatically given service tags. These tags are only visible by using the command-line interface (CLI) or API and are not currently available in usage reports. You can use the [`ibmcloud resource search`](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#ibmcloud-resource-tag-search) command to retrieve the resources that were created by configurations in a project based on the service tag.
+
+{{../account/known-issues.md#iam_limits}}
+
+{{../account/known-issues.md#cbr-limits}}
+
+{{../account/known-issues.md#policy-version-limit}}
