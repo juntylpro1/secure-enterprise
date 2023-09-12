@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-09-12"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -140,7 +140,7 @@ Input variables are parameters that users specify when they install your product
 1. To add new input variables, click **Add input variables**.
 1. Select the parameters that you want to include, or select **Parameters** to select all options, and click **Add**.
 1. From the input variables table, select a parameter, and click **Edit**.
-1. Select the applicable options to require or hide the value.
+1. Select the applicable options to require or hide the value. You can choose a value type, default value, and description for each input variable to customize how the value appears to users. Unless they are hidden, input variables display for your users, and can be configured during the deployment process. Make sure that your input variable descriptions are clear and concise for your users.
 
    Required
    :   Users are required to specify the parameter during installation.
@@ -148,10 +148,8 @@ Input variables are parameters that users specify when they install your product
    Hidden
    :   The parameter is included in the configuration but is not shown to users and is not configurable.
 
-1. You can choose a value type, default value, and description for each input variable to customize how the value appears to users.
-
-   Unless they are hidden, input variables display for your users, and can be configured during the deployment process. Ensure that your input variable descriptions are clear and concise for your users.
-   {: tip}
+   To help you and your users stay more secure, make sure that passwords that are stored as hidden values have limited authority. While these values are never stored, they are available during the installation process in a customer account context. Therefore, to avoid a security impact if the value is leaked, make sure that these passwords have read-only access to specific resources, such as a specific image in an image registry.
+   {: important}
 
 1. Click **Save** > **Next**.
 
