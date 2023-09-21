@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-21"
 
 keywords: enterprise, enterprise account, create enterprise, set up enterprise, enterprise users, enterprise access, enterprise tutorial
 
@@ -21,7 +21,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-This tutorial walks you through how to set up an enterprise by department so you can manage and track usage costs for multiple {{site.data.keyword.Bluemix}} accounts. By completing this tutorial, you learn how to create an enterprise, add accounts and organize them in account groups, invite users, and explore subscriptions.
+This tutorial walks you through how to set up an enterprise by department so you can manage and track usage costs for multiple {{site.data.keyword.Bluemix}} accounts. By completing this tutorial, you learn how to create an enterprise, add accounts, organize accounts in account groups, invite users, and explore subscriptions.
 {: shortdesc}
 
 The tutorial uses a fictitious company that is called *Example Corp* that wants to create an enterprise with the following structure. As you complete the tutorial, adapt each step to match your organization's accounts and desired structure.
@@ -35,7 +35,7 @@ Read [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-wh
 
 Verify that you have the required access in a Subscription account, which serves as the base account from which you create the enterprise. To create an enterprise, you must be the account owner or have the Administrator role on the Billing account management service.
 
-Creating an enterprise from an account and importing existing accounts cannot be undone. This tutorial is provided as an example of the steps you can follow to set up an enterprise by department, but you should carefully plan your enterprise structure around your organization's needs.
+Creating an enterprise from an account and importing existing accounts cannot be undone. This tutorial is an example of the steps you can follow to set up an enterprise by department, but you should carefully plan your enterprise structure around your organization's needs.
 {: important}
 
 ## Create the enterprise
@@ -105,7 +105,7 @@ Complete the following steps to create the example Web account in your enterpris
 1. Enter `Web` as the name of the account.
 1. If you want to assign a different user as the account owner, enter their IBMid in the **Owner** field. The account owner has full access to manage the account.
 1. Select **Marketing** as the parent of this account.
-1. Turn on **Enterprise-managed IAM** to centrally manage access and security settings in the new account. For more information, see [Creating secure accounts in an enterprise](/docs/secure-enterprise?topic=secure-enterprise-enterprise-iam-settings-tutorial).
+1. Turn on **Enterprise-managed IAM** to centrally manage access and security settings in the new account. For more information, see [Customizing IAM settings for an enterprise](/docs/secure-enterprise?topic=secure-enterprise-enterprise-iam-settings-tutorial).
 1. Click **Create**.
 
 After you create the account, the account owner can log in to the account to invite other users and manage their access.

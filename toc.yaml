@@ -48,6 +48,7 @@ toc:
       id: tutorial
       topics:
       - enterprise-tutorial.md
+      - iam-secure-account-tutorial.md
       - topicgroup:
           label: Managing resource access
           topics:
