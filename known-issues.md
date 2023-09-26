@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-09-08"
+lastupdated: "2023-09-26"
 
 keywords: known issues, known limitations
 
@@ -35,7 +35,7 @@ Configurations can be added, deleted, and renamed. Moving a configuration betwee
 ## Cost estimate
 {: #cost-estimate-known-issue}
 
-Cost estimation is available for deployable architectures in the {{site.data.keyword.cloud_notm}} catalog. Depending on the deployable architecture, a starting cost is estimated based on the available data. This estimated amount is subject to change as the architecture is customized within a project, and it does not include all resources, usage, licenses, fees, discounts, or taxes. In the future, aggregate costs across projects that can be grouped by various criteria will be available. For more information, see [Estimating architecture costs in a project](/docs/secure-enterprise?topic=secure-enterprise-cost-estimate-project).
+Cost estimation is available for deployable architectures in the {{site.data.keyword.cloud_notm}} catalog. Depending on the deployable architecture, a starting cost is estimated based on the available data. This estimated amount is subject to change as the architecture is customized within a project, and it does not include all resources, usage, licenses, fees, discounts, or taxes. For more information, see [Estimating architecture costs in a project](/docs/secure-enterprise?topic=secure-enterprise-cost-estimate-project).
 
 ## API, SDK, and Terraform
 {: #api-sdk-tf-known-issue}
