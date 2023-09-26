@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-09-26"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: secure-enterprise
 # Understanding high availability for projects
 {: #ha-dr}
 
-{{site.data.keyword.Bluemix}} projects is a general availability (GA) service that is offered in multiple regions: Dallas, Washington, Toronto, Sao Paulo, Frankfurt, Tokyo, Sydney, Osaka, and London. Each location has three different data centers for redundancy. The data for each location is kept in the three data centers near that location. If all of the data centers in a location fail, the projects service for that location becomes unavailable.
+{{site.data.keyword.Bluemix}} projects is a general availability (GA) service that is offered in multiple regions: Dallas, Washington, Toronto, Sao Paulo, Frankfurt, Tokyo, Sydney, Osaka, and London. Each location has three different data centers for redundancy. The data for each location is kept in the three data centers near that location. If all of the data centers in a location fail, the {{site.data.keyword.cloud_notm}} Projects service for that location becomes unavailable.
 
 See [ensure zero downtime](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the disaster recovery standards. You can also find information about {{site.data.keyword.cloud_notm}} [Service Level Objectives](/docs/overview?topic=overview-slo).
 

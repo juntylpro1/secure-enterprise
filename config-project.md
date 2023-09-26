@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-04-25"
+lastupdated: "2023-09-26"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes
 
@@ -61,7 +61,7 @@ To create a customized configuration, complete the following steps:
 1. Click **Save**.
 1. Click **Validate**. The modal that is displayed provides more details about your in-progress validation.
 
-   If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail). Or, an administrator on the projects service can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration will not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
+   If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail). Or, an administrator on the {{site.data.keyword.cloud_notm}} Projects service can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration will not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
 
 During the configuration and deployment process, monitor your [needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects). The widget reflects any issue that occurs in your configurations.
 {: remember}
@@ -69,7 +69,7 @@ During the configuration and deployment process, monitor your [needs attention i
 ## Approving changes
 {: #approve-changes}
 
-After you validate your configuration, the changes must be approved by an editor or administrator on the projects service. Complete the following steps to approve changes:
+After you validate your configuration, the changes must be approved by an editor or administrator on the {{site.data.keyword.cloud_notm}} Projects service. Complete the following steps to approve changes:
 
 1. From the projects list, select a project.
 1. Check that there aren't any outstanding needs attention items on the **Overview** tab in your project. Needs attention items can block your ability to deploy.
@@ -78,7 +78,7 @@ After you validate your configuration, the changes must be approved by an editor
 1. Click **View last validation**.
 1. Add a comment providing more details about the approval, and click **Approve**.
 
-If your validation failed due to the Code Risk Analyzer scan, an administrator on the projects service can [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway.
+If your validation failed due to the Code Risk Analyzer scan, an administrator on the {{site.data.keyword.cloud_notm}} Projects service can [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway.
 {: remember}
 
 ## Deploying your architecture
