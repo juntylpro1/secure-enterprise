@@ -59,7 +59,9 @@ toc:
       - topicgroup:
           label: Customizing deployable architectures
           topics:
+            - custom-evaluation.md
             - custom-basic.md
+            - custom-share.md
 
   - navgroup:
       id: howto
