@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-29"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, enterprise settings
 
@@ -19,10 +19,10 @@ completion-time: 15m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
 
-Customize the IAM settings for all of the accounts in your enterprise to meet compliance and internal standards. You can centrally manage IAM settings like API key creation, authentication, active sessions and more for new and existing accounts with enterprise-managed settings templates.
+Customize the IAM settings for all of the accounts in your enterprise to meet compliance and internal standards. You can centrally manage IAM settings like API key creation, authentication, and active sessions for new and existing accounts with enterprise-managed settings templates.
 {: shortdesc}
 
-The tutorial uses a fictitious company that is called *Example Corp*, which [set up an enterprise](/docs/secure-enterprise?topic=secure-enterprise-enterprise-tutorial) with the following structure. As you complete the tutorial, adapt each step to match your organization's security setting requirements.
+The tutorial uses a fictitious company that's called *Example Corp*, which [set up an enterprise](/docs/secure-enterprise?topic=secure-enterprise-enterprise-tutorial) with the following structure. As you complete the tutorial, adapt each step to match your organization's security setting requirements.
 
 ![A four-tier enterprise that groups accounts according to department in an organization. For example, account groups are named Marketing, Development, and Sales. The account groups contain accounts for teams within those departments. For example, the Sales account group contains accounts for Direct, Online, and Enablement.](images/enterprise-by-dept.svg "An enterprise that organizes accounts according to department in the organization."){: caption="Figure 1. An enterprise that is organized by department" caption-side="bottom"}
 
@@ -31,9 +31,9 @@ The tutorial uses a fictitious company that is called *Example Corp*, which [set
 
 Read [How enterprise-managed IAM access works](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises#how-enterprise-iam) and [Creating enterprise-managed settings templates](/docs/secure-enterprise?topic=secure-enterprise-settings-template-create) to learn the basics of enterprise-managed IAM.
 
-Verify that you have the required access in an Enterprise account, which is the root account from which you assign IAM templates to child accounts. To create IAM templates, you must have the Template Administrator role on All IAM Account Management services. To assign IAM templates to child accounts, you must have the Template Assignment Administrator role on All IAM Account Management services and at least the Viewer role on the Enterprise service.
+Verify that you have the required access in an Enterprise account, which is the root account from which you assign IAM templates to child accounts. To create IAM templates, you must have the Template Administrator role on All IAM Account Management services. To assign IAM templates to child accounts, you must have the Template Assignment Administrator role on All IAM Account Management services and the Viewer role or higher on the Enterprise service.
 
-New and existing accounts in your enterprise must turn on the Enterprise-managed IAM setting to be eligible for IAM template assignments. For more information, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in)
+New and existing accounts in your enterprise must turn on the Enterprise-managed IAM setting to be eligible for IAM template assignments. For more information, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in).
 {: important}
 
 ## Create the settings template
@@ -58,13 +58,13 @@ Settings templates are created in the Enterprise account. The versions of only o
 1. Click **Authentication**.
    1. Select **MFA for a user with or without an IBMid > U2F MFA**. Use the highest level of MFA for developers because they have high levels of access to critical resources.
 1. Click **Login session**.
-   1. Configure **Active sessions** to 12 hours to make sure they users are logging in at least once during their work day.
+   1. Configure **Active sessions** to 12 hours to make sure the users are logging in at least once during their work day.
    1. Configure the **Sign out due to inactivity** setting to 30 minutes to make sure that idle sessions require reauthentication within this time limit.
 
    Your configuration is saved automatically.
    {: note}
 
-Any settings that aren't defined in the template, the child account can manage on their own. Before you can create the second version, review and commit `v1` by completing the following steps.
+Any settings that aren't defined in the template can be managed by the child account. Before you can create the second version, review and commit `v1` by completing the following steps.
 
 1. Click **Review**.
 1. Verify that the settings template is configured to your expectation.
@@ -77,7 +77,7 @@ Any settings that aren't defined in the template, the child account can manage o
 
 Create another version of the settings template for the Marketing and Sales department groups. These departments don't have as much access to resources as developers, so they don't need the same strict settings as the Development department groups.
 
-1. In the {{site.data.keyword.cloud}} console, go to **Manage > Access (IAM) > Templates**.
+1. In the {{site.data.keyword.cloud.notm}} console, go to **Manage > Access (IAM) > Templates**.
 1. Click **IAM settings** and select the AccountSecuritySettings template.
 1. Click the **New version** icon ![New version icon](../icons/new-version.svg "New version").
 1. Enter the Marketing and Sales department in the description, the level of multifactor authentication that is required, and other settings that you define in the template.
@@ -106,7 +106,7 @@ Assign `v1` to the Development account group and `v2` to the Marketing and Sales
 {: #assign_settings_v1}
 {: step}
 
-1. In the {{site.data.keyword.cloud}} console, go to **Manage > Access (IAM) > Templates**.
+1. In the {{site.data.keyword.cloud.notm}} console, go to **Manage > Access (IAM) > Templates**.
 1. Click **IAM settings**.
 1. Go to the AccountSecuritySettings template and click the **Table expand** icon ![Table expand icon](../icons/table-expand.svg "Table expand").
 1. Click `v1` of the AccountSecuritySettings template.

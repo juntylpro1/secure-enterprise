@@ -47,8 +47,14 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - enterprise-tutorial.md
-      - iam-secure-account-tutorial.md
+      - topicgroup:
+          label: Creating a secure enterprise
+          topics:
+          - enterprise-tutorial.md
+          - iam-secure-account-tutorial.md
+          - iam-ent-template-tutorial.md
+          - iam-ent-template-pen-test.md
+      - project-getstart-tutorial.md
       - topicgroup:
           label: Managing resource access
           topics:
