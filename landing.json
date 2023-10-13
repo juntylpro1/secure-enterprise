@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2023-09-05",
+    "lastupdated": "2023-10-13",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -41,6 +41,11 @@
         "thumbnail": "/images/landing-Introducing-IBM-Cloud-enterprises.png"
       },
       {
+        "title": "Security and compliance for regulated workloads on IBM Cloud",
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance",
+        "thumbnail": "/images/landing-secure-compliant.png"
+      },
+      {
         "title": "IBM Cloud Console Guide: Getting Access - Role Overview",
         "href": "/docs/account?topic=account-cloudaccess#watch-iamaccess",
         "thumbnail": "/images/landing-Getting-Access-Role-Overview.png"
@@ -56,11 +61,6 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
-          "date": "05 September 2023",
-          "title": "Centrally administer your multi-account environment",
-          "description": "IBM Cloud is excited to announce that you can now centrally administer access and security settings in your organization with Enterprise-managed IAM. By using enterprise IAM templates, you can quickly create and manage access groups and trusted profiles across accounts and easily ensure that all new accounts inherit the same settings. Leveraging Enterprise-managed IAM can help your organization save time and effort, reduce the risk of unauthorized access, stay compliant with industry regulations and better protect your data."
-        },
-        {
           "date": "25 July 2023",
           "title": "Projects integration with IBM Cloud Schematics and general improvements",
           "description": "Projects are integrated more seamlessly with Schematics, as users can now view the Schematics logs directly from their project during validation and deployment. This release also includes system improvements to deleting a project. A recent update to the Code Risk Analyzer might result in fewer validation errors for deployable architectures that include Event Streams resources."
@@ -69,6 +69,11 @@
           "date": "06 July 2023",
           "title": "Projects API response models update",
           "description": "The response models for all methods now enforce a lower snake case format in state values. This format needs to be expected in the response when you are calling the project and configuration endpoints. This update is a breaking change."
+        },
+        {
+          "date": "02 June 2023",
+          "title": "Support for access management tags in the projects UI",
+          "description": "You can now add, edit, and delete access management tags directly in the projects UI. Previously, you could manage these tags only by using the command-line interface (CLI) or API."
         }
       ]
     }
