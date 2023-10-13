@@ -4,7 +4,7 @@ copyright:
 
   years: 2023
 
-lastupdated: "2023-09-29"
+lastupdated: "2023-10-13"
 
 keywords: deployable architecture, custom, share, enterprise, evaluate
 
@@ -70,7 +70,7 @@ You use catalog entry additional information to create support cases, use the CL
 1. Make sure that the version and variation are correct.
 1. Use the estimated deployment time for planning purposes and to understand how long deployment is expected to take.
 1. Take note of the programmatic name, product ID, version locator, and catalog ID. These values can be used in support cases, CLI, and input values.
-1. Use the content source URL to scan the deployable architecture for vulnerabilities. For more information, see [Scanning software for vulnerabilities](/docs/account?topic=account-scans).
+1. Use the content source URL to download the source code of the deployable architecture and scan for vulnerabilities. For more information, see [Scanning software for vulnerabilities](/docs/account?topic=account-scans).
 1. Close the panel.
 
 ## Comparing architecture versions and variations
