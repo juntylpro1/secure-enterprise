@@ -2,9 +2,9 @@
 
 copyright:
   years:  2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-10-26"
 
-keywords: change log for Projects, updates to Projects
+keywords: change log for Projects API, updates to Projects API, Projects API
 
 subcollection: secure-enterprise
 
@@ -16,6 +16,67 @@ subcollection: secure-enterprise
 {: #projects-api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [Projects API](/apidocs/projects). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+## 26 October 2023
+{: #26-oct-2023}
+
+In `projects` and `configurations` operations, such as `create` and `update`, definition properties such as `name` and `description` must now be provided in a `definition` wrapper. Similarly, these properties are now only available inside a `definition` block in the `response` payload of `create`, `update`, `get`, and `list` operations. This is a breaking change that was originally released on 06 July 2023. The following sections provide more information about the methods that are affected by this update. 
+
+### Projects
+{: #projects}
+
+`create-project: POST /v1/projects`
+* For both the `request` & `response`, the `name`, `description`, and `destroy_on_delete` are now wrapped inside a `definition` object.
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+    * `definition: {“name”: “test”, “description”: “This is a test project”, “destroy_on_delete”: false}`.
+        * If `destroy_on_delete` is not provided, a default value of `true` is assigned on a project create operation.
+    * See [projects#create-project-request](/apidocs/projects#create-project-request).
+* Similarly, in the `response` body, the previously mentioned properties are now available in a `definition` block.
+    * See [projects#create-project-response](/apidocs/projects#create-project-response).
+
+`update-project: PATCH /v1/projects/{id}`
+* For both the `request` & `response`, the `name`, `description`, and `destroy_on_delete` are now wrapped inside a `definition` object.
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+    * `definition: {“name”: “test_update”, “description”: “This is an updated test project“}`.
+    * See [projects#update-project-request](/apidocs/projects#update-project-request).
+* Similarly, in the `response` body, the previously mentioned properties are now available in a `definition` block.
+    * See [projects#update-project-response](/apidocs/projects#update-project-response).
+
+`get-projects: GET /v1/projects/{id}`
+* In the `response` of this operation, the `name`, `description`, and `destroy_on_delete` are now wrapped inside a `definition` block.
+    * See [projects#get-project-response](/apidocs/projects#get-project-response).
+
+`list-project: GET /v1/projects`
+* Each project that is returned in the `response` array wraps the `name`, `description`, and `destroy_on_delete` properties in a `definition` block.
+    * See [projects#list-projects-response](/apidocs/projects#list-projects-response).
+
+### Configurations
+{: #configurations}
+
+`create-config: POST /v1/projects/{project_id}/configs`
+* For both `request` & `response`, the `locator_id`, `name`, `labels`, `authorizations`, `compliance_profile`, `input`, `setting`, `description` are now wrapped inside a `definition` object.
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+    * `definition: {“name”: “test”, “description”: “This is a test config”, “locator_id”: “1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.cd596f95-95a2-4f21-9b84-477f21fd1e95-global”}`.
+    * See [projects#create-config-request](/apidocs/projects#create-config-request).
+* Similarly, in the `response` body, the previously mentioned properties are now available in a `definition` block.
+    * A `setting` property is also included in the `definition` block.
+    * See [projects#create-config-response](/apidocs/projects#create-config-response).
+
+`update-config: PATCH /v1/projects/{project_id}/configs/{id}`
+* For both `request` & `response`, the `locator_id`, `name`, `labels`, `authorizations`, `compliance_profile`, `input`, `setting`, `description` are now wrapped inside a `definition` object.
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+    * `definition: {“name”: “test”, “description”: “This is a test config”, “locator_id”: “1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.cd596f95-95a2-4f21-9b84-477f21fd1e95-global”}`.
+    * See [projects#update-config-request](/apidocs/projects#update-config-request).
+* Similarly, in the `response` body the previously mentioned properties are moved into a `definition` block.
+    * See [projects#update-config-response](/apidocs/projects#update-config-response).
+
+`get-config: GET /v1/projects/{id}`
+* In the `response` of this operation, the `locator_id`, `name`, `labels`, `authorizations`, `compliance_profile`, `input`, `setting`, `description`, and `setting` are now wrapped inside a `definition` object.
+    * See [projects#get-config-response](/apidocs/projects#get-config-response).
+
+`list-configs: GET /v1/projects/{project_id}/configs`
+* In the `response` of this operation, the `name` and `description` are now wrapped inside a `definition` object.
+    * See [projects#list-configs-response](/apidocs/projects#list-configs-response).
 
 ## 06 July 2023
 {: #06-jul-2023}
