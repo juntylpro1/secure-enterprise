@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-11-06"
 
 keywords: enterprise, enterprise account, multiple accounts, enterprise access, templates, enterprise managed, versions, versioning. template version, migrate version, upgrade version, new version
 
@@ -49,7 +49,7 @@ For more information about creating a new version, see the documentation for [ac
 ## Assigning a new version
 {: #new-version}
 
-Assigning a new version of an IAM template to accounts where a previous version is assigned updates the IAM resources that the template creates in those accounts to match the new version. The old version becomes inactive in your assignment record and can become active again if you [move an account](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#move-account) within your enterprise. If the IAM template that you're replacing includes action controls that enable child account administrators to make changes to the IAM resource in their account, review the behavior of possible [scenarios]().
+Assigning a new version of an IAM template to accounts where a previous version is assigned updates the IAM resources that the template creates in those accounts to match the new version. The old version becomes inactive in your assignment record and can become active again if you [move an account](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#move-account) within your enterprise. If the IAM template that you're replacing includes action controls that enable child account administrators to make changes to the IAM resource in their account, review the behavior of possible [scenarios](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#new-version-scenarios).
 
 To assign a new version of an IAM template, complete the following steps:
 1. Go to **Manage > Access (IAM) > Templates** in the {{site.data.keyword.cloud_notm}} console.
