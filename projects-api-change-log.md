@@ -20,8 +20,8 @@ In this change log, you can learn about the latest changes, improvements, and up
 ## 06 November 2023
 {: #06-nov-2023}
 
-The latest updates include the following breaking changes:
-* The `pipeline_state` is now retired from the `configurations` `response` model. All status information of a `configuration` is available in the augmented `state` property in the canonical schema of a `configuration`.
+The latest update includes the following breaking change:
+* The `configurations` `response` models for all methods no longer use a `pipeline_state`. All status information of a `configuration` is available in the augmented `state` property in the canonical schema of a `configuration`.
 
 ### Projects and configurations changes
 {: #projects-and-configs}
@@ -31,41 +31,50 @@ The latest updates include the following breaking changes:
 
 `delete-config: PATCH /v1/projects/{project_id}/configs/{id}`
 * The `draft_only` query parameter is deprecated.
-* The API now supports delete of `configuration` of a specified project ID and `version`.
-    * See [projects#delete-config-version](/apidocs/projects#delete-config-version).
+* The API now supports delete of `configuration` of a specified project ID and `version`. See [projects#delete-config-version](/apidocs/projects#delete-config-version).
 
 ### Renamed configuration endpoints
 {: #renamed-config-endpoints}
 
-* `POST /v1/projects/{project_id}/configs/{id}/check` -> `POST /v1/projects/{project_id}/configs/{id}/validate`.
-* `POST /v1/projects/{project_id}/configs/{id}/install` -> `POST /v1/projects/{project_id}/configs/{id}/deploy`.
-* `POST /v1/projects/{project_id}/configs/{id}/uninstall` -> `POST /v1/projects/{project_id}/configs/{id}/undeploy`.
+The following configuration endpoints are renamed as follows: 
+* `POST /v1/projects/{project_id}/configs/{id}/check` is changed to `POST /v1/projects/{project_id}/configs/{id}/validate`.
+* `POST /v1/projects/{project_id}/configs/{id}/install` is changed to `POST /v1/projects/{project_id}/configs/{id}/deploy`.
+* `POST /v1/projects/{project_id}/configs/{id}/uninstall` is changed to `POST /v1/projects/{project_id}/configs/{id}/undeploy`.
 
 ### Replaced configuration endpoints
 {: #replaced-config-endpoints}
 
-* The `drafts` methods were replaced by the `versions` operations.
-    * `GET /v1/projects/{project_id}/configs/{config_id}/drafts` -> `GET /v1/projects/{project_id}/configs/{id}/versions`.
-    * `GET /v1/projects/{project_id}/configs/{config_id}/drafts/{version}` -> `GET /v1/projects/{project_id}/configs/{id}/versions/{version}`
+The `drafts` methods were replaced by the `versions` operations as follows: 
+* `GET /v1/projects/{project_id}/configs/{config_id}/drafts` is changed to `GET /v1/projects/{project_id}/configs/{id}/versions`.
+* `GET /v1/projects/{project_id}/configs/{config_id}/drafts/{version}` is changed to `GET /v1/projects/{project_id}/configs/{id}/versions/{version}`
 
 ### Configuration states
 {: #config-states}
 
-* The state model for `configurations` has been flattened.
-* Effectively the `pipeline_state` is no longer available and the one `state` property is now augmented to capture all possible status of a `configuration`.
-* The new `state` values are `approved`, `deleted`, `deleting`, `deleting_failed`, `discarded`, `deployed`, `deploying_failed`, `deploying`, `superceded`, `undeploying`, `undeploying_failed`, `validated`, `validating`, `validating_failed`
-* All `configuration` endpoints include this `state` property in the `response` model. For an example, see [projects#get-config-version-response](/apidocs/projects#get-config-version-response).
+The state model for `configurations` is flattened. The `pipeline_state` is no longer available, and the one `state` property is now augmented to capture all possible statuses of a `configuration`.
+
+The following are the new `state` values:
+* `approved`
+* `deleted`
+* `deleting`
+* `deleting_failed`
+* `discarded`
+* `deployed`
+* `deploying_failed`
+* `deploying`
+* `superceded`
+* `undeploying`
+* `undeploying_failed`
+* `validated`
+* `validating`
+* `validating_failed`
+
+All `configuration` endpoints include this `state` property in the `response` model. For an example, see [projects#get-config-version-response](/apidocs/projects#get-config-version-response).
 
 ### Configuration new metadata
 {: #config-new-metadata}
 
-The `response` model of `configurations` operations now defines new metadata in the root.
-
-If an `approve` job was run on a `configuration`, an `approved_version` property is included in the `response` payload.
-
-Similarly, if a `deploy` job was run on a `configuration`, a `deployed_version` and `last_deployed` metadata are available in the `response` body.
-
-Running a `validation` job yields the metadata `last_validated`, while running an `undeploy` job yields the metadata `last_undeployed` in the `response`.
+The `response` model of `configurations` operations now defines new metadata in the root. If an `approve` job was run on a `configuration`, an `approved_version` property is included in the `response` payload. Similarly, if a `deploy` job was run on a `configuration`, then `deployed_version` and `last_deployed` metadata are available in the `response` body. Running a `validation` job yields the metadata `last_validated`, while running an `undeploy` job yields the metadata `last_undeployed` in the `response`.
 
 ## 26 October 2023
 {: #26-oct-2023}
