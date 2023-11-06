@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2023
 
-lastupdated: "2023-07-06"
+lastupdated: "2023-11-06"
 
 keywords: project access, iam projects, assigning project access, assign access, access project
 
@@ -14,26 +14,26 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Assigning users access to projects
+# Assigning access to projects
 {: #access-project}
 
-Projects are controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). As an administrator on a project, you can grant users access to view and edit projects, approve changes, and deploy or destroy configuration resources.
+Projects are controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). As an administrator on a project, you can grant users access to view and edit projects, approve changes, and deploy or destroy configuration resources. Projects also requires authorization with other {{site.data.keyword.cloud_notm}} services in order for users to validate and deploy configurations.
 {: shortdesc}
 
 ## Actions and roles for the {{site.data.keyword.cloud_notm}} Projects service
 {: #service-access-projects}
 
-The following list includes the actions that users can take when they are assigned a specific role on the {{site.data.keyword.cloud_notm}} Projects service. Review the following information to make sure that you are assigning the correct level of access to your users.
+The following table includes the actions that users can take when they are assigned a specific role on the {{site.data.keyword.cloud_notm}} Projects service. Review the following information to make sure that you are assigning the correct level of access to your users.
 
 | Role | Definition |Project Permissions |
 |-------------|---------------------|---------------------|
 | Viewer | Viewers can perform read-only actions within a project. | View a project (including the project.json) \n \n Find a project by using Global Search |
 | Operator | Operators can perform the same actions as viewers, with more permissions beyond the viewer role, including planning project deployments | All viewer project permissions \n \n Validate a configuration \n \n Edit a configuration |
-| Editor | Editors can perform the same actions as operators, with more permissions beyond the operator role, including creating projects and deploying resources. | All viewer and operator project permissions \n \n Create a project \n \n Edit a project \n \n Edit project settings \n \n Delete a project \n \n Create a configuration \n \n  Discard a draft configuration \n \n Approve configuration changes \n \n Deploy configuration changes \n \n Destroy resources  |
+| Editor | Editors can perform the same actions as operators, with more permissions beyond the operator role, including creating projects and deploying resources. | All viewer and operator project permissions \n \n Create a project \n \n Edit a project \n \n Edit project settings \n \n Delete a project \n \n Create a configuration \n \n  Discard a draft configuration \n \n Approve configuration changes \n \n Deploy configuration changes \n \n Destroy resources \n \n Create an environment \n \n Edit an environment \n \n Delete an environment |
 | Administrator | Administrators can perform the same actions as editors, with more permissions beyond the editor role, including updating project statuses and planning new or changed project deployments. | All viewer, operator, and editor project permissions \n \n Force approve changes that failed validation |
 {: caption="Table 1. Access roles for projects" caption-side="top"}
 
-In addition, you must be assigned the following access on the project tooling resources within the account:
+In addition to access on the {{site.data.keyword.cloud_notm}} Projects service, you must be assigned the following IAM privileges on the project tooling resources within the account:
 
 * The Viewer role on the resource group for the project, which allows a resource group for the project to be selected to deploy the tooling services.
 
@@ -62,40 +62,7 @@ Before a project can validate or deploy configurations, the Projects service mus
 | Role | Source | Target | Source account |
 | ------------- | --------------------- | --------------------- | --------------------- |
 | Manager and Administrator | {{site.data.keyword.cloud_notm}} Projects service | {{site.data.keyword.bpshort}} service | This account |
-| Viewer | {{site.data.keyword.cloud_notm}} Projects service | Resource-controller service | This account |
+| Viewer | {{site.data.keyword.cloud_notm}} Projects service | Resource group only \n \n All resource groups in the account | This account |
 | Viewer | {{site.data.keyword.cloud_notm}} Projects service | Catalog Management service | This account |
 | Viewer and SecretsReader| {{site.data.keyword.cloud_notm}} Projects service | {{site.data.keyword.secrets-manager_short}} service | This account |
 {: caption="Table 2. Projects service to service authorizations " caption-side="top"}
-
-The resource-controller service can't be authorized manually by using the UI. A user with the required role on the resource-controller service can automatically grant this authorization by creating a project, or they can [create the authorization manually by using Terraform](/docs/secure-enterprise?topic=secure-enterprise-serviceauth&interface=terraform#auth-terra).
-{: important}
-
-The following Terraform example creates the authorizations between the Projects service and the resource-controller, {{site.data.keyword.bpshort}}, Catalog Management, and {{site.data.keyword.secrets-manager_short}} services:
-
-   ```terraform
-  resource "ibm_iam_authorization_policy" "rc" {
-    source_service_name = "project"
-    target_service_name = "resource-controller"
-    roles = ["Viewer"]
-    description = "created by terraform"
-}
-  resource "ibm_iam_authorization_policy" "sc" {
-    source_service_name = "project"
-    target_service_name = "schematics"
-    roles = ["Manager", "Administrator"]
-    description = "created by terraform"
-}
-  resource "ibm_iam_authorization_policy" "gc" {
-    source_service_name = "project"
-    target_service_name = "globalcatalog-collection"
-    roles = ["Viewer"]
-    description = "created by terraform"
-}
-  resource "ibm_iam_authorization_policy" "sm" {
-    source_service_name = "project"
-    target_service_name = "secrets-manager"
-    roles = ["Viewer", "SecretsReader"]
-    description = "created by terraform"
-}
-   ```
-   {: codeblock}
