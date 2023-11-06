@@ -15,7 +15,7 @@ content-type: conref
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Content references for secure-enterprise subcollection.
+# Content references for secure-enterprise subcollection
 {: #conref-example}
 
 The following content is going to be reused in several different topics that need identical information.

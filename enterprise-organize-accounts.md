@@ -278,7 +278,7 @@ if err != nil {
 
 For detailed information about the API, see [Enterprise Management API](/apidocs/enterprise-apis/enterprise){: external}.
 
-### Moving accounts with enterprise-managed IAM tempalte assignments
+### Moving accounts with enterprise-managed IAM template assignments
 {: #moving-template-assignment}
 
 {{site.data.content.move-account}}
