@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-11-07"
 
 keywords: customize, deployable architecture, bundle, manifest
 
@@ -21,10 +21,8 @@ You can take advantage of a {{site.data.keyword.IBM}}-curated customization bund
 
 The customization bundle also includes an `automation` directory that includes starter scripts to help you manage the lifecycle of your customized deployable architecture from onboarding and validation to publishing it to a private catalog on {{site.data.keyword.cloud_notm}}. Currently, two pipeline methods are included in this directory: GitHub actions or a Toolchain from {{site.data.keyword.cloud_notm}}.
 
-The following guidance provides an overview of the customization bundle and some examples of customization that you can do. It is not all inclusive and you can make any changes that you need. After you modify the architecture, you can add it to a private catalog and use {{site.data.keyword.IBM_notm}}'s tools to check for vulnerabilities, ensure security and compliance, and share the architecture with your enterprise. For more in-depth customization walkthroughs, see the following tutorials :
+The following guidance provides an overview of the customization bundle and some examples of customization that you can do. It is not all inclusive and you can make any changes that you need. After you modify the architecture, you can add it to a private catalog and use {{site.data.keyword.IBM_notm}}'s tools to check for vulnerabilities, ensure security and compliance, and share the architecture with your enterprise. For a more in-depth customization walkthrough, see [Using a customization bundle to customize a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-basic-custom).
 
-- Check out [Using a customization bundle to customize a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-basic-custom) to learn how to customize variables.
-- Check out [Connect to a VPC landing zone by using a client-to-site VPN](/docs/solution-tutorials?topic=solution-tutorials-connect-landingzone-client-vpn) to see a specific example of how to extend a deployable architecture with a module.
 
 Depending on your level of customization, {{site.data.keyword.cloud_notm}} might not support the deployable architecture. The components of the architecture that are supplied in the customization bundle are supported by {{site.data.keyword.cloud_notm}}, but any customized code that's used to extend is not.
 {: important}
