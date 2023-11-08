@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-11-08"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -185,6 +185,66 @@ After you review the version details, you're ready to configure the input variab
    ibmcloud catalog offering update -c <CATALOGID> -o <OFFERINGID> --updated-offering offering.json
    ```
    {: codeblock}
+
+### Configuring scripts
+{: #custom-pre-post-scripts}
+
+You can have a pre-script or post-script run for your deployable architectures before or after validating, deploying, and undeploying. Scripts are configured to a specific version of your deployable architecture, and must be run and validated through projects. For more information about projects, see [Creating a project](/docs/secure-enterprise?topic=secure-enterprise-setup-project&interface=ui).
+
+There are several benefits for using scripts for your deployable architecture. Scripts can be used for custom validation, for example, if you want to ensure that the `tag` parameter is always a valid cost center ID. The pre-validation script could make a call out to a service to check that the cost center ID was valid. You can track deployments and add resources to an inventory system by providing a post-deployment script that can call out to a service to track which resources were just deployed. Another scenario could be data migration. A pre-deployment script can backup data and then after the deployable architecture deletes the old data store and creates the new one, the post-deployement script can restore it to the new data store. Or you can use scripts to install or configure software.
+
+Scripts are pulled from your deployable architecture's repository. Scripts need to be written in ansible and saved in a YAML file. For the deployment to recognize the scripts automatically, create a scripts file in the root of your repo and they need to be saved in this order `action/stage/type.yaml`. For example, if you have a script that you want to run before your projects validation, the file would be saved as `validate/pre/ansible.yaml`. If they are saved in a different directory, you need to use the catalog manifest so that the catalog can find them. For more information about the catalog manifest, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
+
+All scripts must be capable of running more than once without any ill affects. For example, a pre-deployment or post-deployment script should operate correctly, even if it is run several times. Post-deployment scripts might add resources to a catalog management database and should be sure not to add duplicate resources if run more than once.
+
+The following is an example of a pre-script that is used to display a message after the deployable architecture is validated. Pre-scripts get passed to all of the inputs from the deployable architecture, including the credentials used to authorize deployment.
+
+```python
+- name: Validate pre playbook
+  hosts: localhost
+  vars:
+    ibmcloud_api_key: "{{ lookup(`ansible.builtin.env`, `ibmcloud_api_key`)}}"
+    cos_instance_name: "{{ lookup(`ansible.builtin.env`, `cos_instance_name`)}}"
+    workspace_id: "{{ lookup(`ansible.builtin.env`, `workspace_id`)}}"
+  tasks:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: "The workspace id is {{ workspace_id }}"
+    when: workspace_id is defined and workspace_id != ""
+  - name: Print message
+    ansible.builtin.debug:
+      msg: "The cos instance name is {{ cos_instance_name }}"
+    when: cos_instance_name is defined
+  - name: Print result
+    ansible.builtin.debug:
+      msg: "Received api key"
+    when: ibmcloud_api_key is defined
+```
+
+The following is an example of a post-script. Post-scripts get passed the outpouts of the deployable architecture.
+
+```python
+- name: Deploy post playbook
+  hosts: localhost
+  vars:
+    ibmcloud_api_key: "{{ lookup(`ansible.builtin.env`, `ibmcloud_api_key`)}}"
+    git_repo_url: "{{ lookup(`ansible.builtin.env`, `git_repo_url`)}}"
+  tasks:
+   - name: Print result
+     ansible.builtin.debug:
+       msg: "Received api key"
+     when: ibmcloud_api_key is defined
+   - name: Print result
+     ansible.builtin.debug:
+       msg: "The result is: {{ git_repo_url }}"
+     when: git_repo_url is defined and git_repo_url != ""
+```
+
+To add scripts to your deployable architecture's version, use the following steps.
+
+1. Create a scripts file in the root of your repo and save your scripts as separate YAML files. The file structure for your script file needs to be `root/action/state/type`.yaml. For example, `script/validate/pre/ansible.yaml`.
+1. From the Configure the deployment details section, click **Add scripts**.
+1. Select the scripts you would like to add, and click **Add**.
 
 ### Defining IAM access by using the console
 {: #custom-solution-access-ui}
