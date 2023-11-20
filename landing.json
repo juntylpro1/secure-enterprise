@@ -64,7 +64,7 @@
           "date": "06 November 2023",
           "title": "Configure scipts for your deployable architecture",
           "description": "When creating or updating your deployable architecture, you can add scripts to run before and after you validate, deploy, and undeploy your project."
-        }
+        },
         {
           "date": "06 November 2023",
           "title": "Introducing environments and general improvements to projects API and CLI",
