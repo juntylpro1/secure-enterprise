@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-11-29"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -193,9 +193,9 @@ You can have a pre-script or post-script run for your deployable architectures b
 
 There are several benefits for using scripts for your deployable architecture. Scripts can be used for custom validation, for example, if you want to ensure that the `tag` parameter is always a valid cost center ID. The pre-validation script could make a call out to a service to check that the cost center ID was valid. You can track deployments and add resources to an inventory system by providing a post-deployment script that can call out to a service to track which resources were just deployed. Another scenario could be data migration. A pre-deployment script can backup data and then after the deployable architecture deletes the old data store and creates the new one, the post-deployement script can restore it to the new data store. Or you can use scripts to install or configure software.
 
-Scripts are pulled from your deployable architecture's repository. Scripts need to be written in ansible and saved in a YAML file. For the deployment to recognize the scripts automatically, create a scripts file in the root of your repo and they need to be saved in this order `action/stage/type.yaml`. For example, if you have a script that you want to run before your projects validation, the file would be saved as `validate/pre/ansible.yaml`. If they are saved in a different directory, you need to use the catalog manifest so that the catalog can find them. For more information about the catalog manifest, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
+Scripts are pulled from your deployable architecture's repository. Scripts need to be written in Ansible and saved in a YAML file. For the deployment to recognize the scripts automatically, create a scripts file in the root of your repo and they need to be saved in this order `action/stage/type.yaml`. For example, if you have a script that you want to run before your project validation, the file would be saved as `validate/pre/ansible.yaml`. If they are saved in a different directory, you need to use the catalog manifest so that the catalog can find them. For more information about the catalog manifest, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
 
-All scripts must be capable of running more than once without any ill affects. For example, a pre-deployment or post-deployment script should operate correctly, even if it is run several times. Post-deployment scripts might add resources to a catalog management database and should be sure not to add duplicate resources if run more than once.
+All scripts must be capable of running more than once without failing. For example, a pre-deployment or post-deployment script should operate correctly, even if it is run several times. Post-deployment scripts might add resources to a catalog management database and should be sure not to add duplicate resources if run more than once.
 
 The following is an example of a pre-script that is used to display a message after the deployable architecture is validated. Pre-scripts get passed to all of the inputs from the deployable architecture, including the credentials used to authorize deployment.
 
@@ -221,7 +221,7 @@ The following is an example of a pre-script that is used to display a message af
     when: ibmcloud_api_key is defined
 ```
 
-The following is an example of a post-script. Post-scripts get passed the outpouts of the deployable architecture.
+The following is an example of a post-script. Post-scripts get passed the outputs of the deployable architecture.
 
 ```python
 - name: Deploy post playbook
@@ -244,7 +244,7 @@ To add scripts to your deployable architecture's version, use the following step
 
 1. Create a scripts file in the root of your repo and save your scripts as separate YAML files. The file structure for your script file needs to be `root/action/state/type`.yaml. For example, `script/validate/pre/ansible.yaml`.
 1. From the Configure the deployment details section, click **Add scripts**.
-1. Select the scripts you would like to add, and click **Add**.
+1. Select the scripts that you would like to add, and click **Add**.
 
 ### Defining IAM access by using the console
 {: #custom-solution-access-ui}
