@@ -134,6 +134,7 @@ toc:
               - topic: tp-projects.md
                 navtitle: Using trusted profiles
           - config-project.md
+          - move-deployed-resource-project.md
           - override-failed-validations.md
           - cost-estimate.md
           - topicgroup:
