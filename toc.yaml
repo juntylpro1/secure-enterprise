@@ -137,6 +137,7 @@ toc:
           - move-deployed-resource-project.md
           - override-failed-validations.md
           - cost-estimate.md
+          - create-environment.md
           - topicgroup:
               label: Managing your project lifecycle
               topics:

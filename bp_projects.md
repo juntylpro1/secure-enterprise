@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-12-06"
 
 keywords: best practice projects, manage projects, project
 
@@ -53,26 +53,42 @@ There are a few different secret types that you can create. Use an arbitrary sec
 
 Typically a single {{site.data.keyword.secrets-manager_short}} instance is used for all projects in an account. Secrets in that instance can be organized into secrets groups that align with access restrictions. For example, you might want to use a secrets group per project or for a set of related projects.
 
+## Controlling deployments by using environments 
+{: #best-practice-env}
+
+Within a project, you can group related configurations together by using an environment. An environment can also contain properties such as input values, authentication details, and {{site.data.keyword.compliance_short}} attachments. These properties are automatically added to a configuration when you select an environment, which helps ensure accurate deployments to your target account. When you edit a configuration, you can select an environment for the configuration to use in the **Define details** section. 
+
+### Benefits to using environments 
+{: #benefits-env}
+
+Environments make it easier to control deployments. By specifying an environment and adding properties, you know that the same values are shared across configurations that are using that environment. Within a configuration, you can override any values that are automatically provided by an environment. 
+
+Environments provide a way to group related configurations together within a project. Let's say you have a set of configurations that you want to deploy to the same target account that's your development account. You can create a Development environment and add the authentication details for the target account to that environment. The authentication method is added to each configuration that's using the Development environment.
+
+Though you can create as many environments as you want, it's recommended that you keep the number of environments in your project low. Using a standard set of environments for your deployments across accounts makes it easier to configure and deploy architectures. 
+
+For more information, see [Creating an environment](/docs/secure-enterprise?topic=secure-enterprise-create-env).
+
 ## Organizing your configurations
 {: #best-practice-config}
 
 Consider organizing all of the related configurations into a single project. This way, you can manage the deployments from one location and help ensure they're secure and compliant. This might consist of one or more deployable architectures to create the necessary infrastructure, which then needs to be replicated to support multiple regions and environments such as development, test, and production.
 
-Use a naming convention for your configurations so that users can understand the function of each configuration. For example, in a deployment that uses a VPC base deployable architecture and a Kubernetes Cluster deployable architecture that relies on the VPC base, you might name your configurations as follows:
+Use a naming convention for your configurations so that users can understand the function of each configuration. For example, in a deployment that uses a VPC Base deployable architecture and a Kubernetes Cluster deployable architecture that relies on the VPC Base, you might name your configurations as follows:
 
-| Name   | Deployable architecture | Notes |
-|--------|-------------------------|-------|
-| Dev-VPC-Global | VPC Base               | Create the base VPC for the development environment |
-| Dev-Kub-Dallas | Kubernetes Cluster | Create the cluster in Dallas for development |
-| Dev-Kub-London | Kubernetes Cluster | Create the cluster in London for development |
-| Prod-VPC-Global | VPC Base               | Create the base VPC for the production environment |
-| Prod-Kub-Dallas | Kubernetes Cluster | Create the cluster in Dallas for production |
-| Prod-Kub-London | Kubernetes Cluster | Create the cluster in London for production |
-| Prod-Kub-Tokyo | Kubernetes Cluster | Create the cluster in Tokyo for production |
-| Prod-Kub-Sydney | Kubernetes Cluster | Create the cluster in Sydney for production |
+| Name   | Deployable architecture | Environment | Notes |
+|--------|-------------------------|-------------|-------|
+| Dev-VPC-Global | VPC Base               | Development | Create the base VPC for the development environment |
+| Dev-Kub-Dallas | Kubernetes Cluster | Development | Create the cluster in Dallas for development |
+| Dev-Kub-London | Kubernetes Cluster | Development | Create the cluster in London for development |
+| Prod-VPC-Global | VPC Base               | Production | Create the base VPC for the production environment |
+| Prod-Kub-Dallas | Kubernetes Cluster | Production | Create the cluster in Dallas for production |
+| Prod-Kub-London | Kubernetes Cluster | Production | Create the cluster in London for production |
+| Prod-Kub-Tokyo | Kubernetes Cluster | Production | Create the cluster in Tokyo for production |
+| Prod-Kub-Sydney | Kubernetes Cluster | Production | Create the cluster in Sydney for production |
 {: caption="Table 1. Configuration name examples" caption-side="top"}
 
-You can duplicate the development configuration in the `project.json` file and modify it as needed to quickly set up a second environment for production.
+You can duplicate the development configuration in the `project.json` file and modify it as needed to quickly creating production deployments from their tested development deployments.
 {: tip}
 
 ## Creating access groups for projects
