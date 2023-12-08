@@ -4,7 +4,7 @@ copyright:
 
   years: 2023
 
-lastupdated: "2023-10-13"
+lastupdated: "2023-12-07"
 
 keywords: deployable architecture, custom, share, enterprise, evaluate
 
@@ -36,7 +36,7 @@ This is a fictitious scenario to help you learn and understand how to share a de
 
 To begin the evaluation, you decide to search for terms to help you narrow down your selection. Since you are interested in Virtual Server Instances, you decide to use that as your search term.
 
-1. In the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog) console, click **Catalog**.
+1. In the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com){: external} console, click **Catalog**.
 1. Search for **Virtual Server Instance**.
 1. Select **Deployable architectures** from the list of **Type** filters to limit the results to deployable architectures.
 
