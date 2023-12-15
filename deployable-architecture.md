@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-12-15"
 
 keywords: deployable architecture, deployment architecture, infrastructure patterns
 
@@ -35,7 +35,7 @@ Whether you're deploying by using lifecycle management tools with projects, inst
 
 Many of the deployable architectures have different options, called variations, available for you to compare and choose from in the catalog. For example, a quick start variation can help you create a proof of concept to start at a reduced cost. And with each available option in the catalog, you can compare details such as the architecture diagram, claimed compliance information, features and highlights, and the starting at cost.
 
-Depending on your needs, you might want to use customization options such as turning off various features of the architecture pattern or hardcoding specific variables for your organization's use. You can customize by downloading a customization bundle of the deployable architecture code, updating the Terraform, and onboarding that version of the deployable architecture to a private catalog for your enterprise's use.
+Depending on your needs, you might want to use customization options such as turning off various features of the architecture pattern or hardcoding specific variables for your organization's use. You can customize by downloading a customization bundle of the deployable architecture code, updating the Terraform, and onboarding that version of the deployable architecture to a private catalog for your enterprise's use. For more information, see [Customizing an {{site.data.keyword.cloud_notm}} deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog).
 
 
 ## Managing the lifecycle of your deployable architecture
@@ -57,3 +57,4 @@ In addition to assembling the pieces of the architecture for you, many of the de
 {: #get-started-deployable-arch}
 
 {{site.data.keyword.cloud_notm}} can help reduce the time that it takes to design the right solutions that meet all of the intricate compliance controls and regulations for your industry. Go to the [{{site.data.keyword.cloud_notm}} catalog](/catalog#reference_architecture) to review the available deployable architectures to identify the patterns that can work for your business. Whether it's taking a deployable architecture as-is, configuring it to your needs in a project, or downloading the code directly from the catalog to customize or extend it to fit your needs exactly, we can help jump-start your move to running secure workloads on the cloud.
+

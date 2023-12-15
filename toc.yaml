@@ -68,6 +68,7 @@ toc:
             - custom-evaluation.md
             - custom-basic.md
             - custom-share.md
+            - deploy-regions.md
 
   - navgroup:
       id: howto
