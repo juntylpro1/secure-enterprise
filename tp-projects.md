@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2023
+  years: 2023, 2024
 
-lastupdated: "2023-09-26"
+lastupdated: "2024-01-12"
 
 keywords: trusted profile, projects trusted profile, authorization, project auth, project security
 
@@ -55,7 +55,7 @@ Complete the following steps:
 
 1. Find the project CRN. The CRN is used to authorize deployments to a target acccount.
    - To find the project CRN while you're [editing a project configuration](/docs/secure-enterprise?topic=secure-enterprise-config-project#how-to-config), click the tooltip icon on the `trusted_profile_id` field and copy the CRN.
-   - Otherwise, go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects** and clicking the relevant project. Click **Manage** > **General** and copy the CRN.
+   - Otherwise, go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects** and clicking the relevant project. Click **Manage** > **Details** and copy the CRN.
 1. Confirm that you are in the target account to which the project deploys.
 2. In the {{site.data.keyword.cloud}} console, click **Manage** > **Access (IAM)**, and select **Trusted profiles**.
 3. Click **Create profile**.
