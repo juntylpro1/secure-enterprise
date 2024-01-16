@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2023
+  years: 2023, 2024
 
-lastupdated: "2023-12-06"
+lastupdated: "2024-01-16"
 
 keywords: environment, add environment, deployment environment
 
@@ -31,6 +31,7 @@ You must have the Editor role or greater on the {{site.data.keyword.cloud}} Proj
 
 ## Creating an environment by using the console
 {: #create-env-ui}
+{: ui}
 
 To create an environment from your project, complete the following steps: 
 
@@ -43,10 +44,11 @@ There are three categories of properties that you can add to an environment: aut
 
 ### Adding properties manually 
 {: #add-prop-manually}
+{: ui}
 
 If you add properties manually, consider adding the authentication method first. The authentication method for your target account is required to authorize a deployment to that target account. The authentication method is also used if you want to pull in a {{site.data.keyword.compliance_short}} attachment from your target account. You can add only one authentication property to an environment, and you can only add a compliance property to an environment if you have a {{site.data.keyword.compliance_short}} attachment in your target account that you want to use. You can't add a compliance property that uses the [default controls from the deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#cra-validate-failure), as those default controls vary from architecture to architecture.
 
-You must provide an authentication property in your environment first with valid authentication details if you want to add a compliance property and specify an attachment from {{site.data.keyword.compliance_short}}.
+You must provide an authentication property in your environment first with valid authentication details if you want to add a compliance property and specify an attachment from {{site.data.keyword.compliance_short}}. You can [use an API key with {{site.data.keyword.secrets-manager_short}}](/docs/secure-enterprise?topic=secure-enterprise-authorize-project&interface=cli) or you can [use a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project&interface=cli) to authenticate with the target account that contains your {{site.data.keyword.compliance_short}} attachment. 
 {: important}
 
 Authentication and compliance information is used in all configurations, so if you add an authentication property or a compliance property with a {{site.data.keyword.compliance_short}} attachment to your environment, it is automatically added to any configuration that's using the environment.
@@ -69,6 +71,7 @@ To add a property manually, complete the following steps:
 
 ### Adding properties from a configuration
 {: #add-from-config}
+{: ui}
 
 Save time and reduce errors by adding multiple properties to your environment from a configuration. By doing so, you help ensure that the properties are accurate in your environment, as the input names and values are pulled directly from the configuration that you select. After you add the properties from a configuration, you can edit them in the environment without affecting your configuration. Future edits to your configuration do not impact the properties in your environment. 
 
@@ -78,6 +81,76 @@ To add multiple properties from a configuration, complete the following steps:
 1. Click **Add** > **Add from a configuration…**
 1. Select the configuration that you want to use to add properties to your environment. 
 1. Select the items from the configuration that you want to add to your environment, and click **Add**. 
+
+## Creating an environment by using the CLI
+{: #create-env-cli}
+{: cli}
+
+To create an environment by using the CLI, run the following `ibmcloud project environment-create` command:
+
+```sh
+ibmcloud project environment-create --project-id PROJECT-ID [--definition DEFINITION]
+```
+{: codeblock}
+
+Within the `definition`, you can specify the input properties that you want to include in your environment by using the `inputs` option. Similarly, you can specify an authentication property in your environment by using the `authorizations` option within the `definition`. And, you can add a compliance property by including the `compliance-profile` option within the `definition` as well.
+
+For example, the following command creates an environment that is named `development` and has one input property that defines the resource group:
+
+```sh
+ibmcloud project environment-create \
+     --project-id exampleString \
+     --definition '{"name": "development", "inputs": {"resource_group" : "stage"}}'
+```
+{: codeblock}
+
+Similarly, the following command creates an environment that is named `development` and has one input property that defines the resource group. A [trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project&interface=cli) is also provided as an authentication property, along with an attachment from {{site.data.keyword.compliance_short}} for the compliance property that is located in the `us-south` region:
+
+```sh
+ibmcloud project environment-create \
+     --project-id exampleString \
+     --definition '{
+    "name": "development",
+    "authorizations": {
+      "method": "trusted_profile",
+      "trusted_profile_id": "<trusted-profile-id>"
+    },
+    "inputs": {
+      "resource_group": "stage"
+    },
+    "compliance_profile": {
+      "id": "<profile-id>",
+      "instance_id": "<instance-id>",
+      "instance_location": "us-south",
+      "profile_name": "{\"instance_crn\":\"crn:v1:staging:public:compliance:us-south:a/<account>:<instance-id>::\",\"instance_label\":\"compliance\",\"name\":\"Basic Control\",\"version\":\"1.0.0\",\"attachment_label\":\"basic\"}",
+      "attachment_id": "<attachment-id>"
+    }
+  }'
+```
+{: codeblock}
+
+For more information about the command parameters, see [**`ibmcloud project environment-create`**](/docs/cli?topic=cli-projects-cli#project-cli-environment-create-command).
+
+## Creating an environment by using the API
+{: #create-env-api}
+{: api}
+
+Projects API is a beta release that is currently available for evaluation and testing purposes.
+{: beta}
+
+You can programmatically create an environment by calling the [Projects API](/apidocs/projects#create-project-environment){: external} as shown in the following sample request. The example creates an environment that is named `development` and has two input properties, one to define the resource group and one to define the region:
+
+```bash
+curl -X POST --location --header "Authorization: Bearer {iam_token}" \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \ 
+  --data '{ "definition": { "name": "development", "description": "The environment 'development'", "authorizations": { "method": "api_key", "api_key": "TbcdlprpFODhkpns9e0daOWnAwd2tXwSYtPn8rpEd8d9" }, "inputs": { "resource_group": "stage", "region": "us-south" }, "compliance_profile": { "id": "some-profile-id", "instance_id": "some-instance-id", "instance_location": "us-south", "profile_name": "some-profile-name", "attachment_id": "some-attachment-id" } } }' \
+  "{base_url}/v1/projects/{project_id}/environments" 
+```
+{: curl}
+{: codeblock}
+
+
 
 <!-- 1. Optionally, select **Edit this configuration to use the environment** if you want the configuration to use this environment. If selected, your configuration must be revalidated.  -->
 
