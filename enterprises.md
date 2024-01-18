@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-09-05"
+  years: 2019, 2024
+lastupdated: "2024-01-18"
 
 keywords: enterprise, enterprise account, multiple accounts, organization, hierarchy
 
@@ -50,7 +50,7 @@ Whether you prefer to manage your cloud through the {{site.data.keyword.cloud_no
 At its core, an enterprise consists of three main building blocks:
 - The enterprise account, which serves as the parent account to all other accounts in the enterprise. The enterprise account manages billing for the entire enterprise, with usage costs from all accounts that are rolled up and paid from the enterprise account. With enterprise-managed IAM, you can also build out IAM best practices from the top down by assigning to child accounts IAM resources, such as access groups, trusted profiles, and IAM settings, all to your organization's specification.
 - Account groups, which you can use to organize related accounts. Account groups can't contain resources themselves, but you can view costs for resource usage from the accounts that they contain.
-- Accounts, which are just like stand-alone {{site.data.keyword.Bluemix_notm}} accounts in that they contain resources and resource groups, Cloud Foundry orgs and spaces, and independent access permissions. However, one major difference is that each account in an enterprise doesn't manage its own billing or payments because these are handled at the enterprise account level.
+- Accounts, which are just like stand-alone {{site.data.keyword.Bluemix_notm}} accounts in that they contain resources and resource groups and independent access permissions. However, one major difference is that each account in an enterprise doesn't manage its own billing or payments because these are handled at the enterprise account level.
 
 You create tiers in your enterprise by nesting an account group within an account group.
 ![A diagram that shows four enterprise tiers. The first tier is the enterprise, which contains two tiers of account groups. Then, the account group contains accounts.](images/enterprise-hierarchy.svg "Enterprise tiers are created by adding account groups."){: caption="Figure 1. A four-tier enterprise hierarchy" caption-side="bottom"}
