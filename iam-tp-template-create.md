@@ -107,7 +107,7 @@ You can remove policies before a template is committed and assigned.
 
 
 ## Updating template details
-{: #update-tp-tempalte-name}
+{: #update-tp-template-name}
 {: ui}
 
 You can update the template name, trusted profile name, and descriptions at any time before you commit the template. To update template details, complete the following steps:
@@ -667,7 +667,7 @@ Save the ProfileTemplate ID and entity_tag value from the response for use in up
 
 You can update a trusted profile template at any time before you commit it. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](apidocs/iam-identity-token-api#update-trusted-profile-template-version). To update a specific version of a trusted profile template, complete the following steps:
 
-1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and ETag in the response for the tempalte version that you want to update.
+1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and ETag in the response for the template version that you want to update.
 
    ```bash
    curl -X GET 'https://iam.test.cloud.ibm.com/v1/profile_templates?account_id=5bbe28be34524sdbdaa34d37d1f2294a' -H 'Content-Type: application/json' -H 'Authorization: Bearer $TOKEN'
@@ -1028,7 +1028,7 @@ You can assign an IAM template to only child accounts and account groups, not th
 
 To create an assignment for a trusted profile template, complete the following steps:
 
-1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and version in the response for the tempalte version that you want to assign.
+1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and version in the response for the template version that you want to assign.
 
    ```bash
    curl -X GET 'https://iam.test.cloud.ibm.com/v1/profile_templates?account_id=5bbe28be34524sdbdaa34d37d1f2294a' -H 'Content-Type: application/json' -H 'Authorization: Bearer $TOKEN'
@@ -1618,7 +1618,7 @@ To remove an assignment, complete the following steps:
 
 1. Remove the assignment.
 
-Removing an assignment might cause a previous assignment to become active. For more information, see [Working with tempalte versions](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#remove-assignment).
+Removing an assignment might cause a previous assignment to become active. For more information, see [Working with template versions](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#remove-assignment).
 {: note}
 
    ```bash
@@ -1674,7 +1674,7 @@ Removing an assignment might cause a previous assignment to become active. For m
 
 Before you can delete a trusted profile template version, you must remove all assignments for that version of the template. Delete a specific version by completing the following steps:
 
-1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and version in the response for the tempalte version that you want to delete.
+1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and version in the response for the template version that you want to delete.
 
    ```bash
    curl -X GET 'https://iam.test.cloud.ibm.com/v1/profile_templates?account_id=5bbe28be34524sdbdaa34d37d1f2294a' -H 'Content-Type: application/json' -H 'Authorization: Bearer $TOKEN'

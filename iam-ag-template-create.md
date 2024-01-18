@@ -197,7 +197,7 @@ Any policy that access group administrators add to the enterprise-managed access
 {: note}
 
 ## Updating template details
-{: #update-ag-tempalte-name}
+{: #update-ag-template-name}
 {: ui}
 
 You can update the template name, access group name, and descriptions at any time before you commit the template. To update template details, complete the following steps:
@@ -256,7 +256,7 @@ To create a new version of an access group template, complete the following step
 1. Select the version that you want as the basis for your new version.
 1. Enter a new template name and description or keep the ones that you're already using.
 
-    Entering a new template name updates the tempalte name for this version and all previous versions. The template description is stored speparately for each version.
+    Entering a new template name updates the template name for this version and all previous versions. The template description is stored speparately for each version.
     {: note}
 
 1. Enter a new access group name and description or keep the ones you're already using.
@@ -508,7 +508,7 @@ You can't assign an IAM template to the enteprise account, only child accounts.
 {: #new-version-ag-template-api}
 {: api}
 
-If you want to make changes to an access group template that's committed or assigned, create a new version. Entering a new template name updates the tempalte name for this version and all previous versions.
+If you want to make changes to an access group template that's committed or assigned, create a new version. Entering a new template name updates the template name for this version and all previous versions.
 
 1. List the access group templates in your enterprise account and note the the `id` of the template for which you want to create a new version.
 
@@ -557,7 +557,7 @@ To remove an assignment, complete the following steps:
 
 Before you can delete an access group template version, you must remove all assignments for that version of the template. Delete a specific version by completing the following steps:
 
-1. List the access group templates in your enteprise account and note the `AccessGroupTemplateId` ID and version in the response for the tempalte version that you want to delete.
+1. List the access group templates in your enteprise account and note the `AccessGroupTemplateId` ID and version in the response for the template version that you want to delete.
 
    ```bash
     curl -X GET --location --header "Authorization: Bearer {iam_token}" --header "Accept: application/json" "{base_url}/v1/group_templates?account_id=accountID-123&limit=50&offset=0&verbose=true"
@@ -790,7 +790,7 @@ You can't assign an IAM template to the enteprise account, only child accounts.
 {: #new-version-ag-template-cli}
 {: cli}
 
-If you want to make changes to an access group template that's committed or assigned, create a new version. Entering a new template name updates the tempalte name for this version and all previous versions.
+If you want to make changes to an access group template that's committed or assigned, create a new version. Entering a new template name updates the template name for this version and all previous versions.
 
 1. List the access group templates in your enterprise account and note the the `id` of the template for which you want to create a new version.
 

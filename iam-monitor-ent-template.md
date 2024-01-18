@@ -87,7 +87,7 @@ Complete the following steps to review how child account administrators are modi
    - Trusted profile templates: `iam-identity`
    - Settings templates: `iam-identity`
    - Policy templates: `iam-access-management`
-1. Use the search field to view IAM templates events by searching for the `action` and `tempalte_id`. For example,  `action:iam-groups.update template_id=={template_id}`. <--- Need to verifty
+1. Use the search field to view IAM templates events by searching for the `action` and `template_id`. For example,  `action:iam-groups.update template_id=={template_id}`. <--- Need to verifty
 
 ### Analyzing events in child accounts
 {: #account-review}

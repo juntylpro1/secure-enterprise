@@ -57,7 +57,7 @@ To create a settings template, complete the following steps:
 1. Click **Create**.
 
 ### (Optional) Add IAM account settings
-{: #iam-account-settings-tempalte}
+{: #iam-account-settings-template}
 {: ui}
 
 Make your enterprise secure by default by defining IAM account settings in child accounts.
@@ -162,7 +162,7 @@ To restrict all users to using only specific IP addresses, complete the followin
 
 
 ### (Optional) Add authentication setting
-{: #authentication-settings-tempalte}
+{: #authentication-settings-template}
 {: ui}
 
 The following information is helpful to consider before you enable MFA in child accounts to ensure that you know how it affects all users in the child accounts:
@@ -183,7 +183,7 @@ To enable MFA in a settings template, complete the following steps:
 1. Select the type of MFA that you want to enable in your account. For more information about the MFA options, see [ID-based MFA options](/docs/account?topic=account-types#id-based).
 
 ### (Optional) Add login session settings
-{: #login-session-settings-tempalte}
+{: #login-session-settings-template}
 {: ui}
 
 Improve the security of the accounts in your enterprise by requiring users to enter their login credentials at customized intervals. You can select the time that a user's active session can last before they need to enter their credentials again. You can also choose the duration that a user is inactive before they are signed out of their session and are required to enter their credentials again.
@@ -626,7 +626,7 @@ To create a settings template by using the API, complete the following steps:
 
 You can update a settings template at any time before you commit it. To update a specific version of an account settings template, complete the following steps:
 
-1. List the settings templates in your enteprise account and note the `AccountSettingsTemplate` ID and ETag in the response for the tempalte version that you want to update.
+1. List the settings templates in your enteprise account and note the `AccountSettingsTemplate` ID and ETag in the response for the template version that you want to update.
 
    ```bash
    curl -X GET 'https://iam.test.cloud.ibm.com/v1/account_settings_templates?account_id=5bbe28be34524sdbdaa34d37d1f2294a' -H 'Content-Type: application/json' -H 'Authorization: Bearer $TOKEN'
@@ -941,7 +941,7 @@ You can't assign an IAM template to the enteprise account, only child accounts.
 
 To create an assignment for an account settings template, complete the following steps:
 
-1. List the settings templates in your enteprise account and note the `AccountSettingsTemplate` ID and ETag in the response for the tempalte version that you want to assign to child accounts.
+1. List the settings templates in your enteprise account and note the `AccountSettingsTemplate` ID and ETag in the response for the template version that you want to assign to child accounts.
 
 
    ```bash
@@ -1371,7 +1371,7 @@ To remove an assignment, complete the following steps:
 
 1. Remove the assignment.
 
-   Removing an assignment might cause a previous assignment to become active. For more information, see [Working with tempalte versions](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#remove-assignment).
+   Removing an assignment might cause a previous assignment to become active. For more information, see [Working with template versions](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#remove-assignment).
    {: note}
 
    ```bash

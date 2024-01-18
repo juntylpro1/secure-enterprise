@@ -33,7 +33,7 @@ Check the status of the account in your enterprise.
 
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage > Enteprrise** and click **Accounts**.
 1. Click the **Table expand** icon ![Table expand icon](../icons/table-expand.svg "Table expand") on the account group where the account resides, or click on the account if it's not in a group.
-1. View the status of the account. You can't assign IAM tempaltes to `PENDING`, `CANCELED` or `SUSPENDED` accounts.
+1. View the status of the account. You can't assign IAM templates to `PENDING`, `CANCELED` or `SUSPENDED` accounts.
     1. If an account is `PENDING`, contact the account owner and ask them to complete their account registration. The confirmation email is sent to the email address that is associated with the owner's IBMid. If they can't find the confirmation email, they can go to the [IBM Cloud login page](https://cloud.ibm.com/){: external} and try to log in. The following message is displayed:
 
         > To complete your registration, check your email.

@@ -619,7 +619,7 @@ fmt.Println(string(b))
 
 Removing the reference to a policy template from an access group or trusted profile template revokes the permissions that the policy grants to members. You can remove a policy template reference from an IAM template in a **Draft** state. However, you can't remove a policy template that's referenced in a committed or assigned trusted profile or access group template.
 
-If you want to assign a different policy in a committed or assigned access group or trusted profile template, you must create a new version. For more information, see [Creating a new version of access group tempaltes](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#new-version-ag-template) and [trusted profile templates](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#new-version-tp-template).
+If you want to assign a different policy in a committed or assigned access group or trusted profile template, you must create a new version. For more information, see [Creating a new version of access group templates](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#new-version-ag-template) and [trusted profile templates](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#new-version-tp-template).
 
 To remove a policy template from access group or trusted profile templates, call the [IAM Policy Management API](/apidocs/iam-policy-management#delete-policy-assignment) as shown in the following sample request:
 
