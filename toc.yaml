@@ -124,7 +124,7 @@ toc:
               - include: ../account/context-restrictions-update.md
               - include: ../account/context-restrictions-remove.md
       - topicgroup:
-          label: Deploying architectures with projects
+          label: Deploying architectures and managing resources with projects
           topics:
           - create-project.md
           - topicgroup:
@@ -134,10 +134,14 @@ toc:
                 navtitle: Using an API key or secret
               - topic: tp-projects.md
                 navtitle: Using trusted profiles
-          - config-project.md
+          - topicgroup:
+              label: Configuring and deploying architectures
+              topics:
+              - config-project.md
+              - cost-estimate.md
+              - override-failed-validations.md
+              - deploy-project.md
           - move-deployed-resource-project.md
-          - override-failed-validations.md
-          - cost-estimate.md
           - create-environment.md
           - topicgroup:
               label: Managing your project lifecycle

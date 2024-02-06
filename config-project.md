@@ -2,11 +2,11 @@
 
 copyright:
 
-  years: 2022, 2023
+  years: 2023, 2024
 
-lastupdated: "2023-09-26"
+lastupdated: "2024-02-06"
 
-keywords: manage project, rename project, move project, deploy project, merge request, merge changes
+keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
 subcollection: secure-enterprise
 
@@ -15,7 +15,7 @@ subcollection: secure-enterprise
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Configuring and deploying a deployable architecture
+# Configuring a deployable architecture
 {: #config-project}
 
 After you add a deployable architecture to your project, you can edit the input values to configure the architecture for deployment.
@@ -29,19 +29,48 @@ Before you can deploy your project, the inputs, plan, compliance, and estimated 
 ## Setting input values
 {: #project-input-values}
 
-Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. They are a set of common inputs that are used to provide shared input values across any number of configurations.
+Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Configurations can be linked together by using the outputs of one configuration as the inputs on another. For example, a configuration for an application could use an output from an infrastructure configuration, such as a cluster ID, to deploy onto that infrastructure.
 
-The input's attribute allows variables to be imported from any number of outputs of different configurations, even from other projects. By doing so, the dev environment of an app project can easily be linked to the dev environment of an infrastructure project. Or common input values can easily be shared across environments and projects.
+### Referencing values
+{: #reference-values}
 
-## Configuring the architecture
+Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. For inputs that have editable fields, you can include references as text strings that refer to inputs or outputs from other configurations that were deployed from your project. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.  
+
+You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab. 
+{: tip}
+
+References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/config/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed in order to reference another value within it.
+
+#### Referencing values from a configuration 
+{: #reference-values-config}
+
+The general format to reference a value in a configuration is as follows: 
+
+`ref:/config/<config_name>/<inputs_or_outputs>/<input_or_output_name>`.
+
+You can reference an input or an output from a configuration that has been deployed from your project. For example, the following reference points to an output that is named `cluster_id` within the `ProdCluster` configuration: `ref:/config/ProdCluster/outputs/cluster_id`.
+
+You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so. 
+{: remember}
+
+#### Referencing inputs from an environment
+{: #reference-parameters-env}
+
+Since environments are created within a project, and not within a configuration, you don't need to include `/config/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `env` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./env/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment. 
+
+For example, the following reference points to an input parameter that is named `cluster_id` within the `Production` environment: `ref:./env/Production/inputs/cluster_id`.
+
+## Configuring an architecture by using the console
 {: #how-to-config}
+{: ui}
 
 To create a customized configuration, complete the following steps:
 
 1. From the **Security** panel, select the authentication method that you want to use to deploy your architecture.
 
-    Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to a target account and is required to deploy your configuration. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+    Add an API key by using {{site.data.keyword.secrets-manager_full}}. This authorizes the project to deploy to a target account and is required to deploy your architecture. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
     {: note}
+{: #cra-validate-failure}
 
 1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account. {: #cra-validate-failure}
 
@@ -56,20 +85,21 @@ To create a customized configuration, complete the following steps:
 
     If you select **Select from {{site.data.keyword.compliance_short}}**, you must have an instance of the service and an attachment through {{site.data.keyword.compliance_short}} in the target account that you want to deploy to. For help creating an attachment, see [Evaluating resource configuration with {{site.data.keyword.compliance_long}}](/docs/secure-enterprise?topic=secure-enterprise-security-compliance-scanning).
 
-1. From the **Required** panel, enter values for the required fields for the deployable architecture configuration.
+1. From the **Required** panel, enter values for the required inputs for the deployable architecture configuration.
 1. Optional: You can add values by going to the **Optional** panel.
 1. Click **Save**.
 1. Click **Validate**. The modal that is displayed provides more details about your in-progress validation.
 
-   If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail). Or, an administrator on the {{site.data.keyword.cloud_notm}} Projects service can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration will not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
+   If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail). Or, an administrator on the projects service can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration might not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
 
 During the configuration and deployment process, monitor your [needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects). The widget reflects any issue that occurs in your configurations.
 {: remember}
 
-## Approving changes
+## Approving configuration changes by using the console
 {: #approve-changes}
+{: ui}
 
-After you validate your configuration, the changes must be approved by an editor or administrator on the {{site.data.keyword.cloud_notm}} Projects service. Complete the following steps to approve changes:
+After you validate your configuration, the changes must be approved by an editor or administrator on the projects service. Complete the following steps to approve changes:
 
 1. From the projects list, select a project.
 1. Check that there aren't any outstanding needs attention items on the **Overview** tab in your project. Needs attention items can block your ability to deploy.
@@ -78,31 +108,40 @@ After you validate your configuration, the changes must be approved by an editor
 1. Click **View last validation**.
 1. Add a comment providing more details about the approval, and click **Approve**.
 
-If your validation failed due to the Code Risk Analyzer scan, an administrator on the {{site.data.keyword.cloud_notm}} Projects service can [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway.
+If your validation failed due to the Code Risk Analyzer scan, an administrator on the projects service can [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway.
 {: remember}
 
-## Deploying your architecture
-{: #deploy-config}
+## Configuring an architecture by using the CLI
+{: #how-to-config-cli}
+{: cli}
 
-After your configuration updates are validated and approved, you can deploy your architecture to your target account. You can deploy to any account that has authorized your project for deployments. For more information, see [Using an API key with Secrets Manager to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project).
+To add a configuration to a project by using the CLI, run the following `ibmcloud project config-create` command:
 
-1. From the **Configurations** tab in your project, click the name of your deployable architecture configuration > **Edit**.
-1. Review the input values and make any necessary changes.
-1. Click **Deploy**. This action includes preparing your resources to deploy, which can take a few minutes. You are notified when the deployment is successful.
-1. Review the outputs from the deployable architecture.
+```sh
+ibmcloud project config-create --project-id PROJECT-ID [--definition DEFINITION] [--schematics SCHEMATICS]
+```
+{: codeblock}
 
-If any additional changes are needed, or if a new version of the deployable architecture is available, you must deploy your architecture again. You must also deploy your architecture again [if there is any drift detected](/docs/schematics?topic=schematics-drift-note&interface=ui#drift-ui) in your {{site.data.keyword.bpshort}} workspace.
+For more information about the command parameters, see [**`ibmcloud project config-create`**](/docs/cli?topic=cli-projects-cli#project-cli-config-create-command).
 
-## Viewing resources
-{: #resources-project}
+## Approving configuration changes by using the CLI
+{: #approve-changes-cli}
+{: cli}
 
-View your resources that are tied to the deployable architecture configuration by completing the following steps:
+1. Run the following `ibmcloud project config-validate` command to get a validation check on your configuration:
 
-1. From the projects list, select a project.
-2. Go to the **Configurations** tab, and select a deployable architecture configuration.
-4. From the **Resources** tab, you can view the full list of deployed resources. For additional information, click **View in {{site.data.keyword.bpshort}}**.
+   ```sh
+   ibmcloud project config-validate --project-id PROJECT-ID --id ID
+   ```
+   {: codeblock}
 
-## Reviewing output values
-{: #project-output-values}
+   For more information about the command parameters, see [**`ibmcloud project config-validate`**](/docs/cli?topic=cli-projects-cli#project-cli-config-validate-command).
+ 
+1. After validating your configuration, approve your configuration edits and merge them to the main configuration by running the following `ibmcloud project config-approve` command:
 
-Output values populate after the architecture is deployed, and they provide important information about your created resources. After the deployment is successful, you can go to the **Output** tab to view the outputs.
+   ```sh
+   ibmcloud project config-approve --project-id PROJECT-ID --id ID [--comment COMMENT]
+   ```
+   {: codeblock}
+
+   For more information about the command parameters, see [**`ibmcloud project config-approve`**](/docs/cli?topic=cli-projects-cli#project-cli-config-approve-command).
