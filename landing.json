@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2023-11-06",
+    "lastupdated": "2024-02-06",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -61,19 +61,19 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
-          "date": "06 November 2023",
-          "title": "Configure scipts for your deployable architecture",
-          "description": "When creating or updating your deployable architecture, you can add scripts to run before and after you validate, deploy, and undeploy your project."
+          "date": "06 February 2024",
+          "title": "Automatically detect drift in your project",
+          "description": "You can now run daily drift detection scans to identify and override (or adopt) the detected changes. Automatic drift detection is an experimental feature for evaluation or testing purposes."
         },
         {
-          "date": "06 November 2023",
-          "title": "Introducing environments and general improvements to projects API and CLI",
-          "description": "You can now group configurations together within a project by using environments. Environments can also contain properties like input values that are automatically added to configurations. This release also includes updates to the projects API and CLI. The commands are normalized so they follow a regular pattern, and terminology is now aligned across our UI, CLI, and API."
+          "date": "06 February 2024",
+          "title": "Add references in your project",
+          "description": "It's now easier to link architectures to one another by adding references to inputs or outputs. Add the reference as an input in an architecture that you're configuring, and the value is automatically used for deployment."
         },
         {
-          "date": "25 July 2023",
-          "title": "Projects integration with IBM Cloud Schematics and general improvements",
-          "description": "Projects are integrated more seamlessly with Schematics, as users can now view the Schematics logs directly from their project during validation and deployment. This release also includes system improvements to deleting a project. A recent update to the Code Risk Analyzer might result in fewer validation errors for deployable architectures that include Event Streams resources."
+          "date": "06 February 2024",
+          "title": "Duplicate configurations in your project",
+          "description": "You can now duplicate an architecture configuration from the Configurations tab in a project. By doing so, you can quickly create a second version of your configuration with all of the input values that were provided in the original configuration."
         }
       ]
     }
