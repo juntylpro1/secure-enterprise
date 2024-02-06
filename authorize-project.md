@@ -1,13 +1,13 @@
 ---
 
 copyright:
-  years: 2022, 2023
+  years: 2023, 2024
 
 
-lastupdated: "2023-05-03"
+lastupdated: "2024-02-06"
 
 
-keywords: authorizing a project, add project to account, project secrets, project API key, authenticate, authentication for a project
+keywords: authorizing a project, add project to account, project secrets, project API key, authenticate, authentication for a project, target account
 
 subcollection: secure-enterprise
 
@@ -31,20 +31,47 @@ Though it is possible to add your API key directly into your configuration, it i
 
 1. Make sure that you are assigned the required permissions to create the project tooling resources within the account in addition to permission to create projects:
 
-* The Editor role on the {{site.data.keyword.cloud_notm}} Projects service.
-* The Editor and Manager role on the {{site.data.keyword.bplong}} service.
-* The Viewer role on the resource group for the project.
+   * The Editor role on the {{site.data.keyword.cloud_notm}} Projects service.
+   * The Editor and Manager role on the {{site.data.keyword.bplong}} service.
+   * The Viewer role on the resource group for the project.
 
-For more information about access and permissions, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
+   For more information about access and permissions, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
+
+1. Each API key that you create has the same access that you are assigned as a user. Before you create an API key, make sure that you have access to deploy architectures in the account that you want to deploy to, also known as your target account. If you have the following [wide-ranging access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-wide), then you can deploy architectures in the account: 
+   * The Administrator role for All Identity and Access enabled services.
+   * The Administrator role for All Account Management services. 
+
+   Alternatively, you can [create an API key that is associated with a service ID](/docs/account?topic=account-serviceidapikeys&interface=ui#serviceidapikeys). Service ID API keys inherit all access that is assigned to the specific service ID. So, you can scope the access for the service ID to the minimum that is required for the deployable architecture that you're configuring. This approach is similar to using a trusted profile with specific access based on the deployable architecture. For more information on finding the required access roles for any given deployable architecture, see [granting specific access based on the deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-specific). 
+
+1. Complete the required steps to [create a project and add a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-setup-project). You authorize the project to deploy with an API key or existing secret when you configure your deployable architecture. 
+
+## Creating an API key
+{: #create-new-secret}
+
+Complete the following steps to create an API key:
+
+1. In the {{site.data.keyword.cloud_notm}} console, sign in to the account that you want to deploy to.
+1. Go to **Manage** > **Access (IAM)** > **API keys**.
+1. Click **Create an {{site.data.keyword.Bluemix_notm}} API key**.
+1. Enter a name and description for your API key.
+1. Click **Create**.
+1. Then, click **Show** to display the API key. Or, click **Copy** to copy and save it for later, or click **Download**.
+
+   For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
+   {: tip}
+
+## Adding an API key to {{site.data.keyword.secrets-manager_short}}
+{: #add-api-key-sm}
+
+After you create an API key, complete the following steps to add it to {{site.data.keyword.secrets-manager_short}} in the account that contains your project:
 
 1. [Create a {{site.data.keyword.secrets-manager_short}} service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) in your {{site.data.keyword.cloud_notm}} account. To create a secret, you must have the Writer role or higher on the {{site.data.keyword.secrets-manager_short}} service.
-
-2. After you create your secret instance, make sure that you select **Other secret type** to add an arbitrary secret. For information about creating an abitrary secret, see [Creating arbitrary secrets in the UI](/docs/secrets-manager?topic=secrets-manager-arbitrary-secrets&interface=ui). Your arbitrary secret must contain the API key. The API key must be created in the target account that you want to deploy to.
-
-3. Complete the required steps to [create a project and add a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-setup-project). You authorize the project to deploy with an API key or existing secret when you configure your deployable architecture.
+1. After you create your secret instance, make sure that you select **Other secret type** to add an arbitrary secret. For information about creating an arbitrary secret, see [Creating arbitrary secrets in the UI](/docs/secrets-manager?topic=secrets-manager-arbitrary-secrets&interface=ui). Your arbitrary secret must contain the API key. The API key must be created in the target account that you want to deploy to.
 
 ## Using an existing secret
 {: #deploy-exisiting-secret}
+
+After you added your API key to {{site.data.keyword.secrets-manager_short}} as an arbitrary secret, you can use that secret to authorize your project to deploy. Complete the following steps: 
 
 1. In the {{site.data.keyword.cloud_notm}} console, sign in to the account that you want to deploy the project to.
 1. Go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects**.
@@ -57,24 +84,4 @@ For more information about access and permissions, see [Assigning users access t
 1. Choose the service instance, secret group, and secret.
 1. Click **Save**.
 
-## Adding an API key
-{: #create-new-secret}
-
-During the configuration process, you might decide to add the API key directly. This option is not recommended because the API key displays in your `project.json` file and is visible to anyone who exports it.
-
-1. In the {{site.data.keyword.cloud_notm}} console, sign in to the account that you want to deploy to.
-1. Go to **Manage** > **Access (IAM)** > **API keys**.
-1. Click **Create an {{site.data.keyword.Bluemix_notm}} API key**.
-1. Enter a name and description for your API key. Include the appropriate privileges.
-1. Click **Create**.
-1. Then, click **Show** to display the API key. Or, click **Copy** to copy and save it for later, or click **Download**.
-
-For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
-{: tip}
-
-1. Go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") **Projects**.
-1. Select the project that includes the deployable architecture configuration you want to authorize.
-1. From the **Configurations** tab, select the configuration.
-1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Edit**.
-1. In the required input section,make sure that the **Use an existing secret** option is set to **No**.
-1. Add the API key that you copied or downloaded.
+During the configuration process, you might decide to add the API key directly for experimental work. This option is not recommended, especially for deployments to your production account, because the API key displays in your `project.json` file and is visible to anyone who exports it.
