@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-02-06"
+lastupdated: "2024-02-08"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -39,16 +39,16 @@ Depending on how the architecture was designed, some inputs might include a set 
 You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab. 
 {: tip}
 
-References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/config/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed in order to reference another value within it.
+References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed in order to reference another value within it.
 
 #### Referencing values from a configuration 
 {: #reference-values-config}
 
 The general format to reference a value in a configuration is as follows: 
 
-`ref:/config/<config_name>/<inputs_or_outputs>/<input_or_output_name>`.
+`ref:/configs/<config_name>/<inputs_or_outputs>/<input_or_output_name>`.
 
-You can reference an input or an output from a configuration that has been deployed from your project. For example, the following reference points to an output that is named `cluster_id` within the `ProdCluster` configuration: `ref:/config/ProdCluster/outputs/cluster_id`.
+You can reference an input or an output from a configuration that has been deployed from your project. For example, the following reference points to an output that is named `cluster_id` within the `ProdCluster` configuration: `ref:/configs/ProdCluster/outputs/cluster_id`.
 
 You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so. 
 {: remember}
@@ -56,9 +56,9 @@ You can add a relative reference to another input within the configuration that 
 #### Referencing inputs from an environment
 {: #reference-parameters-env}
 
-Since environments are created within a project, and not within a configuration, you don't need to include `/config/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `env` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./env/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment. 
+Since environments are created within a project, and not within a configuration, you don't need to include `/configs/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `environments` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./environments/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment. 
 
-For example, the following reference points to an input parameter that is named `cluster_id` within the `Production` environment: `ref:./env/Production/inputs/cluster_id`.
+For example, the following reference points to an input parameter that is named `cluster_id` within the `Production` environment: `ref:./environments/Production/inputs/cluster_id`.
 
 ## Configuring an architecture by using the console
 {: #how-to-config}
