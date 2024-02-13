@@ -54,6 +54,7 @@ toc:
           - iam-secure-account-tutorial.md
           - iam-ent-template-tutorial.md
           - iam-ent-template-pen-test.md
+          - security-setup.md
       - project-getstart-tutorial.md
       - topicgroup:
           label: Managing resource access
@@ -141,6 +142,7 @@ toc:
               - cost-estimate.md
               - override-failed-validations.md
               - deploy-project.md
+              - drift-detection.md
           - move-deployed-resource-project.md
           - create-environment.md
           - topicgroup:
