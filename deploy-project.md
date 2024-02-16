@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-02-06"
+lastupdated: "2024-02-16"
 
 keywords: manage project, deploy project, merge request, merge changes, deploy configuration, deploy architecture
 
@@ -53,23 +53,23 @@ Output values populate after the architecture is deployed, and they provide impo
 {: #deploy-config-cli-copy}
 {: cli}
 
-1. Run the following `ibmcloud project config-check` command to get a validation check on your configured edits:
+1. Run the following `ibmcloud project config-validate` command to get a validation check on your configured edits:
 
    ```sh
-   ibmcloud project config-check --project-id PROJECT-ID --id ID [--x-auth-refresh-token X-AUTH-REFRESH-TOKEN] [--version VERSION]
+   ibmcloud project config-validate --project-id PROJECT-ID --id ID [--x-auth-refresh-token X-AUTH-REFRESH-TOKEN] [--version VERSION]
    ```
    {: codeblock}
 
-   For more information about the command parameters, see [**`ibmcloud project config-check`**](/docs/cli?topic=cli-projects-cli#project-cli-config-check-command).
+   For more information about the command parameters, see [**`ibmcloud project config-validate`**](/docs/cli?topic=cli-projects-cli#project-cli-config-validate-command).
 
-1. Run the following `ibmcloud project config-install` command to deploy your configured edits after they are validated and approved:
+1. Run the following `ibmcloud project config-deploy` command to deploy your configured edits after they are validated and approved:
 
    ```sh
-   ibmcloud project config-install --project-id PROJECT-ID --id ID
+   ibmcloud project config-deploy --project-id PROJECT-ID --id ID
    ```
    {: codeblock}
 
-   For more information about the command parameters, see [**`ibmcloud project config-install`**](/docs/secure-enterprise?topic=secure-enterprise-projects-cli#project-cli-config-install-command).
+   For more information about the command parameters, see [**`ibmcloud project config-deploy`**](/docs/secure-enterprise?topic=secure-enterprise-projects-cli#project-cli-config-deploy-command).
 
 ## Getting the list of resources that are tied to a deployment by using the CLI
 {: #resources-project-cli-copy}
