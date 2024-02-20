@@ -426,7 +426,7 @@ If an assignment fails, use the `account-settings-assigment-update` method to re
 
 Create a new version of an account settings template when you need to make updates to a committed version. To create a new version, complete the following steps.
 
-1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](apidocs/iam-identity-token-api#update-account-settings-template-version).
+1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version).
 1. Use the `account-settings-template-version-create` method to create a new version. The following sample request creates a new version of the template `AccountSettingsUpdated`.
 
    ```bash
