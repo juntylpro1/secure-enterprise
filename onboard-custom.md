@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023
-lastupdated: "2023-11-29"
+   years: 2023, 2024
+lastupdated: "2024-02-20"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -404,7 +404,7 @@ The summary table lists the resources that your product uses and their estimated
 
 You can add controls to your deployable architecture to prove that it meets security and compliance requirements.
 
-Before you can add controls to your product, you must choose a predefined profile or add your controls to a custom {{site.data.keyword.compliance_full}} profile. Then, scan the resources in your account that match those the deployable architecture creates to verify. For more information, see [What is a profile?](/docs/security-compliance?topic=security-compliance-profiles)
+Before you can add controls to your product, you must choose a predefined profile or add your controls to a custom {{site.data.keyword.compliance_full}} profile. Then, scan the resources in your account that match those the deployable architecture creates to verify.
 {: important}
 
 Only controls that are supported by the {{site.data.keyword.compliance_short}} and validated by {{site.data.keyword.compliance_short}} scans appear in the catalog.
@@ -432,7 +432,7 @@ Add the scans that you previously ran in the {{site.data.keyword.compliance_shor
 1. Click **Apply scan**.
 1. Click **Next**.
 
-If your version does not pass all of the goals for a particular control, you can create a custom Security and Compliance profile. For more information, see [What is a profile?](/docs/security-compliance?topic=security-compliance-profiles)
+If your version does not pass all of the goals for a particular control, you can create a custom Security and Compliance profile.
 
 ### Applying {{site.data.keyword.compliance_short}} scans by using the CLI
 {: #custom-tf-scc-scan-cli}
