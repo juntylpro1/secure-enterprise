@@ -143,7 +143,11 @@ toc:
               - override-failed-validations.md
               - deploy-project.md
               - drift-detection.md
-          - move-deployed-resource-project.md
+          - topicgroup:
+              label: Managing existing resources
+              topics:
+              - topic: move-deployed-resource-project.md
+              - topic: manage-existing-resources.md
           - create-environment.md
           - topicgroup:
               label: Managing your project lifecycle
