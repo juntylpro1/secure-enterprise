@@ -355,7 +355,7 @@ To create a settings template by using the CLI, complete the following steps:
 
 You can update a settings template at any time before you commit it. To update a specific version of an account settings template, complete the following steps:
 
-1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version).
+1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version){: external}.
 
    The following example JSON file specifies the `account_id` of the enterprise account, the `name` of the template, and the `account_settings`. The new configuration resets MFA to `NONE` and removes the other settings.
 
@@ -426,7 +426,7 @@ If an assignment fails, use the `account-settings-assigment-update` method to re
 
 Create a new version of an account settings template when you need to make updates to a committed version. To create a new version, complete the following steps.
 
-1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version).
+1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version){: external}.
 1. Use the `account-settings-template-version-create` method to create a new version. The following sample request creates a new version of the template `AccountSettingsUpdated`.
 
    ```bash
