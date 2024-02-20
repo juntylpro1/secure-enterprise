@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-01-12"
+lastupdated: "2024-02-20"
 
 keywords: trusted profile, projects trusted profile, authorization, project auth, project security
 
@@ -102,7 +102,7 @@ It's secure and convenient to give the trusted profile a wide range of access be
    1. Click **Add**.
 1. Click Create.
 
-### Granting specific access
+### Granting specific access based on the deployable architecture
 {: #serviceid-access-specific}
 
 Grant the trusted profile the minimum required access role for the configuration that you're deploying. Choose this option if you have one or only a few deployable architectures with the same access requirements that you plan to deploy to the same target account.
@@ -120,6 +120,21 @@ View the catalog page for specific access roles that are required for a given de
    For more information about assigning access, see [Creating the service ID](/docs/secure-enterprise?topic=secure-enterprise-tp-project#create-projects-serviceid).
 
 1. Click Create.
+
+### Granting specific access to existing resources
+{: #serviceid-access-existing-resources}
+
+If you are using a trusted profile to [organize existing resources in a project](/docs/secure-enterprise?topic=secure-enterprise-organize-resources), you can grant the trusted profile access to specific resources, as opposed to all of them. Choose this option if you want to limit which existing resources a project can manage.  
+
+1. To create the first policy, select **All Identity and Access enabled services** and click **Next**.
+   1. Select **Specific resources**, scope the access to the resources you want, and click **Next**. 
+   1. For the resource group access, select the Administrator role and click **Next**.
+   1. Select the Manager service role and the Administrator platform role.
+   1. Click **Add**.
+1. For the second policy, select **All Account Management services** and click **Next**.
+   1. Select the Administrator role.
+   1. Click **Add**.
+1. Click **Create**.
 
 ## Creating the service ID
 {: #serviceid-auto-tp}
