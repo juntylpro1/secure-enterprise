@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-05"
+  years: 2023, 2024
+lastupdated: "2024-02-20"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, settings, migrate version, upgrade version, new version
 
@@ -355,7 +355,7 @@ To create a settings template by using the CLI, complete the following steps:
 
 You can update a settings template at any time before you commit it. To update a specific version of an account settings template, complete the following steps:
 
-1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](apidocs/iam-identity-token-api#update-account-settings-template-version).
+1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version).
 
    The following example JSON file specifies the `account_id` of the enterprise account, the `name` of the template, and the `account_settings`. The new configuration resets MFA to `NONE` and removes the other settings.
 
