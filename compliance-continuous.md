@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-13"
+  years: 2023, 2024
+lastupdated: "2024-02-22"
 
 keywords:
 
@@ -60,7 +60,7 @@ To learn more about achieving continuous compliance as an enterprise, visit the 
 ## Reviewing available controls
 {: #review-controls}
 
-As a regulated business, there are specific standards that apply to your industry that you need to prove compliance to. In {{site.data.keyword.compliance_short}}, you can view the [control libraries](/docs/security-compliance?topic=security-compliance-key-concepts) that are offered by {{site.data.keyword.IBM}} that can meet your requirements. For example, if you are a financial institution, you might want to use the {{site.data.keyword.cloud_notm}} for Financial Services library. If you don't see the control set that you are looking for, you can always create a custom one. After you have reviewed the libraries, you can pull specific compliance controls into a profile that can be evaluated.
+As a regulated business, there are specific standards that apply to your industry that you need to prove compliance to. In {{site.data.keyword.compliance_short}}, you can view the [profiles](/docs/security-compliance?topic=security-compliance-predefined-profiles) that are offered by {{site.data.keyword.IBM}} that can meet your requirements. For example, if you are a financial institution, you might want to use the {{site.data.keyword.cloud_notm}} for Financial Services library. If you don't see the control set that you are looking for, you can always create a custom one. After you have reviewed the libraries, you can pull specific compliance controls into a profile that can be evaluated.
 
 During your investigation phase, you might also want to review the available infrastructure [deployable architectures](/catalog#referencearchitecture) in the catalog. {{site.data.keyword.cloud_notm}} has created automation for the deployment of common architectural patterns that combine one or more cloud resources and designed for easy scalability and modularity. You can review the components of the architecture and the level of compliance each deployable architecture meets by reviewing the details directly in the catalog detail pages, and you can customize these architectures to meet your exact needs.
 

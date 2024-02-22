@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2023
+  years: 2023, 2024
 
-lastupdated: "2023-06-30"
+lastupdated: "2024-02-22"
 
 keywords:
 
@@ -20,7 +20,7 @@ subcollection: secure-enterprise
 For highly regulated industries, such as financial services, achieving continuous compliance within a cloud environment is an important first step toward protecting customer and application data. Historically, that process was difficult and manual, which placed your organization at risk. But, with {{site.data.keyword.compliance_full}}, you can integrate daily, automatic compliance checks into your development lifecycle to help minimize that risk.
 {: shortdesc}
 
-A new and improved experience of {{site.data.keyword.compliance_short}} is here! Be sure that you're working with the latest architecture to avoid migration issues later. To learn more, see [Key concepts](/docs/security-compliance?topic=security-compliance-key-concepts) or [How it works](/docs/security-compliance?topic=security-compliance-posture-management).
+A new and improved experience of {{site.data.keyword.compliance_short}} is here! Be sure that you're working with the latest architecture to avoid migration issues later. To learn more, see [How it works](/docs/security-compliance?topic=security-compliance-posture-management).
 {: tip}
 
 
