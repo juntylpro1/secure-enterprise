@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-09-21"
+  years: 2023, 2024
+lastupdated: "2024-02-22"
 
 keywords: enterprise, enterprise account, create enterprise, set up enterprise, enterprise users, enterprise access, enterprise tutorial
 
@@ -57,7 +57,7 @@ After your enterprise is created, you are directed to the enterprise dashboard. 
 {: #account_groups_tutorial}
 {: step}
 
-Use account groups to [organize related accounts](/docs/account?topic=account-enterprise-organize). The second and third tier of the Example Corp. enterprise hierarchy contain the Marketing, Development, Sales, Design, and Engineering account groups. Complete the following steps to create the account groups:
+Use account groups to [organize related accounts](/docs/secure-enterprise?topic=secure-enterprise-enterprise-organize&interface=ui). The second and third tier of the Example Corp. enterprise hierarchy contain the Marketing, Development, Sales, Design, and Engineering account groups. Complete the following steps to create the account groups:
 
 1. From the enterprise dashboard, click **Accounts** to view accounts and account groups in the enterprise.
 2. In the account group section, click **Create**.
