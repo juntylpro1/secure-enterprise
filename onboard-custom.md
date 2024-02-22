@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-22"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -425,7 +425,7 @@ You must include compliance information in your catalog manifest JSON file to ad
 {: #custom-tf-scc-scan-ui}
 {: ui}
 
-Add the scans that you previously ran in the {{site.data.keyword.compliance_short}}. {{site.data.keyword.compliance_short}} scans determine adherence to regulatory controls. For more information, see [Scheduling a scan](/docs/security-compliance?topic=security-compliance-schedule-scan).
+Add the scans that you previously ran in the {{site.data.keyword.compliance_short}}. {{site.data.keyword.compliance_short}} scans determine adherence to regulatory controls. For more information, see [Scheduling a scan](/docs/security-compliance?topic=security-compliance-scan-resources&interface=ui).
 
 1. Select the profile that you used for the evaluation.
 1. Select the {{site.data.keyword.compliance_short}} scan.
@@ -438,7 +438,7 @@ If your version does not pass all of the goals for a particular control, you can
 {: #custom-tf-scc-scan-cli}
 {: cli}
 
-Add the scans that you previously ran in the {{site.data.keyword.compliance_short}}. {{site.data.keyword.compliance_short}} determine adherence to regulatory controls. For more information, see [Scheduling a scan](/docs/security-compliance?topic=security-compliance-schedule-scan).
+Add the scans that you previously ran in the {{site.data.keyword.compliance_short}}. {{site.data.keyword.compliance_short}} determine adherence to regulatory controls. For more information, see [Scheduling a scan](/docs/security-compliance?topic=security-compliance-scan-resources&interface=ui).
 
 To add the {{site.data.keyword.compliance_short}} scan, run the [`ibmcloud catalog offering version scc`](/docs/cli?topic=cli-manage-catalogs-plugin#version-scc) command:
 
