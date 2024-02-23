@@ -67,7 +67,7 @@ An access group template is a predefined access group with a set of associated a
 For more information, see [Creating enterprise-managed access group templates](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create).
 
 ## Trusted profile templates
-{: #ag-enterprise-templates}
+{: #tp-enterprise-templates}
 
 With trusted profile templates, you can automatically grant federated users access to child accounts with conditions based on SAML attributes from your corporate directory. You can skip the account invitation process and define conditions that map the people in your organization to the right account. This way, the right access is already set up for them when they apply a trusted profile.
 
