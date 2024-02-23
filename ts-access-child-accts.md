@@ -6,7 +6,7 @@ lastupdated: "2023-09-05"
 
 keywords: troubleshooting enterprise iam templates, iam tempalates, enterprise-managed IAM, access enteprise IAM, access templates
 
-subcollection: account
+subcollection: secure-enterprise
 
 ---
 

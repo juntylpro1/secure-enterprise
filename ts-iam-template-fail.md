@@ -6,7 +6,7 @@ lastupdated: "2023-09-05"
 
 keywords: troubleshooting enterprise iam templates, iam tempalates, enterprise-managed IAM, access enteprise IAM, access templates, error message, assign template error, invalid account
 
-subcollection: account
+subcollection: secure-enterprise
 
 ---
 
