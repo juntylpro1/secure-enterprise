@@ -126,7 +126,7 @@ Now that the setting is enabled to restrict users from creating API keys, you ca
 {: important}
 
 #### Restricting users from creating service IDs
-{: #restrict-api-key-template}
+{: #restrict-service-id}
 {: ui}
 
 By default, all members of an account can create service IDs. However, by using the Service ID creation setting, access can be restricted so that only members with the correct access can create service IDs. For more information about Service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
