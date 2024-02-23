@@ -117,7 +117,7 @@ Complete the following steps to create an account with enterprise-managed IAM en
 
    For more information, see the argument reference details on the [Terraform Enterprise Management](https://registry.terraform.io/providers/IBM-Cloud/ibm/1.56.0-beta0/docs/resources/enterprise_account){: external} page.
 
-1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
+1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://developer.hashicorp.com/terraform/cli/init){: external}.
    ```terraform
    terraform init
    ```

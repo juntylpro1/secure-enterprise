@@ -148,7 +148,7 @@ The `version.tf` file stores information about the Terraform version and provide
 
 Before you onboard your customized deployable architecture to a private catalog, test your customization and ensure that the architecture runs as intended. To test your architecture with the Terraform command line, complete the following steps:
 
-1. After you customize the architecture, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
+1. After you customize the architecture, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://developer.hashicorp.com/terraform/cli/init){: external}.
 
    ```terraform
    terraform init
