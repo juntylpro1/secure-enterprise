@@ -29,7 +29,7 @@ You must create an instance of the {{site.data.keyword.cloudaccesstrailshort}} s
 When you assign an enterprise-managed IAM template to target child accounts, multiple events generate. The enterprise account and each target child account have their own corresponding events.
 
 ### Analyzing template create events in the enterprise account
-{: #ent-account-assignments}
+{: #ent-template-assignments}
 
 Complete the following steps to review the creation of IAM templates in an enterprise account:
 
