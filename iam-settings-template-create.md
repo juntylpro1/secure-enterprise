@@ -303,7 +303,7 @@ To delete a settings template, complete the following steps:
 1. Confirm that you want to delete the settings template.
 
 ### Deleting a version
-{: #delete-settings-template-version}
+{: #delete-settings-template-version-ui}
 {: ui}
 
 You can also delete a specific version by completing the following steps:
@@ -468,7 +468,7 @@ To remove an assignment, complete the following steps:
    {: codeblock}
 
 ## Deleting a version by using the CLI
-{: #delete-settings-template-version}
+{: #delete-settings-template-version-cli}
 {: cli}
 
 Before you can delete a settings template version, you must remove all assignments for that version of the template. Delete a specific version by completing the following steps:
@@ -1423,7 +1423,7 @@ To remove an assignment, complete the following steps:
 
 
 ## Deleting a version by using the API
-{: #delete-settings-template-version}
+{: #delete-settings-template-version-api}
 {: api}
 
 Before you can delete a settings template version, you must remove all assignments for that version of the template. Delete a specific version by completing the following steps:
