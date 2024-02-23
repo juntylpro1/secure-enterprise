@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-05-03"
+  years: 2023, 2024
+lastupdated: "2024-02-23"
 
 keywords:
 
@@ -30,7 +30,7 @@ The DevSecOps Application Lifecycle Management deployable architecture streamlin
 
 The Tekton pipelines provide a framework of custom scripts that you can use to ensure the compliant and automated orchestration of code and configuration changes. The pipelines maintain a GitOps release inventory, while they collect and store evidence that can be used to generate auditable change requests. Additionally, the continuous compliance pipeline periodically scans the deployed artifacts and associated source code repositories for vulnerabilities.
 
-For more information about configuring the deployable architecture to fit your needs, see the [DevSecOps deployment guide](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-dep). You can use a [project](/docs/secure-enterprise?topic=secure-enterprise-setup-project) to deploy this architecture in all of your application development environments, so that your development team can take a shift-left approach by identifying security risks and exposures early, so that they are addressed before code ever reaches production.
+For more information about configuring the deployable architecture to fit your needs, see the [DevSecOps deployment guide](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-overview). You can use a [project](/docs/secure-enterprise?topic=secure-enterprise-setup-project) to deploy this architecture in all of your application development environments, so that your development team can take a shift-left approach by identifying security risks and exposures early, so that they are addressed before code ever reaches production.
 
 ## Ensuring continuous compliance with the CC pipeline
 {: #cc-pipeline}
