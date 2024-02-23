@@ -42,7 +42,7 @@ This tutorial uses a fictitious scenario to help you learn and understand a few 
 {: #basic-custom-prereqs}
 
 1. Verify that you're using a Pay-As-You-Go or Subscription account by going to **Manage** > **Account** > **Account settings** in the {{site.data.keyword.cloud_notm}} console.
-1. Create a repository to store your customized deployable architecture. For the purposes of this tutorial, GitHub is used. For more information, see [Create a repo](https://docs.github.com/en/get-started/quickstart/create-a-repo){: external}.
+1. Create a repository to store your customized deployable architecture. For the purposes of this tutorial, GitHub is used. For more information, see [Create a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories){: external}.
 1. Make sure that you have an editor of your choice set up, for example, [Visual Studio Code](https://code.visualstudio.com/){: external}.
 1. Verify that you're assigned the following {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles:
       * Administrator on all account management services and all IAM services
@@ -201,14 +201,14 @@ Before you onboard your customized deployable architecture to a private catalog 
    ```
    {: codeblock}
 
-1. Initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
+1. Initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://developer.hashicorp.com/terraform/cli/init){: external}.
 
    ```terraform
    terraform init
    ```
    {: pre}
 
-1. Provision the resources. For more information, see [Provisioning Infrastructure with Terraform](https://www.terraform.io/cli/run){: external}.
+1. Provision the resources. For more information, see [Provisioning Infrastructure with Terraform](https://developer.hashicorp.com/terraform/cli/run){: external}.
 
    1. Run `terraform plan` to generate a Terraform execution plan to preview the proposed actions.
 
