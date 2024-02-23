@@ -72,7 +72,7 @@ To create a customized configuration, complete the following steps:
     {: note}
 {: #cra-validate-failure}
 
-1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account. {: #cra-validate-failure}
+1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account. 
 
     If you select **Architecture default**:
     * The scan uses the default controls that the owner of the deployable architecture added when they onboarded it.
