@@ -209,7 +209,7 @@ Use the following steps to create an enterprise:
 
    You can specify the ID of an account that is used to create the enterprise on the `source_account_id` option. For more information, see the argument reference details on the [Terraform Enterprise Management](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/enterprise){: external} page.
 
-1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://www.terraform.io/cli/init){: external}.
+1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://developer.hashicorp.com/terraform/cli/init){: external}.
 
    ```terraform
    terraform init
