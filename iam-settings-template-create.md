@@ -244,7 +244,7 @@ If an assignment fails, click **Retry**.
 {: tip}
 
 ## Creating a new version
-{: #new-version-settings-template}
+{: #new-version-create-ui}
 {: ui}
 
 To create a new version of a settings template, complete the following steps:
@@ -421,7 +421,7 @@ If an assignment fails, use the `account-settings-assigment-update` method to re
 {: tip}
 
 ## Creating a new version by using the CLI
-{: #new-version-settings-template}
+{: #new-version-create-cli}
 {: cli}
 
 Create a new version of an account settings template when you need to make updates to a committed version. To create a new version, complete the following steps.
@@ -1096,7 +1096,7 @@ If an assignment fails, use the `account-settings-assigment-update` method to re
 {: tip}
 
 ## Creating a new version by using the API
-{: #new-version-settings-template}
+{: #new-version-create-api}
 {: api}
 
 If you want to make changes to a settings template that's committed or assigned, create a new version.
