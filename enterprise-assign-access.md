@@ -140,7 +140,7 @@ For more information about roles and actions to assign access in an enterprise a
 {: #enterprise-cli-policy}
 {: cli}
 
-To create a new access policy for a user, run the **`ibmcloud iam user-policy-create`** command. In the command example, a JSON file is used to specify the policy details. Review the example in the [Assigning access by using the API](#enterprise-api-policy) section for an example of what to include in the JSON file.
+To create a new access policy for a user, run the **`ibmcloud iam user-policy-create`** command. In the command example, a JSON file is used to specify the policy details. Review the example in the [Assigning access by using the API](/docs/secure-enterprise?topic=secure-enterprise-assign-access-enterprise&interface=api#enterprise-api-policy) section for an example of what to include in the JSON file.
 
 Create a user policy:
 
