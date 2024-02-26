@@ -42,7 +42,7 @@ You must store your catalog manifest at the root of your repository and name the
 
 You can use the following template to modify an existing catalog manifest. All values are optional, and you can determine which values you want to include and which values are not needed. For more information about each value, see [Catalog manifest values](#manifest-values).
 
-You can also see the template in a swagger format. For more information, see [Catalog Management API](https://cm.globalcatalog.cloud.ibm.com/api){: external} and find the Catalog Manifest schema.
+You can also see the template in a swagger format. For more information, see [Catalog Management API](https://cm.globalcatalog.cloud.ibm.com/static/build/swagger/){: external} and find the Catalog Manifest schema.
 {: tip}
 
 ```text
