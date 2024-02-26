@@ -51,7 +51,7 @@ To assign access to the {{site.data.keyword.cloud_notm}} Projects service, compl
 1. Click **Add** to add your policy configuration to your access summary.
 1. Click **Assign**.
 
-It's a best practice to [assign access to an access group](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises#bp-enterprise-access-include-how_access) and then add users to the access group, instead of assigning access to users one by one. However, you can assign access to a single user by going to **Manage** > **Access (IAM)** > **Users** and selecting the user you want to assign access to.
+It's a best practice to [assign access to an access group](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises) and then add users to the access group, instead of assigning access to users one by one. However, you can assign access to a single user by going to **Manage** > **Access (IAM)** > **Users** and selecting the user you want to assign access to.
 {: tip}
 
 ## Granting access between the Projects service and other {{site.data.keyword.cloud_notm}} services
