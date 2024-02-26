@@ -18,7 +18,7 @@ keywords:
 Learn about the management responsibilities and terms and conditions that you have when you use deployable architectures. For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for using {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
 
-Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use a deployable architecture. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
+Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use a deployable architecture. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms).
 
 ## Incident and operations management
 {: #incident-and-ops-da}
@@ -87,7 +87,7 @@ Security and regulation compliance includes tasks such as security controls impl
 |----------|-----------------------|--------|
 | Apply patches and security updates to operating system in customer instances | IBM notifies you of updates. | Customer must apply all updates. |
 | Install software and OS patches into customer-managed virtual machines | N/A | Customer must apply all patches. |
-| Meet security and compliance objectives| Provide a secure deployable architecture that complies with declared standards. For more information about data security, see [How do I know that my data is safe?](/docs/overview/terms-of-use?topic=overview-security).  | Secure your workloads and data. Integrate tools into your toolchains that satisfy your security and compliance requirements. To learn more about securing your cloud apps, see [Security to safeguard and monitor your cloud apps](https://www.ibm.com/cloud/architecture/architecture/practices/securing-cloud-native-apps-risks-mitigation/){: external}.  |
+| Meet security and compliance objectives| Provide a secure deployable architecture that complies with declared standards. For more information about data security, see [How do I know that my data is safe?](/docs/overview?topic=overview-security).  | Secure your workloads and data. Integrate tools into your toolchains that satisfy your security and compliance requirements. To learn more about securing your cloud apps, see [Security to safeguard and monitor your cloud apps](https://www.ibm.com/cloud/architecture/architecture/practices/securing-cloud-native-apps-risks-mitigation/){: external}.  |
 {: row-headers}
 {: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="bottom"}
 {: summary="The first column describes the task that a customer or IBM might be responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
