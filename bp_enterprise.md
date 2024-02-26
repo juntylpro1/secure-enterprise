@@ -29,7 +29,7 @@ The enterprise administrator or your financial officer might not be familiar wit
 An enterprise user with Administrator or Editor access can edit the enterprise and account group names, but they can't change account names. To edit an account name, a user must be in the account itself.
 {: tip}
 
-Because you have a unified view of all usage that's organized by your account groups and accounts, you can charge back usage costs to the associated teams. For more information, see [Recovering costs for enterprise usage](/docs/billing-usage?topic=billing-usage-enterprise-usage#enterprise-cost-recovery).
+Because you have a unified view of all usage that's organized by your account groups and accounts, you can charge back usage costs to the associated teams. For more information, see [Recovering costs for enterprise usage](/docs/billing-usage?topic=billing-usage-enterprise-usage&interface=ui#enterprise-cost-recovery).
 
 ## Creating a consistent enterprise hierarchy
 {: #accounts-vs-groups}
