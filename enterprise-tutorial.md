@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-02-29"
 
 keywords: enterprise, enterprise account, create enterprise, set up enterprise, enterprise users, enterprise access, enterprise tutorial
 
@@ -33,7 +33,7 @@ The tutorial uses a fictitious company that is called *Example Corp* that wants 
 
 Read [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise) to learn the basic principles of how account management, billing, resources, and user and access management work in an enterprise.
 
-Verify that you have the required access in a Subscription account, which serves as the base account from which you create the enterprise. To create an enterprise, you must be the account owner or have the Administrator role on the Billing account management service.
+Verify that you have the required access in a Subscription account or a [qualifying Pay-as-you-Go account](/billing-usage?topic=billing-usage-billusagefaqs#paygo-enterprise), which serves as the base account from which you create the enterprise. To create an enterprise, you must be the account owner or have the Administrator role on the Billing account management service.
 
 Creating an enterprise from an account and importing existing accounts cannot be undone. This tutorial is an example of the steps you can follow to set up an enterprise by department, but you should carefully plan your enterprise structure around your organization's needs.
 {: important}

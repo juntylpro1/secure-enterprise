@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-02-29"
 
 keywords: enterprise, enterprise account, create enterprise, set up enterprise, multiple account, video
 
@@ -16,15 +16,15 @@ subcollection: secure-enterprise
 # Creating an enterprise
 {: #create-enterprise}
 
-You create an {{site.data.keyword.Bluemix}} enterprise from an existing Subscription account. When an existing subscription account is used, an enterprise and an enterprise account are created. The account that you use to create the enterprise and the new enterprise account are permanently added to the enterprise, but this account does not become the parent account.
+You create an {{site.data.keyword.Bluemix}} enterprise from an existing Subscription account or a [qualifying Pay-as-you-Go account](/docs/billing-usage?topic=billing-usage-billusagefaqs#paygo-enterprise). When an existing account is used, an enterprise and an enterprise account are created. The account that you use to create the enterprise and the new enterprise account are permanently added to the enterprise, but this account does not become the parent account.
 {: shortdesc}
 
 ## Before you begin
 {: #create-prereqs}
 
-To create an [{{site.data.keyword.Bluemix_notm}} enterprise](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise), you must be the account owner or have the Administrator role on the Billing account management service in a Subscription account.
+To create an [{{site.data.keyword.Bluemix_notm}} enterprise](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise), you must be the account owner or have the Administrator role on the Billing account management service in a Subscription account or a qualifying Pay-as-you-Go account.
 
-The Subscription account that you use to create the enterprise is permanently moved into the enterprise. Moving the account into the enterprise has the following impacts:
+The Subscription or Pay-as-you-Go account that you use to create the enterprise is permanently moved into the enterprise. Moving the account into the enterprise has the following impacts:
 * Billing for the account transitions to being [managed by the enterprise](/docs/billing-usage?topic=billing-usage-enterprise). After the transition, users in the account can't access billing and payment information, such as invoices, payments, or subscriptions, for future billing periods. To view or manage billing, users need to be invited to the enterprise account and be given access to the Billing service in that account.
 * Users and access permissions within the account are not changed. Access within the account is separate from the enterprise, and users don't automatically get access within the enterprise when the account is added. However, billing information is no longer available within the account regardless of access permissions.
 * Resources within the account are not changed. Users with the correct access permissions can continue to view usage information for resources in the account.
