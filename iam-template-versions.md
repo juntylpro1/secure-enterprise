@@ -109,7 +109,7 @@ You might want to remove inactive assignments before you move an account to avoi
 1. To view a record of assignments, go to **Manage > Access (IAM) > Templates**, select your template and version, and go to **Assignments**.
 1. Remove an assignment by clicking the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Delete**.
 
-You can also find the assignment record in Activity Tracker. For more information, see [Monitoring enterprise-managed IAM templates](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates#assignment-record).
+You can also find the assignment record in Activity Tracker. For more information, see [Monitoring enterprise-managed IAM templates](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates).
 {: tip}
 
 ## Removing an assignment
