@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2024-02-20",
+    "lastupdated": "2024-03-01",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -44,11 +44,6 @@
         "title": "Security and compliance for regulated workloads on IBM Cloud",
         "href": "/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance",
         "thumbnail": "/images/landing-secure-compliant.png"
-      },
-      {
-        "title": "IBM Cloud Console Guide: Getting Access - Role Overview",
-        "href": "/docs/account?topic=account-cloudaccess#watch-iamaccess",
-        "thumbnail": "/images/landing-Getting-Access-Role-Overview.png"
       }
     ],
     "section_learn": {
