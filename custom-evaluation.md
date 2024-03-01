@@ -19,7 +19,7 @@ completion-time: 30m
 {{site.data.keyword.attribute-definition-list}}
 
 # Evaluating an {{site.data.keyword.cloud_notm}} deployable architecture
-{: #evaluate-deployable architecture}
+{: #evaluate-deployable}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
 
