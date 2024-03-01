@@ -456,7 +456,7 @@ Consider using trusted profile templates when you have many child accounts that 
 
 To create a trusted profile template by using the API, complete the following steps:
 
-1. Configure the trusted profile template definition. For more information about the attributes that you can use, see the [IAM Identity API](/apidocs/iam-identity-token-api#create-account-trusted-profile-template).
+1. Configure the trusted profile template definition. For more information about the attributes that you can use, see the [IAM Identity API](/apidocs/iam-identity-token-api#create-profile-template).
 
    The following example specifies the `account_id` of the enterprise account, the `name` of the template, and the `profile` configuration. This trusted profile is for databases administrators. A specific user is allowed to apply the template as defined in `identities`. `rules` is also defined, which grants access to the profile based on SAML attributes.
    {: curl}
