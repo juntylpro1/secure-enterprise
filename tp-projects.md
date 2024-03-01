@@ -117,7 +117,7 @@ View the catalog page for specific access roles that are required for a given de
 
 1. Continue by assigning the trusted profile the required access roles that you viewed in the previous step.
 
-   For more information about assigning access, see [Creating the service ID](/docs/secure-enterprise?topic=secure-enterprise-tp-project#create-projects-serviceid).
+   For more information about assigning access, see [Creating the service ID](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-auto-tp).
 
 1. Click Create.
 
