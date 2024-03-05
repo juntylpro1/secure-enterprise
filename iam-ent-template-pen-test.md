@@ -135,7 +135,7 @@ Security consultants need these policies to view clusters, cluster IPs, and comp
 
 In PEN testing, consultants simulate cyberattacks to discover vulnerabilities and assess the security posture. Access to clusters and compute resources is often necessary to do PEN tests, as it allows them to simulate attacks on containerized applications, container orchestrators, or cloud services.
 
-Make sure that access for external security consultants is temporary and monitored. For more information, see [Monitoring enterprise IAM templates](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates#assignment-record).
+Make sure that access for external security consultants is temporary and monitored. For more information, see [Monitoring enterprise IAM templates](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates).
 {: tip}
 
 ## Review and commit your trusted profile template

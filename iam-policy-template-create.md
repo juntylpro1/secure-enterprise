@@ -474,7 +474,7 @@ Unlike regular access policies, an access policy template doesn't have an explic
     {: codeblock}
     {: curl}
 
-1. Use the policy template ID to assign access in access group templates and trusted profile templates. For more information, see the [trusted profiles](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#add-access-tp-template-api) and [access groups](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=api#add-access-ag-template-api) documentation.
+1. Use the policy template ID to assign access in access group templates and trusted profile templates. For more information, see the [trusted profiles](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#create-trusted-profile-template-api) and [access groups](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=api#add-access-ag-template-api) documentation.
 
 ## Creating a new policy template version by using the API
 {: #new-version-policy-api}

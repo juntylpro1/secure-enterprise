@@ -86,7 +86,7 @@ No, you can't edit the name of an account from within your enterprise. To edit t
 {: #enterprise-invite-users}
 {: faq}
 
-To invite users to an enterprise, you must have an {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) access policy with the Editor or higher role on the User Management service. For more information, see [Inviting users](/docs/account?topic=account-iamuserinv#invitations).
+To invite users to an enterprise, you must have an {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) access policy with the Editor or higher role on the User Management service. For more information, see [Inviting users](/docs/account?topic=account-iamuserinv&interface=ui#invitations).
 
 ## Can my child account have a different subscription currency than my enterprise account?
 {: #enterprise-currency}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-03-01"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, settings, migrate version, upgrade version, new version
 
@@ -180,7 +180,7 @@ Enabling MFA does not affect users that are already logged in because MFA takes 
 To enable MFA in a settings template, complete the following steps:
 
 1. Go to the Authentication section.
-1. Select the type of MFA that you want to enable in your account. For more information about the MFA options, see [ID-based MFA options](/docs/account?topic=account-types#id-based).
+1. Select the type of MFA that you want to enable in your account. For more information about the MFA options, see [MFA options](/docs/account?topic=account-types#mfa-options).
 
 ### (Optional) Add login session settings
 {: #login-session-settings-template}
