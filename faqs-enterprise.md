@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-14"
+  years: 2015, 2024
+lastupdated: "2024-03-22"
 
 keywords: account settings, delete account, account errors, reassign account, view tags, batch registration, transfer account ownership
 
@@ -44,7 +44,7 @@ No, your {{site.data.keyword.cloud_notm}} account can be a part of only one ente
 {: #multiple-enterprise}
 {: faq}
 
-No, an existing {{site.data.keyword.cloud_notm}} enterprise account can't be imported into another enterprise. 
+No, an existing {{site.data.keyword.cloud_notm}} enterprise account can't be imported into another enterprise.
 
 ## How do I add child accounts to my enterprise?
 {: #enterprise-add-account}
@@ -118,7 +118,7 @@ Only Subscription accounts can create an enterprise account.
 {: #enterprise-account-number}
 {: faq}
 
-You can have a maximum of 300 child accounts that can be distributed across a maximum of 300 account groups. An enterprise can contain up to five tiers of accounts and account groups. For more information, see [Enterprise hierarchy](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise&interface=ui#enterprise-hierarchy)
+You can have a maximum of 1000 child accounts that can be distributed across a maximum of 500 account groups. An enterprise can contain up to five tiers of accounts and account groups. For more information, see [Enterprise hierarchy](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise&interface=ui#enterprise-hierarchy)
 
 ## Can I create common resources for all of my child accounts?
 {: #enterprise-common-resources}

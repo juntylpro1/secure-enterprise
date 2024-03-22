@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2024
 
-lastupdated: "2024-02-26"
+lastupdated: "2024-03-22"
 
 keywords: known issues, known limitations
 
@@ -46,5 +46,16 @@ The projects API, SDK, and Terraform functionalities are beta for this release. 
 {{../account/known-issues.md#iam_limits}}
 
 {{../account/known-issues.md#cbr-limits}}
+
+## Enterprise limits
+{: #enterprise-limits}
+
+The following table lists the maximum limits for {{site.data.keyword.cloud_notm}} [enterprises](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise). These limits apply to any user who can create an enterprise, add accounts to an enterprise, or create and update account groups.
+
+| Resource                               | Max  |
+|----------------------------------------|------|
+| Account groups per enterprise          | 500  |
+| Accounts per enterprise                | 1000 |
+{: caption="Table 3. Enterprise limits" caption-side="top"}
 
 {{../account/known-issues.md#policy-version-limit}}

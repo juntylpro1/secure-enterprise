@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-05"
+  years: 2020, 2024
+lastupdated: "2024-03-22"
 
 keywords: enterprise, add account, import account, create account
 
@@ -20,6 +20,9 @@ You can build out your enterprise by adding more {{site.data.keyword.Bluemix}} a
 {: shortdesc}
 
 After your enterprise has multiple accounts, you can organize related accounts by using account groups. For more information, see in [Organizing accounts in an enterprise](/docs/secure-enterprise?topic=secure-enterprise-enterprise-organize).
+
+You can have up to 1000 accounts in an enterprise. For more information, see [Enterprise limits](/docs/account?topic=account-known-issues#iam_limits).
+{: note}
 
 ## Importing existing accounts
 {: #add-accounts}
