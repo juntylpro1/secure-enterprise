@@ -112,7 +112,7 @@ For more information about enterprise billing, see [Centrally managing billing a
 {: #enterprise-account-type}
 {: faq}
 
-Only Subscription accounts can create an enterprise account.
+Subscription accounts and Pay-As-You-Go accounts that signed up with a credit card on cloud.ibm.com can create an enterprise account.
 
 ## How many child accounts can I have in an enterprise account?
 {: #enterprise-account-number}
