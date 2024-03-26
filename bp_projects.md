@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-12-06"
+  years: 2022, 2024
+lastupdated: "2024-03-26"
 
 keywords: best practice projects, manage projects, project
 
@@ -53,19 +53,19 @@ There are a few different secret types that you can create. Use an arbitrary sec
 
 Typically a single {{site.data.keyword.secrets-manager_short}} instance is used for all projects in an account. Secrets in that instance can be organized into secrets groups that align with access restrictions. For example, you might want to use a secrets group per project or for a set of related projects.
 
-## Controlling deployments by using environments 
+## Controlling deployments by using environments
 {: #best-practice-env}
 
-Within a project, you can group related configurations together by using an environment. An environment can also contain properties such as input values, authentication details, and {{site.data.keyword.compliance_short}} attachments. These properties are automatically added to a configuration when you select an environment, which helps ensure accurate deployments to your target account. When you edit a configuration, you can select an environment for the configuration to use in the **Define details** section. 
+Within a project, you can group related configurations together by using an environment. An environment can also contain properties such as input values, authentication details, and {{site.data.keyword.compliance_short}} attachments. These properties are automatically added to a configuration when you select an environment, which helps ensure accurate deployments to your target account. When you edit a configuration, you can select an environment for the configuration to use in the **Define details** section.
 
-### Benefits to using environments 
+### Benefits to using environments
 {: #benefits-env}
 
-Environments make it easier to control deployments. By specifying an environment and adding properties, you know that the same values are shared across configurations that are using that environment. Within a configuration, you can override any values that are automatically provided by an environment. 
+Environments make it easier to control deployments. By specifying an environment and adding properties, you know that the same values are shared across configurations that are using that environment. Within a configuration, you can override any values that are automatically provided by an environment.
 
 Environments provide a way to group related configurations together within a project. Let's say you have a set of configurations that you want to deploy to the same target account that's your development account. You can create a Development environment and add the authentication details for the target account to that environment. The authentication method is added to each configuration that's using the Development environment.
 
-Though you can create as many environments as you want, it's recommended that you keep the number of environments in your project low. Using a standard set of environments for your deployments across accounts makes it easier to configure and deploy architectures. 
+Though you can create as many environments as you want, it's recommended that you keep the number of environments in your project low. Using a standard set of environments for your deployments across accounts makes it easier to configure and deploy architectures.
 
 For more information, see [Creating an environment](/docs/secure-enterprise?topic=secure-enterprise-create-env).
 
@@ -116,6 +116,9 @@ Needs attention items are best used to monitor validation, approvals, failures, 
 You can apply tags to organize, track, and manage your projects. It can be useful to add tags to related projects, or even an extra tag to projects that are temporary, such as infrastructure used for a customer demo or a prototype that's no longer needed. This allows temporary projects to be easily located and managed.
 
 Tags are not case-sensitive, and the maximum length of a tag is 128 characters. The permitted characters are A-Z, 0-9, spaces, underscore, hyphen, period, and colon.
+
+Resources in a project are automatically given service tags with the ID for the project and configuration that they're associated with. For more information, see [Tracking usage and spend for projects](/secure-enterprise?topic=secure-enterprise-project-usage-spend).
+{: note}
 
 ## Destroying resources created by projects
 {: #project-resources-destroy}

@@ -155,6 +155,7 @@ toc:
               - attention-items.md
               - status-project.md
           - delete-project.md
+          - project-spend.md
       - topicgroup:
           label: Customizing a deployable architecture
           topics:
