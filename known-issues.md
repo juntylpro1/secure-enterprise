@@ -60,7 +60,7 @@ The following table lists the maximum limits for {{site.data.keyword.cloud_notm}
 
 {{../account/known-issues.md#policy-version-limit}}
 
-## Drift detection
+## Drift detection limits
 {: #drift-detection-known-issue}
 
 Schematics and Terraform can detect a drift only between a changed resource and the specific configuration that created that resource during deployment. The service cannot detect drift in reused or referenced resources. [Learn more](/docs/secure-enterprise?topic=secure-enterprise-manage-drift&interface=ui#known-limitation).
