@@ -17,12 +17,12 @@ subcollection: secure-enterprise
 # Tracking usage and spend for projects
 {: #project-usage-spend}
 
-[Projects](#x2035151){: term} help with accounting by ensuring that all resources that are associated with a project can be tracked back to the project with tagging and resource usage reports.
+As a billing or FinOps manager, you need to track spending for teams in your organization and bill them back for the resources that they deploy. [Projects](#x2035151){: term} help with accounting by ensuring that all resources that are associated with a project can be tracked back to the project with tagging and resource usage reports.
 {: shortdesc}
 
-Resources that are manually added to a project or created by deploying from a project are automatically given service tags with the ID for the project and configuration that they're associated with. These tags are visible in usage reports or by using the command line interface (CLI) or API. You can use these tags to filter your usage report and get a clear view of spending for projects. This way, it's easier to bill usage back to the teams that are deploying projects.
+Resources in a project are automatically given service tags with the ID for the project and configuration that they're associated with. These tags are visible in usage reports or by using the command-line interface (CLI) or API. You can use these tags to filter your usage report and get a clear view of spending for projects. This way, it's easier to bill usage back to the teams that are deploying projects.
 
-Service tags are managed exclusively by services. Users can't add or remove service tags. For more information, see [Tag types](/docs/account?topic=account-tag&interface=ui#tag-types).
+The services themselves exclusively manage service tags. Users can't add or remove service tags. For more information, see [Tag types](/docs/account?topic=account-tag&interface=ui#tag-types).
 {: note}
 
 If you're just getting started, you might want to [estimate architecture costs in a project](/docs/secure-enterprise?topic=secure-enterprise-cost-estimate-project&interface=ui).
@@ -49,5 +49,5 @@ If you're just getting started, you might want to [estimate architecture costs i
 
 Add up the usage cost for each resource associated with a project ID to get the total spend for a project over a billing period.
 
-You can use the [`ibmcloud resource search`](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#ibmcloud-resource-tag-search) command to retrieve the resources that were created by configurations in a project based on the service tag.
+You can use the [`ibmcloud resource search`](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#ibmcloud-resource-tag-search) command to retrieve the resources in a project based on the project ID service tag.
 {: tip}
