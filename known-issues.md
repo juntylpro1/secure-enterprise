@@ -63,4 +63,8 @@ The following table lists the maximum limits for {{site.data.keyword.cloud_notm}
 ## Drift detection limits
 {: #drift-detection-known-issue}
 
-Schematics and Terraform can detect a drift only between a changed resource and the specific configuration that created that resource during deployment. The service cannot detect drift in reused or referenced resources. [Learn more](/docs/secure-enterprise?topic=secure-enterprise-manage-drift&interface=ui#known-limitation).
+Schematics and Terraform can detect a drift only between a changed resource and the specific configuration that created that resource during deployment. The service can’t detect drift in reused or referenced resources. 
+
+For example, in a specific scenario, configuration `config-1` created a Cloud Object Storage instance during deployment. Later, you deployed configurations `config-2` and `config-3`, and they reused the same Cloud Object Storage instance. When you renamed the resource, drift was detected only between `config-1` and the renamed Cloud Object Storage instance. `config-2` and `config-3` failed the drift detection job because drift can be detected only between a configuration and the resource that it created, not reused.
+
+For more information, see [Managing drift](/docs/secure-enterprise?topic=secure-enterprise-manage-drift).
