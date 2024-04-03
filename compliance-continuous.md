@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-04-03"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: secure-enterprise
 With continuous security and compliance at the core of {{site.data.keyword.cloud}}'s platform, you can find compliant-by-default infrastructure for hosting your regulated workloads in the cloud. From deployable architectures for secure infrastructure and DevSecOps pipelines to continuous validation through {{site.data.keyword.compliance_short}}, you can be sure that your organization is secure and compliant through every stage of development.
 {: shortdesc}
 
-![Security and compliance for regulated workloads on {{site.data.keyword.cloud_notm}}](https://www.youtube.com/embed/v3K5TTcaxOA){: video output="iframe" data-script="#regulatedworkload-video-transcript" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Security and compliance for regulated workloads on {{site.data.keyword.cloud_notm}}](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_oh70qmd5){: video output="iframe" data-script="#regulatedworkload-video-transcript" id="mediacenter-player" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Video transcript
 {: #regulatedworkload-video-transcript}
