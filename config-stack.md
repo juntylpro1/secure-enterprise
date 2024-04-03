@@ -30,8 +30,8 @@ This is an experimental feature that is available for evaluation and testing pur
 Make sure that you have the following access. For more information about access and permissions, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
 * The Editor role on the {{site.data.keyword.cloud_notm}} Projects service.
-* The Editor and Manager role on the {{site.data.keyword.bplong}} service
-* The Viewer role on the resource group for the project
+* The Editor and Manager role on the {{site.data.keyword.bplong}} service.
+* The Viewer role on the resource group for the project.
 
 Add the deployable architectures that you'd like to stack together to your project. For more information, see [Adding deployable architectures to a project](/docs/secure-enterprise?topic=secure-enterprise-setup-project&interface=ui#add-deployment-project).
 
