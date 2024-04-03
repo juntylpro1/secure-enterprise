@@ -33,7 +33,7 @@ toc:
           label: Learn about deploying compliant workloads
           topics:
             - compliance-continuous.md
-            - deployable-architecture.md
+            - what-is-module-da.md
             - index.md
             - secure-software-supply-chain.md
       - topicgroup:
@@ -164,14 +164,14 @@ toc:
           label: Leveraging private catalogs for enterprise products
           topics:
           - include: ../account/cm-video.md
+            navtitle: What is catalog management?
           - catalog-enterprise-filters.md
-          - topicgroup:
-              label: Onboarding deployable architectures to a private catalog
-              topics:
-              - topic: catalog-manifest.md
-                navtitle: Specifying product metadata
-              - onboard-custom.md
-              - catalog-enterprise-share.md
+          - topic: catalog-onboard-da.md
+            navtitle: Onboarding a deployable architecture
+          - topic: module-onboard.md
+            navtitle: Onboarding a module
+          - catalog-manifest.md
+          - catalog-enterprise-share.md
       - topicgroup:
           label: Ensuring continuous compliance
           topics:
