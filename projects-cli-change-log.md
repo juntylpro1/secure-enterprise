@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2023
-lastupdated: "2023-11-06"
+  years:  2023, 2024
+lastupdated: "2024-04-03"
 
 keywords: change log for Projects, updates to Projects CLI, projects CLI
 
@@ -17,6 +17,17 @@ subcollection: secure-enterprise
 
 <!-- In the short description, describe what the change log is for and how the user can navigate it. -->
 In this change log, you can learn about the latest changes, improvements, and updates for the Project CLI.
+
+## Version 0.0.36
+{: #cli-0036}
+
+Version 0.0.36 of the CLI was released on 3 April 2024.
+
+In this release, the following changes impact the pagination of listing commands. For more information, see the [pagination](/apidocs/projects#get-config-version-response) section of the Projects API docs. The in-line option `--start` was renamed to `--token` for all listing commands. For example, the `project list` command now uses `--token` instead of `--start` as an option. 
+
+Listing commands return 10 records by default if the page size is not specified by the `--limit` option. Alternatively, the `--all-pages` option returns every record available. 
+
+Added experimental commands to support [stacking deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack&interface=cli). 
 
 ## Version 0.0.25
 {: #cli-0024}

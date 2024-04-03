@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-04-01"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -35,13 +35,17 @@ For example, the VPC landing zone is a deployable architecture that provisions s
 
 Deployable architectures that are built and maintained by experts at IBM Cloud are made available to you in the IBM Cloud catalog. If you choose to create your own version of those deployable architectures, or build one from scratch, you can onboard your deployable architecture to a private catalog and share your ready-to-deploy solution with your organization through the catalog.
 
-A deployable architecture might include variations, have dependencies or be compatible with other architectures.
+A deployable architecture might include variations, have dependencies, be compatible with other architectures, or be stacked together to create more complex solutions. 
 
 Variations
 :  A variation is a type of deployable architecture that applies differing capabilities or complexity to an existing deployable architecture. For example, there might be a *Quick start* variation to your deployable architecture that has basic capabilities for simple, low-cost deployment to test internally. And, you might have a *Standard* variation that is a bit more complex that is ready for use in production.
 
 Dependencies and compatibility
 :   A deployable architecture is considered dependent upon another architecture when it has inputs that require the outputs from the other architecture to properly deploy. Similarly, compatible architectures are defined by the input and output variables. For example, if you want to use a deployable architecture that is compatible with a database that you've deployed, you can reference the deployed database from the deployable architecture.
+
+[Experimental]{: tag-purple} Stacks 
+:   A deployable architecture stack links together multiple architectures to create an end-to-end solution. This linking is achieved by specifying references in the configuration of each architectures inputs. You do not need to be an expert in Terraform, or have any Terraform coding skills, to create and deploy a stack. Deployable architecture stacks are created with IBM Cloud Projects and then can be shared with others through a private catalog. A stacked deployable architecture has independent configuration states for each of the architectures in the stack. This allows each component deployable architecture to be individually deployed, updated, or undeployed independently. The deployable architecture stack derives much of its cost, compliance, support, and quality assurances from its included deployable architectures. However, each stack is uniquely versioned and has its own descriptions and reference architecture. For example, the watsonx deployable architecture is assembled from three separate deployable architectures, including the Red Hat OpenShift secure landing zone. For more information, see [stacking deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack&interface=cli).
+
 
 ## What are projects and how do they work with deployable architectures?
 {: #what-are-projects}
@@ -57,5 +61,5 @@ Projects are responsible for ensuring that only approved deployable architecture
 |:--------|:----------------------|:-----|
 | Creating a library of sharable automation components | Module | Modules provide reusable, curated automation to speed up the process for those who are creating and configuring deployable architectures. |
 | Ensuring that your organization's cloud environment is secure and compliant | Deployable architecture | Deployable architectures are packaged in a way that you can define a secure and compliant deployment once and ensure that all members of your organization are repeating the deployment in the same way. |
+| Architecting your own solutions | Deployable architecture stack | By combining architectures, you can create a more complex end-to-end solution for your organization. |
 {: caption="Table 1. Understanding for automated deployments use-cases" caption-side="top"}
-

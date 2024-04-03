@@ -139,6 +139,7 @@ toc:
               label: Configuring and deploying architectures
               topics:
               - config-project.md
+              - config-stack.md
               - cost-estimate.md
               - override-failed-validations.md
               - deploy-project.md

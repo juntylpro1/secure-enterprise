@@ -53,6 +53,17 @@ You can reference an input or an output from a configuration that has been deplo
 You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so. 
 {: remember}
 
+#### Referencing values in a stack
+{: #reference-values-config}
+
+[Experimental]{: tag-purple}
+
+If your configuration is part of a stacked deployable architecture, you can reference outputs from other member configurations in the stack and specify inputs for the stack itself. The general format to reference a value for a stack is as follows:
+
+`ref:/configs/<stack_name>/members/<member_name>/inputs_or_outputs/<input_or_output_name>`
+
+If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level. 
+
 #### Referencing inputs from an environment
 {: #reference-parameters-env}
 
