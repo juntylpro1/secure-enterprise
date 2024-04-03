@@ -56,6 +56,11 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
+          "date": "03 April 2024",
+          "title": "Projects API v1.0.0 is now available",
+          "description": "A new version of the Projects API is now available."
+        },
+        {
           "date":"21 March 2024",
           "title":"Enterprise account limits increase",
           "description":"Easily scale your organization and workloads with increased limits on the number of accounts and account groups that you can have in your enterprise. You can have a maximum of 1000 accounts and 500 account groups."
@@ -64,11 +69,6 @@
           "date": "20 February 2024",
           "title": "Organize existing resources in your project",
           "description": "Now, you can use a project to organize resources across accounts. By doing so, your resources remain deployed in their respective accounts, but you gain an at-a-glance view of those resources in your project. Organizing resources is experimental and might change without notice."
-        },
-        {
-          "date": "06 February 2024",
-          "title": "Automatically detect drift in your project",
-          "description": "You can now run daily drift detection scans to identify and override (or adopt) the detected changes. Automatic drift detection is an experimental feature for evaluation or testing purposes."
         }
       ]
     }
