@@ -18,10 +18,10 @@ subcollection: secure-enterprise
 <!-- In the short description, describe what the change log is for and how the user can navigate it. -->
 In this change log, you can learn about the latest changes, improvements, and updates for the Project CLI.
 
-## Version 0.0.36
+## Version 0.0.37
 {: #cli-0036}
 
-Version 0.0.36 of the CLI was released on 3 April 2024.
+Version 0.0.37 of the CLI was released on 3 April 2024.
 
 In this release, the following changes impact the pagination of listing commands. For more information, see the [pagination](/apidocs/projects#get-config-version-response) section of the Projects API docs. The in-line option `--start` was renamed to `--token` for all listing commands. For example, the `project list` command now uses `--token` instead of `--start` as an option. 
 
