@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2023
+  years: 2023, 2024
 
-lastupdated: "2023-12-05"
+lastupdated: "2024-04-03"
 
 keywords: move schematics workspace, migrate schematics workspace, deployable architecture
 
@@ -27,7 +27,7 @@ Watch and learn the process of moving deployed resources to a project.
 ## Watch and learn
 {: #move-wks-da}
 
-![Moving a {{site.data.keyword.bpshort}} workspace into a project](https://video.ibm.com/embed/recorded/133169139){: video output="iframe" data-script="#move-wks-da-script" id="watsonmediaplayer" width="560" height="315" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+![Moving a {{site.data.keyword.bpshort}} workspace into a project](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_ytu3tvzb){: video output="iframe" data-script="#move-wks-da-script" id="mediacenter-player" width="560" height="315" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 ### Video transcript
 {: #move-wks-da-script}
@@ -56,7 +56,7 @@ Step 2: Use the Project CLI to modify the workspace so that it is managed as a d
 * Set a [GIT_TOKEN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens){: external} environment variable to authenticate your Git source repository. For example, run `export GIT_TOKEN="enter your GIT TOKEN"`.
 * Set access to your account in either of the following ways:
    * Set the `IC_API_KEY` environment variable to access your {{site.data.keyword.cloud_notm}} account. For example, run `IC_API_KEY="Your API key"`.
-   * Use your `trusted-profile-id` details to access your {{site.data.keyword.cloud_notm}} account. For more information, see [Finding the trusted profile ID](/docs/secure-enterprise?topic=secure-enterprise-tp-project#find-tp-id). For example, a trusted profile ID might look similar to `Profile-1bd5eala-000-4a6666-00000`. 
+   * Use your `trusted-profile-id` details to access your {{site.data.keyword.cloud_notm}} account. For more information, see [Finding the trusted profile ID](/docs/secure-enterprise?topic=secure-enterprise-tp-project#find-tp-id). For example, a trusted profile ID might look similar to `Profile-1bd5eala-000-4a6666-00000`.
 * Make sure that the [Project](/docs/cli?topic=cli-projects-cli) and [Catalogs management](/docs/secure-enterprise?topic=secure-enterprise-manage-catalogs-plugin) CLI plug-ins are up to date. Run the `ibmcloud plugin list` command to view the current version of the CLI plug-ins.
 * Create a project for production deployment and record the name and ID of the project where you want to move the resources.
 * Make sure that the Projects service is authorized in your account to communicate with other {{site.data.keyword.cloud_notm}} services. For more information, see [Granting access between the Projects service and other {{site.data.keyword.cloud_notm}} services](/docs/secure-enterprise?topic=secure-enterprise-access-project&interface=ui#user-create-role).
@@ -151,7 +151,7 @@ Complete the following steps to add a project configuration and move the {{site.
    1. Select your project that you first created for deployment production, and go to the **Configurations** tab.
    1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions") > **View last deployment**.
    1. In the Deployment successful section, click **Changes deployed successfully** > **Logs** to view all the deployed resources in the project.
-   
+
 The {{site.data.keyword.bpshort}} workspace deployment is now included in the logs that are inside the new project.
 
 If you want to verify the results by using the CLI, run the [ibmcloud project get](/docs/cli?topic=cli-projects-cli#project-cli-get-command) or [ibmcloud project list](/docs/cli?topic=cli-projects-cli#project-cli-list-command) commands to verify that your workspace was successfully moved to your project.
