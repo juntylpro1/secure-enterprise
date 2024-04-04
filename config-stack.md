@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-04-03"
+lastupdated: "2024-04-04"
 
 keywords: stack, configure stack, deployable architecture stack, stacked deployable architecture
 
@@ -18,7 +18,7 @@ subcollection: secure-enterprise
 # Stacking deployable architectures by using the CLI
 {: #config-stack}
 
-You can stack deployable architectures together in a project to create a robust end-to-end solution architecture, without coding Terraform to connect the deployable architectures together. You can add references to inputs or outputs as you configure your deployable architectures to link them together in the stack. After you deploy the deployable architectures in your stack, you can add the stack to a private catalog to easily share it with others in your organization. 
+You can stack deployable architectures together in a project to create a robust end-to-end solution architecture. You don't need to code Terraform to connect the member deployable architectures within the stack. As you configure input values in a member deployable architecture, you can reference inputs or outputs from another member to link the deployable architectures together. After you deploy the deployable architectures in your stack, you can add the stack to a private catalog to easily share it with others in your organization. 
 {: shortdesc}
 
 This is an experimental feature that is available for evaluation and testing purposes and might change without notice.
@@ -27,7 +27,7 @@ This is an experimental feature that is available for evaluation and testing pur
 ## Before you begin
 {: #stack-prereq}
 
-Make sure that you have the following access. For more information about access and permissions, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
+Make sure that you have the following access. For more information about access and permissions, see [Assigning access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
 * The Editor role on the {{site.data.keyword.cloud_notm}} Projects service.
 * The Editor and Manager role on the {{site.data.keyword.bplong}} service.
@@ -35,7 +35,7 @@ Make sure that you have the following access. For more information about access 
 
 Add the deployable architectures that you'd like to stack together to your project. For more information, see [Adding deployable architectures to a project](/docs/secure-enterprise?topic=secure-enterprise-setup-project&interface=ui#add-deployment-project).
 
-When you add deployable architectures to your project, provide meaningful names to help identify them. For example, if your stack contains an infrastructure deployable architecture that creates the base for an application, that infrastructure needs to be deployed first. Otherwise, the application isn't able to deploy onto that infrastructure. Name your infrastructure deployable architecture `1 - infrastructure` when you add it to your project. Name the application `2 - application` to indicate it needs to be deployed second.
+When you add deployable architectures to your project, provide meaningful names to help identify them. For example, if your stack contains an infrastructure deployable architecture that creates the base for an application, that infrastructure needs to be deployed first. Otherwise, the application can't deploy onto that infrastructure. Name your infrastructure deployable architecture `1 - infrastructure` when you add it to your project. Name the application `2 - application` to indicate it needs to be deployed second.
 {: tip}
 
 ## Stacking architectures together by using the CLI
@@ -61,7 +61,9 @@ For more information about the command parameters, see [**`ibmcloud project conf
 ## Creating the stack definition by using the CLI
 {: #create-stack-definition-cli}
 
-The stack definition contains inputs and outputs at the stack level that can be referenced in the member deployable architectures within the stack. You can also include references between members of the stack, which links the member deployable architectures together: 
+To onboard your deployable architecture stack to a private catalog, you must create a stack definition. It defines how the member deployable architectures within the stack relate to each other. Provide this information so users can deploy the entire stack successfully when they add it to a project from the private catalog. 
+
+The stack definition contains inputs and outputs at the stack level that can be referenced in the member deployable architectures within the stack. You can also include references between members of the stack, which links the member deployable architectures together for users. Include inputs that require a specific value or reference to deploy the entire stack successfully.
 
 ![A diagram of a deployable architecture stack. Three input values are defined at the stack level, a prefix, an ssh_key, and an ssh_private_key. The test-slz architecture within the stack references the prefix and ssh_key as two of its input values. While the custom-apache architecture within the stack references an output from test-slz as one of its inputs, along with the ssh_private_key from the stack level.](images/apache-stack.svg "A deployable architecture stack with references"){: caption="Figure 1. A deployable architecture stack with references" caption-side="bottom"}
 
@@ -76,14 +78,14 @@ ibmcloud project stack-definition-create --project-id PROJECT-ID --id
 
 Where `id` is the configuration ID of the `StackDev` deployable architecture stack that you just added to your project. 
 
-For example, the following command adds the following three inputs at the stack level: 
-* `prefix` input with `stackDemo` as the default value. The input is a required string that is not hidden from users. 
-* `ssh_key` input with no default value. The input is a required string that is not hidden from users. 
-* `ssh_private_key` with no default value. The input is a required string that is not hidden from users. 
+For example, the following command adds the following three inputs at the stack level. These inputs are required strings that are not hidden from users, so users must configure these input values to deploy the stack: 
+* `prefix` input with `stackDemo` as the default value.
+* `ssh_key` input with no default value. 
+* `ssh_private_key` with a default value provided to assist users as they configure the input. 
 
-The command also includes input names for the two members of the stack. These inputs will be populated with values as references:
+The command also includes input names for the two members of the stack. These inputs will be populated with values as references and saved for users who add the stack to a project from the private catalog:
 * The `test-slz` deployable architecture contains a `prefix` input and an `ssh_key` input. 
-* The `custom-apache` deployable architecture contains an `ssh_private_key` input and a `prerequisite_workspace_id` input. 
+* The `custom-apache` deployable architecture contains an `ssh_private_key` input and a `prerequisite_workspace_id` input.
 
 For more information about writing references, see [referencing values](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#reference-values).
 
@@ -114,13 +116,13 @@ ibmcloud project config-update \
 --definition '{"inputs": {"prefix": "ref:../../inputs/prefix", "ssh_key": "ref:../../inputs/ssh_key"}}' --output json
 ```
 
-Since the `custom-apache` architecture uses the `ssh_private_key` value from the stack definition, update the `custom-apache` deployable architecture to reference that value: 
+Since the `custom-apache` architecture uses the `ssh_private_key` value from the stack definition, update the `custom-apache` deployable architecture to reference that value. The `custom-apache` architecture also uses the `schematics_workspace_id` input value as one of its inputs, so include a reference to that value: 
 
 ```sh
 ibmcloud project config-update \
 --project-id 0e13c360-45c4-4b68-a53f-bb8f6ac04161 \
 --id caff3a49-0bf4-40c4-b348-47e5da6e2274 \
---definition '{"inputs": {"ssh_private_key": "ref:../../inputs/ssh_private_key"
+--definition '{"inputs": {"ssh_private_key": "ref:../../inputs/ssh_private_key", "prerequisite_workspace_id": "ref:../test-slz/outputs/schematics_workspace_id"}}' --output json
 ```
 
 For more information about the command parameters, see [**`ibmcloud project config-update`**](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#project-cli-config-update-command).
@@ -169,7 +171,7 @@ ibmcloud project config-deploy \
 ## Onboarding a deployable architecture stack to a private catalog by using the CLI 
 {: #onboard-da-stack-to-catalog}
 
-After each member deployable architecture in your stack is validated and deployed, you can onboard your entire stack to a private catalog for others to access. Run the following `ibmcloud project stack-definition-export` command: 
+After each member deployable architecture in your stack is validated and deployed, you can onboard your stack to a private catalog for others to access. Run the following `ibmcloud project stack-definition-export` command: 
 
 ```sh
 ibmcloud project stack-definition-export --project-id PROJECT ID
