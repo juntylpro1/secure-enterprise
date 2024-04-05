@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-05"
 
 keywords: stack, configure stack, deployable architecture stack, stacked deployable architecture
 
@@ -63,7 +63,7 @@ For more information about the command parameters, see [**`ibmcloud project conf
 
 To onboard your deployable architecture stack to a private catalog, you must create a stack definition. It defines how the member deployable architectures within the stack relate to each other. Provide this information so users can deploy the entire stack successfully when they add it to a project from the private catalog. 
 
-The stack definition contains inputs and outputs at the stack level that can be referenced in the member deployable architectures within the stack. You can also include references between members of the stack, which links the member deployable architectures together for users. Include inputs that require a specific value or reference to deploy the entire stack successfully.
+The stack definition contains inputs and outputs at the stack level that can be referenced in the member deployable architectures within the stack. You can also include references between members of the stack, which links the member deployable architectures together for users. Inputs that require a specific value or reference to deploy the stack successfully need to be included in the stack definition. 
 
 ![A diagram of a deployable architecture stack. Three input values are defined at the stack level, a prefix, an ssh_key, and an ssh_private_key. The test-slz architecture within the stack references the prefix and ssh_key as two of its input values. While the custom-apache architecture within the stack references an output from test-slz as one of its inputs, along with the ssh_private_key from the stack level.](images/apache-stack.svg "A deployable architecture stack with references"){: caption="Figure 1. A deployable architecture stack with references" caption-side="bottom"}
 
