@@ -152,7 +152,7 @@ An access group template that is named `dev-group-1` hasn't been committed yet:
 | `outcome` | `success` | The outcome of the request. |
 | `correlationId` | `76450570-1ef3-41d2-ab24-935966032f9` | Used for debug interactions and tracing the request with support. |
 | `initiator ID` | `IBMid-779000XKG2` | The unique ID of the requester.|
-| `initiator nam`e | `user@example.com` | The email of the requester.|
+| `initiator name` | `user@example.com` | The email of the requester.|
 | `account_id` | `b04d9d6240ac4071nnf9152bf46bd94e` | The enterprise account ID. |
 | `committed` | `false` | Committed flag determines if the template is ready for assignment. |
 | `description` | `Dev group description` | The description of the policy. |
