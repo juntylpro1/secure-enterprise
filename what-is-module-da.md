@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-01"
+lastupdated: "2024-04-15"
 
-keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
+keywords: deployable architecture, deployment architecture, da, module, infrastructure as code, what is, stack, variation, projects
 
 subcollection: secure-enterprise
 
@@ -12,7 +12,7 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Repeatably deploying secure and compliant workloads
+# What are modules and deployable architectures?
 {: #understand-module-da}
 
 Creating secure, compliant, and scalable application infrastructure can be difficult to set up and costly to maintain. Instead of figuring out how to assemble a compliant infrastructure architecture on your own, you can take advantage of modules and deployable architectures. Modules and deployable architectures can help you to create a framework around how resources are deployed in your organization's accounts. By working with these reusable configurations, you can define the standard for deployment once and ensure that it is easily repeatable for each member of your organization.
@@ -63,3 +63,4 @@ Projects are responsible for ensuring that only approved deployable architecture
 | Ensuring that your organization's cloud environment is secure and compliant | Deployable architecture | Deployable architectures are packaged in a way that you can define a secure and compliant deployment once and ensure that all members of your organization are repeating the deployment in the same way. |
 | Architecting your own solutions | Deployable architecture stack | By combining architectures, you can create a more complex end-to-end solution for your organization. |
 {: caption="Table 1. Understanding for automated deployments use-cases" caption-side="top"}
+
