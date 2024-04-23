@@ -40,7 +40,7 @@ Before you can onboard your module, be sure that you complete the following prer
 
 To create the `.tgz` file that you need to onboard your module to a private catalog, you must create a release version of your source code. For help with creating a release, see [Managing releases in a repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository){: external}.
 
-If you're using a private source code repository, be sure that you have a [Git personal access token](https://github.ibm.com/settings/tokens/new){: external} or a secret that is stored in [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
+If you're using a private source code repository, be sure that you have a [Git personal access token](https://github.com/settings/tokens/new){: external} or a secret that is stored in [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
 
 
 

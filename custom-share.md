@@ -37,7 +37,7 @@ This tutorial uses a fictitious scenario to help you learn and understand how to
 
 1. You must be assigned the Publisher and Viewer access roles for the Catalog Management service to share products with other accounts. For more information, see [Assigning users access](/docs/account?topic=account-catalog-access).
 
-1. Verify that at least one version of your deployable architecture is validated and in the `Ready` state. For more information, see [Validating a test deployment by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-validate-ui).
+1. Verify that at least one version of your deployable architecture is validated and in the `Ready` state. For more information, see [Validating a test deployment by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Send a share request
 {: #share-request}

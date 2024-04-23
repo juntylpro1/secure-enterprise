@@ -228,4 +228,4 @@ Before you onboard your customized deployable architecture to a private catalog 
 ## Next steps
 {: #basic-custom-next}
 
-If your deployable architecture ran as expected, you successfully customized your own architecture from **VSI on VPC landing zone**. You are now ready to move your updated files to the GitHub repository that you created and [onboard your product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui).
+If your deployable architecture ran as expected, you successfully customized your own architecture from **VSI on VPC landing zone**. You are now ready to move your updated files to the GitHub repository that you created and [onboard your product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).

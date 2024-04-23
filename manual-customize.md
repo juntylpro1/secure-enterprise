@@ -185,12 +185,12 @@ The customization bundle has an `automation` directory that includes a couple of
 
 
 ### Using the console to onboard to a private catalog
-{: #customize-next}
+{: #customize-onboard-private-catalog}
 
 If you'd like to use the console to onboard your deployable architecture, see [onboarding your customized deployable architecture to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) for step-by-step guidance.
 
 ## Next steps
 {: #customize-next}
 
-The scripts that are provided in the customization bundle help you to automate the onboarding process to a private catalog for sharing your product with other users. However, if you'd like to use the console or CLI to onboard your deployable architecture, see [onboarding your customized deployable architecture to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) for step-by-step guidance. By using private catalogs, members of your enterprise are required to use approved architectures that they can deploy by using [projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects).
+The scripts that are provided in the customization bundle help you to automate the onboarding process to a private catalog for sharing your product with other users. However, if you'd like to use the console or CLI to onboard your deployable architecture, see [onboarding your customized deployable architecture to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) for step-by-step guidance. By using private catalogs, members of your enterprise are required to use approved architectures that they can deploy by using [projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects).
 

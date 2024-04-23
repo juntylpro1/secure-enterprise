@@ -87,7 +87,7 @@ To create a customized configuration, complete the following steps:
 
     If you select **Architecture default**:
     * The scan uses the default controls that the owner of the deployable architecture added when they onboarded it.
-    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals) are checked.
+    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin) are checked.
     * Any extra controls that the architecture owner added that are not included in the list of supported rules are not checked when you validate your configuration.
     * If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used.
 
