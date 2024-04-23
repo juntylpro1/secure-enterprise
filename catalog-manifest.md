@@ -1,8 +1,10 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-04-02"
+
+  years: 2023, 2024
+
+lastupdated: "2024-04-23"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -27,7 +29,7 @@ To edit your manifest locally, you can use the following steps.
 
 1. Copy the following example manifest file into a local editor.
 2. Name the file `ibm_catalog.json`.
-3. Add your preferred configurations into the file by using the example manifest as a guide. To learn more about each value, view the [available values](#manifest-values).
+3. Add your preferred configurations into the file by using the example manifest as a guide. To learn more about each value, view the [available values](#available-values).
 4. Add the file into the root folder of your source code repository.
 5. [Add your deployable architecture to your catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da-catalog).
 
@@ -213,7 +215,10 @@ The following code snippet can be used as a template.
 {: codeblock}
 
 
-## Products
+## Available values
+{: #available-values}
+
+### Products
 {: #value-products}
 
 The products value indicates an array of products with size one or more. If a catalog manifest file exists at the root of your repository, only the products within the file can be imported. Products are imported one at a time. The following values can be included at the `products` level:
@@ -265,7 +270,7 @@ The products value indicates an array of products with size one or more. If a ca
 
 
 
-## Modules
+### Modules
 {: #value-module}
 
 The `module_info` value indicates information about other products that the deployable architecture is compatible with. The following values can be included at the `module_info` level:
@@ -292,7 +297,7 @@ The `module_info` value indicates information about other products that the depl
 	:   The programmatic names of the compatible variations. Variations are onboarded individually to a catalog and are given a version number. An example variation name might be `standard` or `advanced`.
 
 
-## Flavors
+### Flavors
 {: #value-variations}
 
 Section header for information about the deployable architecture variations. Flavors are now known as variations in the console. The following values can be included at the `flavors` level:

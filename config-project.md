@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-02-08"
+lastupdated: "2024-04-23"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -54,7 +54,7 @@ You can add a relative reference to another input within the configuration that 
 {: remember}
 
 #### Referencing values in a stack
-{: #reference-values-config}
+{: #reference-values-stack}
 
 [Experimental]{: tag-purple}
 

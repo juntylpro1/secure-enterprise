@@ -1,8 +1,10 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-11-07"
+
+  years: 2023, 2024
+
+lastupdated: "2024-04-23"
 
 keywords: customize, deployable architecture, bundle, manifest
 
@@ -26,7 +28,6 @@ The following guidance provides an overview of the customization bundle and some
 
 Depending on your level of customization, {{site.data.keyword.cloud_notm}} might not support the deployable architecture. The components of the architecture that are supplied in the customization bundle are supported by {{site.data.keyword.cloud_notm}}, but any customized code that's used to extend is not.
 {: important}
-
 ## Before you begin
 {: #customize-begin}
 
@@ -50,7 +51,7 @@ When you download the customization bundle, you receive a set of files that are 
 ### `ibm_catalog.json`
 {: #customize-JSON}
 
-The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information into a private catalog. With a catalog manifest file, you can avoid manually entering version metadata through the console. To view how to set up an `ibm_catalog.json` file and the values that you can include, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest).
+The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information into a private catalog. With a catalog manifest file, you can avoid manually entering version metadata through the console. To view how to set up an `ibm_catalog.json` file and the values that you can include, see [Specifying product metadata for onboarding a product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-manifest-values).
 
 ### `main.tf`
 {: #customize-main}

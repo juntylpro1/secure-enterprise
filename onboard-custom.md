@@ -1,8 +1,10 @@
 ---
 
 copyright:
-   years: 2023, 2024
-lastupdated: "2024-02-22"
+
+  years: 2023, 2024
+
+lastupdated: "2024-04-23"
 
 keywords: deployable architecture, custom, private catalog, catalog manifest
 
@@ -113,7 +115,7 @@ Review the version details and configure the input variables.
 {: #custom-review-version-cli}
 {: cli}
 
-You can review your version's details by using the console. To view the steps, see [Reviewing the version details by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-review-version-ui).
+You can review your version's details by using the console. To view the steps, see [Reviewing the version details by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ### Configuring the input variables by using the console
 {: #custom-cfgdeploy-ui}
@@ -265,7 +267,7 @@ Let users know the service and platform access roles that are needed to install 
 {: #custom-solution-access-cli}
 {: cli}
 
-If you included a catalog manifest file in your repository, the IAM access was automatically imported into the private catalog. If not, you can add new access by using the console. To view the steps, see [Defining IAM access by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-solution-access-ui).
+If you included a catalog manifest file in your repository, the IAM access was automatically imported into the private catalog. If not, you can add new access by using the console. To view the steps, see [Defining IAM access by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Adding deployable architecture details by using the console
 {: #custom-solution-arch-ui}
@@ -315,7 +317,7 @@ If you included a dependency section in your catalog manifest file, prerequisite
 {: #custom-arch-cli}
 {: cli}
 
-If you included a catalog manifest file in your repository, deployable architecture details are automatically imported into the private catalog. If not, you can add an architecture diagram to your deployable architecture by using the console. To view the steps, see [Adding deployable architecture details by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-solution-arch-ui).
+If you included a catalog manifest file in your repository, deployable architecture details are automatically imported into the private catalog. If not, you can add an architecture diagram to your deployable architecture by using the console. To view the steps, see [Adding deployable architecture details by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Adding the license requirements by using the console
 {: #custom-cfg-license-ui}
@@ -333,7 +335,7 @@ If you included a catalog manifest file in your repository, license requirement 
 {: #custom-cfg-license-cli}
 {: cli}
 
-If you included a catalog manifest file in your repository, license requirement details were automatically imported into the private catalog. If not, add license requirements to your deployable architecture by using the console. To view the steps, see [Adding license requirements by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-cfg-license-ui).
+If you included a catalog manifest file in your repository, license requirement details were automatically imported into the private catalog. If not, add license requirements to your deployable architecture by using the console. To view the steps, see [Adding license requirements by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Reviewing your readme file by using the console
 {: #custom-readme-ui}
@@ -351,7 +353,7 @@ If you reload the version at any time, any changes that you made to your readme 
 {: #custom-readme-cli}
 {: cli}
 
-Review your readme file by using the console. To view the steps, see [Reviewing your readme file by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-readme-ui).
+Review your readme file by using the console. To view the steps, see [Reviewing your readme file by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Validating a test deployment by using the console
 {: #custom-validate-ui}
@@ -388,7 +390,7 @@ ibmcloud catalog offering version validate --vl <VERSION_LOCATOR>
 {: #custom-cost-cli}
 {: cli}
 
-Review the cost of your deployable architecture by using the console. To view the steps, see [Reviewing or defining cost by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-cost-ui).
+Review the cost of your deployable architecture by using the console. To view the steps, see [Reviewing or defining cost by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Reviewing or defining cost by using the console
 {: #custom-cost-ui}
@@ -419,7 +421,7 @@ You must include compliance information in your catalog manifest JSON file to ad
 {: #custom-tf-add-controls-cli}
 {: cli}
 
-You must include compliance information in your catalog manifest JSON file to add profiles and controls to your product. To see the steps, see [Adding compliance controls by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-tf-add-controls-ui).
+You must include compliance information in your catalog manifest JSON file to add profiles and controls to your product. To see the steps, see [Adding compliance controls by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ### Applying {{site.data.keyword.compliance_short}} scans by using the console
 {: #custom-tf-scc-scan-ui}
@@ -457,4 +459,4 @@ Make sure that you completed all of the required steps so that you can share the
 {: #custom-tf-review-reqs-cli}
 {: cli}
 
-You can make sure that you completed all of the required steps. To view the steps, see [Reviewing requirements by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui#custom-tf-review-reqs-ui).
+You can make sure that you completed all of the required steps. To view the steps, see [Reviewing requirements by using the console](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).

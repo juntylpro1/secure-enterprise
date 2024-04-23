@@ -1,8 +1,10 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-29"
+
+  years: 2023, 2024
+
+lastupdated: "2024-04-23"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, enterprise trusted profile, penetration testing
 

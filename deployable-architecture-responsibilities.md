@@ -1,8 +1,10 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-05-01"
+
+  years: 2023, 2024
+
+lastupdated: "2024-04-23"
 
 subcollection: secure-enterprise
 
@@ -87,7 +89,7 @@ Security and regulation compliance includes tasks such as security controls impl
 |----------|-----------------------|--------|
 | Apply patches and security updates to operating system in customer instances | IBM notifies you of updates. | Customer must apply all updates. |
 | Install software and OS patches into customer-managed virtual machines | N/A | Customer must apply all patches. |
-| Meet security and compliance objectives| Provide a secure deployable architecture that complies with declared standards. For more information about data security, see [How do I know that my data is safe?](/docs/overview?topic=overview-security).  | Secure your workloads and data. Integrate tools into your toolchains that satisfy your security and compliance requirements. To learn more about securing your cloud apps, see [Security to safeguard and monitor your cloud apps](https://www.ibm.com/cloud/architecture/architecture/practices/securing-cloud-native-apps-risks-mitigation/){: external}.  |
+| Meet security and compliance objectives| Provide a secure deployable architecture that complies with declared standards. For more information about data security, see [How do I know that my data is safe?](/docs/overview?topic=overview-security).  | Secure your workloads and data. Integrate tools into your toolchains that satisfy your security and compliance requirements. To learn more about securing your cloud apps, see [Security to safeguard and monitor your cloud apps](https://www.ibm.com/topics/cloud-native){: external}.  |
 {: row-headers}
 {: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="bottom"}
 {: summary="The first column describes the task that a customer or IBM might be responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}

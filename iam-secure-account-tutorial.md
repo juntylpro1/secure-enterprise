@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-29"
+  years: 2023, 2024
+lastupdated: "2024-04-23"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, enterprise settings
 
@@ -77,7 +77,7 @@ Any settings that aren't defined in the template can be managed by the child acc
 
 Create another version of the settings template for the Marketing and Sales department groups. These departments don't have as much access to resources as developers, so they don't need the same strict settings as the Development department groups.
 
-1. In the {{site.data.keyword.cloud.notm}} console, go to **Manage > Access (IAM) > Templates**.
+1. In the {{site.data.keyword.cloud_notm}} console, go to **Manage > Access (IAM) > Templates**.
 1. Click **IAM settings** and select the AccountSecuritySettings template.
 1. Click the **New version** icon ![New version icon](../icons/new-version.svg "New version").
 1. Enter the Marketing and Sales department in the description, the level of multifactor authentication that is required, and other settings that you define in the template.
@@ -106,7 +106,7 @@ Assign `v1` to the Development account group and `v2` to the Marketing and Sales
 {: #assign_settings_v1}
 {: step}
 
-1. In the {{site.data.keyword.cloud.notm}} console, go to **Manage > Access (IAM) > Templates**.
+1. In the {{site.data.keyword.cloud_notm}} console, go to **Manage > Access (IAM) > Templates**.
 1. Click **IAM settings**.
 1. Go to the AccountSecuritySettings template and click the **Table expand** icon ![Table expand icon](../icons/table-expand.svg "Table expand").
 1. Click `v1` of the AccountSecuritySettings template.

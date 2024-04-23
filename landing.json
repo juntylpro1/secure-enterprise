@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2024-03-21",
+    "lastupdated": "2024-04-23",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -31,7 +31,7 @@
       {
         "title": "Onboard approved software and deployable architectures to private catalogs",
         "description": "You can customize what products are available from the catalog for users in your enterprise to ensure that only approved architectures that adhere to your compliance standards are deployed.",
-        "href": "/docs/secure-enterprise?topic=secure-enterprise-onboard-custom"
+        "href": "/docs/secure-enterprise?topic=secure-enterprise-onboard-da"
       }
     ],
     "section_videos": [
@@ -48,7 +48,7 @@
     ],
     "section_learn": {
       "developer": "https://developer.ibm.com/depmodels/cloud/",
-      "architecture": "https://www.ibm.com/cloud/architecture/architectures/public-cloud",
+      "architecture": "https://www.ibm.com/topics/public-cloud",
       "training": "https://www.ibm.com/training/cloud",
       "community": "https://community.ibm.com/community/user/cloud/home"
     },
