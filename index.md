@@ -76,7 +76,7 @@ Typically, a project holds several configurations of each architecture. An archi
 ### Deployable architectures
 {: #deployable-architectures}
 
-Projects provide governance and management for deployable architectures, which are infrastructure as code templates. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
+Projects provide governance and management for deployable architectures, which are infrastructure as code templates. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
 
 ### Project tooling
 {: #tooling-projects}

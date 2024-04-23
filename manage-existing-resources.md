@@ -31,7 +31,7 @@ Within a project, you can further refine groups of resources by adding them to d
 {: tip}
 
 ## Watch and learn
-{: #watch-and-learn}
+{: #watch-and-learn-projects}
 
 Prefer to see it in action? Check out the following video to learn how to organize existing resources in your project by using the console.
 

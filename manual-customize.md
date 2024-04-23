@@ -28,6 +28,7 @@ The following guidance provides an overview of the customization bundle and some
 
 Depending on your level of customization, {{site.data.keyword.cloud_notm}} might not support the deployable architecture. The components of the architecture that are supplied in the customization bundle are supported by {{site.data.keyword.cloud_notm}}, but any customized code that's used to extend is not.
 {: important}
+
 ## Before you begin
 {: #customize-begin}
 
@@ -181,6 +182,12 @@ If your tests were successful, you can prepare to onboard your architecture to a
 {: #included-pipelines}
 
 The customization bundle has an `automation` directory that includes a couple of options for starter pipelines. These pipelines can be used to automate the lifecycle of your customized products that you share by using a private catalog on {{site.data.keyword.cloud_notm}}. This includes managing the onboarding, validation, and sharing of the deployable architecture version to a private catalog. `README` files are included for each pipeline option that provide details on how to leverage it. For more information about each one, see [GitHub Actions](https://github.com/features/actions){: external} and [Creating a toolchain](https://cloud.ibm.com/devops/setup/deploy?repository=https%3A%2F%2Fus-east.git.cloud.ibm.com%2Fopen-toolchain%2Fiac-compliance-ci-toolchain&env_id=ibm:yp:us-east){: external}.
+
+
+### Using the console to onboard to a private catalog
+{: #customize-next}
+
+If you'd like to use the console to onboard your deployable architecture, see [onboarding your customized deployable architecture to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) for step-by-step guidance.
 
 ## Next steps
 {: #customize-next}

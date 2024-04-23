@@ -166,6 +166,6 @@ To complete the remainder of the process for the deployable architecture, comple
 1. Add compliance information (controls).
 1. Revalidate to receive a cost estimate.
 
-For more information about how to complete the steps, see [Onboarding a customized deployable architecture to your private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui).
+For more information about how to complete the steps, see [Onboarding a customized deployable architecture to your private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 For more information, see [Adopting the Enterprise Architecture](/docs/adopt-enterprise-architecture?topic=adopt-enterprise-architecture-intro).

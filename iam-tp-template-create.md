@@ -67,7 +67,7 @@ To create a trusted profile template, complete the following steps:
 1. Click **Create**.
 
 ### (Optional) Add trust relationships
-{: #add-members-template}
+{: #add-tp-template}
 {: ui}
 
 Establish trust with federated users by creating conditions based on attributes from your corporate directory. When federated users meet the conditions that you define, they can apply the profile.

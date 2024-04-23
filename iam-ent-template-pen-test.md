@@ -36,7 +36,7 @@ The tutorial uses a fictitious company that is called *Example Corp*, which want
 
 
 ## Before you begin
-{: #before-ent-iam-tutorial}
+{: #before-ent-pen-iam-tutorial}
 
 - Check out [Best practices for assigning access in an enterprise](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises) to learn more about the features, concepts, and components of the enterprise-managed access system.
 
