@@ -1,10 +1,8 @@
 ---
 
 copyright:
-
-  years: 2023, 2024
-
-lastupdated: "2024-04-23"
+  years: 2022, 2024
+lastupdated: "2024-04-29"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -214,9 +212,10 @@ The following code snippet can be used as a template.
 ```
 {: codeblock}
 
-
 ## Available values
 {: #available-values}
+
+The following sections include information about each value that can be referenced in your manifest file.
 
 ### Products
 {: #value-products}
