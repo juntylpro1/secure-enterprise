@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-03"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -534,11 +534,11 @@ Section header for information about the deployable architecture variations. Fla
          `url_proxy`
          :   Section header for information about a proxied image.
 
-               `url`
-               :   The URL to the proxied image.
+            `url`
+            :   The URL to the proxied image.
 
-               `sha`
-               :   The `sha` indientifier of the image.
+            `sha`
+            :   The `sha` indientifier of the image.
          
          `caption`
          A short label for the architecture diagram.
