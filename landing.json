@@ -1,6 +1,6 @@
 {
     "title": "Running secure enterprise workloads",
-    "lastupdated": "2024-04-23",
+    "lastupdated": "2024-05-06",
     "introduction": "Use IBM Cloud enterprises and a variety of tools and products to securely develop, deploy, and manage your regulated, mission-critical enterprise workloads in the cloud.",
     "section_recommended": [
       {
@@ -56,6 +56,11 @@
       "view_more": "/docs/overview?topic=overview-whatsnew",
       "tiles": [
         {
+          "date": "06 May 2024",
+        "title": "Experimental: Stack deployable architectures by using the console",
+        "description": "You can now use the console to stack deployable architectures together to create more complex end-to-end solutions for your organization."
+        },
+        {
           "date": "03 April 2024",
           "title": "Projects API v1.0.0 is now available",
           "description": "A new version of the Projects API is now available."
@@ -64,11 +69,6 @@
           "date":"21 March 2024",
           "title":"Enterprise account limits increase",
           "description":"Easily scale your organization and workloads with increased limits on the number of accounts and account groups that you can have in your enterprise. You can have a maximum of 1000 accounts and 500 account groups."
-        },
-        {
-          "date": "20 February 2024",
-          "title": "Organize existing resources in your project",
-          "description": "Now, you can use a project to organize resources across accounts. By doing so, your resources remain deployed in their respective accounts, but you gain an at-a-glance view of those resources in your project. Organizing resources is experimental and might change without notice."
         }
       ]
     }
