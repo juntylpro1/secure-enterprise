@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-04-05"
+lastupdated: "2024-05-06"
 
 keywords: stack, configure stack, deployable architecture stack, stacked deployable architecture
 
@@ -15,7 +15,7 @@ subcollection: secure-enterprise
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Stacking deployable architectures by using the CLI
+# Stacking deployable architectures 
 {: #config-stack}
 
 You can stack deployable architectures together in a project to create a robust end-to-end solution architecture. You don't need to code Terraform to connect the member deployable architectures within the stack. As you configure input values in a member deployable architecture, you can reference inputs or outputs from another member to link the deployable architectures together. After you deploy the deployable architectures in your stack, you can add the stack to a private catalog to easily share it with others in your organization. 
@@ -40,6 +40,7 @@ When you add deployable architectures to your project, provide meaningful names 
 
 ## Stacking architectures together by using the CLI
 {: #stack-architectures-cli}
+{: cli}
 
 After you add the deployable architectures to your project, stack them together by running the following `ibmcloud project config-create` command. In the `Definition` option, specify the `members` by providing a name and the configuration ID for the existing deployable architectures that you want to include in your stack:
 
@@ -60,6 +61,7 @@ For more information about the command parameters, see [**`ibmcloud project conf
 
 ## Creating the stack definition by using the CLI
 {: #create-stack-definition-cli}
+{: cli}
 
 To onboard your deployable architecture stack to a private catalog, you must create a stack definition. It defines how the member deployable architectures within the stack relate to each other. Provide this information so users can deploy the entire stack successfully when they add it to a project from the private catalog. 
 
@@ -100,6 +102,7 @@ For more information about the command parameters, see [**`ibmcloud project stac
 
 ## Referencing inputs from the stack level within member deployable architectures by using the CLI
 {: #update-members-cli}
+{: cli}
 
 Now that the inputs are added at the stack level, update the member deployable architectures in the stack to reference those inputs by running the `ibmcloud project config-update` command for each member of the stack: 
 
@@ -129,6 +132,7 @@ For more information about the command parameters, see [**`ibmcloud project conf
 
 ## Updating input values at the stack level by using the CLI
 {: #update-stack-values-cli}
+{: cli}
 
 Now that the member deployable architectures are configured to reference the values you want, update the input values at the stack level by running `ibmcloud project config-update` for the `StackDev` deployable architecture stack. For example, the following command updates the `prefix` input value that is referenced by the `test-slz` deployable architecture within the stack. Values are also provided for the `ssh_key` and `ssh_private_key` inputs: 
 
@@ -170,6 +174,7 @@ ibmcloud project config-deploy \
 
 ## Onboarding a deployable architecture stack to a private catalog by using the CLI 
 {: #onboard-da-stack-to-catalog}
+{: cli}
 
 After each member deployable architecture in your stack is validated and deployed, you can onboard your stack to a private catalog for others to access. Run the following `ibmcloud project stack-definition-export` command: 
 
@@ -195,5 +200,52 @@ ibmcloud project stack-definition-export \
 For more information about the command parameters, see [**`ibmcloud project stack-definition-export`**](/docs/secure-enterprise?topic=secure-enterprise-projects-cli&interface=cli#project-cli-stack-definition-export-command).
 
 Your stack is now a draft in the private catalog that is not yet published, but available to anyone who has Editor access to the private catalog. 
+
+To finish onboarding your deployable architecture stack to your private catalog, [edit the catalog details](/docs/secure-enterprise?topic=secure-enterprise-onboard-da&interface=ui#edit-catalog-entry) and provide information like an architecture diagram and a category.
+
+## Stacking architectures together by using the console
+{: #stack-architectures-ui}
+{: ui}
+
+After you add and [configure the deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#how-to-config) to your project, stack them together by completing the following steps: 
+
+1. Select the checkbox for the deployable architectures that you want to stack. 
+1. Select **Stack**. 
+1. Provide a name for the new stack, or select an existing stack. 
+1. Click **Continue**.
+
+## Defining stack variables by using the console
+{: #stack-define-variables}
+{: ui}
+
+The input variables that you define for the stack are configured by users after the stack is added to a private catalog. Similarly, the output variables that you select display for users at the stack level. Don't select variables that users shouldn't configure. For example, if your stack requires a specific value for an input variable, such as a storage plan, don't select the storage plan input. Don't select [references that link the deployable architectures together](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#reference-values) within your stack. If you do so, the connection between those architectures might break and the stack might not successfully deploy. 
+
+Complete the following steps: 
+
+1. On the **Configurations** tab in your project, click the **Options** icon ![Options icon](../icons/action-menu-icon.svg "Options") for the stack and select **Define variables**.
+1. On the **Security** tab, select any variables that users need to configure. 
+1. Go to the **Required inputs** tab and select any required inputs that users need to configure. 
+1. Go to the **Optional inputs** tab and select any optional inputs that users need to configure. 
+1. Go to the **Outputs** tab and select any output variables that you want displayed at the stack level. 
+1. Click **Next** and continue selecting variables for the remaining architectures in your stack. 
+1. When you're done, click **Finish** and configure the stack for deployment. 
+
+## Onboarding a deployable architecture stack to a private catalog by using the console 
+{: #onboard-stack-ui}
+{: ui}
+
+After you validate and deploy each of the deployable architectures in your stack, you can add the stack to a private catalog to easily share it with others in your organization. For more information, see [deploying an architecture](/docs/secure-enterprise?topic=secure-enterprise-deploy-project&interface=ui). 
+
+Complete the following steps: 
+
+1. On the **Configurations** tab in your project, click the **Options** icon ![Options icon](../icons/action-menu-icon.svg "Options") for the stack and select **Add to private catalog**.
+1. Select or create the private catalog that you want to add the deployable architecture stack to. 
+1. Select whether this stack is a new product, or a new version of an existing product. 
+1. Provide the details like a product name, if applicable, the category, variation, and version. 
+1. Click **Next**. 
+1. Review the variables that users can configure after they add the stack to a project from the private catalog. If you need to make any changes, you can [define the stack variables](#stack-define-variables). 
+1. Click **Add**.
+
+Your stack is now a draft in the private catalog that is not yet published, but available to anyone who has Editor access to your private catalog. 
 
 To finish onboarding your deployable architecture stack to your private catalog, [edit the catalog details](/docs/secure-enterprise?topic=secure-enterprise-onboard-da&interface=ui#edit-catalog-entry) and provide information like an architecture diagram and a category.
