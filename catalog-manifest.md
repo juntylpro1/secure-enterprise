@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-05-06"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -183,10 +183,10 @@ The following code snippet can be used as a template.
                ],
                "schematics_env_values": {
                   "value": "value",
-                  "smref": "BRIAN WHAT IS THIS?"
+                  "smref": " "
                },
                "architecture": {
-                  "descriptions": "BRIAN - WHAT IS THIS?",
+                  "descriptions": " ",
                   "features": [
                      {
                         "title": "Feature 1 title",
@@ -316,71 +316,71 @@ Section header for information about the deployable architecture variations. Fla
 `usage_template`
 :   Similar to `usage`. With a template you can use variables as a place holder where the values can be substituted. The string is stored in the `usage` property.
 
-    | Template variable | Replacement value |
-    |:------------------|:------------------|
-    | ${{version}} | The version string of this variation or flavor. |
-    | ${{flavor}} | The programtic name of the variation or flavor. |
-    | ${{kind}} | The implementation kind. I.e. `terraform`. |
-    | ${{id}} | The offering or product ID. |
-    | ${{name}} | The programatic name of the offering or product. |
-    | ${{catalogID}} | The ID of the catalog where the offering or product is located. |
-    | ${{workingDirectory}} | The working directory of the flavor or variation. |
-    {: caption=" Table 1. Usage template values and descriptions" caption-side="bottom"}
+   | Template variable | Replacement value |
+   |:------------------|:------------------|
+   | ${{version}} | The version string of this variation or flavor. |
+   | ${{flavor}} | The programtic name of the variation or flavor. |
+   | ${{kind}} | The implementation kind. I.e. `terraform`. |
+   | ${{id}} | The offering or product ID. |
+   | ${{name}} | The programatic name of the offering or product. |
+   | ${{catalogID}} | The ID of the catalog where the offering or product is located. |
+   | ${{workingDirectory}} | The working directory of the flavor or variation. |
+   {: caption=" Table 1. Usage template values and descriptions" caption-side="bottom"}
 
 `licenses`
 :   Information about the end user license agreements that users are required to accept when they install the product. The license agreements are in addition to the {{site.data.keyword.cloud_notm}} Services Agreement.
 
-	```json
-	{
-		"id": "string, license id",
-		"name": "string, license display name",
-		"type": "string, type of license, e.g. Apache xxx",
-		"url": "string, URL for the license text",
-		"description": "string, license description"
-	}
-	```
+   ```json
+   {
+   	"id": "string, license id",
+   	"name": "string, license display name",
+   	"type": "string, type of license, e.g. Apache xxx",
+   	"url": "string, URL for the license text",
+   	"description": "string, license description"
+   }
+   ```
 	{: screen} 
 
    `id`
-	:   The license ID.
+   :   The license ID.
 
    `name`
-	:   The name of the license.
+   :   The name of the license.
 
    `type`
-	:   The type of license. For example, Apache.
+   :   The type of license. For example, Apache.
 
    `url`
-	:   A URL to where the user can access the license agreement.
+   :   A URL to where the user can access the license agreement.
 
    `description`
-	:   A description of the license.
+   :   A description of the license.
 
 
 `compliance`
 :   Section header that indicates which compliance controls that the architecture satisfies with the default installation settings. The evaluation and validation of the claims made is completed by {{site.data.keyword.compliance_full}}.
 
-	```json
-	"compliance": {
-		"authority": "scc-v3",
-		"profiles": [
-			{
-					"profile_name": "",
-					"profile_version": ""
-			}
-		]
-	}
-	```
+   ```json
+   "compliance": {
+      "authority": "scc-v3",
+      "profiles": [
+         {
+               "profile_name": "",
+               "profile_version": ""
+         }
+      ]
+   }
+   ```
 	{: codeblock}
 
-	You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
-	{: important}
+   You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
+   {: important}
 
    `authority`
-	:   IBM Cloud Security and Compliance Center v3 is the only authority accepted. This is programatically written as `scc-v3`.
+   :   IBM Cloud Security and Compliance Center v3 is the only authority accepted. This is programatically written as `scc-v3`.
 
    `profiles`
-	:   Section header that indicates the profile that contains the controls that are being claimed. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
+   :   Section header that indicates the profile that contains the controls that are being claimed. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
 
       `profile_name`
       :   The name of the profile. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
@@ -389,7 +389,7 @@ Section header for information about the deployable architecture variations. Fla
       :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
    `controls`
-	:   Section header that indicates that the variation has claimed controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name`, `profile_version`, and `control_name`. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
+   :   Section header that indicates that the variation has claimed controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name`, `profile_version`, and `control_name`. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
 
       `profile`
       :    Section header that indicates that you are adding controls from a specific profile.
@@ -404,10 +404,10 @@ Section header for information about the deployable architecture variations. Fla
       :   Section header to indicate a list of claimed controls. For example:
 
       ```text
-		"names": [
-			"CM-7(b)",
-			"AC-2(a)"
-		]
+      "names": [
+         "CM-7(b)",
+         "AC-2(a)"
+      ]
       ```
       {: codeblock}
 		
@@ -418,62 +418,62 @@ Section header for information about the deployable architecture variations. Fla
 `change_notices` (optional)
 :   A list of the three types of changes that you might want to alert your users to when releasing a new version of your deployable architecture. You can specify `breaking changes`, `new features`, and `general updates`. Breaking changes are those updates that break functionality that was available through a previous version. New features highlight any new functionality that a user might encounter with the new version. Updates encompass any changes that you want to highlight to a user such as a modified behavior that doesn't neccessarily break existing functionality or changes that make the deployable architecture easier for them to use.
 
-	```json
-	"change_notices": {
-		"breaking": [
-			{
-				"title": "",
-				"description": ""
-			}
-		],
-		"new_features": [
-			{
-				"title": "",
-				"description": ""
-			}
-		],
-		"updates": [
-			{
-				"title": "",
-				"description": ""
-			}
-		]
-	}
-	```
-	{: codeblock}
+   ```json
+   "change_notices": {
+      "breaking": [
+         {
+            "title": "",
+            "description": ""
+         }
+      ],
+      "new_features": [
+         {
+            "title": "",
+            "description": ""
+         }
+      ],
+      "updates": [
+         {
+            "title": "",
+            "description": ""
+         }
+     ]
+   }
+   ```
+   {: codeblock}
 
 
 `iam_permissions`(optional)
 :   Section header for a list of all IAM permissions that are required for a user to work with your deployable architecture version. IAM permission information includes the programmatic name of the service that is required and a list of CRNs for roles that are needed. If you build your catalog manifest file from the UI, the CRNs are already included.
 
 
-	```
-	{
-		"service_name": "IAM defined service name",
-		"role_crns" [
-			""
-		],
-		"resources": [
-			{
-				"name": "",
-				"description": "",
-				"role_crns: [
-					""
-				]
-			}
-		]
-	}
-	```
-	{: codeblock}
+   ```
+   {
+      "service_name": "IAM defined service name",
+      "role_crns" [
+         ""
+      ],
+      "resources": [
+         {
+            "name": "",
+            "description": "",
+            "role_crns: [
+               ""
+            ]
+         }
+      ]
+   }
+   ```
+   {: codeblock}
 
    `service_name`
-	:   The programmatic name of the service that users must have access to.
+   :   The programmatic name of the service that users must have access to.
 
    `role_crns`
-	:   Section header to indicate a list of access roles. For example:
+   :   Section header to indicate a list of access roles. For example:
 
    `resources`
-	:   The resources for a permission.
+   :   The resources for a permission.
 
       `name`
       :   The name of the resource.
@@ -487,31 +487,31 @@ Section header for information about the deployable architecture variations. Fla
 `architecture`
 :   High-level information about the deployable architecture version that includes a description, features, and a diagram. Multiple diagrams, with captions, can be provided.
 
-	```json
-	"architecture" {
-		"descriptions": "",
-		"features": [
-			{
-				"title": "",
-				"description": ""
-			}
-		],
-		"diagrams": [
-			{
-				"diagram" {
-					"caption": "",
-					"url": "",
-					"type": "image/svg+xml"
-				},
-				"description": ""
-			}
-		]
-	}
-	```
-	{: codeblock}
+   ```json
+   "architecture" {
+      "descriptions": "",
+      "features": [
+         {
+            "title": "",
+            "description": ""
+         }
+      ],
+      "diagrams": [
+         {
+            "diagram" {
+               "caption": "",
+               "url": "",
+               "type": "image/svg+xml"
+            },
+            "description": ""
+         }
+      ]
+   }
+   ```
+   {: codeblock}
 
    `features`
-	:   Information that highlights the processes, abilities, and results of the version, or if applicable, architecture variation. When onboarding using the console, these details are called highlights. These details appear on the variation selection box within your catalog entry. If your product has multiple architecture variations, users can compare the variation-level features to decide which variation suits their needs.
+   :   Information that highlights the processes, abilities, and results of the version, or if applicable, architecture variation. When onboarding using the console, these details are called highlights. These details appear on the variation selection box within your catalog entry. If your product has multiple architecture variations, users can compare the variation-level features to decide which variation suits their needs.
 
       `title`
       :   Name of the feature.
@@ -520,7 +520,7 @@ Section header for information about the deployable architecture variations. Fla
       :   A description of the feature.
 
    `diagrams`
-	:   Information about the architecture diagram that includes the diagram caption, the URL to embed the SVG of the diagram, the diagram metadata such as element ID and element description, and the description of the reference architecture.
+   :   Information about the architecture diagram that includes the diagram caption, the URL to embed the SVG of the diagram, the diagram metadata such as element ID and element description, and the description of the reference architecture.
 
       `diagram`
       :   Section marker for information about a singular architecture diagram.
@@ -541,7 +541,7 @@ Section header for information about the deployable architecture variations. Fla
             :   The `sha` indientifier of the image.
          
          `caption`
-         A short label for the architecture diagram.
+         :   A short label for the architecture diagram.
 
          `type`
          :   The type of media.
@@ -555,38 +555,38 @@ Section header for information about the deployable architecture variations. Fla
 `dependencies`
 :   Section header for a list of prerequisite products that are required to deploy the architecture. Information includes the programmatic name of the product and product versions. Optionally, you can include the catalog ID and a list of dependent variations.
 
-	```json
-	{
-		"name": "offering name",
-		"id": "offering ID",
-		"kind": "terraform",
-		"version": "SemVer version e.g. 3.1.2"
-		"flavors": [
-			"flavor name"
-		],
-		"install_type": "fullstack or extension",
-		"catalog_id": "catalog ID"
-	}
-	```
-	{: codeblock}
+   ```json
+   {
+      "name": "offering name",
+      "id": "offering ID",
+      "kind": "terraform",
+      "version": "SemVer version e.g. 3.1.2"
+      "flavors": [
+         "flavor name"
+      ],
+      "install_type": "fullstack or extension",
+      "catalog_id": "catalog ID"
+   }
+   ```
+   {: codeblock}
 
    `catalog_id` (optional)
-	:   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
+   :   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
 
    `id` (optional)
-	:   The product ID. The ID is not required if the `name` value is set.
+   :   The product ID. The ID is not required if the `name` value is set.
 
    `name` (optional)
-	:   Programmatic name of the product.
+   :   Programmatic name of the product.
 
    `kind`
-	:   The format kind of the dependency.
+   :   The format kind of the dependency.
 
    `version`
-	:   A version or range of versions to include as dependencies in SemVer format.
+   :   A version or range of versions to include as dependencies in SemVer format.
 
    `flavors` (optional)
-	:   List of variations that the architecture depends on.
+   :   List of variations that the architecture depends on.
 
 `release_notes_url`
 :   URL to the architecture's release notes.
@@ -655,11 +655,6 @@ Section header for information about the deployable architecture variations. Fla
    `default_value`
    :   The value that is to be set as the default.
 
-
-   `value_constraint`
-   :   WHAT IS THIS?
-
-
    `description`
    :   A description of the variable that you want to display in the UI for users of your deployable architecture.
    
@@ -702,13 +697,13 @@ Section header for information about the deployable architecture variations. Fla
 `schematics_env_values`
 :   A list of the values and variables that need to be passed to the Schematics service to be used as environment variables during the execution of the Terraform. This might be a secure value, a setting of the Terraform logging or something else. You can choose to specify a string or crete a reference to Secrets Manager. If both are specified, then the Secrets Manager reference is used.
 
-	```json
-	{
-		"value": "Environment variables and their values",
-		"sm_ref": "Specification of an instance of Secrets Manager and a key"
-	}
-	```
-	{: codeblock}
+   ```json
+   {
+      "value": "Environment variables and their values",
+      "sm_ref": "Specification of an instance of Secrets Manager and a key"
+   }
+   ```
+   {: codeblock}
 
 `terraform_version`
 :   The Hashicorp Terraform runtime version that is needed to validate and install the version. Setting this value in the manifest overrides what is specified in the source code.
@@ -716,13 +711,13 @@ Section header for information about the deployable architecture variations. Fla
 `outputs`
 :   Section header for information about Terraform output values.
 
-	```json
-	{
-		"key": "name of the output value as defined in the Terraform",
-		"description": "The description of the key"
-	}
-	```
-	{: codeblock}
+   ```json
+   {
+      "key": "name of the output value as defined in the Terraform",
+      "description": "The description of the key"
+   }
+   ```
+   {: codeblock}
 
    `key`
    :   Specifies the output value.
@@ -737,13 +732,13 @@ Section header for information about the deployable architecture variations. Fla
 `scripts`
 :   A list of scripts contained within the same repository that can be run by a project during a particular stage of a specified action. Each key in the map must match the format `action` and `stage` in the entry. `Stage` must be either `pre` or `post`. `Action` must be `validate`, `deploy`, or `undeploy`.
 
-	```json
-	{
-		"short_description": "description for the script",
-		"type": "type of script. i.e. ansible",
-		"path": "the path to the script in the repo. Must begin with scripts/..."
-		"stage": "pre or post"
-		"action": "The action that executes the script. Options include validate, deploy, or undeploy."
-	}
-	```
-	{: codeblock}
+   ```json
+   {
+      "short_description": "description for the script",
+      "type": "type of script. i.e. ansible",
+      "path": "the path to the script in the repo. Must begin with scripts/..."
+      "stage": "pre or post"
+      "action": "The action that executes the script. Options include validate, deploy, or undeploy."
+   }
+   ```
+   {: codeblock}
