@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-04-23"
+lastupdated: "2024-05-08"
 
 subcollection: secure-enterprise
 
@@ -14,13 +14,13 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding your responsibilities when you use deployable architectures
+# Understanding your responsibilities when you use {{site.data.keyword.IBM_notm}} deployable architectures
 {: #responsibilities-deployable-architectures}
 
-Learn about the management responsibilities and terms and conditions that you have when you use deployable architectures. For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for using {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
+Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.IBM}} deployable architectures. For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for using {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
 
-Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use a deployable architecture. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms).
+Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use an {{site.data.keyword.IBM_notm}} deployable architecture. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms).
 
 ## Incident and operations management
 {: #incident-and-ops-da}
@@ -57,10 +57,10 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 | Issues with third party and open source container images | N/A | Customer resolves with third-party vendor or open source community. |
 | Issues with {{site.data.keyword.cloud_notm}}-provided stock operating system images | N/A | Customer must get a compatible stock image from the vendor. |
 | Issues with the services that the Terraform creates from a deployable architecture | {{site.data.keyword.cloud_notm}} resolves issues with the services. | N/A |
-| {{site.data.keyword.cloud_notm}} resource outages or issues that occur during automated template execution by using {{site.data.keyword.cloud_notm}} Terraform Provider | IBM reports outages for any cloud resources on the [Status](https://cloud.ibm.com/status){: external} page. | Customers can redeploy after issue is resolved.|
+| {{site.data.keyword.cloud_notm}} resource outages or issues that occur during automated template execution by using {{site.data.keyword.cloud_notm}} Terraform Provider | IBM reports outages for any cloud resources on the [Status](https://cloud.ibm.com/status){: external} page. | Customers can redeploy after the issue is resolved.|
 | {{site.data.keyword.cloud_notm}} catalog and private catalog support | {{site.data.keyword.IBM_notm}} provides a way for you to discover available deployable architectures in our public catalog and save your versions to a private catalog. | N/A |
 | Provide ability for drift detection | {{site.data.keyword.IBM_notm}} notifies you if your instantiated resources differ from the base pattern. | Customer decides when to remediate any configurations detected in drift detection. |
-| Pulling deployable architecture changes into a project| {{site.data.keyword.IBM_notm}} provides the ability for customers to update the version of a deployable architecture in a project if a new version becomes available. | Customers are [notified when a new deployable architecture version is available](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects#na-version-update) so they can update their project. \n\n Customers can save their existing project data through an API, CLI, or by [exporting the project.json](/docs/secure-enterprise?topic=secure-enterprise-setup-project#json-export) from the UI. The saved information can be used as backup or as rollover plan if an issue exists.  \n\n Customers can then test the deployable architecture changes by deploying in a development or test environment before they deploy to production.  These actions can all be completed within the same project.  |
+| Pulling deployable architecture changes into a project| {{site.data.keyword.IBM_notm}} provides the ability for customers to update the version of a deployable architecture in a project if a new version becomes available. | Customers are [notified when a new deployable architecture version is available](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects#na-version-update) so they can update their project. \n\n Customers can save their existing project data through an API, CLI, or by [exporting the project.json](/docs/secure-enterprise?topic=secure-enterprise-setup-project#json-export) from the UI. The saved information can be used as a backup or as a rollover plan if an issue exists.  \n\n Customers can then test the deployable architecture changes by deploying in a development or test environment before they deploy to production. These actions can all be completed within the same project.  |
 | Provide notice of end of support | {{site.data.keyword.IBM_notm}} provides notice through regular channels. | N/A |
 {: row-headers}
 {: caption="Table 2. Responsibilities for change management" caption-side="bottom"}
@@ -101,8 +101,8 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-| Meet disaster recovery objectives| {{site.data.keyword.IBM_notm}} follows best practices for disaster recovery. All {{site.data.keyword.IBM_notm}} applications automatically recover and restart after any disaster event. For more information about disaster recovery, see the [{{site.data.keyword.IBM_notm}} Disaster Recovery Plan](/docs/overview?topic=overview-zero-downtime#disaster-recovery).  | Customers can help meet disaster recovery objectives by deploying their project in a development or test environment before they deploy to production. \n\nThe customer does not have to take other actions to prepare for an event of a catastrophic failure in a region.   |
-| Meet high availability objectives| {{site.data.keyword.cloud_notm}} is available globally and load balanced from a single URL. It is highly available and continues to run even if your resources are unavailable. For more information about high availability, see the [{{site.data.keyword.IBM_notm}} service level objectives](/docs/overview?topic=overview-slo) and the [sample application architecture](/docs/overview?topic=overview-bcdr-app-recovery). | N/A |
+| Meet disaster recovery objectives| {{site.data.keyword.IBM_notm}} follows best practices for disaster recovery for the {{site.data.keyword.cloud_notm}} platform and services. For more information about disaster recovery, see the [{{site.data.keyword.IBM_notm}} Disaster Recovery Plan](/docs/overview?topic=overview-zero-downtime#disaster-recovery). | Customers can help meet disaster recovery objectives when using deployable architectures by [understanding their responsibilities](/docs/overview?topic=overview-understanding-dr) and maintaining a disaster recovery plan for services and software that are deployed by using deployable architectures and customer-owned data stored within those services or software.   |
+| Meet high availability objectives| {{site.data.keyword.cloud_notm}} is available globally and load balanced from a single URL. It is highly available and continues to be available even if your resources are unavailable. For more information about high availability, see the [{{site.data.keyword.IBM_notm}} service level objectives](/docs/overview?topic=overview-slo) and the [sample application architecture](/docs/overview?topic=overview-bcdr-app-recovery). | {{site.data.keyword.IBM_notm}} deployable architectures represent best practice deployment patterns. It is the customer's responsibility to [understand high availability considerations](/docs/overview?topic=overview-ha-considerations) when selecting and configuring deployable architectures. |
 {: row-headers}
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="bottom"}
 {: summary="The first column describes the task that a customer or IBM might be responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
