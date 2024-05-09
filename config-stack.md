@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-05-06"
+lastupdated: "2024-05-09"
 
 keywords: stack, configure stack, deployable architecture stack, stacked deployable architecture
 
@@ -218,7 +218,7 @@ After you add and [configure the deployable architectures](/docs/secure-enterpri
 {: #stack-define-variables}
 {: ui}
 
-The input variables that you define for the stack are configured by users after the stack is added to a private catalog. Similarly, the output variables that you select display for users at the stack level. Don't select variables that users shouldn't configure. For example, if your stack requires a specific value for an input variable, such as a storage plan, don't select the storage plan input. Don't select [references that link the deployable architectures together](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#reference-values) within your stack. If you do so, the connection between those architectures might break and the stack might not successfully deploy. 
+The input variables that you define for the stack are configured by users after the stack is added to a project from a private catalog. Similarly, the output variables that you select display for users at the stack level. Don't select variables that users shouldn't configure. For example, if your stack requires a specific value for an input variable, such as a storage plan, don't select the storage plan input. Don't select [references that link the deployable architectures together](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#reference-values) within your stack. If you do so, the connection between those architectures might break and the stack might not successfully deploy. 
 
 Complete the following steps: 
 
