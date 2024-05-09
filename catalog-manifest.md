@@ -339,7 +339,7 @@ Section header for information about the deployable architecture variations. Fla
    	"description": "string, license description"
    }
    ```
-	{: screen} 
+	{: screen}
 
    `id`
    :   The license ID.
@@ -371,7 +371,7 @@ Section header for information about the deployable architecture variations. Fla
       ]
    }
    ```
-	{: codeblock}
+   {: codeblock}
 
    You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
    {: important}
@@ -410,7 +410,7 @@ Section header for information about the deployable architecture variations. Fla
       ]
       ```
       {: codeblock}
-		
+
    If you have included controls in your readme and your catalog manifest file, the manifest file takes precedence. It is best practice to make sure the controls listed in your catalog manifest file match the controls in your readme file.
    {: note}
 
@@ -447,7 +447,7 @@ Section header for information about the deployable architecture variations. Fla
 :   Section header for a list of all IAM permissions that are required for a user to work with your deployable architecture version. IAM permission information includes the programmatic name of the service that is required and a list of CRNs for roles that are needed. If you build your catalog manifest file from the UI, the CRNs are already included.
 
 
-   ```
+   ```json
    {
       "service_name": "IAM defined service name",
       "role_crns" [
@@ -539,7 +539,7 @@ Section header for information about the deployable architecture variations. Fla
 
             `sha`
             :   The `sha` indientifier of the image.
-         
+
          `caption`
          :   A short label for the architecture diagram.
 
@@ -657,7 +657,7 @@ Section header for information about the deployable architecture variations. Fla
 
    `description`
    :   A description of the variable that you want to display in the UI for users of your deployable architecture.
-   
+
    `display_name`
    :   The name that is displayed for the configuration type.
 
