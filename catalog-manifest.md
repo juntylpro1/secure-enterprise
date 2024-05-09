@@ -261,11 +261,11 @@ The products value indicates an array of products with size one or more. If a ca
 `features`
 :   Section header for details that highlight the processes, abilities, and results of the product. These product-level features are listed on your catalog entry page with your product description. For example, features might incluce CPU requirements, security features, or more. Each entry is defined as an array as shown in the example manifest in the previous section.
 
-   `title`
-   :   The name of the feature.
+    `title`
+    :   The name of the feature.
 
-   `description`
-   :   A concise description of the feature.
+    `description`
+    :   A concise description of the feature.
 
 
 
@@ -281,19 +281,19 @@ The `module_info` value indicates information about other products that the depl
    :   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
 
    `id` (optional)
-	:   ID of the product. The ID is not required if the `name` value is set.
+   :   ID of the product. The ID is not required if the `name` value is set.
 
    `name` (optional)
-	:   Programmatic name of the product that works with the deployable architecture.
+   :   Programmatic name of the product that works with the deployable architecture.
 
    `kind`
-	:   The format of the module that works with your deployable architecture. Most often this is `terraform`.
+   :   The format of the module that works with your deployable architecture. Most often this is `terraform`.
 
    `version`
-	:   Version or range of product versions that work with the deployable architecture in SemVer format.
+   :   Version or range of product versions that work with the deployable architecture in SemVer format.
 
    `flavors` (optional)
-	:   The programmatic names of the compatible variations. Variations are onboarded individually to a catalog and are given a version number. An example variation name might be `standard` or `advanced`.
+   :   The programmatic names of the compatible variations. Variations are onboarded individually to a catalog and are given a version number. An example variation name might be `standard` or `advanced`.
 
 
 ### Flavors
@@ -332,14 +332,14 @@ Section header for information about the deployable architecture variations. Fla
 
    ```json
    {
-   	"id": "string, license id",
-   	"name": "string, license display name",
-   	"type": "string, type of license, e.g. Apache xxx",
-   	"url": "string, URL for the license text",
-   	"description": "string, license description"
+      "id": "string, license id",
+      "name": "string, license display name",
+      "type": "string, type of license, e.g. Apache xxx",
+      "url": "string, URL for the license text",
+      "description": "string, license description"
    }
    ```
-	{: screen}
+   {: screen}
 
    `id`
    :   The license ID.
