@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-06"
+lastupdated: "2024-05-10"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -277,23 +277,23 @@ The `module_info` value indicates information about other products that the depl
 `works_with`
 :   Section header for information about a singular product that is compatible with the deployable architecture.
 
-   `catalog_id` (optional)
-   :   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
+    `catalog_id` (optional)
+    :   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
 
-   `id` (optional)
-   :   ID of the product. The ID is not required if the `name` value is set.
+    `id` (optional)
+    :   ID of the product. The ID is not required if the `name` value is set.
 
-   `name` (optional)
-   :   Programmatic name of the product that works with the deployable architecture.
+    `name` (optional)
+    :   Programmatic name of the product that works with the deployable architecture.
 
-   `kind`
-   :   The format of the module that works with your deployable architecture. Most often this is `terraform`.
+    `kind`
+    :   The format of the module that works with your deployable architecture. Most often this is `terraform`.
 
-   `version`
-   :   Version or range of product versions that work with the deployable architecture in SemVer format.
+    `version`
+    :   Version or range of product versions that work with the deployable architecture in SemVer format.
 
-   `flavors` (optional)
-   :   The programmatic names of the compatible variations. Variations are onboarded individually to a catalog and are given a version number. An example variation name might be `standard` or `advanced`.
+    `flavors` (optional)
+    :   The programmatic names of the compatible variations. Variations are onboarded individually to a catalog and are given a version number. An example variation name might be `standard` or `advanced`.
 
 
 ### Flavors
@@ -316,277 +316,277 @@ Section header for information about the deployable architecture variations. Fla
 `usage_template`
 :   Similar to `usage`. With a template you can use variables as a place holder where the values can be substituted. The string is stored in the `usage` property.
 
-   | Template variable | Replacement value |
-   |:------------------|:------------------|
-   | ${{version}} | The version string of this variation or flavor. |
-   | ${{flavor}} | The programtic name of the variation or flavor. |
-   | ${{kind}} | The implementation kind. I.e. `terraform`. |
-   | ${{id}} | The offering or product ID. |
-   | ${{name}} | The programatic name of the offering or product. |
-   | ${{catalogID}} | The ID of the catalog where the offering or product is located. |
-   | ${{workingDirectory}} | The working directory of the flavor or variation. |
-   {: caption=" Table 1. Usage template values and descriptions" caption-side="bottom"}
+    | Template variable | Replacement value |
+    |:------------------|:------------------|
+    | ${{version}} | The version string of this variation or flavor. |
+    | ${{flavor}} | The programtic name of the variation or flavor. |
+    | ${{kind}} | The implementation kind. I.e. `terraform`. |
+    | ${{id}} | The offering or product ID. |
+    | ${{name}} | The programatic name of the offering or product. |
+    | ${{catalogID}} | The ID of the catalog where the offering or product is located. |
+    | ${{workingDirectory}} | The working directory of the flavor or variation. |
+    {: caption=" Table 1. Usage template values and descriptions" caption-side="bottom"}
 
 `licenses`
 :   Information about the end user license agreements that users are required to accept when they install the product. The license agreements are in addition to the {{site.data.keyword.cloud_notm}} Services Agreement.
 
-   ```json
-   {
-      "id": "string, license id",
-      "name": "string, license display name",
-      "type": "string, type of license, e.g. Apache xxx",
-      "url": "string, URL for the license text",
-      "description": "string, license description"
-   }
-   ```
-   {: screen}
+    ```json
+    {
+    	"id": "string, license id",
+    	"name": "string, license display name",
+    	"type": "string, type of license, e.g. Apache xxx",
+    	"url": "string, URL for the license text",
+    	"description": "string, license description"
+    }
+    ```
+    {: screen} 
 
-   `id`
-   :   The license ID.
+    `id`
+    :   The license ID.
 
-   `name`
-   :   The name of the license.
+    `name`
+    :   The name of the license.
 
-   `type`
-   :   The type of license. For example, Apache.
+    `type`
+    :   The type of license. For example, Apache.
 
-   `url`
-   :   A URL to where the user can access the license agreement.
+    `url`
+    :   A URL to where the user can access the license agreement.
 
-   `description`
-   :   A description of the license.
+    `description`
+    :   A description of the license.
 
 
 `compliance`
 :   Section header that indicates which compliance controls that the architecture satisfies with the default installation settings. The evaluation and validation of the claims made is completed by {{site.data.keyword.compliance_full}}.
 
-   ```json
-   "compliance": {
-      "authority": "scc-v3",
-      "profiles": [
-         {
-               "profile_name": "",
-               "profile_version": ""
-         }
-      ]
-   }
-   ```
-   {: codeblock}
+    ```json
+    "compliance": {
+       "authority": "scc-v3",
+       "profiles": [
+          {
+                "profile_name": "",
+                "profile_version": ""
+          }
+       ]
+    }
+    ```
+    {: codeblock}
 
-   You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
-   {: important}
+    You can list multiple profiles in your catalog manifest JSON file, but note that only the first profile is added to your compliance information in a private catalog.
+    {: important}
 
-   `authority`
-   :   IBM Cloud Security and Compliance Center v3 is the only authority accepted. This is programatically written as `scc-v3`.
+    `authority`
+    :   IBM Cloud Security and Compliance Center v3 is the only authority accepted. This is programatically written as `scc-v3`.
 
-   `profiles`
-   :   Section header that indicates the profile that contains the controls that are being claimed. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
+    `profiles`
+    :   Section header that indicates the profile that contains the controls that are being claimed. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
 
-      `profile_name`
-      :   The name of the profile. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+        `profile_name`
+        :   The name of the profile. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
-      `profile_version`
-      :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+        `profile_version`
+        :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
-   `controls`
-   :   Section header that indicates that the variation has claimed controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name`, `profile_version`, and `control_name`. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
+    `controls`
+    :   Section header that indicates that the variation has claimed controls. The catalog manifest accepts an array of controls that you can claim on your variation by specifying a control's `profile_name`, `profile_version`, and `control_name`. You can view predefined profiles in {{site.data.keyword.compliance_short}}.
 
-      `profile`
-      :    Section header that indicates that you are adding controls from a specific profile.
+        `profile`
+        :    Section header that indicates that you are adding controls from a specific profile.
 
-         `name`
-         :   The profile name of the claimed control. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+            `name`
+            :   The profile name of the claimed control. For example, `NIST`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
-         `version`
-         :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
+            `version`
+            :   The version of the profile. For example, `1.0.0`. You can find the profile name in {{site.data.keyword.compliance_short}}.
 
-      `names`
-      :   Section header to indicate a list of claimed controls. For example:
+        `names`
+        :   Section header to indicate a list of claimed controls. For example:
 
-      ```text
-      "names": [
-         "CM-7(b)",
-         "AC-2(a)"
-      ]
-      ```
-      {: codeblock}
-
-   If you have included controls in your readme and your catalog manifest file, the manifest file takes precedence. It is best practice to make sure the controls listed in your catalog manifest file match the controls in your readme file.
-   {: note}
+        ```text
+        "names": [
+           "CM-7(b)",
+           "AC-2(a)"
+        ]
+        ```
+        {: codeblock}
+		
+    If you have included controls in your readme and your catalog manifest file, the manifest file takes precedence. It is best practice to make sure the controls listed in your catalog manifest file match the controls in your readme file.
+    {: note}
 
 
 `change_notices` (optional)
 :   A list of the three types of changes that you might want to alert your users to when releasing a new version of your deployable architecture. You can specify `breaking changes`, `new features`, and `general updates`. Breaking changes are those updates that break functionality that was available through a previous version. New features highlight any new functionality that a user might encounter with the new version. Updates encompass any changes that you want to highlight to a user such as a modified behavior that doesn't neccessarily break existing functionality or changes that make the deployable architecture easier for them to use.
 
-   ```json
-   "change_notices": {
-      "breaking": [
-         {
-            "title": "",
-            "description": ""
-         }
-      ],
-      "new_features": [
-         {
-            "title": "",
-            "description": ""
-         }
-      ],
-      "updates": [
-         {
-            "title": "",
-            "description": ""
-         }
-     ]
-   }
-   ```
-   {: codeblock}
+    ```json
+    "change_notices": {
+       "breaking": [
+          {
+             "title": "",
+             "description": ""
+          }
+       ],
+       "new_features": [
+          {
+             "title": "",
+             "description": ""
+          }
+       ],
+       "updates": [
+          {
+             "title": "",
+             "description": ""
+          }
+      ]
+    }
+    ```
+    {: codeblock}
 
 
 `iam_permissions`(optional)
 :   Section header for a list of all IAM permissions that are required for a user to work with your deployable architecture version. IAM permission information includes the programmatic name of the service that is required and a list of CRNs for roles that are needed. If you build your catalog manifest file from the UI, the CRNs are already included.
 
 
-   ```json
-   {
-      "service_name": "IAM defined service name",
-      "role_crns" [
-         ""
-      ],
-      "resources": [
-         {
-            "name": "",
-            "description": "",
-            "role_crns: [
-               ""
-            ]
-         }
-      ]
-   }
-   ```
-   {: codeblock}
+    ```
+    {
+       "service_name": "IAM defined service name",
+       "role_crns" [
+          ""
+       ],
+       "resources": [
+          {
+             "name": "",
+             "description": "",
+             "role_crns: [
+                ""
+             ]
+          }
+       ]
+    }
+    ```
+    {: codeblock}
 
-   `service_name`
-   :   The programmatic name of the service that users must have access to.
+    `service_name`
+    :   The programmatic name of the service that users must have access to.
 
-   `role_crns`
-   :   Section header to indicate a list of access roles. For example:
+    `role_crns`
+    :   Section header to indicate a list of access roles. For example:
 
-   `resources`
-   :   The resources for a permission.
+    `resources`
+    :   The resources for a permission.
 
-      `name`
-      :   The name of the resource.
+        `name`
+        :   The name of the resource.
 
-      `description`
-      :   A description of the resource.
+        `description`
+        :   A description of the resource.
 
-      `role_crns`
-      :   Section header to indicate a list of access roles. For example:
+        `role_crns`
+        :   Section header to indicate a list of access roles. For example:
 
 `architecture`
 :   High-level information about the deployable architecture version that includes a description, features, and a diagram. Multiple diagrams, with captions, can be provided.
 
-   ```json
-   "architecture" {
-      "descriptions": "",
-      "features": [
-         {
-            "title": "",
-            "description": ""
-         }
-      ],
-      "diagrams": [
-         {
-            "diagram" {
-               "caption": "",
-               "url": "",
-               "type": "image/svg+xml"
-            },
-            "description": ""
-         }
-      ]
-   }
-   ```
-   {: codeblock}
+    ```json
+    "architecture" {
+       "descriptions": "",
+       "features": [
+          {
+             "title": "",
+             "description": ""
+          }
+       ],
+       "diagrams": [
+          {
+             "diagram" {
+                "caption": "",
+                "url": "",
+                "type": "image/svg+xml"
+             },
+             "description": ""
+          }
+       ]
+    }
+    ```
+    {: codeblock}
 
-   `features`
-   :   Information that highlights the processes, abilities, and results of the version, or if applicable, architecture variation. When onboarding using the console, these details are called highlights. These details appear on the variation selection box within your catalog entry. If your product has multiple architecture variations, users can compare the variation-level features to decide which variation suits their needs.
+    `features`
+    :   Information that highlights the processes, abilities, and results of the version, or if applicable, architecture variation. When onboarding using the console, these details are called highlights. These details appear on the variation selection box within your catalog entry. If your product has multiple architecture variations, users can compare the variation-level features to decide which variation suits their needs.
 
-      `title`
-      :   Name of the feature.
+        `title`
+        :   Name of the feature.
 
-      `description`
-      :   A description of the feature.
+        `description`
+        :   A description of the feature.
 
-   `diagrams`
-   :   Information about the architecture diagram that includes the diagram caption, the URL to embed the SVG of the diagram, the diagram metadata such as element ID and element description, and the description of the reference architecture.
+    `diagrams`
+    :   Information about the architecture diagram that includes the diagram caption, the URL to embed the SVG of the diagram, the diagram metadata such as element ID and element description, and the description of the reference architecture.
 
-      `diagram`
-      :   Section marker for information about a singular architecture diagram.
-
-         `url`
-         :   The URL to the diagram's SVG. You can also embed an SVG.
-
-         `api_url`
-         :   The catalog management API URL to the diagram.
-
-         `url_proxy`
-         :   Section header for information about a proxied image.
+        `diagram`
+        :   Section marker for information about a singular architecture diagram.
 
             `url`
-            :   The URL to the proxied image.
+            :   The URL to the diagram's SVG. You can also embed an SVG.
 
-            `sha`
-            :   The `sha` indientifier of the image.
+            `api_url`
+            :   The catalog management API URL to the diagram.
 
-         `caption`
-         :   A short label for the architecture diagram.
+            `url_proxy`
+            :   Section header for information about a proxied image.
 
-         `type`
-         :   The type of media.
+                `url`
+                :   The URL to the proxied image.
 
-         `thumbnail_url`
-         :   A link to a thumbnail for the diagram.
+                `sha`
+                :   The `sha` indientifier of the image.
+         
+            `caption`
+            :   A short label for the architecture diagram.
 
-      `description`
-      :   Information about architecture diagram as a whole, including the outline of the system and the relationships, constraints, and boundaries between components of the deployable architecture.
+            `type`
+            :   The type of media.
+
+            `thumbnail_url`
+            :   A link to a thumbnail for the diagram.
+
+        `description`
+        :   Information about architecture diagram as a whole, including the outline of the system and the relationships, constraints, and boundaries between components of the deployable architecture.
 
 `dependencies`
 :   Section header for a list of prerequisite products that are required to deploy the architecture. Information includes the programmatic name of the product and product versions. Optionally, you can include the catalog ID and a list of dependent variations.
 
-   ```json
-   {
-      "name": "offering name",
-      "id": "offering ID",
-      "kind": "terraform",
-      "version": "SemVer version e.g. 3.1.2"
-      "flavors": [
-         "flavor name"
-      ],
-      "install_type": "fullstack or extension",
-      "catalog_id": "catalog ID"
-   }
-   ```
-   {: codeblock}
+    ```json
+    {
+       "name": "offering name",
+       "id": "offering ID",
+       "kind": "terraform",
+       "version": "SemVer version e.g. 3.1.2"
+       "flavors": [
+          "flavor name"
+       ],
+       "install_type": "fullstack or extension",
+       "catalog_id": "catalog ID"
+    }
+    ```
+    {: codeblock}
 
-   `catalog_id` (optional)
-   :   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
+    `catalog_id` (optional)
+    :   ID of the catalog that houses the product. If not specified, the {{site.data.keyword.cloud_notm}} catalog is the default.
 
-   `id` (optional)
-   :   The product ID. The ID is not required if the `name` value is set.
+    `id` (optional)
+    :   The product ID. The ID is not required if the `name` value is set.
 
-   `name` (optional)
-   :   Programmatic name of the product.
+    `name` (optional)
+    :   Programmatic name of the product.
 
-   `kind`
-   :   The format kind of the dependency.
+    `kind`
+    :   The format kind of the dependency.
 
-   `version`
-   :   A version or range of versions to include as dependencies in SemVer format.
+    `version`
+    :   A version or range of versions to include as dependencies in SemVer format.
 
-   `flavors` (optional)
-   :   List of variations that the architecture depends on.
+    `flavors` (optional)
+    :   List of variations that the architecture depends on.
 
 `release_notes_url`
 :   URL to the architecture's release notes.
@@ -594,116 +594,116 @@ Section header for information about the deployable architecture variations. Fla
 `configuration`
 :   Section header for that specifies the configuration of deployment variables for specific variation. Catalog data types are used to extend native types and faciliate for a better user experience when you're working in the IBM Cloud console. If you are running your code on a local machine or another environment, the variables are not used. An example might be a catalog type of `password` that is used to extend the capabilities of a Terraform variable defined with a type of `string` so that it is treated as sensitive in the UI.
 
-```json
-{
-   "key": "The configuration key. This value should match the name of a deployment variable.",
-   "type": "The data type of the variable. This must be a valid catalog management type.",
-   "default_value": "The default value set by the person who onboarded the deployable architecture",
-   "value_constraint": "string",
-   "description": "The description of the variable that is shown in the catalog to those who use your deployable architecture.",
-   "display_name": "The display name for the configuration type.",
-   "required": boolean,
-   "options": [
-      "Selectable option 1",
-      "Selectable option 2"
-   ],
-   "hidden": boolean,
-   "custom_config": {
-      "type": "The ID of the widget type.",
-      "grouping": "Where the configuration type is rendered.",
-      "original_grouping": "The original groupiing type for the configuration.",
-      "grouping_index": "The order in which the configuration item shows in a particular grouping.",
-      "config_constraints": "Map of constraint parameters that are passed to the custom widget.",
-      "associations": "The list of parameters associated with the configuration.",
-      "options_url": "The URL where the options for your custom type can be pulled by using dynamic data from objects in the catalog."
-   },
-   "configuration_group": "The name of the assocated configuration group."
-}
-```
-{: codeblock}
+    ```json
+    {
+       "key": "The configuration key. This value should match the name of a deployment variable.",
+       "type": "The data type of the variable. This must be a valid catalog management type.",
+       "default_value": "The default value set by the person who onboarded the deployable architecture",
+       "value_constraint": "string",
+       "description": "The description of the variable that is shown in the catalog to those who use your deployable architecture.",
+       "display_name": "The display name for the configuration type.",
+       "required": boolean,
+       "options": [
+          "Selectable option 1",
+          "Selectable option 2"
+       ],
+       "hidden": boolean,
+       "custom_config": {
+          "type": "The ID of the widget type.",
+          "grouping": "Where the configuration type is rendered.",
+          "original_grouping": "The original groupiing type for the configuration.",
+          "grouping_index": "The order in which the configuration item shows in a particular grouping.",
+          "config_constraints": "Map of constraint parameters that are passed to the custom widget.",
+          "associations": "The list of parameters associated with the configuration.",
+          "options_url": "The URL where the options for your custom type can be pulled by using dynamic data from objects in the catalog."
+       },
+       "configuration_group": "The name of the assocated configuration group."
+    }
+    ```
+    {: codeblock}
 
-   `key`
-   :   The configuration key. The value should match the name of a deployment variable.
+    `key`
+    :   The configuration key. The value should match the name of a deployment variable.
 
-   `type`
-   :   The type of input. The data type must be supported by the Catalog Management service. Native Terraform types map to one of the supported types. For example, the Terraform type `map` equates to `object`. The Terraform type `list` equates to `array`. A Terraform type `string` with a sensitive attribute, equates to `password`.
+    `type`
+    :   The type of input. The data type must be supported by the Catalog Management service. Native Terraform types map to one of the supported types. For example, the Terraform type `map` equates to `object`. The Terraform type `list` equates to `array`. A Terraform type `string` with a sensitive attribute, equates to `password`.
 
-      Supported predefined types:
-      * `boolean`
-      * `float`
-      * `int`
-      * `number`
-      * `password`
-      * `string`
-      * `object`
+        Supported predefined types:
+        * `boolean`
+        * `float`
+        * `int`
+        * `number`
+        * `password`
+        * `string`
+        * `object`
 
-      Supported custom types:
-      * `array`
-      * `region`
-      * `textarea`
-      * `vpc`
-      * `vpc ssh key`
-      * `vpc region`
-      * `cluster`
-      * `power iaas`
-      * `resource group`
-      * `multi-line secure value`
-      * `schematics workspace`
-      * `json editor`
-      * `preset configuration`
+        Supported custom types:
+        * `array`
+        * `region`
+        * `textarea`
+        * `vpc`
+        * `vpc ssh key`
+        * `vpc region`
+        * `cluster`
+        * `power iaas`
+        * `resource group`
+        * `multi-line secure value`
+        * `schematics workspace`
+        * `json editor`
+        * `preset configuration`
 
-   `default_value`
-   :   The value that is to be set as the default.
+    `default_value`
+    :   The value that is to be set as the default.
 
-   `description`
-   :   A description of the variable that you want to display in the UI for users of your deployable architecture.
+    `description`
+    :   A description of the variable that you want to display in the UI for users of your deployable architecture.
+   
+    `display_name`
+    :   The name that is displayed for the configuration type.
 
-   `display_name`
-   :   The name that is displayed for the configuration type.
+    `required`
+    :   A boolean that indicates if users are required to specify the parameter during installation.
 
-   `required`
-   :   A boolean that indicates if users are required to specify the parameter during installation.
+    `hidden`
+    :   A boolean that indicates if the parameter should be hidden from users during installation.
 
-   `hidden`
-   :   A boolean that indicates if the parameter should be hidden from users during installation.
+    `options`
+    :   An array of options that users can choose from for a parameter.
 
-   `options`
-   :   An array of options that users can choose from for a parameter.
+    `custom_config`
+    :   Section header use to indicate that a custom configuration can be used.
 
-   `custom_config`
-   :   Section header use to indicate that a custom configuration can be used.
+        `type`
+        :   The ID of the widget type used for configuration
 
-      `type`
-      :   The ID of the widget type used for configuration
+        `grouping`
+        :   Where the configuration type should appear in the catalog. Valid values are `Target`, `Resource`, and `Deployment`.
 
-      `grouping`
-      :   Where the configuration type should appear in the catalog. Valid values are `Target`, `Resource`, and `Deployment`.
+        `original_grouping`
+        :   Where the configuration type originally appeared. Valid values are `Target`, `Resource`, and `Deployment`.
 
-      `original_grouping`
-      :   Where the configuration type originally appeared. Valid values are `Target`, `Resource`, and `Deployment`.
+        `grouping_index`
+        :   The order of this configuration item when there are mulitple.
 
-      `grouping_index`
-      :   The order of this configuration item when there are mulitple.
+        `config_constraints`
+        :   Map of constraint parameters that are given to the custom widget.
 
-      `config_constraints`
-      :   Map of constraint parameters that are given to the custom widget.
+        `associations`
+        :   Section header for parameters that are associated with the configuration.
 
-      `associations`
-      :   Section header for parameters that are associated with the configuration.
-
-   `configuration_group`
-   :   The name of an associated configuration group.
+    `configuration_group`
+    :   The name of an associated configuration group.
 
 `schematics_env_values`
 :   A list of the values and variables that need to be passed to the Schematics service to be used as environment variables during the execution of the Terraform. This might be a secure value, a setting of the Terraform logging or something else. You can choose to specify a string or crete a reference to Secrets Manager. If both are specified, then the Secrets Manager reference is used.
 
-   ```json
-   {
-      "value": "Environment variables and their values",
-      "sm_ref": "Specification of an instance of Secrets Manager and a key"
-   }
-   ```
-   {: codeblock}
+    ```json
+    {
+       "value": "Environment variables and their values",
+       "sm_ref": "Specification of an instance of Secrets Manager and a key"
+    }
+    ```
+    {: codeblock}
 
 `terraform_version`
 :   The Hashicorp Terraform runtime version that is needed to validate and install the version. Setting this value in the manifest overrides what is specified in the source code.
@@ -711,19 +711,19 @@ Section header for information about the deployable architecture variations. Fla
 `outputs`
 :   Section header for information about Terraform output values.
 
-   ```json
-   {
-      "key": "name of the output value as defined in the Terraform",
-      "description": "The description of the key"
-   }
-   ```
-   {: codeblock}
+    ```json
+    {
+       "key": "name of the output value as defined in the Terraform",
+       "description": "The description of the key"
+    }
+    ```
+    {: codeblock}
 
-   `key`
-   :   Specifies the output value.
+    `key`
+    :   Specifies the output value.
 
-   `description`
-   :   A short summary of the output value.
+    `description`
+    :   A short summary of the output value.
 
 `install_type`
 :   Specifies whether a deployable architecture is full stack or extension. Architectures listed as extensions require prerequisites.
@@ -732,13 +732,13 @@ Section header for information about the deployable architecture variations. Fla
 `scripts`
 :   A list of scripts contained within the same repository that can be run by a project during a particular stage of a specified action. Each key in the map must match the format `action` and `stage` in the entry. `Stage` must be either `pre` or `post`. `Action` must be `validate`, `deploy`, or `undeploy`.
 
-   ```json
-   {
-      "short_description": "description for the script",
-      "type": "type of script. i.e. ansible",
-      "path": "the path to the script in the repo. Must begin with scripts/..."
-      "stage": "pre or post"
-      "action": "The action that executes the script. Options include validate, deploy, or undeploy."
-   }
-   ```
-   {: codeblock}
+    ```json
+    {
+       "short_description": "description for the script",
+       "type": "type of script. i.e. ansible",
+       "path": "the path to the script in the repo. Must begin with scripts/..."
+       "stage": "pre or post"
+       "action": "The action that executes the script. Options include validate, deploy, or undeploy."
+    }
+    ```
+    {: codeblock}
