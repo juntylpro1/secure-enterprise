@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-14"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -235,7 +235,7 @@ The products value indicates an array of products with size one or more. If a ca
 :   The kind of product that you are onboarding. Valid values are software, module, or solution. A solution is otherwise known as a deployable architecture.
 
 `tags`
-:   An array of predefined values that can help users to filter the catalog to identify and learn more about your product.
+:   An array of predefined values that can help users to filter the catalog to identify and learn more about your product. To view the available options, run the following command: `ibmcloud catalog filter options --all`.
 
 `keywords`
 :   An array of specific words or phrases that a user might try to search for.
@@ -339,7 +339,7 @@ Section header for information about the deployable architecture variations. Fla
     	"description": "string, license description"
     }
     ```
-    {: screen} 
+    {: screen}
 
     `id`
     :   The license ID.
@@ -410,7 +410,7 @@ Section header for information about the deployable architecture variations. Fla
         ]
         ```
         {: codeblock}
-		
+
     If you have included controls in your readme and your catalog manifest file, the manifest file takes precedence. It is best practice to make sure the controls listed in your catalog manifest file match the controls in your readme file.
     {: note}
 
@@ -539,7 +539,7 @@ Section header for information about the deployable architecture variations. Fla
 
                 `sha`
                 :   The `sha` indientifier of the image.
-         
+
             `caption`
             :   A short label for the architecture diagram.
 
@@ -657,7 +657,7 @@ Section header for information about the deployable architecture variations. Fla
 
     `description`
     :   A description of the variable that you want to display in the UI for users of your deployable architecture.
-   
+
     `display_name`
     :   The name that is displayed for the configuration type.
 
