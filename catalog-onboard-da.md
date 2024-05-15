@@ -55,12 +55,12 @@ To add your deployable architecture to a private catalog, you can use the follow
 2. Select the private catalog that you want to add a product to. The catalog details page opens.
 3. Click **Add product**. A side panel opens.
 4. Select **Deployable architecture** for **Product type**.
-6. Select the type of repository where your source code is located. 
+6. Select the type of repository where your source code is located.
 
 	If your source code is located in a private repository, you need to authenticate by using a Git personal access token or a secret from [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
 
 7. Add a link to your source code in the **Source URL** field. It should look similar to `https://github.com/IBM-Cloud/terraform-sample/archive/refs/tags/v1.1.0.tar.gz`.
-  
+
    If you are onboarding your deployable architecture for testing purposes, you do not need to have a `.tgz` file. You can provide the link to the root level of your architecture.
    {: note}
 
@@ -87,7 +87,7 @@ After you successfully onboard your deployable architecture to your private cata
    3. Verify that your entry is showing as expected by checking the **Catalog entry preview**.
    4. When you're finished making your selections, click **Save**.
 
-5. Edit the **About** page for your product. When a user selects your product from the catalog, an **About** section is shown that allows them to learn more about your product and the features that are available. 
+5. Edit the **About** page for your product. When a user selects your product from the catalog, an **About** section is shown that allows them to learn more about your product and the features that are available.
    1. In the **Actions** drop-down, select **Edit product page**.
    2. Enter a description of your product that explains the product's value and benefits to your users.
    3. To add specific feature information, click **Features** > **Add feature**.
@@ -99,7 +99,7 @@ After you successfully onboard your deployable architecture to your private cata
 ## Specifying details through the console
 {: #specify-details}
 
-Your users see the version-level information that you define as part of the catalog entry for your product. The information provided as part of this flow can help your users to understand the functionality of the individual components that are associated with it. 
+Your users see the version-level information that you define as part of the catalog entry for your product. The information provided as part of this flow can help your users to understand the functionality of the individual components that are associated with it.
 
 To ensure that your selections are carried over into your next release, you can generate a manifest file. The manifest file, `ibm_catalog.json`, is the source of truth for your catalog entry. It contains all of the information about your product and the selections that you've made. After you generate the file, you must add it to the root level of your source code repository. If you prefer to work in the code, the following sections can be configured directly through the mainfest file. For more information about how to structure the file, see [Locally editing your manifest file](/docs/secure-enterprise?topic=secure-enterprise-manifest-values).
 {: note}
@@ -113,7 +113,7 @@ After you add your deployable architecture to a private catalog, you're able to 
 1. Go to the **Manage > Catalogs > Private catalogs** page of the console.
 2. Select the private catalog where you added your product. The catalog details page opens.
 3. Select the product that previously onboarded.
-4. On the **Versions** tab, select the version of your product that you want to provide information for. 
+4. On the **Versions** tab, select the version of your product that you want to provide information for.
 5. Use the following information as a guide to configure your deployable architecture details.
 
 
@@ -134,7 +134,7 @@ When you release a new version of your product, there might be changes that you 
 
 
 #### Understanding pre and post-scripts
-{: #understand-scripts}
+{: #include-scripts}
 
 You can have a pre-script or post-script run for your deployable architectures before or after validating, deploying, and undeploying. Scripts are configured to a specific version of your deployable architecture, and must be run and validated through projects. For more information about projects, see [Creating a project](/docs/secure-enterprise?topic=secure-enterprise-setup-project&interface=ui).
 
@@ -197,7 +197,7 @@ When you make a deployable architecture available to other users in the cloud, y
 
 * Any prerequisites or dependencies that a user might need to know before attempting to work with your deployable architecture. For example, whether this deployable architecture depends on another being installed first.
 * An architecture diagram that details how the components in your deployable architecture work together.
-* Any highlights that can help users to differentiate between which version or variation of your architecture might be best suited to their needs. 
+* Any highlights that can help users to differentiate between which version or variation of your architecture might be best suited to their needs.
 
 
 ### Adding license agreements
@@ -213,7 +213,7 @@ Document the instructions for installing your deployable architecture in the rea
 ### Validating the version
 {: #validate-version}
 
-Select the target for validation. When a product is validated, the resources are deployed. For a stand-alone deployable architecture, the target can be either a Schematics workspace in your current account or a specific project. Depending on the option that you select, more configuration information might be required. After your target is configured, you must provide the values for the input and output variables that are required for your architecture to successfully deploy to the target. After your variables are configured, you can validate the version. 
+Select the target for validation. When a product is validated, the resources are deployed. For a stand-alone deployable architecture, the target can be either a Schematics workspace in your current account or a specific project. Depending on the option that you select, more configuration information might be required. After your target is configured, you must provide the values for the input and output variables that are required for your architecture to successfully deploy to the target. After your variables are configured, you can validate the version.
 
 Do not clean up the resources in your account until after you run the compliance evaluation in the managing security and compliance section.
 {: note}
@@ -239,7 +239,7 @@ When you make a deployable architecture available to others in your organization
 
 	1. In the {{site.data.keyword.cloud_notm}} console, click the **menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Security and Compliance** to access {{site.data.keyword.compliance_short}}.
 	2. Create an attachment by using the profile that you selected.
-     
+
      The scope that you define as part of creating an attachment must contain the resources that were deployed when you validated your product.
      {: note}
 
@@ -271,7 +271,7 @@ To download a manifest, you can use the following steps.
 
 A variation is a new version of your architecture that is designed to build upon the funtions of the base deployable architecture. Variations can either be a `fullstack` or `extension`. The `fullstack` option indicates that the variation does not have any prerequisite dependencies that need to be deployed first. Essentially, it is self-contained. If the variation is an `extension`, then there is at least one dependent offering that must be deployed before the deployment of the variation.
 
-1. [Generate the manifest file](#download-manifest) for the previous version of your deployable architecture. 
+1. [Generate the manifest file](#download-manifest) for the previous version of your deployable architecture.
 2. In your source code repo, create a working directory.
 3. In the manifest file of your repo, add the following code snippet into the `flavors` section. This array defines the offering as part of the same deployable architecture, but allows it to be listed as a variation within the catalog. If you downloaded your manifest from a previously onboarded version in the catalog, the file will already have a minimal definition in place for a new variation. For example, if your deployable architecture is called `Dinner` and you want to create a variation of that, you might call it `steak` as shown in the following example.
 
@@ -294,8 +294,8 @@ A variation is a new version of your architecture that is designed to build upon
    2. Select the private catalog that you want to add a product to. The catalog details page opens.
    3. Select the product that you want to provide more details for.
    4. On the **Versions** tab, click **Add version**.
-   5. Provide the information and then click **Add version**. 
-   
+   5. Provide the information and then click **Add version**.
+
    The updated catalog manifest file that you uploaded as part of your release auto-fills most of the configurations for your new variation. However, it is a best practice to validate the configuration before you share the product with your organization.
 
 
