@@ -36,8 +36,6 @@ Projects help manage IaC at scale. They help ensure that the IaC and its configu
 * Projects allow infrastructure to be managed as code across accounts, allowing all infrastructure that is related to a project to be managed from a single place. This makes it easy to monitor that development and test infrastructure is aligned with production infrastructure by avoiding surprises as applications move through to production.
 * Projects help with accounting and configuration management by ensuring that all resources that are associated with the project can be tracked back to the project by tagging and resource reports. Projects can also be tagged to provide a higher level of organization.
 
-<!--As project functionality continues to develop, projects will offer additional benefits such as drift detection, update policy, cost, status, and compliance reporting, improved security, and project lifecycle management.-->
-
 ## Exploring popular use cases
 {: #project-use}
 

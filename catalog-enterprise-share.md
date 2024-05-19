@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-05-17"
 
 keywords: enterprise, share, private catalog, allowlist, account groups
 
@@ -12,7 +12,7 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Sharing private catalog products in an enterprise
+# Sharing a private catalog
 {: #catalog-enterprise-share}
 
 You can share products in your private catalog with users in your account, account groups within your enterprise, the entire enterprise, and even other enterprises that you have access to. By sharing your product, any user within the account, enterprise, or account groups can create an instance of your product.
@@ -21,10 +21,10 @@ You can share products in your private catalog with users in your account, accou
 ## Before you begin
 {: #prereqs-enterprise-share}
 
-1. You must be assigned the following access. For more information, see [Assigning users access](/docs/account?topic=account-catalog-access).
+* You must be assigned the following access. For more information, see [Assigning users access](/docs/account?topic=account-catalog-access).
    - Editor role on the Enterprise account management service in the enterprise account.
    - Administrator role on the Catalog Management account management service in the same account as your product.
-1. Verify that at least one version of your product is in the `ready` state.
+* Verify that at least one version of your product is in the `ready` state.
 
 ## Sharing your product by using the console
 {: #ent-share-steps}
@@ -55,7 +55,7 @@ When you share a product with enterprises, users in your account, or account gro
 {: #ent-share-cli}
 {: cli}
 
-When you share a product with users in your account, enterprise, or account groups, they can create instances of any version that is validated and in the `ready` state. Versions that are in the `draft` state are not shared with users.
+When you share a product with users in your account, enterprise, or account groups, they can create instances of any version that is validated and in the `ready` state. Versions that are in the `draft` state are not shared with users, unless the user has access to the private catalog.
 
 Run the [`ibmcloud catalog offering publish enterprise`](/docs/cli?topic=cli-manage-catalogs-plugin#publish-offering-enterprise) command to share your product to your enterprise:
 

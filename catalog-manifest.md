@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-05-17"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -15,9 +15,10 @@ subcollection: secure-enterprise
 # Locally editing the catalog manifest
 {: #manifest-values}
 
-The catalog manifest file specifies the information about your onboarded software that you want to share with potential users through the catalog. You can provide licensing and compliance information, make specific settings, and provide descriptions about the intended purpose of your product.
+The catalog manifest file specifies the information about your onboarded solution that you want to share with users through a catalog. You can provide licensing and compliance information, make specific settings, and provide descriptions about the intended purpose of your product.
+{: shortdesc}
 
-Prefer to use the console to edit your catalog settings? You can make the selections by following the [provided wizard and then export the manifest file](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
+Prefer to use the console to edit your catalog details? You can make the selections by following the [provided wizard and then export the manifest file](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) to add to your source repo.
 {: tip}
 
 ## Editing your manifest
@@ -29,7 +30,7 @@ To edit your manifest locally, you can use the following steps.
 2. Name the file `ibm_catalog.json`.
 3. Add your preferred configurations into the file by using the example manifest as a guide. To learn more about each value, view the [available values](#available-values).
 4. Add the file into the root folder of your source code repository.
-5. [Add your deployable architecture to your catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da-catalog).
+5. [Add your deployable architecture to your catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 ## Example manifest file
 {: #example-manifest}
@@ -154,16 +155,17 @@ The following code snippet can be used as a template.
                ],
                "dependencies": [
                   {
-                     "catalog_id": "",
-                     "id": "",
-                     "name": "",
-                     "version": "",
+                     "catalog_id": "ID",
+                     "id": "ID",
+                     "name": "Product programmatic name",
+                     "kind": "Format kind",
+                     "version": "Versions or range of versions",
                      "flavors": [
                         "Variation name 1",
                         "Variation name 2",
                         "Variation name 3"
                      ],
-                     "install_type": "full stack or extension",
+                     "install_type": "fullstack or extension",
                   }
                ],
                "iam_permissions" [
@@ -580,7 +582,7 @@ Section header for information about the deployable architecture variations. Fla
     :   Programmatic name of the product.
 
     `kind`
-    :   The format kind of the dependency.
+    :   The format kind of the dependency. Use `stack` for a deployable architecture made of grouped deployable architectures where a stack config file is present. Use `terraform` for deployable architectures made solely of one or more modules.
 
     `version`
     :   A version or range of versions to include as dependencies in SemVer format.
@@ -726,7 +728,7 @@ Section header for information about the deployable architecture variations. Fla
     :   A short summary of the output value.
 
 `install_type`
-:   Specifies whether a deployable architecture is full stack or extension. Architectures listed as extensions require prerequisites.
+:   Specifies whether a deployable architecture is `fullstack` or `extension`. Architectures listed as extensions require prerequisites. The `dependencies` array must also completed if you set this value to `extension`.
 
 
 `scripts`

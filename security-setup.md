@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-05-17"
 
 keywords: customize, deployable architecture, set up, security and compliance center, custom profiles
 
@@ -26,7 +26,7 @@ With IBM Cloud Security and Compliance Center, as a security focal within your e
 
 This tutorial walks you through the process of setting up the automatic evaluation of your [VSI on VPC landing zone deployable architecture](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vsi-ef663980-4c71-4fac-af4f-4a510a9bcf68-global){: external} resources against the IBM Cloud Framework for Financial Services profile. This workflow requires you to set up an attachment to target a resource group in your account that is to contain the resources for the deployable architecture. 
 
-You can follow the [Creating deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-evaluate-deployable) tutorials to customize the deployable architecture to meet your needs and offer it through a private catalog to your enterprise users. Or, you can use the unedited deployable architecture from the catalog. Either way, with this tutorial, you can scan your account resources on a recurring schedule to get ready for audits.
+You can follow the [Using IBM Cloud deployable architectures to build a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-basic-custom) tutorial to customize the deployable architecture to meet your needs and offer it through a private catalog to your enterprise users. Or, you can use the unedited deployable architecture from the catalog. Either way, with this tutorial, you can scan your account resources on a recurring schedule to get ready for audits.
 
 
 ## Before you begin

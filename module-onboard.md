@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-04-02"
+lastupdated: "2024-03-25"
 
 keywords: catalog, catalogs, private catalogs, account catalogs, catalog visibility, module visibility, import module, module registry, terraform module
 
@@ -40,7 +40,7 @@ Before you can onboard your module, be sure that you complete the following prer
 
 To create the `.tgz` file that you need to onboard your module to a private catalog, you must create a release version of your source code. For help with creating a release, see [Managing releases in a repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository){: external}.
 
-If you're using a private source code repository, be sure that you have a [Git personal access token](https://github.com/settings/tokens/new){: external} or a secret that is stored in [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
+If you're using a private source code repository, be sure that you have a [Git personal access token](https://github.ibm.com/settings/tokens/new){: external} or a secret that is stored in [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
 
 
 
@@ -52,7 +52,7 @@ If you're using a private source code repository, be sure that you have a [Git p
 3. Click **Add product**. A side panel opens.
 4. Select **Module** for **Product type**.
 5. Select **Terraform** as your **Delivery method**.
-6. Select the type of repository where your source code is located. 
+6. Select the type of repository where your source code is located.
 
 	If your source code is located in a private repository, you need to authenticate by using a [Git personal access token](https://github.ibm.com/settings/tokens/new){: external} or a secret from [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
 
@@ -89,7 +89,7 @@ After you successfully add your module to a private catalog, you can specify the
    2. Review the information that was imported with your deployable architecture and make edits as needed.
    3. Verify that your entry is showing as expected by checking the **Catalog entry preview**.
    4. When you're finished making your selections, click **Save**.
-5. Edit the **About** page for your module. When users select your module from the catalog, an **About** section is shown that allows them to learn more about the features that are available. 
+5. Edit the **About** page for your module. When users select your module from the catalog, an **About** section is shown that allows them to learn more about the features that are available.
    1. In the **Actions** drop-down, select **Edit product page**.
    2. Enter a description of your module that explains the module's value and benefits to your users.
    3. To add specific feature information, click **Features** > **Add feature**.
@@ -106,7 +106,7 @@ After you specify details through the console, you can generate a manifest file 
 {: important}
 
 ### Getting to the details
-{: #set-up}
+{: #set-up-details}
 
 After you add your module to a private catalog, you can use a step-by-step walkthrough in the console to update general information about your module. To get to the console page, you can use the following steps.
 
@@ -137,9 +137,9 @@ When you release a new version of your module, there might be changes that you w
 
 When you make a module is made available to other users in the cloud, you must provide the following information:
 
-* An architecture diagram that details how the components in your module work together. 
-   
-   Each example of a module must have at least one architecture diagram that outlines the relationships, constraints, and boundaries between the components included in the module example. Architecture diagrams must be provided in `.svg` format. 
+* An architecture diagram that details how the components in your module work together.
+
+   Each example of a module must have at least one architecture diagram that outlines the relationships, constraints, and boundaries between the components included in the module example. Architecture diagrams must be provided in `.svg` format.
 
 * Any highlights that can help users to differentiate between which version or example of module might be best suited to their needs. For example, you might want to list the number of VPCs, network connectivity type, high availability capability, or other important factors that might be used to differentiate each example.
 
@@ -197,7 +197,7 @@ When you've completed the walkthrough, you must review your selections and confi
 
 
 ## Downloading the manifest
-{: #download-manifest}
+{: #module-download-manifest}
 
 Whenever changes are made to your module configuration through the console, it is a best practice to generate and download a new manifest file to ensure that your changes are picked up in future releases of your modue.
 
@@ -215,4 +215,3 @@ To download a manifest through the UI, you can use the following steps.
 {: #onboard-modules-share-ui}
 
 Now that your module is added to a private catalog and the details are set, you're ready to share it with other members of your organization. For help with sharing, see [Sharing your product](/docs/secure-enterprise?topic=secure-enterprise-catalog-enterprise-share).
-
