@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-15"
+lastupdated: "2024-05-19"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -185,7 +185,7 @@ Ensure that you fully understand the costs that are associated with deploying yo
 ### Managing compliance
 {: #manage-compliance}
 
-When you make a deployable architecture available to others in your organization, you can specify the specific compliance controls that your architecture meets by using the default installation. Compliance with regulatory controls is evaluated by {{site.data.keyword.compliance_long}}. For more information, see [Running an evaluation for {{site.data.keyword.cloud}}](/docs/secure-enterprise?topic=secure-enterprise-format-controls).
+When you make a deployable architecture available to others in your organization, you can specify the specific compliance controls that your architecture meets by using the default installation. Compliance with regulatory controls is evaluated by {{site.data.keyword.compliance_long}}. For more information, see [Running an evaluation for {{site.data.keyword.cloud}}](/docs/security-compliance?topic=security-compliance-scan-resources).
 
 1. Click **Add claims**.
 2. Select a profile. The profile is pulled from the {{site.data.keyword.compliance_short}} service. You can choose to select a predefined profile or go to {{site.data.keyword.compliance_short}} and create one of your own.
@@ -230,7 +230,7 @@ If you are working with a deployable architecture stack, there are additional fi
 1. Go to the **Manage** > **Catalogs** > **Private catalogs** page of the console.
 2. Select the product that was previously onboarded. A details page opens.
 3. On the **Versions** tab, select the version that you want to generate a manifest for.
-4. From the **Actions** drop-down menu, select **Download catalog configuration**.
+4. From the **Actions** drop-down menu, select **Download repo content**.
 5. Add the files into the root folder of your source code repository as `ibm_catalog.json`.
 
 ## Adding a variation
@@ -248,4 +248,4 @@ At this point, you've already onboarded your first variation. Now, you can start
 
 Now that your deployable architecture is added to a private catalog and the details are set, you're ready to share the product with other members of your organization. For help with sharing, see [Sharing your product](/docs/secure-enterprise?topic=secure-enterprise-catalog-enterprise-share).
 
-If you want to publish your deployable architecture to the IBM Cloud catalog, you can use Partner Center to get approval and publish for all users to take advantage of the solution that you built. For more information, see [Preparing to onboard deployable architectures](/docs/sell?topic=sell-da-requirements).
+If you want to publish your deployable architecture to the {{site.data.keyword.cloud_notm}} catalog, you can use Partner Center to get approval and publish for all users to take advantage of the solution that you built. For more information, see [Preparing to onboard deployable architectures](/docs/sell?topic=sell-da-requirements).

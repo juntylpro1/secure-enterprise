@@ -26,7 +26,7 @@ completion-time: 5m
 This tutorial walks you through how to share a deployable architecture that you created from an {{site.data.keyword.cloud}} pre-built deployable architecture. By completing this tutorial, you learn about sending a share request, viewing the status of your share request, and sharing your deployable architecture.
 {: shortdesc}
 
-When you send a share request to an enterprise, you are requesting to add the enterprise to an [allowlist](#x3954001){: term}. After the enterprise accepts the request, you can share individual products and deployable architectures to enterprise users who can create instances of any version that is in the `ready` state. A product is in the `ready` state when it is validated and you've marked it as `ready`. Versions that are not validated are in the `draft` state and are not shared with users. However, unvalidated `draft` versions are available to users who have access to the private catalog that contains the version. 
+When you send a share request to an enterprise, you are requesting to add the enterprise to an [allowlist](#x3954001){: term}. After the enterprise accepts the request, you can share individual products and deployable architectures to enterprise users who can create instances of any version that is in the `ready` state. A product is in the `ready` state when it is validated and you've marked it as `ready`. Versions that are not validated are in the `draft` state and are not shared with users. However, unvalidated `draft` versions are available to users who have access to the private catalog that contains the version.
 
 Imagine you are a product manager for the fictitious company _Example Corp_. Your enterprise needs a deployable architecture to provide secure and customizable compute resources for running your applications and services. You browse the {{site.data.keyword.cloud_notm}} catalog and discover the VSI on VPC landing zone option, a deployable architecture that provides the foundation that you need. However, your team of developers decided to modify the architecture to fully meet your business needs. You name your new deployable architecture `Example Corp architecture` and onboarded it to the private catalog `Example Corp catalog`. Now, you are ready to share Example Corp architecture to the rest of your enterprise account `Example Corp enterprise`.
 
@@ -65,7 +65,7 @@ You can check the share request status by completing the following steps:
 1. In the {{site.data.keyword.cloud_notm}} console, select **Manage** > **Catalogs** > **Share requests**.
 2. Click **Sent requests** to show the table of all your requests.
    - If the enterprise accepted the request, the request state is `Accepted`.
-   - If the enterprise denied the request, the request state is `Rejected`
+   - If the enterprise denied the request, the request state is `Rejected`.
 
 After the enterprise accepts the request, you need to share the deployable architecture to the enterprise. If your request is rejected, you will need to reach out to the enterprise.
 
