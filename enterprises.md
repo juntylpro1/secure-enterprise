@@ -146,8 +146,7 @@ Within each account, students can create resources to build their projects and c
 
 
 ## Enterprise limits
-{: #enterprise-limits}
-{: #enterprises-limits}
+{: #enterprise-limit}
 
 The following table lists the maximum limits for {{site.data.keyword.cloud_notm}} [enterprises](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise). These limits apply to any user who can create an enterprise, add accounts to an enterprise, or create and update account groups.
 
