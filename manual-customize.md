@@ -15,7 +15,7 @@ subcollection: secure-enterprise
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Creating a deployable architecture from an existing offering
+# Customizing an {{site.data.keyword.cloud_notm}} deployable architecture
 {: #customize-from-catalog}
 
 You can take advantage of an {{site.data.keyword.IBM}}-curated [deployable architecture](#x10293733){: term} to create a new deployable architecture or consume an existing deployable architecture as a module for your teams to use. Each deployable architecture in the catalog provides its own bundle that is available to download and work with. With the bundle, you can edit the deployable architecture on your local computer, use your own pipelines to test, and update the architecture to fit your enterprise's needs. To work with an architecture, you must have familiarity with Terraform.
