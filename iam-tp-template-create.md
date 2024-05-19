@@ -82,13 +82,6 @@ To establish trust, complete the following steps:
 1. Define the session duration for how long a user can apply the profile before they must reauthenticate.
 1. Click **Save**.
 
-<!---
-#### Action controls
-{: #trust-action-controls}
-
-By default, child account administrators can't add, remove, or update trust relationships for an enterprise-managed trusted profiles. To allow child account administrators to add, remove, or update trust relationships, set the action control for each to **Yes**.
---->
-
 ### (Optional) Add access policies
 {: #add-access-tp-template}
 {: ui}
@@ -111,14 +104,6 @@ Access policies grant access in child accounts to the federated users that can a
 {: ui}
 
 You can remove policies before a template is committed and assigned.
-
-<!---
-
-#### Action controls
-{: #access-tp-action-controls}
-
-By default, child account administrators can't add, remove, or update access policies for an enterprise-managed trusted profiles. To allow child account administrators to add, remove, or update access policies, set the action control for each to **Yes**.
---->
 
 ## Updating template details
 {: #update-tp-template-name}
@@ -207,11 +192,6 @@ To assign a new version of a trusted profile template, complete the following st
 
 The new template version that you assign replaces the old version. Learn more about [Assigning a new version](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#new-version).
 {: note}
-
-
-<!--- NOT MVP :(
-1. To seamlessly migrate from an older version to a new version, review the new version and assign it to child accounts that contain a previous version. For more information, see [Reviewing your access group template](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#review-tp-template) and [Assigning an access group template to child accounts](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#assign-tp-template).
---->
 
 ## Removing an assignment
 {: #remove-assignment-tp}
