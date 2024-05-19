@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-17"
 
 keywords: catalog, private catalog, catalog management service, public catalog, enterprise account, child account, account group, enterprise, IBM Cloud catalog
 
@@ -16,7 +16,7 @@ subcollection: secure-enterprise
 # Customizing the {{site.data.keyword.cloud_notm}} catalog for an enterprise
 {: #catalog-enterprise-restrict}
 
-As the account owner or administrator, you can manage which products in the {{site.data.keyword.cloud}} catalog are available for your enterprise. You can choose to include all products, a set of products, or only certain products. You can also specify what level of the enterprise hierarchy the filters apply to. And, you can further restrict which products are available for a specific account group or account.
+As the account owner or administrator, you can [manage which products in the {{site.data.keyword.cloud}} catalog](/docs/account?topic=account-cm-video) are available for your enterprise. You can choose to include all products, a set of products, or only certain products. You can also specify what level of the enterprise hierarchy the filters apply to. And, you can further restrict which products are available for a specific account group or account.
 {: shortdesc}
 
 ## Before you begin

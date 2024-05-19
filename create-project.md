@@ -34,8 +34,6 @@ Resources are created in the project account for the user. You must have permiss
 
 For more information about access and permissions, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
-<!--It's recommended to use a trusted profile as the authentication method for a project. Trusted profiles are used to securely deploy architecture configurations without the need for key rotation. For more information, see [Using a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project).-->
-
 ## Adding users to a project 
 {: #add-users-project}
 

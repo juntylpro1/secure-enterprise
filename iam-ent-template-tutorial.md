@@ -111,11 +111,6 @@ Define the set of roles that compliance focals can use in multiple accounts. Com
 
 Compliance focals need only this one policy to see the overall compliance posture for a group of sevices in child accounts. Leave the action control for **Add policies** set to **No** so that access group administrators in child accounts can't add more policies to the enterprise-managed access group in their account.
 
-<!---
-
-   1. Select the **Reader** role so that compliance focals can perform read-only actions within a service such as viewing service-specific resources. *(Do they need a Viewer or Reader or both?)*
---->
-
 ## Review and commit your access group template
 {: #ag-review}
 {: step}

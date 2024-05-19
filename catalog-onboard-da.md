@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-05-19"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -43,10 +43,10 @@ Want to see how it works but don't have a deployable architecture ready to use? 
 
 To create the `.tgz` file that you need to onboard your deployable architecture to a private catalog, you must create a release version of your source code. For help with creating a release, see [Managing releases in a repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository){: external}.
 
-If you're using a private source code repository, be sure that you have a Git personal access token or a secret that is stored in [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
+If you're using a private source code repository, be sure that you have a Git personal access token or a secret that is stored in [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started).
 
 
-## Adding a deployable architecture
+## Adding a deployable architecture to a private catalog
 {: #add-catalog}
 
 To add your deployable architecture to a private catalog, you can use the following steps.
@@ -55,6 +55,7 @@ To add your deployable architecture to a private catalog, you can use the follow
 2. Select the private catalog that you want to add a product to. The catalog details page opens.
 3. Click **Add product**. A side panel opens.
 4. Select **Deployable architecture** for **Product type**.
+5. Select **Terraform** or **Stack** as your **Delivery method**.
 6. Select the type of repository where your source code is located.
 
 	If your source code is located in a private repository, you need to authenticate by using a Git personal access token or a secret from [{{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started).
@@ -133,61 +134,16 @@ When you release a new version of your product, there might be changes that you 
 * **Updates**: Describe any general updates that were made to the new version. For example, bug fixes or improvements to existing features.
 
 
-#### Understanding pre and post-scripts
+#### Including pre- and post-scripts
 {: #include-scripts}
 
-You can have a pre-script or post-script run for your deployable architectures before or after validating, deploying, and undeploying. Scripts are configured to a specific version of your deployable architecture, and must be run and validated through projects. For more information about projects, see [Creating a project](/docs/secure-enterprise?topic=secure-enterprise-setup-project&interface=ui).
-
-There are several benefits for using scripts for your deployable architecture. Scripts can be used for custom validation, for example, if you want to ensure that the `tag` parameter is always a valid cost center ID. The pre-validation script might call out to a service to check that the cost center ID was valid. You can track deployments and add resources to an inventory system by providing a post-deployment script that can call out to a service to track which resources were deployed. Another scenario might be data migration. A pre-deployment script can backup data. Then, after the deployable architecture deletes the old data store and creates the new one, the post-deployement script can restore it to the new data store. Or you can use scripts to install or configure software.
+You can have a pre-script or post-script run for your deployable architectures before or after validating, deploying, and undeploying. Scripts are configured to a specific version of your deployable architecture as specified in the catalog manifest file, and must be run and validated through projects.
 
 Scripts are optional for an offering but if they are used they are required to be in the repository in a directory named `scripts`. The script files themselves must conform to the following naming convention `<action>-<stage>-ansible-playbook.yaml`. Options for `action` include `deploy`, `validate`, and `undeploy`. Options for `stage` include `pre` and `post`. Only ansible scripts in the playbook format are supported at this time.
 
 All scripts must be able to run more than once without failing. For example, a pre-deployment or post-deployment script must operate correctly, even if it is run several times. Post-deployment scripts might add resources to a catalog management database and must be sure not to add duplicate resources if run more than once.
 
-The following is an example of a pre-script that is used to display a message after the deployable architecture is validated. Pre-scripts get passed to all of the inputs from the deployable architecture, including the credentials used to authorize deployment.
-
-```python
-- name: Validate pre playbook
-  hosts: localhost
-  vars:
-    ibmcloud_api_key: "{{ lookup(`ansible.builtin.env`, `ibmcloud_api_key`)}}"
-    cos_instance_name: "{{ lookup(`ansible.builtin.env`, `cos_instance_name`)}}"
-    workspace_id: "{{ lookup(`ansible.builtin.env`, `workspace_id`)}}"
-  tasks:
-  - name: Print message
-    ansible.builtin.debug:
-      msg: "The workspace id is {{ workspace_id }}"
-    when: workspace_id is defined and workspace_id != ""
-  - name: Print message
-    ansible.builtin.debug:
-      msg: "The cos instance name is {{ cos_instance_name }}"
-    when: cos_instance_name is defined
-  - name: Print result
-    ansible.builtin.debug:
-      msg: "Received api key"
-    when: ibmcloud_api_key is defined
-```
-{: codeblock}
-
-The following is an example of a post-script. Post-scripts get passed the outputs of the deployable architecture.
-
-```python
-- name: Deploy post playbook
-  hosts: localhost
-  vars:
-    ibmcloud_api_key: "{{ lookup(`ansible.builtin.env`, `ibmcloud_api_key`)}}"
-    git_repo_url: "{{ lookup(`ansible.builtin.env`, `git_repo_url`)}}"
-  tasks:
-   - name: Print result
-     ansible.builtin.debug:
-       msg: "Received api key"
-     when: ibmcloud_api_key is defined
-   - name: Print result
-     ansible.builtin.debug:
-       msg: "The result is: {{ git_repo_url }}"
-     when: git_repo_url is defined and git_repo_url != ""
-```
-{: codeblock}
+For more information, including examples, see [Creating scripts for a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-understand-scripts).
 
 
 ### Adding deployable architecture details
@@ -213,7 +169,7 @@ Document the instructions for installing your deployable architecture in the rea
 ### Validating the version
 {: #validate-version}
 
-Select the target for validation. When a product is validated, the resources are deployed. For a stand-alone deployable architecture, the target can be either a Schematics workspace in your current account or a specific project. Depending on the option that you select, more configuration information might be required. After your target is configured, you must provide the values for the input and output variables that are required for your architecture to successfully deploy to the target. After your variables are configured, you can validate the version.
+Select the target for validation. When a product is validated, the resources are deployed. For a stand-alone deployable architecture, the target can be either a Schematics workspace in your current account or a specific project. For a deployable architcture stack, you must use a project. Depending on the option that you select, more configuration information might be required. After your target is configured, you must provide the values for the input and output variables that are required for your architecture to successfully deploy to the target. After your variables are configured, you can validate the version.
 
 Do not clean up the resources in your account until after you run the compliance evaluation in the managing security and compliance section.
 {: note}
@@ -266,40 +222,30 @@ To download a manifest, you can use the following steps.
 4. From the **Actions** drop-down menu, select **Export as code**.
 5. Add the file into the root folder of your source code repository as `ibm_catalog.json`.
 
-## Creating a variation
-{: #create-variation}
+## Downloading your catalog configuration
+{: #export-catalog-config}
 
-A variation is a new version of your architecture that is designed to build upon the funtions of the base deployable architecture. Variations can either be a `fullstack` or `extension`. The `fullstack` option indicates that the variation does not have any prerequisite dependencies that need to be deployed first. Essentially, it is self-contained. If the variation is an `extension`, then there is at least one dependent offering that must be deployed before the deployment of the variation.
+If you are working with a deployable architecture stack, there are additional files that are generated in addition to your manifest file. If you have made updates to your catalog configuration by using the console, it is a best practices to download the files and add them to your source code repository so that your changes carry over into your next release.
 
-1. [Generate the manifest file](#download-manifest) for the previous version of your deployable architecture.
-2. In your source code repo, create a working directory.
-3. In the manifest file of your repo, add the following code snippet into the `flavors` section. This array defines the offering as part of the same deployable architecture, but allows it to be listed as a variation within the catalog. If you downloaded your manifest from a previously onboarded version in the catalog, the file will already have a minimal definition in place for a new variation. For example, if your deployable architecture is called `Dinner` and you want to create a variation of that, you might call it `steak` as shown in the following example.
+1. Go to the **Manage** > **Catalogs** > **Private catalogs** page of the console.
+2. Select the product that was previously onboarded. A details page opens.
+3. On the **Versions** tab, select the version that you want to generate a manifest for.
+4. From the **Actions** drop-down menu, select **Download repo content**.
+5. Add the files into the root folder of your source code repository as `ibm_catalog.json`.
 
-   ```json
-   "flavors": [
-    {
-        "label": "Steak",
-        "name": "steak-variation",
-        "working_directory": "./steak",
-        "install_type": "fullstack"
-    }
-   ]
-   ```
-   {: codeblock}
+## Adding a variation
+{: #add-variation}
 
-4. Create a new Git release.
-5. Import the `.tgz` file into the catalog as a new version.
+You can add more variations that are a new version of your architecture that is designed to build upon the funtions of the base deployable architecture. If you [created multiple variations](/docs/secure-enterprise?topic=secure-enterprise-create-da#create-variation) in separate working directories in your source repo and specified them in the `flavors` array in your `ibm_catalog.json` manifest file, you must onboard each variation separately.
 
-   1. Go to the **Manage > Catalogs > Private catalogs** page of the console.
-   2. Select the private catalog that you want to add a product to. The catalog details page opens.
-   3. Select the product that you want to provide more details for.
-   4. On the **Versions** tab, click **Add version**.
-   5. Provide the information and then click **Add version**.
+At this point, you've already onboarded your first variation. Now, you can start back at [Adding a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-onboard-da#add-catalog) to onboard your next variation. Here are a few tips for onboarding your next variation:
 
-   The updated catalog manifest file that you uploaded as part of your release auto-fills most of the configurations for your new variation. However, it is a best practice to validate the configuration before you share the product with your organization.
+* The source URL of the repo release will be the same for all of the variations within that release and they should be imported with the same version number. The product name and version number are how the variations are linked together and then result as options on the same catalog tile.
+* On the Add deployable architecture details page, step 3 includes adding highlights. These are known as features in the `ibm_catalog.json` manifest file. You might have already added these in the manifest, so you can review them here. If not, go ahead and add some highlights. These should be short ability, process, capacity, or other features of this specific architecture. You will use the same highlight "Name" across all variations. The description is where there should be differences. This enables users to evaluate the differences in the architectures by using the text highlights on the catalog details page.
 
-
-## Next steps
+## Next steps: Sharing and publishing
 {: #onboard-next}
 
 Now that your deployable architecture is added to a private catalog and the details are set, you're ready to share the product with other members of your organization. For help with sharing, see [Sharing your product](/docs/secure-enterprise?topic=secure-enterprise-catalog-enterprise-share).
+
+If you want to publish your deployable architecture to the {{site.data.keyword.cloud_notm}} catalog, you can use Partner Center to get approval and publish for all users to take advantage of the solution that you built. For more information, see [Preparing to onboard deployable architectures](/docs/sell?topic=sell-da-requirements).
