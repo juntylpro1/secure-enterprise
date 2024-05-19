@@ -12,7 +12,7 @@ toc:
 
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
       - topicgroup:
           label: Learn about enterprise accounts
