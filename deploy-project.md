@@ -90,22 +90,3 @@ You can also run the following `ibmcloud resource search` command to retrieve al
 ibmcloud resource search "service_tags:\"schematics::project_id:PROJECT_ID\""
 ```
 {: codeblock}
-
-## Deploying your architecture by using the API
-{: #deploy-config-api-copy}
-{: api}
-
-Projects API is a beta release that is currently available for evaluation and testing purposes.
-{: beta}
-
-After your edits are approved, you can programmatically deploy your architecture by calling the [Projects API](/apidocs/projects#deploy-config){: external} as shown in the following sample request. The example deploys a deployment with the ID `0df9-5602447qf3c7-8cd7-1rge0328-4c88`:
-
-```bash
-curl -X POST --location --header "Authorization: Bearer {iam_token}" \
-  --header "Accept: application/json" \
-  --header "Content-Type: application/json" \
-  --data '' \
-  "{base_url}/v1/projects/1rge0328-0df9-4c88-8cd7-5602447qf3c7/configs/0df9-5602447qf3c7-8cd7-1rge0328-4c88/install"
-```
-{: curl}
-{: codeblock}

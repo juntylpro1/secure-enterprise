@@ -165,7 +165,7 @@ The following code snippet can be used as a template.
                         "Variation name 2",
                         "Variation name 3"
                      ],
-                     "install_type": "full_stack or extension",
+                     "install_type": "fullstack or extension",
                   }
                ],
                "iam_permissions" [
@@ -728,7 +728,7 @@ Section header for information about the deployable architecture variations. Fla
     :   A short summary of the output value.
 
 `install_type`
-:   Specifies whether a deployable architecture is `full_stack` or `extension`. Architectures listed as extensions require prerequisites. The `dependencies` array must also completed if you set this value to `extension`.
+:   Specifies whether a deployable architecture is `fullstack` or `extension`. Architectures listed as extensions require prerequisites. The `dependencies` array must also completed if you set this value to `extension`.
 
 
 `scripts`

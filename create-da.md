@@ -155,9 +155,12 @@ See examples:
 
 The catalog manifest is a file in the root of your repository that is called the `ibm_catalog.json`. This file defines the required metadata for creating a tile in a catalog, for example the name, description, features, variation definitions that point to the underlying Terraform configuration, compliance claims that will be verified during onboarding by using {{site.data.keyword.compliance_short}}, and necessary IAM permissions for deploying the architecture. It also defines the configurations that you want to be selected by default when a user attempts to deploy your architecture from the catalog.
 
+Check out the [example from the sample repo](https://github.com/terraform-ibm-modules/sample-deployable-architectures/blob/main/ibm_catalog.json){: external} that shows a fullstack and extension type variation.
+{: tip}
+
 You can create your catalog manifest file by using two different methods:
 
-1. You can create this file from scratch by using the [template](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&interface=ui#example-manifest).
+1. You can create this file from scratch by using the [template](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&interface=ui#example-manifest). .
 1. You can start the onboarding process with the following basic sample in your source repo, and then [download the manifest file](/docs/secure-enterprise?topic=secure-enterprise-onboard-da&interface=ui#download-manifest) after you make changes during onboarding in the console to add the updated file to your source repo.
 
    The following is a basic manifest file that you can add to your repository and edit to help to get you started with this option.
