@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2023
+  years: 2023, 2024
 
-lastupdated: "2023-08-03"
+lastupdated: "2024-05-17"
 
 keywords: deployable architecture, basic customization, VSI on VPC landing zone
 
@@ -18,48 +18,48 @@ completion-time: 10m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using a customization bundle to customize a deployable architecture
+# Using {{site.data.keyword.cloud_notm}} deployable architectures to build a deployable architecture
 {: #basic-custom}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-
-This tutorial walks you through how to customize an {{site.data.keyword.cloud}} pre-built deployable architecture to fit your business needs by using a preconfigured customization bundle. By completing this tutorial, you learn how to download the customization bundle, update the details and Terraform files of a deployable architecture, and then test the customized deployable architecture.
+This tutorial walks you through how to create a new deployable architecture from an existing {{site.data.keyword.cloud}} deployable architecture to fit your business needs. By completing this tutorial, you learn how to download the Terraform files of a deployable architecture, update the variables, and then test the new deployable architecture.
 {: shortdesc}
 
-By starting with an {{site.data.keyword.cloud_notm}} deployable architecture, you don't need to worry about creating compliant infrastructure architecture from the ground up. You can get a jump-start by using an {{site.data.keyword.cloud_notm}} deployable architecture and customizing it to meet your specific needs.
+Imagine you are the infrastructure architect for the fictitious company _Example Corp_ and you have been given certain infrastructure requirements. You browse the {{site.data.keyword.cloud_notm}} catalog and discover that the VSI on VPC landing zone deployable architecture meets most of your requirements. However, you want to make the following changes to meet your business needs:
 
-Imagine you are a developer for the fictitious company _Example Corp_. You're looking for a product to provide secure and customizable compute resources for running your applications and services. You browse the {{site.data.keyword.cloud_notm}} catalog and discover the **VSI on VPC landing zone** option, a deployable architecture that provides what you need. However, you need to modify the architecture to meet your business needs:
+- Remove unwanted variables
+- Constrain {{site.data.keyword.cloud_notm}} regions to US deployment regions
+- Use an existing SSH key instead of a personal SSH key
+- Use a specific Virtual Server Instance profile called `example-profile`
 
-   - Remove unwanted variables
-   - Use only US deployment regions
-   - Use an existing SSH key instead of a personal SSH key
-   - Use a specific Virtual Server Instance profile called `example-profile`
-
-This tutorial uses a fictitious scenario to help you learn and understand a few of the customization options for a deployable architecture. As you complete the tutorial, adapt each step to match your organization's needs.
+This tutorial uses a fictitious scenario to help you learn and understand a few of the configuration options for a deployable architecture. As you complete the tutorial, adapt each step to match your organization's needs.
 
 ## Before you begin
 {: #basic-custom-prereqs}
 
+1. To build an architecture, you must have familiarity with Terraform.
 1. Verify that you're using a Pay-As-You-Go or Subscription account by going to **Manage** > **Account** > **Account settings** in the {{site.data.keyword.cloud_notm}} console.
-1. Create a repository to store your customized deployable architecture. For the purposes of this tutorial, GitHub is used. For more information, see [Create a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories){: external}.
+1. Create a repository to store your new configuration. For the purposes of this tutorial, GitHub is used. For more information, see [Create a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories){: external}.
 1. Make sure that you have an editor of your choice set up, for example, [Visual Studio Code](https://code.visualstudio.com/){: external}.
 1. Verify that you're assigned the following {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles:
       * Administrator on all account management services and all IAM services
       * Editor on the Catalog management service
       * Manager service access role for Schematics
-      * Other roles that are required for specific resources in your customized deployable architecture
+      * Other roles that are required for specific resources in your configured deployable architecture
 
-## Downloading the customization bundle
+## Downloading the deployable architecture files
 {: #basic-custom-bundle}
 {: step}
+
+To begin, you need to download the deployable architecture files. THe files include a `main.tf` file that invokes the root Terraform module in VSI on VPC landing zone.
 
 1. In the {{site.data.keyword.cloud_notm}} console, click **Catalog**.
 1. Select **Deployable architectures** from the list of **Type** filters > **VSI on VPC landing zone**.
 1. Click **Review deployment options** from the summary panel.
-1. Select **Work with code** > **Start customizing** to download the customization bundle.
+1. Select **Work with code** > **Download bundle** to download the bundle.
 1. Open the downloaded bundle on your local computer.
-1. If needed, extract the `.tar.gz` customization bundle to access and edit the files.
+1. If needed, extract the `.tar.gz` bundle to access and edit the files.
 
     After successfully downloading and extracting the bundle, you'll see the following files and folders:
 
@@ -78,7 +78,7 @@ This tutorial uses a fictitious scenario to help you learn and understand a few 
 {: #basic-custom-remove}
 {: step}
 
-When you researched **VSI on VPC landing zone**, you determined that you wanted to modify the region, SSH key, {{site.data.keyword.cloud_notm}} API key, and VSI profile variables. The other variables that are included in the architecture aren't needed for your purposes, and you would like to remove them by using your favorite editor Visual Studio Code.
+When you researched VSI on VPC landing zone, you determined that you wanted to modify the region, SSH key, {{site.data.keyword.cloud_notm}} API key, and VSI profile variables. The other variables that are included in the architecture aren't needed for your purposes, and you would like to remove them by using your favorite editor Visual Studio Code.
 
 1. In Visual Studio Code, open the `variables.tf` file.
 1. Move the following variables to the start of the `variables.tf` file.
@@ -91,7 +91,6 @@ When you researched **VSI on VPC landing zone**, you determined that you wanted 
    {: tip}
 
 1. Delete all the other variables and save the file.
-
 
 ## Updating the main.tf file
 {: #basic-custom-main}
@@ -109,6 +108,7 @@ Now that you updated the `variables.tf` file, make sure that the configuration i
 
 1. To hardcode the architecture to use the `example-profile` VSI profile, add `vsi_instance_profile     = "example-profile"` as the last variable.
 1. Confirm that the `ibmcloud_api_key`, `prefix`, and `region` variables are as shown in the following example.
+
     ```terraform
     module "deploy-arch-ibm-slz-vsi" {
     source      = "https://cm.globalcatalog.cloud.ibm.com/api/v1-beta/offering/source//patterns/vsi?archive=tgz&flavor=standard&installType=fullstack&kind=terraform&name=deploy-arch-ibm-slz-vsi&version=v4.0.0"
@@ -130,13 +130,15 @@ Your architecture is now hardcoded to use the specific `example-profile` VSI pro
 {: #basic-custom-json}
 {: step}
 
-The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information when you onboard to a private catalog. Because you changed the deployable architecture, you created a brand new architecture for your needs. Update the following information in the `ibm_catalog.json` file to reflect your changes.
+The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information when you onboard to a private catalog. Because you changed the deployable architecture, you created a brand new architecture for your needs. Update the following information in the `ibm_catalog.json` file to reflect your changes. 
+
+For more information on the manifest file and what it contains, see [Locally editing the catalog manifest](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&locale=en).
 
 ### Updating the product information
 {: #basic-custom-info}
 {: step}
 
-Now that you customized the deployable architecture and created your own architecture, you must also update the name and the programmatic name. For the purposes of this tutorial, update the name to `Example Corps' architecture` and the programmatic name to `deploy-arch-example-corp`.
+Now that you updated the configuration and created your own architecture, you must also update the name and the programmatic name. For the purposes of this tutorial, update the name to `Example Corps' architecture` and the programmatic name to `deploy-arch-example-corp`.
 
 1. Open the `ibm_catalog.json` file.
 1. Find the `label` field and update the name of your deployable architecture to `Example Corps' architecture`.
@@ -148,7 +150,7 @@ Now that you customized the deployable architecture and created your own archite
 {: #basic-custom-config}
 {: step}
 
-Now, you want to make sure that users of your customized architecture must specify an existing SSH key and can deploy it from only US regions and. To do so, update the variable information in the configuration section of the `ibm_catalog.json` file.
+Now, you want to make sure that users of your new configuration must specify an existing SSH key and can deploy it from only US regions. To do so, update the variable information in the configuration section of the `ibm_catalog.json` file.
 
 1. In the `configuration` section of the `ibm_catalog.json` file, find the following variables and move them to the beginning of the configuration section.
    - `existing_ssh_key_name`
@@ -158,26 +160,27 @@ Now, you want to make sure that users of your customized architecture must speci
 1. To require users to specify an `existing_SSH_key`, change the required field to `true`.
 
 1. To restrict the regions to only US regions, you must add each region as an option for the region variable, for example:
-    ```terraform
-                            {
-                                "key": "region",
-                                "type": "string",
-                                "default_value": "__NOT_SET__",
-                                "description": "Region where VPC is created. To find your VPC region, use `ibmcloud is regions` command to find available regions.",
-                                "required": true,
-                                "custom_config": {},
-                                "options": [
-                                    {
-                                        "displayname": "us-east",
-                                        "value": "us-east"
-                                    },
-                                    {
-                                        "displayname": "us-south",
-                                        "value": "us-south"
 
-                                    }
-                                ]
-                            }
+    ```terraform
+    {
+        "key": "region",
+        "type": "string",
+        "default_value": "__NOT_SET__",
+        "description": "Region where VPC is created. To find your VPC region, use `ibmcloud is regions` command to find available regions.",
+        "required": true,
+        "custom_config": {},
+        "options": [
+            {
+                "displayname": "us-east",
+                "value": "us-east"
+            },
+            {
+                "displayname": "us-south",
+                "value": "us-south"
+
+            }
+        ]
+    }
     ```
     {: codeblock}
 
@@ -188,11 +191,11 @@ Now, you want to make sure that users of your customized architecture must speci
 
 1. Save the `ibm_catalog.json` file.
 
-## Testing your customized deployable architecture
+## Testing your deployable architecture
 {: #basic-custom-test}
 {: step}
 
-Before you onboard your customized deployable architecture to a private catalog and make it available for use, test your customization to ensure that the architecture runs as intended. To test your architecture with the Terraform command line, complete the following steps:
+Before you onboard your configured deployable architecture to a private catalog and make it available for use, test your configuration to ensure that the architecture runs as intended. To test your architecture with the Terraform command line, complete the following steps:
 
 1. Create or update a `.netrc` file that is needed to use Terraform modules from the {{site.data.keyword.cloud_notm}}. For more information, see [ibmcloud catalog utility netrc](/docs/cli?topic=cli-manage-catalogs-plugin#generate-netrc).
 
@@ -228,4 +231,4 @@ Before you onboard your customized deployable architecture to a private catalog 
 ## Next steps
 {: #basic-custom-next}
 
-If your deployable architecture ran as expected, you successfully customized your own architecture from **VSI on VPC landing zone**. You are now ready to move your updated files to the GitHub repository that you created and [onboard your product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
+If your deployable architecture ran as expected, you successfully created your own deployable architecture from VSI on VPC landing zone. You are now ready to move your updated files to the GitHub repository that you created and [onboard your product to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).

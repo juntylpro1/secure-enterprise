@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-17"
+lastupdated: "2024-05-16"
 
 keywords: customize, deployable architecture, bundle, manifest
 
@@ -34,6 +34,7 @@ While there are many things that you can do with a deployable architecture provi
 There are a few limitations to be aware of when working with deployable architecture bundles downloaded from the catalog:
 
 * A deployable architecture includes a provider configuration that is locked to a specific provider version. Any changes to a deployable architecture must work with that provider and version. If your logic calls other modules, those modules must use the same provider and version.
+* Can't use a for loop **we need more information here**
 * Depending on your changes, {{site.data.keyword.cloud_notm}} might not support the deployable architecture. The components of the architecture that are supplied in the bundle are supported by {{site.data.keyword.cloud_notm}}, but any modified code that's used to extend it is not.
 
 ## Before you begin

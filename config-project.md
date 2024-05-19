@@ -4,9 +4,9 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-04-23"
+lastupdated: "2024-05-08"
 
-keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
+keywords: manage project, rename project, move project, deploy project, merge request, merge changes
 
 subcollection: secure-enterprise
 
@@ -34,23 +34,26 @@ Input values are used to configure a deployable architecture to match your speci
 ### Referencing values
 {: #reference-values}
 
-Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. For inputs that have editable fields, you can include references as text strings that refer to inputs or outputs from other configurations that were deployed from your project. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.  
+Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. For an input that has an editable field, you can add a reference to an input or an output from another configuration that was deployed from your project. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.
 
-You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab. 
+In the console, you can add a reference in an architecture that you're configuring by hovering over an input and selecting the **Reference** icon ![Reference icon](../icons/link.svg "Reference").
 {: tip}
 
-References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed in order to reference another value within it.
+If you are using the API or CLI to configure a deployable architecture, and you want to include a reference, you can write one as a text string. References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed to reference another value within it.
 
-#### Referencing values from a configuration 
+You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab.
+{: tip}
+
+#### Referencing values from a configuration
 {: #reference-values-config}
 
-The general format to reference a value in a configuration is as follows: 
+The general format to reference a value in a configuration is as follows:
 
 `ref:/configs/<config_name>/<inputs_or_outputs>/<input_or_output_name>`.
 
 You can reference an input or an output from a configuration that has been deployed from your project. For example, the following reference points to an output that is named `cluster_id` within the `ProdCluster` configuration: `ref:/configs/ProdCluster/outputs/cluster_id`.
 
-You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so. 
+You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so.
 {: remember}
 
 #### Referencing values in a stack
@@ -62,12 +65,12 @@ If your configuration is part of a stacked deployable architecture, you can refe
 
 `ref:/configs/<stack_name>/members/<member_name>/inputs_or_outputs/<input_or_output_name>`
 
-If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level. 
+If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level.
 
 #### Referencing inputs from an environment
 {: #reference-parameters-env}
 
-Since environments are created within a project, and not within a configuration, you don't need to include `/configs/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `environments` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./environments/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment. 
+Since environments are created within a project, and not within a configuration, you don't need to include `/configs/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `environments` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./environments/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment.
 
 For example, the following reference points to an input parameter that is named `cluster_id` within the `Production` environment: `ref:./environments/Production/inputs/cluster_id`.
 
@@ -83,11 +86,11 @@ To create a customized configuration, complete the following steps:
     {: note}
 {: #cra-validate-failure}
 
-1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account. 
+1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account.
 
     If you select **Architecture default**:
     * The scan uses the default controls that the owner of the deployable architecture added when they onboarded it.
-    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin) are checked.
+    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals) are checked.
     * Any extra controls that the architecture owner added that are not included in the list of supported rules are not checked when you validate your configuration.
     * If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used.
 
@@ -147,7 +150,7 @@ For more information about the command parameters, see [**`ibmcloud project conf
    {: codeblock}
 
    For more information about the command parameters, see [**`ibmcloud project config-validate`**](/docs/cli?topic=cli-projects-cli#project-cli-config-validate-command).
- 
+
 1. After validating your configuration, approve your configuration edits and merge them to the main configuration by running the following `ibmcloud project config-approve` command:
 
    ```sh
@@ -156,3 +159,41 @@ For more information about the command parameters, see [**`ibmcloud project conf
    {: codeblock}
 
    For more information about the command parameters, see [**`ibmcloud project config-approve`**](/docs/cli?topic=cli-projects-cli#project-cli-config-approve-command).
+
+## Configuring an architecture by using the API
+{: #how-to-config-api}
+{: api}
+
+Projects API is a beta release that is available for evaluation and testing purposes.
+{: beta}
+
+You can programmatically add a configuration to a project by calling the [Projects API](/apidocs/projects#create-config){: external} as shown in the following sample request. The example adds a configuration with the name `My new configuration` to a project:
+
+```bash
+curl -X POST --location --header "Authorization: Bearer {iam_token}" \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  --data '{ "definition": { "name": "env-stage", "description": "Stage environment configuration.", "locator_id": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.018edf04-e772-4ca2-9785-03e8e03bef72-global", "inputs": { "account_id": "account_id", "resource_group": "stage", "access_tags": [ "env:stage" ], "logdna_name": "LogDNA_stage_service", "sysdig_name": "SysDig_stage_service" }, "settings": { "IBMCLOUD_TOOLCHAIN_ENDPOINT": "https://api.us-south.devops.dev.cloud.ibm.com" } } }' \
+  "{base_url}/v1/projects/{project_id}/configs"
+```
+{: curl}
+{: codeblock}
+
+## Approving configuration changes by using the API
+{: #approve-changes-api}
+{: api}
+
+Projects API is a beta release that is currently available for evaluation and testing purposes.
+{: beta}
+
+You can programmatically approve configuration edits and merge them to the main configuration by calling the [Projects API](/apidocs/projects#approve){: external} as shown in the following sample request. The example approves configuration edits and merges them to the configuration:
+
+```bash
+curl -X POST --location --header "Authorization: Bearer {iam_token}" \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  --data '{ "comment": "Approving the changes" }' \
+  "{base_url}/v1/projects/{project_id}/configs/{id}/approve"
+```
+{: curl}
+{: codeblock}

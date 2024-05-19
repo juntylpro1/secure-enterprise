@@ -82,6 +82,13 @@ To establish trust, complete the following steps:
 1. Define the session duration for how long a user can apply the profile before they must reauthenticate.
 1. Click **Save**.
 
+<!---
+#### Action controls
+{: #trust-action-controls}
+
+By default, child account administrators can't add, remove, or update trust relationships for an enterprise-managed trusted profiles. To allow child account administrators to add, remove, or update trust relationships, set the action control for each to **Yes**.
+--->
+
 ### (Optional) Add access policies
 {: #add-access-tp-template}
 {: ui}
@@ -105,6 +112,13 @@ Access policies grant access in child accounts to the federated users that can a
 
 You can remove policies before a template is committed and assigned.
 
+<!---
+
+#### Action controls
+{: #access-tp-action-controls}
+
+By default, child account administrators can't add, remove, or update access policies for an enterprise-managed trusted profiles. To allow child account administrators to add, remove, or update access policies, set the action control for each to **Yes**.
+--->
 
 ## Updating template details
 {: #update-tp-template-name}
@@ -195,6 +209,10 @@ The new template version that you assign replaces the old version. Learn more ab
 {: note}
 
 
+<!--- NOT MVP :(
+1. To seamlessly migrate from an older version to a new version, review the new version and assign it to child accounts that contain a previous version. For more information, see [Reviewing your access group template](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#review-tp-template) and [Assigning an access group template to child accounts](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#assign-tp-template).
+--->
+
 ## Removing an assignment
 {: #remove-assignment-tp}
 {: ui}
@@ -277,7 +295,7 @@ To create a trusted profile template by using the CLI, complete the following st
 
 You can update a trusted profile template at any time before you commit it. To update a specific version of a trusted profile template, complete the following steps:
 
-1. Update your JSON file with the new trusted profile template definition. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-profile-template-version){: external}.
+1. Update your JSON file with the new trusted profile template definition. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-profile-template-version).
 
   ```json
       {
@@ -371,12 +389,12 @@ If an assignment fails, use the `trusted-profile-assignment-update` method to re
 {: tip}
 
 ## Creating a new version by using the CLI
-{: #new-version-trusted profile-template}
+{: #new-version-trusted-profile-template}
 {: cli}
 
 If you want to make changes to a trusted profile template that's committed or assigned, create a new version.
 
-1. Update your JSON file with the new trusted profile template definition. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#create-profile-template-version){: external}.
+1. Update your JSON file with the new trusted profile template definition. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#create-profile-template-version).
 1. Use the `trusted-profile-template-version-create` method to create a new version. The following sample request creates a new version of the template `DBAdministrator`.
 
    ```bash
@@ -665,7 +683,7 @@ Save the ProfileTemplate ID and entity_tag value from the response for use in up
 {: #update-trusted-profile-template-api}
 {: api}
 
-You can update a trusted profile template at any time before you commit it. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-profile-template-version){: external}. To update a specific version of a trusted profile template, complete the following steps:
+You can update a trusted profile template at any time before you commit it. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-profile-template-version). To update a specific version of a trusted profile template, complete the following steps:
 
 1. List the trusted profile templates in your enteprise account and note the `ProfileTemplate` ID and ETag in the response for the template version that you want to update.
 
