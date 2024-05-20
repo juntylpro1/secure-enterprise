@@ -41,7 +41,7 @@ Depending on your changes, {{site.data.keyword.cloud_notm}} might not support th
 {{site.data.keyword.cloud_notm}} provides multiple deployable architectures that you can use as-is or you can customize. To find an architecture, complete the following steps:
 
 1. In the [{{site.data.keyword.cloud_notm}} catalog](/catalog#reference_architecture){: external}, select a deployable architecture.
-1. Download the customization bundle by selecting **Review deployment options** > **Customize locally** > **Start customizing**.
+1. Download the customization bundle by selecting **Review deployment options** > **Work with code** > **Download bundle**.
 
 ## Customizing the deployable architecture
 {: #customize-bundle}
