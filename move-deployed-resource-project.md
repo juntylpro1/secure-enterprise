@@ -3,8 +3,7 @@
 copyright:
 
   years: 2023, 2024
-
-lastupdated: "2024-04-03"
+lastupdated: "2024-04-23"
 
 keywords: move schematics workspace, migrate schematics workspace, deployable architecture
 
@@ -28,6 +27,7 @@ Watch and learn the process of moving deployed resources to a project.
 {: #move-wks-da}
 
 ![Moving a {{site.data.keyword.bpshort}} workspace into a project](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_ytu3tvzb){: video output="iframe" data-script="#move-wks-da-script" id="mediacenter-player" width="560" height="315" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+
 
 ### Video transcript
 {: #move-wks-da-script}
@@ -166,6 +166,6 @@ To complete the remainder of the process for the deployable architecture, comple
 1. Add compliance information (controls).
 1. Revalidate to receive a cost estimate.
 
-For more information about how to complete the steps, see [Onboarding a customized deployable architecture to your private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom&interface=ui).
+For more information about how to complete the steps, see [Onboarding a customized deployable architecture to your private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
 
 For more information, see [Adopting the Enterprise Architecture](/docs/adopt-enterprise-architecture?topic=adopt-enterprise-architecture-intro).

@@ -36,8 +36,6 @@ Projects help manage IaC at scale. They help ensure that the IaC and its configu
 * Projects allow infrastructure to be managed as code across accounts, allowing all infrastructure that is related to a project to be managed from a single place. This makes it easy to monitor that development and test infrastructure is aligned with production infrastructure by avoiding surprises as applications move through to production.
 * Projects help with accounting and configuration management by ensuring that all resources that are associated with the project can be tracked back to the project by tagging and resource reports. Projects can also be tagged to provide a higher level of organization.
 
-<!--As project functionality continues to develop, projects will offer additional benefits such as drift detection, update policy, cost, status, and compliance reporting, improved security, and project lifecycle management.-->
-
 ## Exploring popular use cases
 {: #project-use}
 
@@ -56,7 +54,7 @@ Building and sharing custom architectures by using private catalogs
 :   Deployable architectures are built to be modular and flexible. You can create custom deployable architectures and share them with your team by using private catalogs by adding the IaC to a new project. The IaC prompts you to select your code (you can download a code bundle from the deployable architecture’s catalog page) and uploads it to any repo you specify. After it's deployed, the IaC creates CI and CD pipelines that check changes for compliance and allow you to publish directly into a private catalog. Private catalogs make it easy to consume and push version updates to your team.
 
 Managing the lifecycle of your infrastructure
-:   Projects help you manage, track, and maintain your infastructure from start to finish. As the lifecycle of your infrastructure changes, you can use projects to easily clean up the project resources that are no longer needed. If a project is complete and is no longer needed, the whole project and all associated resources in all envionments can be deleted. In addition, a project can be paused by deleting the associated resources while retaining the project and its configurations. This makes it easy to resume the project later.
+:   Projects help you manage, track, and maintain your infrastructure from start to finish. As the lifecycle of your infrastructure changes, you can use projects to easily clean up the project resources that are no longer needed. If a project is complete and is no longer needed, the whole project and all associated resources in all envionments can be deleted. In addition, a project can be paused by deleting the associated resources while retaining the project and its configurations. This makes it easy to resume the project later.
 
 Reporting and cost management
 :   Projects assist with cost management and other types of reporting by automatically tagging all created resources and by providing a resource inventory within the project. For example, when a usage report is generated the project tags will be included, allowing the accounting team to allocate costs to projects without any additional effort. Other types of configuration management tasks such as determining an inventory of particular types of applications or resources can also be accomplished by project tagging and resource views.
@@ -76,7 +74,7 @@ Typically, a project holds several configurations of each architecture. An archi
 ### Deployable architectures
 {: #deployable-architectures}
 
-Projects provide governance and management for deployable architectures, which are infrastructure as code templates. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-custom) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
+Projects provide governance and management for deployable architectures, which are infrastructure as code templates. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
 
 ### Project tooling
 {: #tooling-projects}

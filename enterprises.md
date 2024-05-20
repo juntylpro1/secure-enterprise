@@ -28,7 +28,9 @@ When compared to using multiple stand-alone accounts, enterprises offer the foll
 ## Watch and learn
 {: #watch-and-learn}
 
+
 ![Introducing {{site.data.keyword.cloud_notm}} enterprises](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_vsakxb0o){: video output="iframe" data-script="#video-transcript-enterprise" id="mediacenter-player" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
 
 ## Video transcript
 {: #video-transcript-enterprise}
@@ -143,3 +145,15 @@ Educational institutions might want to provide {{site.data.keyword.Bluemix_notm}
 Within each account, students can create resources to build their projects and collaborate with other students in the account. The university has a complete view of the costs of each department and course.
 
 ![A three-tier enterprise that models how a university can organize their accounts. For example, account groups are named for each department: Data Science, Computer Science, and Computer Engineering. Each account group contains individual accounts for each class, such as DS101 and DS102.](images/enterprise-edu.svg "An enterprise for a university that has account groups for each department, and individual accounts for each class."){: caption="Figure 6. An enterprise for a university" caption-side="bottom"}
+
+
+## Enterprise limits
+{: #enterprise-limit}
+
+The following table lists the maximum limits for {{site.data.keyword.cloud_notm}} [enterprises](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise). These limits apply to any user who can create an enterprise, add accounts to an enterprise, or create and update account groups.
+
+| Resource                               | Max  |
+|----------------------------------------|------|
+| Account groups per enterprise          | 500  |
+| Accounts per enterprise                | 1000 |
+{: caption="Table 1. Enterprise limits" caption-side="top"}

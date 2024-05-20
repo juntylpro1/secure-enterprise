@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2023
-lastupdated: "2023-11-06"
+  years:  2023, 2024
+lastupdated: "2024-04-03"
 
 keywords: change log for Projects API, updates to Projects API, Projects API
 
@@ -16,6 +16,50 @@ subcollection: secure-enterprise
 {: #projects-api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [Projects API](/apidocs/projects). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+## 03 April 2024
+{: #03-apr-2024}
+
+Projects API v1.0.0 is now available. Make sure you update your version from beta.
+
+The following changes impact the pagination of `list` operations. For more information, see the [pagination](/apidocs/projects#get-config-version-response) section of the Projects API docs.
+
+### list-projects
+{: #change-log-list-projects}
+
+`GET /v1/projects`
+* The page token query parameter was renamed from `start` to `token`.
+  * For example, calling the `list-projects` operation changed from `GET /v1/projects?limit=5&start={page_token}` to `GET /v1/projects?limit=5&token={page_token}`.
+* The first page is returned without the token query parameter in the request URL. For example, `GET /v1/projects?limit=5` OR `GET /v1/projects`.
+  * The first page is also returned when the specified page token is invalid.
+* The `last` and `previous` fields are no longer supported, nor included in the response payload.
+
+### list-configs
+{: #change-log-list-configs}
+
+`GET /v1/projects/{project_id}/configs`
+* This operation is now paginated.
+* A default of 10 records is returned if the page size is not specified in the `limit` query parameter.
+    * The maximum page size is of 100 records.
+* The first page is returned without the token query parameter in the request URL. For example, `GET /v1/projects/{project_id}/configs/?limit=5` OR `GET /v1/projects/{project_id}/configs`.
+  * The first page is also returned when the specified page token is invalid.
+
+### list-environments
+{: #change-log-list-environments}
+
+`GET /v1/projects/{project_id}/environments`
+* This operation is now paginated.
+* A default of 10 records are returned if the page size is not specified in the `limit` query parameter.
+    * The maximum page size is of 100 records.
+* The first page is returned without the `token` query parameter in the request URL. For example, `GET /v1/projects/{project_id}/environments/?limit=5` OR `GET /v1/projects/{project_id}/environments`.
+  * The first page is also returned when the specified page token is invalid.
+
+### Methods to support stacking deployable architectures 
+{: #change-log-stack-architectures}
+
+[Experimental]{: tag-purple} 
+
+Added experimental methods to support [stacking deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack&interface=cli).  
 
 ## 06 November 2023
 {: #06-nov-2023}

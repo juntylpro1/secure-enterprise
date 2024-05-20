@@ -24,7 +24,7 @@ After your deployment updates are validated and approved, you can deploy your ar
 {: #deploy-config-copy}
 {: ui}
 
-To deploy your architecture, complete the following steps: 
+To deploy your architecture, complete the following steps:
 
 1. From the **Deployments** tab in your project, click the name of your deployable architecture > **Edit**.
 1. Review the input values and make any necessary changes.

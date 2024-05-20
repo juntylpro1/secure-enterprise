@@ -2,18 +2,18 @@
 toc:
   properties:
     subcollection: secure-enterprise
-    category: platform_services
-    audience: platform
+    category: solution_docs
+    content-type: solution
+    audience: solution
     href: /docs/secure-enterprise
-    console-page: /
-    product-page: https://ibm.com/cloud
     path: secure-enterprise
     label: Running secure enterprise workloads
 
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
+      - what-is-module-da.md
       - topicgroup:
           label: Learn about enterprise accounts
           topics:
@@ -33,7 +33,6 @@ toc:
           label: Learn about deploying compliant workloads
           topics:
             - compliance-continuous.md
-            - deployable-architecture.md
             - index.md
             - secure-software-supply-chain.md
       - topicgroup:
@@ -45,6 +44,16 @@ toc:
           - include: ../security-compliance/best-practices.md
 
   - navgroup:
+      id: plan
+      topics:
+      - topicgroup:
+              label: Planning and designing an architecture
+              topics:
+              - planning-architecture.md
+              - planning-da.md
+              - da-publish.md
+
+  - navgroup:
       id: tutorial
       topics:
       - topicgroup:
@@ -53,23 +62,14 @@ toc:
           - enterprise-tutorial.md
           - iam-secure-account-tutorial.md
           - iam-ent-template-tutorial.md
-          - iam-ent-template-pen-test.md
           - security-setup.md
-      - project-getstart-tutorial.md
       - topicgroup:
-          label: Managing resource access
+          label: Creating deployable architectures
           topics:
-            - include: ../account/iam-quickstart.md
-            - include: ../account/tagging-resources-tutorial.md
-            - include: ../account/trustedprofile-fed-tutorial.md
-            - include: ../account/context-restrictions-tutorial.md
-      - topicgroup:
-          label: Customizing deployable architectures
-          topics:
-            - custom-evaluation.md
             - custom-basic.md
-            - custom-share.md
-            - deploy-regions.md
+            - topic: custom-share.md
+              navtitle: Sharing your deployable architecture
+      - deploy-regions.md
 
   - navgroup:
       id: howto
@@ -125,6 +125,29 @@ toc:
               - include: ../account/context-restrictions-update.md
               - include: ../account/context-restrictions-remove.md
       - topicgroup:
+          label: Creating automated solutions
+          topics:
+          - create-module.md
+          - topicgroup:
+              label: Creating deployable architectures
+              topics:
+              - create-da.md
+              - catalog-manifest.md
+          - config-stack.md
+          - manual-customize.md
+          - scripts.md
+          - topic: onboard-compliance-controls.md
+            navtitle: Managing compliance information
+          - topicgroup:
+             label: Using private catalogs to share solutions
+             topics:
+             - catalog-enterprise-filters.md
+             - topic: catalog-onboard-da.md
+               navtitle: Onboarding a deployable architecture
+             - topic: module-onboard.md
+               navtitle: Onboarding a module
+             - catalog-enterprise-share.md
+      - topicgroup:
           label: Deploying architectures and managing resources with projects
           topics:
           - create-project.md
@@ -156,22 +179,6 @@ toc:
               - status-project.md
           - delete-project.md
           - project-spend.md
-      - topicgroup:
-          label: Customizing a deployable architecture
-          topics:
-          - manual-customize.md
-      - topicgroup:
-          label: Leveraging private catalogs for enterprise products
-          topics:
-          - include: ../account/cm-video.md
-          - catalog-enterprise-filters.md
-          - topicgroup:
-              label: Onboarding deployable architectures to a private catalog
-              topics:
-              - topic: catalog-manifest.md
-                navtitle: Specifying product metadata
-              - onboard-custom.md
-              - catalog-enterprise-share.md
       - topicgroup:
           label: Ensuring continuous compliance
           topics:
@@ -221,7 +228,7 @@ toc:
           - link:
               label: IAM Policy Management
               href: https://{DomainName}/apidocs/iam-policy-management
-          - iam-policies-change-log.md
+          - include: ../account/iam-policies-change-log.md
           - link:
               label: Projects
               href: https://{DomainName}/apidocs/projects

@@ -1,8 +1,10 @@
 ---
 
 copyright:
+
   years: 2023, 2024
-lastupdated: "2024-04-03"
+lastupdated: "2024-04-23"
+
 
 keywords:
 
@@ -20,6 +22,7 @@ With continuous security and compliance at the core of {{site.data.keyword.cloud
 {: shortdesc}
 
 ![Security and compliance for regulated workloads on {{site.data.keyword.cloud_notm}}](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_oh70qmd5){: video output="iframe" data-script="#regulatedworkload-video-transcript" id="mediacenter-player" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
 
 ## Video transcript
 {: #regulatedworkload-video-transcript}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-05"
+  years: 2023, 2024
+lastupdated: "2024-04-08"
 
 keywords: monitoring, iam templates, monitoring iam templates, activity tracker
 
@@ -120,18 +120,18 @@ An access policy template that is named `SecretsEditor` is created and has the f
 
 | Attribute    | Value      | Description |
 |--------------|-----------|------------|
-| outcome | `success` | The outcome of the request. |
-| action | `iam-access-management.policy-template.create` | The action that triggers the event. |
-| initiator ID | `IBMid-779000XKG2` | The unique ID of the requester.|
-| initiator name | `user@example.com` | The email of the requester.|
-| tempalate_id | `policyTemplate-b4fcbb84-9761-4b21-8aea-f78692c34641` | The policy template ID. |
-| name | `SecretsEditor` | The name of the policy. |
-| account_id |   `b04d9d6240ac4071nnf9152bf46bd94e` | The enterprise account ID. |
-| policy | See [Example `policy`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | The structure of the policy. The type `access` gratns access to users, and `authorization` grants access between services. |
-| version | `1` | The version of the policy template. |
-| description | `Grant Editor Role on Secrets Manager service.` | The description of the policy. |
-| transaction_id | `99450571-2df3-51c2-tn24-565813689t91` | Used for debug interactions and tracing the request with support. |
-| errors | `{  "code": "insufficent_permissions",  "message": "You are not allowed to create the requested policy template."}` | If the `outcome` is `failure`, an error message is shown. |
+| `outcome` | `success` | The outcome of the request. |
+| `action` | `iam-access-management.policy-template.create` | The action that triggers the event. |
+| `initiator ID` | `IBMid-779000XKG2` | The unique ID of the requester.|
+| `initiator name` | `user@example.com` | The email of the requester.|
+| `tempalate_id` | `policyTemplate-b4fcbb84-9761-4b21-8aea-f78692c34641` | The policy template ID. |
+| `name` | `SecretsEditor` | The name of the policy. |
+| `account_id` |   `b04d9d6240ac4071nnf9152bf46bd94e` | The enterprise account ID. |
+| `policy` | See [Example `policy`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | The structure of the policy. The type `access` gratns access to users, and `authorization` grants access between services. |
+| `version` | `1` | The version of the policy template. |
+| `description` | `Grant Editor Role on Secrets Manager service.` | The description of the policy. |
+| `transaction_id` | `99450571-2df3-51c2-tn24-565813689t91` | Used for debug interactions and tracing the request with support. |
+| `errors` | `{  "code": "insufficent_permissions",  "message": "You are not allowed to create the requested policy template."}` | If the `outcome` is `failure`, an error message is shown. |
 {: caption="Table 1. Sample policy template attributes and values in Activity Tracker" caption-side="top"}
 
 #### Example `policy`
@@ -148,25 +148,25 @@ An access group template that is named `dev-group-1` hasn't been committed yet:
 
 | Attribute    | Value      | Description |
 |--------------|-----------|------------|
-| action | `iam-groups.group-template.create` | The action that triggers the event. |
-| outcome | `success` | The outcome of the request. |
-| correlationId | `76450570-1ef3-41d2-ab24-935966032f9` | Used for debug interactions and tracing the request with support. |
-| initiator ID | `IBMid-779000XKG2` | The unique ID of the requester.|
-| initiator name | `user@example.com` | The email of the requester.|
-| account_id | `b04d9d6240ac4071nnf9152bf46bd94e` | The enterprise account ID. |
-| committed | `false` | Committed flag determines if the template is ready for assignment. |
-| description | `Dev group description` | The description of the policy. |
-| id | `AccessGroupTemplateId-2324f8a0-3f87-42c2-a678-6595b0a59b55` | The access group template ID. |
-| name | `dev-group-1` | The name of the access group template shown in the enterprise account. |
-| version | `1` | The version of the policy template. |
-| group | `action_controls`, `assertions`, `description`, `members`, `name`| The structure of the access group. |
-| action_controls | See [Example `group`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | Determines whether access group administrators in child accounts can add policies to the enterprise-managed group in their account. |
-| assertions | See [Example `group`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | Includes dynamic rules and the action controls that determines whether access group administrators in child accounts can add, remove, and update dynamic rules to the enterprise-managed group in their account. |
-| description | `Access group description` | The access group description that is shown in child accounts. |
-| members | See [Example `group`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | The enterprise members and service IDs to add to the access groups in child accounts. This also includes the action controls that determine whether access group administrators in child accounts can add and remove members in the enterprise-managed group in their account. |
-| name | `groupName 1690274020835 - VPC-Staging` | The acces group name shown in child accounts. |
-| policy_template_references | See Example `policy_template_references` | Existing policy templates that you can reference to assign access in the trusted profile template. |
-| errors | `"code": "template_conflict_error", "message": "An access group template with the name "AccessGroup" already exists. Enter a different name."` | If the `outcome` is `failure`, an error message is shown. |
+| `action` | `iam-groups.group-template.create` | The action that triggers the event. |
+| `outcome` | `success` | The outcome of the request. |
+| `correlationId` | `76450570-1ef3-41d2-ab24-935966032f9` | Used for debug interactions and tracing the request with support. |
+| `initiator ID` | `IBMid-779000XKG2` | The unique ID of the requester.|
+| `initiator name` | `user@example.com` | The email of the requester.|
+| `account_id` | `b04d9d6240ac4071nnf9152bf46bd94e` | The enterprise account ID. |
+| `committed` | `false` | Committed flag determines if the template is ready for assignment. |
+| `description` | `Dev group description` | The description of the policy. |
+| `id` | `AccessGroupTemplateId-2324f8a0-3f87-42c2-a678-6595b0a59b55` | The access group template ID. |
+| `name` | `dev-group-1` | The name of the access group template shown in the enterprise account. |
+| `version` | `1` | The version of the policy template. |
+| `group` | `action_controls`, `assertions`, `description`, `members`, `name`| The structure of the access group. |
+| `action_controls` | See [Example `group`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | Determines whether access group administrators in child accounts can add policies to the enterprise-managed group in their account. |
+| `assertions` | See [Example `group`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | Includes dynamic rules and the action controls that determines whether access group administrators in child accounts can add, remove, and update dynamic rules to the enterprise-managed group in their account. |
+| `description` | `Access group description` | The access group description that is shown in child accounts. |
+| `members` | See [Example `group`](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) | The enterprise members and service IDs to add to the access groups in child accounts. This also includes the action controls that determine whether access group administrators in child accounts can add and remove members in the enterprise-managed group in their account. |
+| `name` | `groupName 1690274020835 - VPC-Staging` | The acces group name shown in child accounts. |
+| `policy_template_references` | See Example `policy_template_references` | Existing policy templates that you can reference to assign access in the trusted profile template. |
+| `errors` | `"code": "template_conflict_error", "message": "An access group template with the name "AccessGroup" already exists. Enter a different name."` | If the `outcome` is `failure`, an error message is shown. |
 {: caption="Table 2. Sample access group template creattion attributes and values in Activity Tracker" caption-side="top"}
 
 #### Example `group`
@@ -207,20 +207,20 @@ An access group template named `dev-group-1` that's assigned to child accouts ha
 
 | Attribute    | Value      | Description |
 |--------------|-----------|------------|
-| action | `iam-groups.group-assignment.create` | The action that triggers the event. |
-| outcome | `success` | The outcome of the request. |
-| correlationId | `6dd6adda-42c2-45ce-9718-373b5cdf1923` | Used for debug interactions and tracing the request with support. The assignment event in child accounts have the same assignmentId. |
-| initiator ID | `IBMid-999200LPO7` | The unique ID of the requester.|
-| initiator name | `user@example.com` | The email of the requester.|
-| AssignmentId | `AccessGroupAssignmentId-AccessGroupTemplateId-274f883e-fe00-4445-8e75-1698a7c76918-Target-a5d1c4130c62404dbc857a37237c49bf` | The assignment ID. Once groups are created in the target accounts, individual events in each account referencing the assignment are created.|
-| TemplateName | `dev-group-1` |
-| TemplateVersion | `2` | Version number of the template assigned. |
-| account_id | `8f27b893b8ce49e19e748bf654ab999e` | Enterprise account ID. |
-| operation | `assign` | The operation that maps to the action. |
-| status | `succeeded` | Status of the assignment. |
-| target | `a5d1c4130c62404dbc857a37237c49bf` | The ID of the target account or account group. |
-| target_type | `AccountGroup` | The target can be either an `Account` or an `AccountGroup`. |
-| template_id | `AccessGroupTemplateId-274f883e-fe00-4445-8e75-1698a7c76918` | ID of the access group template assigned. |
+| `action` | `iam-groups.group-assignment.create` | The action that triggers the event. |
+| `outcome` | `success` | The outcome of the request. |
+| `correlationId` | `6dd6adda-42c2-45ce-9718-373b5cdf1923` | Used for debug interactions and tracing the request with support. The assignment event in child accounts have the same assignmentId. |
+| `initiator ID` | `IBMid-999200LPO7` | The unique ID of the requester.|
+| `initiator name` | `user@example.com` | The email of the requester.|
+| `AssignmentId` | `AccessGroupAssignmentId-AccessGroupTemplateId-274f883e-fe00-4445-8e75-1698a7c76918-Target-a5d1c4130c62404dbc857a37237c49bf` | The assignment ID. Once groups are created in the target accounts, individual events in each account referencing the assignment are created.|
+| `TemplateName` | `dev-group-1` |
+| `TemplateVersion` | `2` | Version number of the template assigned. |
+| `account_id` | `8f27b893b8ce49e19e748bf654ab999e` | Enterprise account ID. |
+| `operation` | `assign` | The operation that maps to the action. |
+| `status` | `succeeded` | Status of the assignment. |
+| `target` | `a5d1c4130c62404dbc857a37237c49bf` | The ID of the target account or account group. |
+| `target_type` | `AccountGroup` | The target can be either an `Account` or an `AccountGroup`. |
+| `template_id` | `AccessGroupTemplateId-274f883e-fe00-4445-8e75-1698a7c76918` | ID of the access group template assigned. |
 {: caption="Table 3. Sample access group template assignment attributes and values in Activity Tracker" caption-side="top"}
 
 ### Trusted profile template creation
@@ -228,13 +228,13 @@ An access group template named `dev-group-1` that's assigned to child accouts ha
 
 | Attribute    | Value      | Description |
 |--------------|-----------|------------|
-| action | `iam-identity.profile-template.create` | The action that triggers the event. |
-| outcome | `failure` | The outcome of the request. |
-| correlationId | `bGxxcmw-06b47d9c53564bb1984dded8b3fdb455`| Used for debug interactions and tracing the request with support. |
-| initiator ID | `IBMid-999200LPO7` | The unique ID of the requester.|
-| initiator name | `user@example.com` | The email of the requester.|
-| realm_id | `IBMid` | The identity provider. |
-| template_committed | `false` | Committed flag determines if the template is ready for assignment. |
+| `action` | `iam-identity.profile-template.create` | The action that triggers the event. |
+| `outcome` | `failure` | The outcome of the request. |
+| `correlationId` | `bGxxcmw-06b47d9c53564bb1984dded8b3fdb455`| Used for debug interactions and tracing the request with support. |
+| `initiator ID` | `IBMid-999200LPO7` | The unique ID of the requester.|
+| `initiator name` | `user@example.com` | The email of the requester.|
+| `realm_id` | `IBMid` | The identity provider. |
+| `template_committed` | `false` | Committed flag determines if the template is ready for assignment. |
 {: caption="Table 4. Sample trusted profile template attributes and values in Activity Tracker" caption-side="top"}
 
 ### Trusted profile template assignment
@@ -242,18 +242,18 @@ An access group template named `dev-group-1` that's assigned to child accouts ha
 
 | Attribute    | Value      | Description |
 |--------------|-----------|------------|
-| action | `iam-identity.profile-assignment.create` | The action that triggers the event. |
-| outcome | `success` | The outcome of the request. |
-| correlationId | `dHptOTc-574744cfcb474f67b9299082fcd2b1ff`| Used for debug interactions and tracing the request with support. The assignment event in child accounts have the same assignmentId. |
-| initiator ID | `IBMid-999200LPO7` | The unique ID of the requester.|
-| initiator name | `user@example.com` | The email of the requester.|
-| realm_id | `IBMid` | The identity provider. |
-| bss_account | `86a1004d3f1848a291de32874cb48120` | The enterprise account ID. |
-| url | `https://iam.cloud.ibm.com/v1/profile_assignments/TemplateAssignment-691487d2-a249-4475-b976-a7bf655ef3be` | URL to look up the assigned child accounts. See [Example `url` curl request](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) |
-| template_id | `ProfileTemplate-73e6bad8-0815-44f7-b086-0cac24b0d3a7` | ID of the trusted profile template assigned. |
-| template_type | `profile` | The type of IAM template. |
-| template_version | `1` | The version number of the trusted profile template. |
-| instance_id | `TemplateAssignment-691487d2-a249-4475-b976-a7bf655ef3be` | The assignment ID. Once profiles are created in the target accounts, individual events in each account referencing the assignment are created. |
+| `action` | `iam-identity.profile-assignment.create` | The action that triggers the event. |
+| `outcome` | `success` | The outcome of the request. |
+| `correlationId` | `dHptOTc-574744cfcb474f67b9299082fcd2b1ff`| Used for debug interactions and tracing the request with support. The assignment event in child accounts have the same assignmentId. |
+| `initiator ID` | `IBMid-999200LPO7` | The unique ID of the requester.|
+| `initiator name` | `user@example.com` | The email of the requester.|
+| `realm_id` | `IBMid` | The identity provider. |
+| `bss_account` | `86a1004d3f1848a291de32874cb48120` | The enterprise account ID. |
+| `url` | `https://iam.cloud.ibm.com/v1/profile_assignments/TemplateAssignment-691487d2-a249-4475-b976-a7bf655ef3be` | URL to look up the assigned child accounts. See [Example `url` curl request](/docs/secure-enterprise?topic=secure-enterprise-monitor-enterprise-iam-templates) |
+| `template_id` | `ProfileTemplate-73e6bad8-0815-44f7-b086-0cac24b0d3a7` | ID of the trusted profile template assigned. |
+| `template_type` | `profile` | The type of IAM template. |
+| `template_version` | `1` | The version number of the trusted profile template. |
+| `instance_id` | `TemplateAssignment-691487d2-a249-4475-b976-a7bf655ef3be` | The assignment ID. Once profiles are created in the target accounts, individual events in each account referencing the assignment are created. |
 {: caption="Table 5. Sample trusted profile assignment attributes and values in Activity Tracker" caption-side="top"}
 
 #### Example `url` curl request

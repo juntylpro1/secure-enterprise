@@ -101,7 +101,7 @@ For a user to manage security and compliance through {{site.data.keyword.complia
 * Administrator or Editor role for {{site.data.keyword.compliance_short}}
 * Custom role for the Enterprise
 
-To create the cutom role with the appropriate permissions, see [Assigning access](/docs/security-compliance?topic=security-compliance-assign-roles)
+To create the custom role with the appropriate permissions, see [Assigning access](/docs/security-compliance?topic=security-compliance-assign-roles)
 
 ### Creating and assigning enterprise-managed IAM templates
 {: #templates-roles}

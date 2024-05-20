@@ -1,8 +1,10 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-29"
+
+  years: 2023, 2024
+
+lastupdated: "2024-04-23"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, enterprise trusted profile, penetration testing
 
@@ -34,7 +36,7 @@ The tutorial uses a fictitious company that is called *Example Corp*, which want
 
 
 ## Before you begin
-{: #before-ent-iam-tutorial}
+{: #before-ent-pen-iam-tutorial}
 
 - Check out [Best practices for assigning access in an enterprise](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises) to learn more about the features, concepts, and components of the enterprise-managed access system.
 
