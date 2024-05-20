@@ -2,9 +2,9 @@
 
 copyright:
 
-  years: 2023
+  years: 2023, 2024
 
-lastupdated: "2023-04-13"
+lastupdated: "2024-05-20"
 
 keywords: project, validation, failures, failed validation, failed, override, approve, administrator
 
@@ -17,7 +17,7 @@ subcollection: secure-enterprise
 # Approving failed validations
 {: #approve-failed-validation}
 
-As an administrator on the {{site.data.keyword.cloud}} projects service, if the validation pipeline didn't complete or succeed, you can override the failure and approve it.
+As an administrator on the {{site.data.keyword.cloud}} Projects service, if the validation pipeline didn't complete or succeed, you can override the failure and approve it.
 {: shortdesc}
 
 Before you override a failed validation, ensure that the pipeline failed due to a Code Risk Analyzer scan and not because of a validation or plan failure. If you override a failure because of a validation or plan failure, approving isn't recommended because the configuration won't deploy successfully.
