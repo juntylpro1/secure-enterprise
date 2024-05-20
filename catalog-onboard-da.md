@@ -231,7 +231,7 @@ If you are working with a deployable architecture stack, there are additional fi
 2. Select the product that was previously onboarded. A details page opens.
 3. On the **Versions** tab, select the version that you want to generate a manifest for.
 4. From the **Actions** drop-down menu, select **Download repo content**.
-5. Add the files into the root folder of your source code repository as `ibm_catalog.json`.
+5. Add the files into the root folder of your source code repository.
 
 ## Adding a variation
 {: #add-variation}
