@@ -41,6 +41,7 @@ toc:
           - bp_enterprise.md
           - bp-enterprise-access.md
           - bp_projects.md
+          - bp-da.md
           - include: ../security-compliance/best-practices.md
 
   - navgroup:
