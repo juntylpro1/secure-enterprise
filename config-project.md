@@ -29,12 +29,12 @@ Before you can deploy your project, the inputs, plan, compliance, and estimated 
 ## Setting input values
 {: #project-input-values}
 
-Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Configurations can be linked together by using the outputs of one configuration as the inputs on another. For example, a configuration for an application could use an output from an infrastructure configuration, such as a cluster ID, to deploy onto that infrastructure.
+Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. 
 
 ### Referencing values
 {: #reference-values}
 
-Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. For an input that has an editable field, you can add a reference to an input or an output from another configuration that was deployed from your project. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.
+Configurations can be linked together by using the outputs of one configuration as the inputs in another. For example, a configuration for an application could use an output from an infrastructure configuration, such as a cluster ID, to deploy onto that infrastructure. To achieve this, you can add a reference to an input or an output from another configuration. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.
 
 In the console, you can add a reference in an architecture that you're configuring by hovering over an input and selecting the **Reference** icon ![Reference icon](../icons/link.svg "Reference").
 {: tip}
