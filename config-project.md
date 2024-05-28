@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-20"
+lastupdated: "2024-05-28"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -34,12 +34,15 @@ Input values are used to configure a deployable architecture to match your speci
 ### Referencing values
 {: #reference-values}
 
-Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. For inputs that have editable fields, you can include references as text strings that refer to inputs or outputs from other configurations that were deployed from your project. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.  
+Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. For an input that has an editable field, you can add a reference to an input or an output from another configuration that was deployed from your project. You can also reference parameters from an environment. When you add a reference, the value is pulled from the input, output, or environment and used as the input value in the architecture that you're configuring.
 
-You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab. 
+In the console, you can add a reference in an architecture that you're configuring by hovering over an input and selecting the **Reference** icon ![Reference icon](../icons/link.svg "Reference").
 {: tip}
 
-References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed in order to reference another value within it.
+If you are using the API or CLI to configure a deployable architecture, and you want to include a reference, you can write one as a text string. References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed to reference another value within it.
+
+You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab.
+{: tip}
 
 #### Referencing values from a configuration 
 {: #reference-values-config}
