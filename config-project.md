@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-28"
+lastupdated: "2024-05-30"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -49,7 +49,7 @@ You can find the name of an output to reference by opening a deployed configurat
 
 The general format to reference a value in a configuration is as follows: 
 
-`ref:/configs/<config_name>/<inputs_or_outputs>/<input_or_output_name>`.
+`ref:/configs/<config_name>/inputs_or_outputs/<input_or_output_name>`.
 
 You can reference an input or an output from a configuration that has been deployed from your project. For example, the following reference points to an output that is named `cluster_id` within the `ProdCluster` configuration: `ref:/configs/ProdCluster/outputs/cluster_id`.
 
