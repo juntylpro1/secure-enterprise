@@ -70,26 +70,27 @@ You must also have an authentication method to grant your project access to the 
 * The Viewer role for All Identity and Access enabled services. You can allow access to all resources, or [scope the access to a select few](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-existing-resources). 
 * The Viewer role for the resource group that contains the existing resources. 
 
+
+
+
+
 ## Adding existing resources to a project
 {: #add-existing-resources}
 
-To add existing resources to a project, complete the following steps: 
+To add existing resources to a project, complete the following steps:
 
-1. In the {{site.data.keyword.cloud_notm}} console, click the **Navigation menu** icon ![Navigation menu icon](../icons/icon_hamburger.svg "Menu") > **[Projects](/projects/)** and create or select a project. 
-1. In the project, go to the Resources tab and click **Add**. 
-1. In the Authenticate section, select an authentication method that you want to use to authenticate with the target account that contains your resources.
-1. In the Select resources section, select the resources that you want to organize in your project and click **Add**. 
+1. In the {{site.data.keyword.cloud_notm}} console, click the **Navigation menu** icon ![Navigation Menu icon](../icons/icon_hamburger.svg "Menu") > **[Projects](/projects/)** and create or select a project.
+1. In the project, go to the Configurations tab and select **Create** > **From existing resources** and enter a name for your configuration.
+1. In the Configure section, select an authentication method that you want to use to authenticate with the target account that contains your resources.
+1. In the Add resources section, click **Add**.
+1. Select the resources that you want to organize in your project, and click **Add**.
 
    Resources that are in a {{site.data.keyword.bplong}} workspace or were already added to another configuration can’t be added and don't display in the list of resources. Some resources might not be included in the list if the authentication method was scoped to specific resources, as opposed to all of them.
-   {: note} 
+   {: note}
 
-The resources that you added to your project are listed on the Resources tab. 
+1. Click **Save draft** to save your changes as a draft.
+1. Click **Apply changes** to finalize your draft and add your resources to the project.
 
-## Removing {{site.data.keyword.cloud_notm}} resources from a project
-{: #remove-existing-resources}
+Within your configuration, the resources that you added are listed on the Resources tab.
 
-To remove resources from a project, complete the following steps:
 
-1. In the project, go to the Resources tab and find the resource that you want to remove.
-2. Click the **Actions** icon ![Actions icon](../icons//action-menu-icon.svg "Actions") > **Remove**.
-1. Click **Remove** to confirm that you want to remove the selected resource from the project. 
