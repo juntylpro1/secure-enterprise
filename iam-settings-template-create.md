@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-01"
+lastupdated: "2024-05-28"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, settings, migrate version, upgrade version, new version
 
@@ -61,6 +61,8 @@ To create a settings template, complete the following steps:
 {: ui}
 
 Make your enterprise secure by default by defining IAM account settings in child accounts.
+
+
 
 #### Restricting domains for account invitations
 {: #invite-domains-template}
@@ -126,7 +128,7 @@ Now that the setting is enabled to restrict users from creating API keys, you ca
 {: important}
 
 #### Restricting users from creating service IDs
-{: #restrict-service-id}
+{: ##restrict-service-id}
 {: ui}
 
 By default, all members of an account can create service IDs. However, by using the Service ID creation setting, access can be restricted so that only members with the correct access can create service IDs. For more information about Service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
@@ -182,6 +184,10 @@ To enable MFA in a settings template, complete the following steps:
 1. Go to the Authentication section.
 1. Select the type of MFA that you want to enable in your account. For more information about the MFA options, see [MFA options](/docs/account?topic=account-types#mfa-options).
 
+
+
+
+
 ### (Optional) Add login session settings
 {: #login-session-settings-template}
 {: ui}
@@ -190,6 +196,7 @@ Improve the security of the accounts in your enterprise by requiring users to en
 
 If a user is a member of multiple accounts, the lowest value of each setting is applied to their session. For example, a user is a member of two accounts: `dev account` and `prod account`. If `prod account` has a 15-minute inactivity timeout, and `dev account` has a 30-minute inactivity timeout, the 15-minute inactivity timeout is applied to both accounts.
 {: note}
+
 
 
 #### Set the duration of active sessions
@@ -277,6 +284,8 @@ To assign a new version of a settings template, complete the following steps:
 The new template version that you assign replaces the old version. Learn more about [Assigning a new version](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#new-version).
 {: note}
 
+
+
 ## Removing an assignment
 {: #remove-assignment-settings}
 {: ui}
@@ -288,6 +297,7 @@ To remove an assignment, complete the following steps:
 1. Click **Settings** and select your settings template.
 1. Click **Assignments**.
 1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions") **> Remove** on the account or account group where you want to remove the assignment.
+
 
 ## Deleting a settings template
 {: #delete-settings-template}
@@ -315,7 +325,6 @@ To delete a settings template, complete the following steps:
 1. Click **Delete version**.
 1. Confirm that you want to delete the version.
 
-<!--- CLI --->
 
 ## Creating a settings template by using the CLI
 {: #create-settings-template-cli}
@@ -355,7 +364,7 @@ To create a settings template by using the CLI, complete the following steps:
 
 You can update a settings template at any time before you commit it. To update a specific version of an account settings template, complete the following steps:
 
-1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version){: external}.
+1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](apidocs/iam-identity-token-api#update-account-settings-template-version).
 
    The following example JSON file specifies the `account_id` of the enterprise account, the `name` of the template, and the `account_settings`. The new configuration resets MFA to `NONE` and removes the other settings.
 
@@ -426,7 +435,7 @@ If an assignment fails, use the `account-settings-assigment-update` method to re
 
 Create a new version of an account settings template when you need to make updates to a committed version. To create a new version, complete the following steps.
 
-1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](/apidocs/iam-identity-token-api#update-account-settings-template-version){: external}.
+1. Update your JSON file with the new settings template configuration. For more information about the attributes that you can use in your JSON file, see the [IAM Identity API](apidocs/iam-identity-token-api#update-account-settings-template-version).
 1. Use the `account-settings-template-version-create` method to create a new version. The following sample request creates a new version of the template `AccountSettingsUpdated`.
 
    ```bash
@@ -488,8 +497,6 @@ Before you can delete a settings template version, you must remove all assignmen
    {: #codeblock}
 
 1. To delete all versions, repeat these steps. Make sure that you remove the assignments for each version first.
-
-<!--- API --->
 
 ## Creating a settings template by using the API
 {: #create-settings-template-api}

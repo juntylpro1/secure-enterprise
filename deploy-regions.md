@@ -26,7 +26,7 @@ completion-time: 20m
 This tutorial walks you through how to use [projects](#x2035151){: term} to deploy two slightly different configurations of the same deployable architecture to two different regions.
 {: shortdesc}
 
-Imagine you are a member of the _Example Corp_ enterprise. You discovered the VSI on VPC landing zone deployable architecture and want to use it for your business. However, you need to deploy the deployable architecture to multiple regions for local data storage, performance, and high availability reasons.
+Imagine you are a member of the _Example Corp_ enterprise. You discovered the VSI on VPC landing zone deployable architecture and want to use it for your business. However, you need to deploy the deployable architecture to multiple regions for local data storage and performance or high availability reasons.
 
 This tutorial uses a fictitious scenario to help you learn and understand how to use projects to deploy to multiple regions. As you complete the tutorial, adapt each step to match your organization's needs.
 
@@ -71,8 +71,6 @@ You successfully added the deployable architecture to a project and are ready to
 {: #configure-architecture}
 {: step}
 
-You can now create your first configuration by setting variables.
-
 1. In the **Define details** section, review the information.
 1. From the **Security** tab in the **Configure** section, select **API key using {{site.data.keyword.secrets-manager_short}}** as the authentication method.
 1. Click **Select from {{site.data.keyword.secrets-manager_short}}**.
@@ -96,7 +94,7 @@ During the configuration and deployment process, monitor your [**Needs attention
 {: #regions-first-deploy}
 {: step}
 
-As an Editor on the {{site.data.keyword.cloud_notm}} Projects service, you can approve the configuration changes and deploy the configuration. It can be beneficial to deploy your first configuration to make sure your changes work as expected. Then, if the deployment is successful, you can continue to create your second configuration.
+As an Editor on the {{site.data.keyword.cloud}} Projects service, you can approve the configuration changes and deploy the configuration. It can be beneficial to deploy your first configuration to make sure your changes work as expected. Then, if the deployment is successful, you can continue to create your second configuration.
 
 You must address any outstanding **Needs attention** items on the **Overview** tab before you can approve and deploy your configurations.
 {: tip}
@@ -123,10 +121,10 @@ If you successfully deployed your first configuration, you can now use it to cre
 1. Click **Add > Save**.
 
 ## Add a second deployable architecture to a project
-{: #second-regions-project}
+{: #regions-project}
 {: step}
 
-Now that you created an environment, you can use it to create a second configuration.
+Now that you created an environment, you can use it to configure the second deployable architecture.
 
 1. From the `VSI on VPC landing zone regions` project dashboard, select the **Configurations** tab.
 1. Click **Create**.
@@ -142,8 +140,6 @@ Now that you created an environment, you can use it to create a second configura
 ## Configure the second deployable architecture
 {: #configure-second-architecture}
 {: step}
-
-Since you used an environment, most of the configuration is completed for you. However, you need to manually set the `prefix` and `region` variables as these are different from your first configuration.
 
 1. From the **Define details** section, review the information and make sure the `landing zone dev` environment is selected.
 1. From the **Security** tab in the **Configure** section, review the information that was pulled in from the environment that you created.
@@ -177,4 +173,4 @@ You must address any outstanding **Needs attention** items on the **Overview** t
 1. From the **Configurations** tab in your project, click the name of your deployable architecture configuration > **Edit**.
 1. Review the input changes and click **Deploy**.
 
-After the deployment successfully completes, you have two slightly different configurations based on a single deployable architecture that are deployed in two separate regions.
+After the deployment successfully completes, you have two slightly different configurations based on a single deployable architecture that is deployed in two separate regions.

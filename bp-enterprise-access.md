@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-05"
+  years: 2023, 2024
+lastupdated: "2024-05-28"
 
 subcollection: secure-enterprise
 
@@ -15,7 +15,7 @@ keywords: enterprise, enterprise account, enterprise iam, enterprise template, i
 # Best practices for assigning access in an enterprise
 {: #access-enterprises}
 
-While you're deciding how to [set up your account structure](/docs/secure-enterprise?topic=secure-enterprise-enterprise-best-practices) within the enterprise, begin planning how to assign access to identities in your organization. These best practices provide you with the basic building blocks to enable successful and secure app development in {{site.data.keyword.cloud}}.
+While you're deciding how to [set up your enterprise and account structure](/docs/secure-enterprise?topic=secure-enterprise-enterprise-best-practices) within the enterprise, begin planning how to assign access to identities in your organization. These best practices provide you with the basic building blocks to enable successful and secure app development in {{site.data.keyword.cloud}}.
 {: shortdesc}
 
 To learn more about organizing resources and assigning access in child accounts or nonenteprise accounts, see [Best practices for organizing resources and assigning access](/docs/account?topic=account-account_setup).
@@ -23,11 +23,11 @@ To learn more about organizing resources and assigning access in child accounts 
 ## How enterprise-managed IAM access works
 {: #how-enterprise-iam}
 
-Centrally manage identity and access management (IAM) for your organization by using IAM templates to assign access and manage security settings. Create templates for IAM resources in your [enterprise account](x9863395){: term} to standardize access groups, trusted profiles, and security settings across accounts in your organization. After you assign an IAM template, the child accounts that you select are assigned an enterprise-managed IAM resource with the associated attributes, like settings, policies and action controls. Action controls determine whether administrators of IAM services in child accounts can modify the enterprise-managed resource in their account.
+Centrally manage identity and access management (IAM) for your organization by using IAM templates to assign access and manage security settings. Create templates for IAM resources in your [enterprise account](x9863395){: term} to standardize access groups, trusted profiles, and account security settings across accounts in your organization. After you assign an IAM template, the child accounts that you select are assigned an enterprise-managed IAM object with the associated attributes, like policies and action controls. Action controls determine whether administrators of IAM services in child accounts can modify the enterprise-managed object in their account.
 
-Users in a child account can determine that an IAM resource comes from an enterprise-managed IAM template by the [enterprise-managed]{: tag-cyan} tag on the resource in the console. The API response for enterprise-managed IAM resources in child accounts includes a `“template”` section.
+Users in a child account can determine that an IAM resource comes from an enterprise-managed IAM template by the [enterprise-managed]{: tag-cyan} tag on the resource in the console. The API response for enterprise-managed IAM objects in child accounts includes a `“template”` section.
 
-Depending on how you configure the action controls for an IAM template, child accounts might modify the IAM resource that you assigned. In this case, only that instance of the resource is impacted. An instance of the same IAM resource in a different account isn't affected.
+Depending on how you configure the action controls for a template, child accounts might modify the IAM resource that you assigned. In this case, only that instance of the resource is impacted. An instance of the same IAM resource in a different account isn't affected.
 {: note}
 
 One advantage of IAM templates is the reduced time and effort to manage access in your organization. For example, instead of creating an access group with the same permissions in each account, create one access group template at the enterprise level, and assign that access group template to child accounts. The assignment creates the access group and its associated policies in each child account, saving you from manually creating hundreds of policies. Learn about other strategies for [Reducing time and effort to manage access](/docs/secure-enterprise?topic=secure-enterprise-access-enterprises&interface=ui#bp-enterprise-access-include-limit-policies).
@@ -87,6 +87,8 @@ Access policy templates define a policy without requiring a subject, and you can
 
 Spend less time on configuring individual policies and use access policy templates to quickly grant the right access in access group and trusted profile templates. For more information, see [Creating access policy templates](/docs/secure-enterprise?topic=secure-enterprise-policy-template-create).
 
+
+
 ## Action controls
 {: #action-controls}
 
@@ -95,7 +97,7 @@ Action controls are a mechanism to define the operations that administrators of 
 Action controls are available only for access group templates.
 {: note}
 
-For access group templates, the best practice is to restrict changes to policies, but to allow access group administrators to add members. This way, you can create role-based access group templates with the right access for those roles and delegate managing membership to the access group administrators in child accounts. Learn more about the available action controls for access group [members](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#members-action-controls), [dynamic rules](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#dynamic-rules-action-controls), and [access policies](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#access-ag-action-controls).
+For access group templates, the best practice is to restrict changes to policies, but to allow access group administrators to add members. This way, you can create role-based access group templates with the right access for those roles and delegate managing membership to the access group administrator. Learn more about the available action controls for access group [members](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#members-action-controls), [dynamic rules](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#dynamic-rules-action-controls), and [access policies](/docs/secure-enterprise?topic=secure-enterprise-ag-template-create&interface=ui#access-ag-action-controls).
 
 
 ## How can I grant access to child account resources with IAM templates?
@@ -107,7 +109,7 @@ Some services, like account management services, don't have provisionable resour
 
 Use IAM templates to grant access in child accounts to resources like all of a service's resources, all resources with a specific tag, or all resources in the account. Review the following sample access policies to help you determine how you might want to grant access in access group and trusted profile templates.
 
-### Sample access policy for account management services
+### Sample access policies for account management services
 {: #ent-acct-management}
 
 Account management roles are a great candidate for enterprise-managed access group and trusted profile templates because there aren't specific resources to scope the policy to.
@@ -165,14 +167,11 @@ When you assign access to a namespace, the policy applies to all current and fut
 ### A few users need temporary access to all accounts
 {: #access-all-accounts}
 
-I need to give compliance focals that are responding to audit evidence requests access to all of my existing accounts so that they can view billing resources and generate reports.
+I need to give compliance focals responding to audit evidence requests from a team of auditors access to all of my existing accounts so that they can view billing resources and generate reports.
 
-- Create a trusted profile template that has Viewer access on the Billing service in the accounts where I assign the template. Include a time-based condition that grants access for the minimum amount of time that the compliance focals need access.
-- Create conditions based on attributes from my identity provider (IdP). The attributes target the compliance focals, who are normally not members of any particular account.
+- Create a trusted profile template that has Viewer access on the Billing service in the accounts where I assign the template. I create conditions based on attributes from my identity provider (IdP). The attributes target the compliance focals, who are normally not members of any particular account. If a user meets the conditions, they can apply the trusted profile in each account.
 
-If a user meets the conditions, they can apply the trusted profile in each account where the template is assigned.
-
-The compliance focals can collect the evidence that the team of auditors need to accomplish their yearly audit by applying the trusted profiles. The focals can finish gathering evidence until the time-based condition expires. If they need more time, create a new version with the alotted time and update the template assignment.
+The compliance focals can collect the evidence that the team of auditors needs to accomplish their yearly audit across all accounts in the enterprise by applying the trusted profiles. When they're finished with the audit, I can remove the template assignment and reassign it the following year when compliance focals need access again.
 
 ### Enforce MFA for new and existing accounts
 {: #settings-all-accounts}

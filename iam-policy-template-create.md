@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-05"
+  years: 2023, 2024
+lastupdated: "2024-05-28"
 
 keywords: enterprise, enterprise account, multiple accounts, enterprise access, policy templates, enterprise managed, policies, enterprise policy, template
 
@@ -27,8 +27,6 @@ While a policy subject isn't required if you use the CLI or API, you do need one
 
 Access policy templates support only the `v2/policies` schema. For more information, see the [IAM Policy Management API change log](/docs/account?topic=account-api-change-log).
 {: note}
-
-<!--- UI --->
 
 Policy templates have limited availability in the {{site.data.keyword.cloud_notm}} console. Use the API or CLI to create policy templates.
 {: important}
@@ -65,8 +63,6 @@ To delete only a specific version, complete the following steps:
 1. Click **Policies**.
 1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Delete version**.
 1. Confirm that you want to delete the version.
-
-<!--- CLI --->
 
 ## Create an access policy template by using the CLI
 {: #create-policy-template-cli}
@@ -241,10 +237,6 @@ ibmcloud iam access-policy-template-version-delete SCCEditor 2
 
 This deletes version `2` of the `SCCEditor` policy template.
 
-
-<!--- API --->
-
-
 ## Creating a policy template by using the API
 {: #create-policy-template-api}
 {: api}
@@ -380,7 +372,6 @@ curl -X PUT 'https://iam.test.cloud.ibm.com/v1/policy_templates/$TEMPLATE_ID/ver
 {: codeblock}
 {: curl}
 
-
 ```go
 v2PolicyGrant := &iampolicymanagementv1.Grant{
   Roles: []iampolicymanagementv1.Roles{
@@ -440,7 +431,6 @@ curl -X PUT 'https://iam.test.cloud.ibm.com/v1/policy_templates/$TEMPLATE_ID/ver
 ```
 {: codeblock}
 {: curl}
-
 
 ```go
 commitPolicyTemplateOptions := iamPolicyManagementService.NewCommitPolicyTemplateOptions(
@@ -520,25 +510,6 @@ curl -X POST 'https://iam.test.cloud.ibm.com/v1/policy_template/$TEMPLATE_ID/ver
 ```
 {: codeblock}
 {: curl}
-
-```java
-
-```
-{: java}
-{: codeblock}
-
-
-```javascript
-
-```
-{: javascript}
-{: codeblock}
-
-```python
-
-```
-{: python}
-{: codeblock}
 
 ```go
 v2PolicyGrant := &iampolicymanagementv1.Grant{
@@ -629,7 +600,6 @@ curl -X DELETE 'https://iam.test.cloud.ibm.com/v1/policy_assignments/$POLICY_ASS
 {: codeblock}
 {: curl}
 
-
 ## Deleting a policy template by using the API
 {: #delete-policy-template-api}
 {: api}
@@ -673,8 +643,7 @@ To delete only a specific version, call the [IAM Policy Management API](/apidocs
 curl -X DELETE 'https://iam.test.cloud.ibm.com/v1/policy_templates/$TEMPLATE_ID/versions/$TEMPLATE_VERSION' -H 'Authorization: Bearer $TOKEN' -H 'Content-Type: application/json'
 ```
 {: codeblock}
-{: curl}
-
+{: curl} s
 
 ```go
 deletePolicyTemplateVersionOptions := iamPolicyManagementService.NewDeletePolicyTemplateVersionOptions(

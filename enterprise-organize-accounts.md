@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-04-17"
 
 keywords: enterprise, create account group, organize accounts, move accounts, account group, change contact, account group contact
 
@@ -160,6 +160,8 @@ For detailed information about the API, see [Enterprise Management API](/apidocs
 You can move accounts anywhere within your enterprise. For example, you can move an account from a child account group into its parent account group, or you can move it directly under the enterprise. Accounts can be moved only within the enterprise. They can't be moved to a different enterprise or removed from the enterprise to be a stand-alone account.
 
 To move an account, you need the Administrator role on the Billing service in the enterprise account and the Editor or Administrator role on either the entire enterprise or both the current and target account groups.
+
+
 
 ### Moving an account in the console
 {: #move-account-ui}

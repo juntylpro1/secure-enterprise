@@ -60,3 +60,4 @@ During the validation process, the starting costs for the project are estimated.
 {: support}
 
 Any user that is a member of your account that is assigned access to the {{site.data.keyword.cloud_notm}} Projects service, {{site.data.keyword.bpshort}}, and the resource group for your project can access your project.
+

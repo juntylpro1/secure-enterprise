@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-05"
+  years: 2023, 2024
+lastupdated: "2024-05-28"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, access group, migrate version, upgrade version, new version
 
@@ -23,7 +23,7 @@ When an enterprise administrator assigns an access group template to child accou
 ## Members
 {: #ag-enterprise-members}
 
-When creating an access group template in the enterprise account, along with the set of associated access policies that grant permissions to the members of that group, you can include enterprise users and service IDs. The enterprise users that you add to the access group template are automatically added to the access groups in the target accounts where you assign the template. They can access the target accounts without an invitation.
+When creating an access group template in the enterprise account, along with the set of associated access policies that grant permissions to the members of that group, you can include enterprise users and service IDs. Users that you add the access group template must be invited to the child accounts where the template is assigned to gain access. Then, the users are automatically added to the access groups in the target accounts where you assign the template.
 
 Set up dynamic rules in an access group template to automatically add federated users in child accounts to enterprise-managed access groups based on specific identity attributes.
 {: note}
@@ -196,6 +196,8 @@ By default, access group administrators in child accounts can't add access polic
 Any policy that access group administrators add to the enterprise-managed access group in their account, they can also remove and update.
 {: note}
 
+
+
 ## Updating template details
 {: #update-ag-template-name}
 {: ui}
@@ -287,6 +289,7 @@ The new template version that you assign replaces the old version. Learn more ab
 {: note}
 
 
+
 ## Removing an assignment
 {: #remove-assignment-ag}
 {: ui}
@@ -299,9 +302,6 @@ To remove an assignment, complete the following steps:
 1. Click **Update assignments**.
    1. To remove an assignment from one or a few accounts, deselect the accounts where you want to remove the template assignment.
    1. To remove an assignment from all accounts where the template is assigned, click **Unassign all**.
-
-
-<!--- API begin --->
 
 ## Creating an access group template by using the API
 {: #create-ag-template-api}
@@ -530,6 +530,7 @@ Once you've created and configured a new version of your access group template, 
 
 ## Removing an assignment by using the API
 {: #remove-ag-assignment-api}
+{: api}
 
 You can remove a template assignment from an account or account group where the template is assigned. You might want to do so if the template isn't working as intended or isn't needed anymore. When you remove a template assignment from an account, by default the previous version of the template is reinstated if one exists. If the assignment you remove is for the first or only version of a template, the enterprise-managed access group in the child accounts are removed.
 
@@ -572,8 +573,6 @@ Before you can delete an access group template version, you must remove all assi
    ```
    {: curl}
    {: codeblock}
-
-<!--- CLI begin --->
 
 ## Creating an access group template by using the CLI
 {: #create-ag-template-cli}

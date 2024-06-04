@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-11-06"
+  years: 2023, 2024
+lastupdated: "2024-05-28"
 
 keywords: enterprise, enterprise account, multiple accounts, enterprise access, templates, enterprise managed, versions, versioning. template version, migrate version, upgrade version, new version
 
@@ -82,7 +82,7 @@ Let's say that you've assigned `v1` of an access group template to `account-1`. 
 If the new version of a template that you're assigning has action controls that are more strict than the current version, the assignment could fail. In that case, you must resolve the conflict to continue.
 {: important}
 
-To resolve the conflict, the enterprise administrator can contact the owner of the child account and ask them to remove the conflicting members of the enterprise-managed group. Or, assign a template that maintains the action control that allows adding members. This way, when you assign the new version, the members that the child account added remain in the enteprrise-managed group.
+To resolve the conflict, the enterprise administrator can contact the owner of the child account and ask them to remove the conflicting members of the enterprise-managed group. Or, assign a template that maintains the action control that allows adding members. This way, when you assign the new version, the members that the child account added remain in the enteprise-managed group.
 
 #### Handling attributes deleted by a child account
 {: #deleted-attributes}

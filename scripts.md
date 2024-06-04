@@ -19,6 +19,8 @@ subcollection: secure-enterprise
 You can have scripts that are run for your deployable architectures before or after validating, deploying, and undeploying. Scripts are configured to a specific version of your deployable architecture, and must be run and validated through projects. For more information about projects, see [Creating a project](/docs/secure-enterprise?topic=secure-enterprise-setup-project&interface=ui).
 {: shortdesc}
 
+
+
 There are several benefits and use cases for using scripts for your deployable architectures:
 
 * Performing custom validation, for example, if you want to ensure that the `tag` parameter is always a valid cost center ID. The pre-validation script might call out to a service to check that the cost center ID was valid.

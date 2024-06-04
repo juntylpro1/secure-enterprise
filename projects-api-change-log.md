@@ -4,7 +4,7 @@ copyright:
   years:  2023, 2024
 lastupdated: "2024-04-03"
 
-keywords: change log for Projects API, updates to Projects API, Projects API
+keywords: change log for Projects API, updates to Projects API, projects API, API
 
 subcollection: secure-enterprise
 
@@ -120,8 +120,8 @@ All `configuration` endpoints include this `state` property in the `response` mo
 
 The `response` model of `configurations` operations now defines new metadata in the root. If an `approve` job was run on a `configuration`, an `approved_version` property is included in the `response` payload. Similarly, if a `deploy` job was run on a `configuration`, then `deployed_version` and `last_deployed` metadata are available in the `response` body. Running a `validation` job yields the metadata `last_validated`, while running an `undeploy` job yields the metadata `last_undeployed` in the `response`.
 
-## 26 October 2023
-{: #26-oct-2023}
+## 25 October 2023
+{: #25-oct-2023}
 
 In `projects` and `configurations` operations, such as `create` and `update`, definition properties such as `name` and `description` must now be provided in a `definition` wrapper. Similarly, these properties are now only available inside a `definition` block in the `response` payload of `create`, `update`, `get`, and `list` operations. This is a breaking change that was originally released on 06 July 2023. The following sections provide more information about the methods that are affected by this update. 
 
