@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-07"
+lastupdated: "2024-06-04"
 
 keywords: project status, manage status, needs attention, partial deployment, deploy project, validate project, validate configuration, deploy configuration
 
@@ -15,7 +15,7 @@ subcollection: secure-enterprise
 # Monitoring the status of a configuration and its resources
 {: #monitor-status-projects}
 
-In a project, a configuration has one status: either draft or deployed. However, configurations go through many changes that you can track throughout the configuration's lifecycle. You can find more information about the detailed status of a configuration by opening the configuration within your project. 
+In a project, a configuration has one status: either draft or deployed. However, configurations go through many changes that you can track throughout the configuration's lifecycle. You can find more information about the detailed status of a configuration by opening the configuration within your project.
 
 ## Understanding configuration status
 {: #understand-config-status}

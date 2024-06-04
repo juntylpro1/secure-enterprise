@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-06-04"
 
 keywords:
 
@@ -25,4 +25,3 @@ DevSecOps Application Lifecycle Management uses {{site.data.keyword.contdelivery
 Out of the box, DevSecOps with {{site.data.keyword.contdelivery_short}} also uses scanning tools such as SonarQube, Gosec, OWASP Zap (dynamic scan), any unit test framework, and GPG signing. It can also be used with more tools such as external Git providers and artifact stores. DevSecOps supports hybrid deployments, in particular by using [pipeline private workers](/docs/ContinuousDelivery?topic=ContinuousDelivery-private-workers), and can be interfaced with other deployment tools such as Satellite Config and ArgoCD. For more information, see [DevSecOps with {{site.data.keyword.contdelivery_short}}](/docs/devsecops?topic=devsecops-devsecops_intro).
 
 You can configure this deployable architecture from the catalog by adding it to a [project](#x2035151){: term}, configuring the input variables, validating your updates, and deploying it in just a short time. Learn about how you can [Deploy DevSecOps Application Lifecycle Management with projects](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-proj).
-

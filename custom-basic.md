@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-28"
+lastupdated: "2024-06-04"
 
 keywords: deployable architecture, basic customization, VSI on VPC landing zone
 
@@ -132,7 +132,7 @@ Your architecture is now hardcoded to use the specific `example-profile` VSI pro
 {: #basic-custom-json}
 {: step}
 
-The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information when you onboard to a private catalog. Because you changed the deployable architecture, you created a brand new architecture for your needs. Update the following information in the `ibm_catalog.json` file to reflect your changes. 
+The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information when you onboard to a private catalog. Because you changed the deployable architecture, you created a brand new architecture for your needs. Update the following information in the `ibm_catalog.json` file to reflect your changes.
 
 For more information on the manifest file and what it contains, see [Locally editing the catalog manifest](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&locale=en).
 

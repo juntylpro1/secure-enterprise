@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-28"
+lastupdated: "2024-06-04"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -29,7 +29,7 @@ Before you can deploy your project, the inputs, plan, compliance, and estimated 
 ## Setting input values
 {: #project-input-values}
 
-Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. 
+Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings.
 
 ### Referencing values
 {: #reference-values}
@@ -65,7 +65,7 @@ If your configuration is part of a stacked deployable architecture, you can refe
 
 `ref:/configs/<stack_name>/members/<member_name>/inputs_or_outputs/<input_or_output_name>`
 
-If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level. 
+If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level.
 
 
 #### Referencing inputs from an environment

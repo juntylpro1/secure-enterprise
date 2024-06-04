@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-28"
+lastupdated: "2024-06-04"
 
 keywords: enterprise, enterprise account, multiple accounts, enterprise access, policy templates, enterprise managed, policies, enterprise policy, template
 
@@ -643,7 +643,7 @@ To delete only a specific version, call the [IAM Policy Management API](/apidocs
 curl -X DELETE 'https://iam.test.cloud.ibm.com/v1/policy_templates/$TEMPLATE_ID/versions/$TEMPLATE_VERSION' -H 'Authorization: Bearer $TOKEN' -H 'Content-Type: application/json'
 ```
 {: codeblock}
-{: curl} 
+{: curl}
 
 ```go
 deletePolicyTemplateVersionOptions := iamPolicyManagementService.NewDeletePolicyTemplateVersionOptions(

@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-01-12"
+lastupdated: "2024-06-04"
 
 keywords: trusted profile, projects trusted profile, authorization, project auth, project security
 
@@ -124,10 +124,10 @@ View the catalog page for specific access roles that are required for a given de
 ### Granting specific access to existing resources
 {: #serviceid-access-existing-resources}
 
-If you are using a trusted profile to [organize existing resources in a project](/docs/secure-enterprise?topic=secure-enterprise-organize-resources), you can grant the trusted profile access to specific resources, as opposed to all of them. Choose this option if you want to limit which existing resources a project can manage.  
+If you are using a trusted profile to [organize existing resources in a project](/docs/secure-enterprise?topic=secure-enterprise-organize-resources), you can grant the trusted profile access to specific resources, as opposed to all of them. Choose this option if you want to limit which existing resources a project can manage.
 
 1. To create the first policy, select **All Identity and Access enabled services** and click **Next**.
-   1. Select **Specific resources**, scope the access to the resources you want, and click **Next**. 
+   1. Select **Specific resources**, scope the access to the resources you want, and click **Next**.
    1. For the resource group access, select the Administrator role and click **Next**.
    1. Select the Manager service role and the Administrator platform role.
    1. Click **Add**.

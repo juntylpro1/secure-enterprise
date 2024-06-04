@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-20"
+lastupdated: "2024-06-04"
 
 keywords: customize, deployable architecture, bundle, manifest
 
@@ -15,7 +15,7 @@ subcollection: secure-enterprise
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Creating a deployable architecture from an existing offering 
+# Creating a deployable architecture from an existing offering
 {: #customize-from-catalog}
 
 You can take advantage of an {{site.data.keyword.IBM}}-curated customization bundle to extend and customize an {{site.data.keyword.cloud}} [deployable architecture](#x10293733){: term}. Each deployable architecture provides its own customization bundle. With the bundle, you can edit the deployable architecture on your local computer, use your own pipelines to test, and extend your own products to fit your enterprise's needs. To customize an architecture, you must have familiarity with Terraform.
