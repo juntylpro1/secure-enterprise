@@ -17,7 +17,7 @@ subcollection: secure-enterprise
 # Using trusted profiles to authorize a project to deploy an architecture
 {: #tp-project}
 
-Some services cannot fully configure and deploy architectures by using trusted profiles. In the future, projects can be directly authorized by using a trusted profile. For now, [use an API key or secret to authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project). For more information, see [Known issues and limitations for projects](/docs/secure-enterprise?topic=secure-enterprise-known-issues#auth-known-issue).
+Some services cannot fully configure and deploy architectures by using trusted profiles. For more information, see [Known issues and limitations for projects](/docs/secure-enterprise?topic=secure-enterprise-known-issues#auth-known-issue).
 {: important}
 
 When you configure your deployable architecture, you are required to select an authentication method. A project can apply a [trusted profile](/docs/account?topic=account-create-trusted-profile), which grants the project access to deploy an architecture in the account where the trusted profile exists. This way, you can securely deploy an architecture without the need for key rotation.

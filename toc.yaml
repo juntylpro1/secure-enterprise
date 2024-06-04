@@ -39,7 +39,6 @@ toc:
           topics:
           - bp_enterprise.md
           - bp-enterprise-access.md
-          - include: ../account/iam-cross-acc-access.md
           - bp_projects.md
           - bp-da.md
           - include: ../security-compliance/best-practices.md
@@ -95,9 +94,7 @@ toc:
                 - access-project.md
                 - include: ../account/catalog-access-reqs.md
                 - include: ../account/iam-groups.md
-                - include: ../account/iam-cross-acct-restriction.md
                 - include: ../account/iam-authorizations.md
-                - include: ../account/iam-cbr.md
                 - include: ../account/iam-audit-policies.md
           - topicgroup:
               label: Centrally managing access in child accounts
@@ -178,7 +175,6 @@ toc:
               - attention-items.md
               - status-project.md
           - delete-project.md
-          - removing-resources.md
           - project-spend.md
       - topicgroup:
           label: Ensuring continuous compliance

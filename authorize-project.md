@@ -87,18 +87,3 @@ After you added your API key to {{site.data.keyword.secrets-manager_short}} as a
 During the configuration process, you might decide to add the API key directly for experimental work. This option is not recommended, especially for deployments to your production account, because the API key displays in your `project.json` file and is visible to anyone who exports it.
 
 
-## Using a secret reference
-{: #deploy-secret-reference}
-
-After you created a secret, you can use that secret as a reference to authorize your project to deploy. For more information about references, see [Referencing values](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#reference-values). To configure your deployable architecture with a reference, complete the following steps:
-
-1. In the {{site.data.keyword.cloud_notm}} console, sign in to the account that you want to deploy the project to.
-1. Go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects**.
-1. Select the project that includes the deployable architecture configuration that you want to authorize.
-1. From the **Configurations** tab, select the configuration.
-1. Click **Edit**
-1. In the Configure section, hover over the API key field, and select the **Key icon**.
-1. Choose the service instance and select the secret that you want to use and click **OK**.
-
-You can also use a trusted profile as a reference. In the Configure section, for the method, select **Trusted profile** and enter your trusted profile ID. For more information about trusted profiles, see [Using trusted profiles](/docs-draft/secure-enterprise?topic=secure-enterprise-tp-project&interface=ui).
-{: note}
