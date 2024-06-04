@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2024
 
-lastupdated: "2024-02-26"
+lastupdated: "2024-06-04"
 
 keywords: cost estimate, starting cost, project cost
 
@@ -19,9 +19,14 @@ subcollection: secure-enterprise
 
 Cost estimation is available for deployable architectures in the {{site.data.keyword.cloud_notm}} catalog. Depending on the deployable architecture, a starting cost is estimated based on the available data. This estimate is meant to be a starting point to help you determine how much your account could be charged for deploying an architecture. This estimated amount is subject to change as the architecture is customized within a project, and it does not include all resources, usage, licenses, fees, discounts, or taxes.
 
-## Viewing the starting cost for your deployable architecture by using the console
+
+
+ 
+
+## Viewing the starting cost for your deployable architecture
 {: #cost-deploy-arch}
-{: ui}
+
+
 
 Depending on the deployable architecture that you select from the catalog, there is an estimated starting cost.
 
@@ -39,15 +44,4 @@ After you add the deployable architecture to your project, you can configure the
 This estimated amount is subject to change as the architecture is customized and deployed, and it does not include all resources, usage, licenses, fees, discounts, or taxes.
 {: important}
 
-## Estimating the cost of a configuration by using the CLI
-{: #estimate-cost-cli}
-{: cli}
 
-To estimate the cost of a configuration in a project by using the CLI, run the following `ibmcloud project config-validate` command:
-
-```sh
-ibmcloud project config-validate --project-id PROJECT-ID --id ID
-```
-{: codeblock}
-
-For more information about the command parameters, see [**`ibmcloud project config-validate`**](/docs/cli?topic=cli-projects-cli#project-cli-config-validate-command).

@@ -161,40 +161,4 @@ For more information about the command parameters, see [**`ibmcloud project conf
 
    For more information about the command parameters, see [**`ibmcloud project config-approve`**](/docs/cli?topic=cli-projects-cli#project-cli-config-approve-command).
 
-## Configuring an architecture by using the API
-{: #how-to-config-api}
-{: api}
 
-Projects API is a beta release that is available for evaluation and testing purposes.
-{: beta}
-
-You can programmatically add a configuration to a project by calling the [Projects API](/apidocs/projects#create-config){: external} as shown in the following sample request. The example adds a configuration with the name `My new configuration` to a project:
-
-```bash
-curl -X POST --location --header "Authorization: Bearer {iam_token}" \
-  --header "Accept: application/json" \
-  --header "Content-Type: application/json" \
-  --data '{ "definition": { "name": "env-stage", "description": "Stage environment configuration.", "locator_id": "1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.018edf04-e772-4ca2-9785-03e8e03bef72-global", "inputs": { "account_id": "account_id", "resource_group": "stage", "access_tags": [ "env:stage" ], "logdna_name": "LogDNA_stage_service", "sysdig_name": "SysDig_stage_service" }, "settings": { "IBMCLOUD_TOOLCHAIN_ENDPOINT": "https://api.us-south.devops.dev.cloud.ibm.com" } } }' \
-  "{base_url}/v1/projects/{project_id}/configs"
-```
-{: curl}
-{: codeblock}
-
-## Approving configuration changes by using the API
-{: #approve-changes-api}
-{: api}
-
-Projects API is a beta release that is currently available for evaluation and testing purposes.
-{: beta}
-
-You can programmatically approve configuration edits and merge them to the main configuration by calling the [Projects API](/apidocs/projects#approve){: external} as shown in the following sample request. The example approves configuration edits and merges them to the configuration:
-
-```bash
-curl -X POST --location --header "Authorization: Bearer {iam_token}" \
-  --header "Accept: application/json" \
-  --header "Content-Type: application/json" \
-  --data '{ "comment": "Approving the changes" }' \
-  "{base_url}/v1/projects/{project_id}/configs/{id}/approve"
-```
-{: curl}
-{: codeblock}
