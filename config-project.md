@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-17"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -109,6 +109,8 @@ To create a customized configuration, complete the following steps:
 
 If you're configuring a deployable architecture stack, make sure to validate each architecture in the stack according to their dependencies.
 {: important}
+
+
 
 ## Approving configuration changes by using the console
 {: #approve-changes}
