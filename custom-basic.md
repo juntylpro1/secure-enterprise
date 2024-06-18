@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-17"
+lastupdated: "2024-06-04"
 
 keywords: deployable architecture, basic customization, VSI on VPC landing zone
 
@@ -25,6 +25,8 @@ completion-time: 10m
 
 This tutorial walks you through how to create a new deployable architecture from an existing {{site.data.keyword.cloud}} deployable architecture to fit your business needs. By completing this tutorial, you learn how to download the Terraform files of a deployable architecture, update the variables, and then test the new deployable architecture.
 {: shortdesc}
+
+By starting with an {{site.data.keyword.cloud_notm}} deployable architecture, you don't need to worry about creating compliant infrastructure architecture from the ground up. You can get a jump-start by using an {{site.data.keyword.cloud_notm}} deployable architecture and configuring it to meet your specific needs.
 
 Imagine you are the infrastructure architect for the fictitious company _Example Corp_ and you have been given certain infrastructure requirements. You browse the {{site.data.keyword.cloud_notm}} catalog and discover that the VSI on VPC landing zone deployable architecture meets most of your requirements. However, you want to make the following changes to meet your business needs:
 
@@ -130,7 +132,7 @@ Your architecture is now hardcoded to use the specific `example-profile` VSI pro
 {: #basic-custom-json}
 {: step}
 
-The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information when you onboard to a private catalog. Because you changed the deployable architecture, you created a brand new architecture for your needs. Update the following information in the `ibm_catalog.json` file to reflect your changes. 
+The `ibm_catalog.json` file is a manifest JSON file that is used to automatically import version information when you onboard to a private catalog. Because you changed the deployable architecture, you created a brand new architecture for your needs. Update the following information in the `ibm_catalog.json` file to reflect your changes.
 
 For more information on the manifest file and what it contains, see [Locally editing the catalog manifest](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&locale=en).
 

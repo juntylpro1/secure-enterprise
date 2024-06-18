@@ -2,9 +2,9 @@
 
 copyright:
   years:  2023, 2024
-lastupdated: "2024-04-03"
+lastupdated: "2024-06-05"
 
-keywords: change log for Projects API, updates to Projects API, Projects API
+keywords: change log for Projects API, updates to Projects API, projects API, API
 
 subcollection: secure-enterprise
 
@@ -16,6 +16,8 @@ subcollection: secure-enterprise
 {: #projects-api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [Projects API](/apidocs/projects). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+
 
 ## 03 April 2024
 {: #03-apr-2024}
@@ -54,12 +56,12 @@ The following changes impact the pagination of `list` operations. For more infor
 * The first page is returned without the `token` query parameter in the request URL. For example, `GET /v1/projects/{project_id}/environments/?limit=5` OR `GET /v1/projects/{project_id}/environments`.
   * The first page is also returned when the specified page token is invalid.
 
-### Methods to support stacking deployable architectures 
+### Methods to support stacking deployable architectures
 {: #change-log-stack-architectures}
 
-[Experimental]{: tag-purple} 
+[Experimental]{: tag-purple}
 
-Added experimental methods to support [stacking deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack&interface=cli).  
+Added experimental methods to support [stacking deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack&interface=cli).
 
 ## 06 November 2023
 {: #06-nov-2023}
@@ -80,7 +82,7 @@ The latest update includes the following breaking change:
 ### Renamed configuration endpoints
 {: #renamed-config-endpoints}
 
-The following configuration endpoints are renamed as follows: 
+The following configuration endpoints are renamed as follows:
 * `POST /v1/projects/{project_id}/configs/{id}/check` is changed to `POST /v1/projects/{project_id}/configs/{id}/validate`.
 * `POST /v1/projects/{project_id}/configs/{id}/install` is changed to `POST /v1/projects/{project_id}/configs/{id}/deploy`.
 * `POST /v1/projects/{project_id}/configs/{id}/uninstall` is changed to `POST /v1/projects/{project_id}/configs/{id}/undeploy`.
@@ -88,7 +90,7 @@ The following configuration endpoints are renamed as follows:
 ### Replaced configuration endpoints
 {: #replaced-config-endpoints}
 
-The `drafts` methods were replaced by the `versions` operations as follows: 
+The `drafts` methods were replaced by the `versions` operations as follows:
 * `GET /v1/projects/{project_id}/configs/{config_id}/drafts` is changed to `GET /v1/projects/{project_id}/configs/{id}/versions`.
 * `GET /v1/projects/{project_id}/configs/{config_id}/drafts/{version}` is changed to `GET /v1/projects/{project_id}/configs/{id}/versions/{version}`
 
@@ -120,17 +122,17 @@ All `configuration` endpoints include this `state` property in the `response` mo
 
 The `response` model of `configurations` operations now defines new metadata in the root. If an `approve` job was run on a `configuration`, an `approved_version` property is included in the `response` payload. Similarly, if a `deploy` job was run on a `configuration`, then `deployed_version` and `last_deployed` metadata are available in the `response` body. Running a `validation` job yields the metadata `last_validated`, while running an `undeploy` job yields the metadata `last_undeployed` in the `response`.
 
-## 26 October 2023
-{: #26-oct-2023}
+## 25 October 2023
+{: #25-oct-2023}
 
-In `projects` and `configurations` operations, such as `create` and `update`, definition properties such as `name` and `description` must now be provided in a `definition` wrapper. Similarly, these properties are now only available inside a `definition` block in the `response` payload of `create`, `update`, `get`, and `list` operations. This is a breaking change that was originally released on 06 July 2023. The following sections provide more information about the methods that are affected by this update. 
+In `projects` and `configurations` operations, such as `create` and `update`, definition properties such as `name` and `description` must now be provided in a `definition` wrapper. Similarly, these properties are now only available inside a `definition` block in the `response` payload of `create`, `update`, `get`, and `list` operations. This is a breaking change that was originally released on 06 July 2023. The following sections provide more information about the methods that are affected by this update.
 
 ### Projects
 {: #projects}
 
 `create-project: POST /v1/projects`
 * For both the `request` & `response`, the `name`, `description`, and `destroy_on_delete` are now wrapped inside a `definition` object.
-* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example:
     * `definition: {“name”: “test”, “description”: “This is a test project”, “destroy_on_delete”: false}`.
         * If `destroy_on_delete` is not provided, a default value of `true` is assigned on a project create operation.
     * See [projects#create-project-request](/apidocs/projects#create-project-request).
@@ -139,7 +141,7 @@ In `projects` and `configurations` operations, such as `create` and `update`, de
 
 `update-project: PATCH /v1/projects/{id}`
 * For both the `request` & `response`, the `name`, `description`, and `destroy_on_delete` are now wrapped inside a `definition` object.
-* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example:
     * `definition: {“name”: “test_update”, “description”: “This is an updated test project“}`.
     * See [projects#update-project-request](/apidocs/projects#update-project-request).
 * Similarly, in the `response` body, the previously mentioned properties are now available in a `definition` block.
@@ -158,7 +160,7 @@ In `projects` and `configurations` operations, such as `create` and `update`, de
 
 `create-config: POST /v1/projects/{project_id}/configs`
 * For both `request` & `response`, the `locator_id`, `name`, `labels`, `authorizations`, `compliance_profile`, `input`, `setting`, `description` are now wrapped inside a `definition` object.
-* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example:
     * `definition: {“name”: “test”, “description”: “This is a test config”, “locator_id”: “1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.cd596f95-95a2-4f21-9b84-477f21fd1e95-global”}`.
     * See [projects#create-config-request](/apidocs/projects#create-config-request).
 * Similarly, in the `response` body, the previously mentioned properties are now available in a `definition` block.
@@ -167,7 +169,7 @@ In `projects` and `configurations` operations, such as `create` and `update`, de
 
 `update-config: PATCH /v1/projects/{project_id}/configs/{id}`
 * For both `request` & `response`, the `locator_id`, `name`, `labels`, `authorizations`, `compliance_profile`, `input`, `setting`, `description` are now wrapped inside a `definition` object.
-* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example: 
+* Callers of this endpoint are now expected to supply the definition properties inside this wrapper, for example:
     * `definition: {“name”: “test”, “description”: “This is a test config”, “locator_id”: “1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc.cd596f95-95a2-4f21-9b84-477f21fd1e95-global”}`.
     * See [projects#update-config-request](/apidocs/projects#update-config-request).
 * Similarly, in the `response` body the previously mentioned properties are moved into a `definition` block.

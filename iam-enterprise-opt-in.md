@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-05"
+  years: 2023, 2024
+lastupdated: "2024-05-28"
 
 subcollection: secure-enterprise
 
@@ -80,6 +80,8 @@ curl -X POST "https://enterprise.cloud.ibm.com/v1/accounts -H "Authorization: Be
 
 To disable enterprise-managed IAM in an account, the account owner must open a [support case](/unifiedsupport/supportcenter).
 {: important}
+
+
 
 ## New accounts by using Terraform
 {: #new-acct-opt-in-terra}

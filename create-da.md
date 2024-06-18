@@ -160,7 +160,7 @@ Check out the [example from the sample repo](https://github.com/terraform-ibm-mo
 
 You can create your catalog manifest file by using two different methods:
 
-1. You can create this file from scratch by using the [template](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&interface=ui#example-manifest). .
+1. You can create this file from scratch by using the [template](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&interface=ui#example-manifest).
 1. You can start the onboarding process with the following basic sample in your source repo, and then [download the manifest file](/docs/secure-enterprise?topic=secure-enterprise-onboard-da&interface=ui#download-manifest) after you make changes during onboarding in the console to add the updated file to your source repo.
 
    The following is a basic manifest file that you can add to your repository and edit to help to get you started with this option.

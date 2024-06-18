@@ -8,7 +8,6 @@ toc:
     href: /docs/secure-enterprise
     path: secure-enterprise
     label: Running secure enterprise workloads
-
   entries:
   - navgroup:
       id: overview
@@ -43,7 +42,6 @@ toc:
           - bp_projects.md
           - bp-da.md
           - include: ../security-compliance/best-practices.md
-
   - navgroup:
       id: plan
       topics:
@@ -53,7 +51,6 @@ toc:
               - planning-architecture.md
               - planning-da.md
               - da-publish.md
-
   - navgroup:
       id: tutorial
       topics:
@@ -71,7 +68,6 @@ toc:
             - topic: custom-share.md
               navtitle: Sharing your deployable architecture
       - deploy-regions.md
-
   - navgroup:
       id: howto
       topics:
@@ -192,7 +188,6 @@ toc:
             - event-notifications-events.md
             - include: ../account/monitoring.md
             - iam-monitor-ent-template.md
-
   - navgroup:
       id: reference
       topics:
@@ -265,7 +260,6 @@ toc:
           - link:
               label: Resource Management
               href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/resource_group
-
   - navgroup:
       id: help
       topics:

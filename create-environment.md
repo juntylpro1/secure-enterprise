@@ -2,11 +2,11 @@
 
 copyright:
 
-  years: 2023, 2024
+  years: 2023
 
-lastupdated: "2024-01-16"
+lastupdated: "2024-06-04"
 
-keywords: environment, add environment, deployment environment
+keywords: environment, add environment, deployment environment, production environment
 
 subcollection: secure-enterprise
 

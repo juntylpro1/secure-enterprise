@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-05-16"
 
 keywords:
 
@@ -28,10 +28,18 @@ First, you need to know whether you're creating a module or deployable architect
 | Deployable architecture | Private catalog  \n {{site.data.keyword.cloud_notm}} catalog |
 {: caption="Table 1. Publishing options" caption-side="top"}
 
+
+
 Let's learn a little more about each of these options.
 
 Private catalog
 :   Private catalogs provide a way to centrally manage access to products in the {{site.data.keyword.cloud_notm}} catalog and your own catalogs. You can customize the public catalog and your private catalogs to make specific solutions available to users in your account. By doing so, you can ensure that your catalogs are relevant to your business. You can share products in your private catalog with users in your account, account groups within your enterprise, the entire enterprise, and even other enterprises that you have access to. By sharing your offering, any user within the account, enterprise, or account groups can configure and deploy an instance.
+
+
+
+
+
+
 
 {{site.data.keyword.cloud_notm}} catalog
 :   The [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} is the official collection of generally available supported products and offerings from {{site.data.keyword.cloud_notm}} and approved third-party partners. All products onboarded and published to the catalog must complete the requirements in Partner Center.

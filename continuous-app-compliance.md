@@ -16,6 +16,7 @@ subcollection: secure-enterprise
 {: #compliant-software-development}
 
 Taking advantage of DevSecOps to automate the integration of security at every phase of your enterprise application development lifecycle addresses security issues as they emerge, making them easier, faster, and less expensive to fix. By using the [DevSecOps Application Lifecycle Management](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-overview) deployable architecture, you can take advantage of the two main benefits of using DevSecOps, which are speed and security.
+{: shortdesc}
 
 Throughout the development cycle, the code is reviewed, scanned, and tested for security issues. This integrated security allows your team to catch issues early, and reduces duplicative reviews and unnecessary rebuilds, resulting in more secure code that is delivered faster. As DevSecOps integrates vulnerability scanning and patching into the development and release cycle, the ability to identify and patch common vulnerabilities and exposures (CVE) is increased. This limits the window a threat actor has to take advantage of vulnerabilities in public-facing production systems. Additionally, continuous compliance with periodic scanning of applications in production is included.
 
@@ -31,6 +32,7 @@ The DevSecOps Application Lifecycle Management deployable architecture streamlin
 The Tekton pipelines provide a framework of custom scripts that you can use to ensure the compliant and automated orchestration of code and configuration changes. The pipelines maintain a GitOps release inventory, while they collect and store evidence that can be used to generate auditable change requests. Additionally, the continuous compliance pipeline periodically scans the deployed artifacts and associated source code repositories for vulnerabilities.
 
 For more information about configuring the deployable architecture to fit your needs, see the [DevSecOps deployment guide](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-overview). You can use a [project](/docs/secure-enterprise?topic=secure-enterprise-setup-project) to deploy this architecture in all of your application development environments, so that your development team can take a shift-left approach by identifying security risks and exposures early, so that they are addressed before code ever reaches production.
+
 
 ## Ensuring continuous compliance with the CC pipeline
 {: #cc-pipeline}

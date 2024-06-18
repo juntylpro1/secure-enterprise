@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-06-04"
 
 keywords:
 
@@ -67,7 +67,7 @@ To achieve composability, a deployable architecture should be designed to:
 
 Alternatively, this deployable architecture also allows creating a new {{site.data.keyword.secrets-manager_short}} instance, a new resource group, and other resources from scratch, providing a stand-alone solution.
 
-By embracing composability, a deployable architecture can be easily integrated into a more complex solution architecture, such as a [deployable architecture stack](/docs/secure-enterprise?topic=secure-enterprise-config-stack). For example, the [Retrieval Augmented Generation Pattern](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) demonstrates how multiple deployable architectures, including the {{site.data.keyword.secrets-manager_short}} deployable architecture, can be combined to build a complex solution. Deployable architectures that are designed with composability in mind provide the foundation for these more complex solutions. 
+By embracing composability, a deployable architecture can be easily integrated into a more complex solution architecture, such as a [deployable architecture stack](/docs/secure-enterprise?topic=secure-enterprise-config-stack). For example, the [Retrieval Augmented Generation Pattern](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) demonstrates how multiple deployable architectures, including the {{site.data.keyword.secrets-manager_short}} deployable architecture, can be combined to build a complex solution. Deployable architectures that are designed with composability in mind provide the foundation for these more complex solutions.
 
 In a deployable architecture stack, each member deployable architecture maintains its independent configuration state, allowing for individual deployment, update, or undeployment. This modular approach enables cost, compliance, support, and quality assurances to be derived from the included deployable architectures, while each stack remains uniquely versioned with its own descriptions and reference architecture.
 
@@ -104,7 +104,7 @@ In contrast, the standard version of the [{{site.data.keyword.redhat_openshift_n
 #### Input variables
 {: #input-vars-best-practice}
 
-Make it easier for users to configure the deployable architecture's input variables by using the following best practices: 
+Make it easier for users to configure the deployable architecture's input variables by using the following best practices:
 
 Expose only commonly modified arguments
 :   Expose only the variables that most users will need to change, avoiding deployable architectures with a large number of input variables that would overwhelm users. For advanced users, consider providing a single JSON input field for further customization. As an example, the VPC Landing zone deployable architecture surfaces a single field named `override_json_string` that gives full control to advanced users on the deployed topology. For more information, see [the VPC Landing zone deployment guide](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-override-kms).

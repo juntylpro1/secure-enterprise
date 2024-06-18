@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-02-20"
+lastupdated: "2024-06-17"
 
 keywords: target account, manage resources, enterprise architecture, administration account, resources, existing resources, organize resources
 
@@ -13,6 +13,7 @@ subcollection: secure-enterprise
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+{:video: .video}
 
 # Organizing existing resources by using a project
 {: #organize-resources}
@@ -35,27 +36,23 @@ Within a project, you can further refine groups of resources by adding them to d
 
 Prefer to see it in action? Check out the following video to learn how to organize existing resources in your project by using the console.
 
-![Organizing existing resources in a project](https://www.youtube.com/embed/3QzfoswV0S8?si=pye4vobzYP_i4xdH){: video output="iframe" data-script="#video-transcript-resources" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Organizing existing resources in a project](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_51s9ohdz){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen}
 
 ### Video transcript
 {: #video-transcript-resources}
 {: notoc}
 
-{{site.data.keyword.cloud_notm}} is working on a new feature to organize resources by using a project.
+A new feature is available in {{site.data.keyword.cloud_notm}} that you can use to organize your resources by using a project.
 
-Within your project, this is achieved by creating a configuration from existing resources.
+Within your project, you can now add existing resources from other accounts.
 
-After you create your configuration, provide authentication details for the target account that contains your existing resources.
+In your project, go to the Resources tab and click **Add** to select the resources that you want to organize in your project.
 
-After you’ve authenticated with the target account, click **Add** to select resources.
+First, provide the authentication credentials for the account that contains your resources. Then, click **Next** to select the resources that you want to organize in your project. You can search for resources by filtering on the Location, Service, or Tags.
 
-When you’re done selecting your resources, click **Save draft** to save your changes.
+Select each resource that you want to organize in your project and click **Add**. The resources that you added to your project are now listed on the Resources tab.
 
-Then, click **Apply changes** to finalize your draft and add your resources to the project.
-
-Within your configuration, you now have a view of the existing resources from your target account.
-
-Moving forward, we’re exploring ways to automatically organize resources in a project, and provide meaningful data in your project, like usage and cost information.
+Moving forward, we’re exploring ways to provide meaningful data in your project, such as usage and cost information.
 
 ## Before you begin
 {: #prereq-resources}
@@ -63,6 +60,8 @@ Moving forward, we’re exploring ways to automatically organize resources in a 
 Make sure that you are assigned the following access in the account that contains your project:
 * The Editor role or greater on the {{site.data.keyword.cloud}} Projects service.
 * The Viewer role on the resource group for the project.
+
+
 
 You must also have an authentication method to grant your project access to the account that contains your resources. You can [use an API key or secret](/docs/secure-enterprise?topic=secure-enterprise-authorize-project) or you can [use a trusted profile](/docs/secure-enterprise?topic=secure-enterprise-tp-project) to grant your project access. Make sure that the API key or trusted profile has the following access:
 * The Viewer role for All Identity and Access enabled services. You can allow access to all resources, or [scope the access to a select few](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-existing-resources).
@@ -73,16 +72,22 @@ You must also have an authentication method to grant your project access to the 
 
 To add existing resources to a project, complete the following steps:
 
-1. In the {{site.data.keyword.cloud_notm}} console, click the **Navigation menu** icon ![Navigation Menu icon](../icons/icon_hamburger.svg "Menu") > **[Projects](/projects/)** and create or select a project.
-1. In the project, go to the Configurations tab and select **Create** > **From existing resources** and enter a name for your configuration.
-1. In the Configure section, select an authentication method that you want to use to authenticate with the target account that contains your resources.
-1. In the Add resources section, click **Add**.
-1. Select the resources that you want to organize in your project, and click **Add**.
+1. In the {{site.data.keyword.cloud_notm}} console, click the **Navigation menu** icon ![Navigation menu icon](../icons/icon_hamburger.svg "Menu") > **[Projects](/projects/)** and create or select a project.
+1. In the project, go to the Resources tab and click **Add**.
+1. In the Authenticate section, select an authentication method that you want to use to authenticate with the target account that contains your resources.
+1. In the Select resources section, select the resources that you want to organize in your project and click **Add**.
 
    Resources that are in a {{site.data.keyword.bplong}} workspace or were already added to another configuration can’t be added and don't display in the list of resources. Some resources might not be included in the list if the authentication method was scoped to specific resources, as opposed to all of them.
    {: note}
 
-1. Click **Save draft** to save your changes as a draft.
-1. Click **Apply changes** to finalize your draft and add your resources to the project.
+The resources that you added to your project are listed on the Resources tab.
 
-Within your configuration, the resources that you added are listed on the Resources tab.
+## Removing {{site.data.keyword.cloud_notm}} resources from a project
+{: #remove-existing-resources}
+
+To remove resources from a project, complete the following steps:
+
+1. In the project, go to the Resources tab and find the resource that you want to remove.
+1. Click the **Actions** icon ![Actions icon](../icons//action-menu-icon.svg "Actions") > **Remove**.
+1. Click **Remove** to confirm that you want to remove the selected resource from the project.
+

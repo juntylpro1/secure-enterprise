@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-02-20"
+lastupdated: "2024-06-04"
 
 keywords: trusted profile, projects trusted profile, authorization, project auth, project security
 
@@ -20,7 +20,7 @@ subcollection: secure-enterprise
 Some services cannot fully configure and deploy architectures by using trusted profiles. For more information, see [Known issues and limitations for projects](/docs/secure-enterprise?topic=secure-enterprise-known-issues#auth-known-issue).
 {: important}
 
-When you configure your deployable architecture, you are required to select an authentication method. A project can assume a [trusted profile](/docs/account?topic=account-create-trusted-profile), which grants the project access to deploy an architecture in the account where the trusted profile exists. This way, you can securely deploy an architecture without the need for key rotation.
+When you configure your deployable architecture, you are required to select an authentication method. A project can apply a [trusted profile](/docs/account?topic=account-create-trusted-profile), which grants the project access to deploy an architecture in the account where the trusted profile exists. This way, you can securely deploy an architecture without the need for key rotation.
 {: shortdesc}
 
 The project uses the trusted profile to create a service ID with the same permissions as the trusted profile and a fresh API key for that service ID to authorize each deployment. Because the temporary API key exists only for the lifetime of the operation, this improves security because it's harder to misuse. The trusted profile needs access to create a service ID and create and delete API keys for the service ID, as well as access to deploy the deployable architecture.
@@ -28,7 +28,7 @@ The project uses the trusted profile to create a service ID with the same permis
 ## Deploying an architecture in your account or another account
 {: #deploy-accross-accounts}
 
-You can deploy an architecture in your own account or in another account by using trusted profiles.
+You can deploy an architecture in your own account or in another account, also called a target account, by using trusted profiles.
 
 Depending on your organization, deploying an architecture might require access to another account by using a trusted profile and coordinating with administrators in multiple accounts. If the {{site.data.keyword.cloud_notm}} Projects service in another account needs access to your account to deploy an architecture, use trusted profiles and service IDs to authorize deployments in your account.
 
@@ -80,7 +80,7 @@ Complete the following steps:
 
    1. Create a policy that grants the trusted profile access to deploy the deployable architecture.
 
-      You can choose from a couple of approaches to grant the service ID access to authorize deployments in your account. See [Granting wide-ranging access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-wide) [Granting specific access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-specific) for more information.
+      You can choose from a couple of approaches to grant the service ID access to authorize deployments in your account. See [Granting wide-ranging access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-wide) or [Granting specific access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-specific) for more information.
 
    1. Click **Add**.
 
@@ -124,10 +124,10 @@ View the catalog page for specific access roles that are required for a given de
 ### Granting specific access to existing resources
 {: #serviceid-access-existing-resources}
 
-If you are using a trusted profile to [organize existing resources in a project](/docs/secure-enterprise?topic=secure-enterprise-organize-resources), you can grant the trusted profile access to specific resources, as opposed to all of them. Choose this option if you want to limit which existing resources a project can manage.  
+If you are using a trusted profile to [organize existing resources in a project](/docs/secure-enterprise?topic=secure-enterprise-organize-resources), you can grant the trusted profile access to specific resources, as opposed to all of them. Choose this option if you want to limit which existing resources a project can manage.
 
 1. To create the first policy, select **All Identity and Access enabled services** and click **Next**.
-   1. Select **Specific resources**, scope the access to the resources you want, and click **Next**. 
+   1. Select **Specific resources**, scope the access to the resources you want, and click **Next**.
    1. For the resource group access, select the Administrator role and click **Next**.
    1. Select the Manager service role and the Administrator platform role.
    1. Click **Add**.

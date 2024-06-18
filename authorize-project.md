@@ -4,7 +4,7 @@ copyright:
   years: 2023, 2024
 
 
-lastupdated: "2024-02-06"
+lastupdated: "2024-05-30"
 
 
 keywords: authorizing a project, add project to account, project secrets, project API key, authenticate, authentication for a project, target account
@@ -37,13 +37,13 @@ Though it is possible to add your API key directly into your configuration, it i
 
    For more information about access and permissions, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
-1. Each API key that you create has the same access that you are assigned as a user. Before you create an API key, make sure that you have access to deploy architectures in the account that you want to deploy to, also known as your target account. If you have the following [wide-ranging access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-wide), then you can deploy architectures in the account: 
+1. Each API key that you create has the same access that you are assigned as a user. Before you create an API key, make sure that you have access to deploy architectures in the account that you want to deploy to, also known as your target account. If you have the following [wide-ranging access](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-wide), then you can deploy architectures in the account:
    * The Administrator role for All Identity and Access enabled services.
-   * The Administrator role for All Account Management services. 
+   * The Administrator role for All Account Management services.
 
-   Alternatively, you can [create an API key that is associated with a service ID](/docs/account?topic=account-serviceidapikeys&interface=ui#serviceidapikeys). Service ID API keys inherit all access that is assigned to the specific service ID. So, you can scope the access for the service ID to the minimum that is required for the deployable architecture that you're configuring. This approach is similar to using a trusted profile with specific access based on the deployable architecture. For more information on finding the required access roles for any given deployable architecture, see [granting specific access based on the deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-specific). 
+   Alternatively, you can [create an API key that is associated with a service ID](/docs/account?topic=account-serviceidapikeys&interface=ui#serviceidapikeys). Service ID API keys inherit all access that is assigned to the specific service ID. So, you can scope the access for the service ID to the minimum that is required for the deployable architecture that you're configuring. This approach is similar to using a trusted profile with specific access based on the deployable architecture. For more information on finding the required access roles for any given deployable architecture, see [granting specific access based on the deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-tp-project#serviceid-access-specific).
 
-1. Complete the required steps to [create a project and add a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-setup-project). You authorize the project to deploy with an API key or existing secret when you configure your deployable architecture. 
+1. Complete the required steps to [create a project and add a deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-setup-project). You authorize the project to deploy with an API key or existing secret when you configure your deployable architecture.
 
 ## Creating an API key
 {: #create-new-secret}
@@ -71,7 +71,7 @@ After you create an API key, complete the following steps to add it to {{site.da
 ## Using an existing secret
 {: #deploy-exisiting-secret}
 
-After you added your API key to {{site.data.keyword.secrets-manager_short}} as an arbitrary secret, you can use that secret to authorize your project to deploy. Complete the following steps: 
+After you added your API key to {{site.data.keyword.secrets-manager_short}} as an arbitrary secret, you can use that secret to authorize your project to deploy. Complete the following steps:
 
 1. In the {{site.data.keyword.cloud_notm}} console, sign in to the account that you want to deploy the project to.
 1. Go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects**.
@@ -85,3 +85,5 @@ After you added your API key to {{site.data.keyword.secrets-manager_short}} as a
 1. Click **Save**.
 
 During the configuration process, you might decide to add the API key directly for experimental work. This option is not recommended, especially for deployments to your production account, because the API key displays in your `project.json` file and is visible to anyone who exports it.
+
+

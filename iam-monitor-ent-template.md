@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-05-28"
 
 keywords: monitoring, iam templates, monitoring iam templates, activity tracker
 
@@ -29,7 +29,7 @@ You must create an instance of the {{site.data.keyword.cloudaccesstrailshort}} s
 When you assign an enterprise-managed IAM template to target child accounts, multiple events generate. The enterprise account and each target child account have their own corresponding events.
 
 ### Analyzing template create events in the enterprise account
-{: #ent-template-assignments}
+{: #ent-create-assignments}
 
 Complete the following steps to review the creation of IAM templates in an enterprise account:
 
@@ -87,7 +87,7 @@ Complete the following steps to review how child account administrators are modi
    - Trusted profile templates: `iam-identity`
    - Settings templates: `iam-identity`
    - Policy templates: `iam-access-management`
-1. Use the search field to view IAM templates events by searching for the `action` and `template_id`. For example,  `action:iam-groups.update template_id=={template_id}`. <--- Need to verifty
+1. Use the search field to view IAM templates events by searching for the `action` and `template_id`. For example,  `action:iam-groups.update template_id=={template_id}`.
 
 ### Analyzing events in child accounts
 {: #account-review}
@@ -107,7 +107,11 @@ Complete the following steps to review IAM template assignments in your child ac
 
 1. In the {{site.data.keyword.cloud_notm}} console, go to the **Navigation Menu** icon ![Navigation Menu icon](../icons/icon_hamburger.svg "Menu") > **Observability** > **{{site.data.keyword.cloudaccesstrailshort}}**.
 1. Click **Open dashboard** on the dashboard that you use to monitor IAM events.
-1. Click **Sources** and select **??** to filter the results and view only enterprise-managed IAM events.
+1. Click **Sources** and  select the IAM service name to filter the results and view only events for the type of template that you're looking for.
+   - Access group templates: `iam-groups`
+   - Trusted profile templates: `iam-identity`
+   - Settings templates: `iam-identity`
+   - Policy templates: `iam-access-management`
 1. Use the search field to view enterprise-managed IAM events by searching for `template`.
 
 ## Examples
@@ -277,4 +281,4 @@ curl -H "Authorization: Bearer $TOKEN" "https://iam.test.cloud.ibm.com/v1/profil
 | `success`     | The assignment process has completed and the template has been assigned to all target accounts and account groups successfully. |
 | `fail`        | The assignment process is complete but there is one or more target accounts where the template failed to be assigned. |
 | `superseded`  | The assignment has been superseded by another assignment record with the same template at a target account group higher in the enterprise accounts hierarchy. For more information, see [Superseeding a version](/docs/secure-enterprise?topic=secure-enterprise-working-with-versions#template-superseded). |
-{: caption="Table 6. The possible states for an IAM template assignments in Activity Tracker" caption-side="top"}
+{: caption="Table 6. The possible states for an IAM template assignment in Activity Tracker" caption-side="top"}

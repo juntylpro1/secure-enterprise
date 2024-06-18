@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-02-20"
+  years: 2023
+lastupdated: "2023-08-21"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, trusted profile, migrate version, upgrade version, new version
 
@@ -82,6 +82,8 @@ To establish trust, complete the following steps:
 1. Define the session duration for how long a user can apply the profile before they must reauthenticate.
 1. Click **Save**.
 
+
+
 ### (Optional) Add access policies
 {: #add-access-tp-template}
 {: ui}
@@ -104,6 +106,8 @@ Access policies grant access in child accounts to the federated users that can a
 {: ui}
 
 You can remove policies before a template is committed and assigned.
+
+
 
 ## Updating template details
 {: #update-tp-template-name}
@@ -205,8 +209,6 @@ To remove an assignment, complete the following steps:
 1. Click **Update assignments**.
    1. To remove an assignment from one or a few accounts, deselect the accounts where you want to remove the template assignment.
    1. To remove an assignment from all accounts where the template is assigned, click **Unassign all**.
-
-<!--- CLI --->
 
 ## Creating a trusted profile template by using the CLI
 {: #create-trusted-profile-template-cli}
@@ -442,9 +444,6 @@ Before you can delete a trusted profile template version, you must remove all as
    {: #codeblock}
 
 1. To delete all versions, repeat these steps. Make sure that you remove the assignments for each version first.
-
-<!--- API --->
-
 
 ## Creating a trusted profile template by using the API
 {: #create-trusted-profile-template-api}

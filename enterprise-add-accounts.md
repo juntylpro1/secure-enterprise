@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-03-22"
+  years: 2020, 2023
+lastupdated: "2023-08-29"
 
 keywords: enterprise, add account, import account, create account
 
@@ -262,7 +262,6 @@ curl -X POST "https://enterprise.cloud.ibm.com/v1/accounts
   "crn:v1:bluemix:public:enterprise::a/$ENTERPRISE_ACCOUNT_ID::account-group:$ACCOUNT_GROUP_ID",
   "name": "Example Account",
   "owner_iam_id": "$OWNER_IAM_ID"
-  "traits": { "enterprise_iam_managed": true }
 }'
 ```
 {: codeblock}
@@ -330,9 +329,6 @@ fmt.Println(string(b))
 {: codeblock}
 {: go}
 
-For more information about the `enterprise_iam_managed` trait, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in).
-{: curl}
-
 ### Creating accounts by using Terraform
 {: #create-account-terraform}
 {: terraform}
@@ -346,15 +342,11 @@ Use the following steps to create accounts by using Terraform:
     parent = "parent"
     name = "name"
     owner_iam_id = "owner_iam_id"
-    traits {
-        mfa = "NONE"
-        enterprise_iam_managed = true
-      }
     }
    ```
    {: codeblock}
 
-   You can specify the ID of an account owner on the `owner_iam_id` option. You can also specify the multifactor authentication setting and turn on enterprise-managed IAM to centrally administer access in the account. For more information, see [Opting in to enterprise-managed IAM](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in) and the argument reference details on the [Terraform Enterprise Management](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/enterprise_account){: external} page.
+   You can specify the ID of an account owner on the `owner_iam_id` option. For more information, see the argument reference details on the [Terraform Enterprise Management](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/enterprise_account){: external} page.
 
 1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://developer.hashicorp.com/terraform/cli/init){: external}.
 

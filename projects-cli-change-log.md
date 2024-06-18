@@ -2,9 +2,9 @@
 
 copyright:
   years:  2023, 2024
-lastupdated: "2024-04-03"
+lastupdated: "2024-06-04"
 
-keywords: change log for Projects, updates to Projects CLI, projects CLI
+keywords: change log for Project, updates to Project CLI
 
 subcollection: secure-enterprise
 
@@ -50,4 +50,3 @@ Added the following commands:
 - The **`environment-delete`** command deletes an environment.
 - The **`environment`** command returns an environment.
 - The **`environments`** command returns all environments.
-

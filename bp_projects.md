@@ -1,10 +1,13 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-03-26"
+  years: 2022, 2023
 
-keywords: best practice projects, manage projects, project
+
+lastupdated: "2023-11-30"
+
+
+keywords: best practice projects, manage projects, project, environment
 
 subcollection: secure-enterprise
 
@@ -24,9 +27,9 @@ These best practices provide you with the basic building blocks to manage succes
 
 A key benefit of {{site.data.keyword.cloud_notm}} projects is the ability to centrally manage and collaborate your Infrastructure as Code deployments. If you are using an enterprise, establishing a primary or home account to store all of your projects helps manage and track your projects in one location.
 
-The usefulness of establishing a primary account depends on your enterprise structure. Projects can be created in an account and deploy resources to other accounts. Users can view only the projects that are within the account that they're currently logged in to. In addition, reports for multiple projects can be generated only for projects within the same account. This is another useful benefit of establishing a common home account for all projects in an enterprise or all projects with a similar line of business. By keeping your project in a primary account, and deploying to separate accounts for each environment(dev, test, and production) you can help minimize issues.
+The usefulness of establishing a primary account depends on your enterprise structure. Projects can be created in an account and deploy resources to other accounts. Users can view only the projects that are within the account that they're currently logged in to. In addition, reports for multiple projects can be generated only for projects within the same account. This is another useful benefit of establishing a common home account for all projects in an enterprise or all projects with a similar line of business. By keeping your project in a primary account, and deploying to separate accounts for each environment (dev, test, and production) to simplify enterprise management.
 
-To make the account easier to identify the purpose and projects within the account by all users, give the account a human-readable name.
+To make the account easier to identify the purpose and projects within the account by all users, give the account a human-readable name. For example `Front-end UI team` and `Back-end API team`.
 
 ## Defining an authentication method
 {: #best-practice-auth}
@@ -102,7 +105,7 @@ Access to projects is controlled by Identity and Access Management (IAM). It's r
 | *ProjectName*-Writer | Manager, Operator |
 {: caption="Table 2. Project access groups and roles" caption-side="top"}
 
-To create new projects, users must be assigned specific access on the project tooling service and {{site.data.keyword.bplong}} service. For more information, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
+To create new projects, users must be assigned specific access. For more information, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 {: note}
 
 ## Monitoring needs attention items
@@ -117,7 +120,7 @@ You can apply tags to organize, track, and manage your projects. It can be usefu
 
 Tags are not case-sensitive, and the maximum length of a tag is 128 characters. The permitted characters are A-Z, 0-9, spaces, underscore, hyphen, period, and colon.
 
-Resources in a project are automatically given service tags with the ID for the project and configuration that they're associated with. For more information, see [Tracking usage and spend for projects](/secure-enterprise?topic=secure-enterprise-project-usage-spend).
+Resources in a project are automatically given service tags with the project ID and configuration ID with which they are associated. For more information, see [Tracking usage and spend for projects](/secure-enterprise?topic=secure-enterprise-project-usage-spend).
 {: note}
 
 ## Destroying resources created by projects

@@ -83,6 +83,8 @@ An attachment is how you target a specific grouping of your resources to evaluat
 When you create your attachment, a scan is scheduled and results are available within 24 hours. When the scan completes your results are available on the **Dashboard** in the {{site.data.keyword.compliance_short}} UI.
 
 
+
+
 ## Interpreting results
 {: #scc-results}
 
@@ -91,6 +93,7 @@ When your scan completes, the results are available on the **Dashboard** tab in 
 When you visit the dashboard, you can see three graphical representations of data that has been aggregated from your scans.
 
 ![A visual representation of the service dashboard. The concepts are fully explained in the surrounding text.](images/dashboard.svg){: caption="Figure 1. Example dashboard" caption-side="bottom"}
+
 
 The three graphs that you can see are:
 

@@ -1,10 +1,8 @@
 ---
 
 copyright:
-
-  years: 2023, 2024
-
-lastupdated: "2024-04-23"
+  years: 2023
+lastupdated: "2023-05-20"
 
 subcollection: secure-enterprise
 
@@ -20,7 +18,7 @@ keywords: project responsibilities, incidents, operations, access, change manage
 Learn about the management responsibilities and terms and conditions that you have when you use projects. For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
 
-Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use projects. For the overall terms of use, see [{{site.data.keyword.cloud}} Terms and Notices](/docs/overview?topic=overview-terms).
+Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use projects. For the overall terms of use, see [{{site.data.keyword.cloud}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
 
 ## Incident and operations management
 {: #incident-and-ops-projects}
@@ -59,7 +57,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Accessing projects| {{site.data.keyword.IBM_notm}} provides the ability to control user access to projects.  | Use Identity and Access Management (IAM) to [assign users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project). |
-|Authorize a project to deploy a configuration| {{site.data.keyword.IBM_notm}} provides the ability to authorize a project to deploy a configuration.  | Choose an authentication method to authorize a project to deploy in an account. Use an API key or an existing secret to [authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project) in an account. |
+|Authorize a project to deploy a configuration| {{site.data.keyword.IBM_notm}} provides the ability to authorize a project to deploy a configuration.  | Choose an authentication method to authorize a project to deploy in an account. Use an API key or an existing secret to [authorize a project to deploy an architecture](/docs/secure-enterprise?topic=secure-enterprise-authorize-project) in an account.  |
 {: row-headers}
 {: caption="Table 3. Responsibilites for identity and access management" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or IBM might be responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
@@ -71,7 +69,7 @@ Security and regulation compliance includes tasks such as security controls impl
 
 |  Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-| Meet security and compliance objectives| Provide a secure {{site.data.keyword.cloud_notm}} Projects service that complies with key standards. For more information about data security, see [How do I know that my data is safe?](/docs/overview?topic=overview-security).  | Secure your workloads and data. Integrate tools into your toolchains that satisfy your security and compliance requirements. To learn more about securing your cloud apps, see [Security to safeguard and monitor your cloud apps](https://www.ibm.com/topics/cloud-native). To learn more about securing your data while you are using the {{site.data.keyword.cloud_notm}} Projects service, see [Securing your data](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd_data_security&interface=ui). To learn more about regulatory compliance with the {{site.data.keyword.cloud_notm}} Projects service, see [Understanding tool integrations with {{site.data.keyword.IBM_notm}} for Financial Services](/docs/ContinuousDelivery?topic=ContinuousDelivery-integrations&interface=ui). |
+| Meet security and compliance objectives| Provide a secure {{site.data.keyword.cloud_notm}} Projects service that complies with key standards. For more information about data security, see [How do I know that my data is safe?](/docs/overview/terms-of-use?topic=overview-security).  | Secure your workloads and data. Integrate tools into your toolchains that satisfy your security and compliance requirements. To learn more about securing your cloud apps, see [Security to safeguard and monitor your cloud apps](https://www.ibm.com/topics/cloud-native). To learn more about securing your data while you are using the {{site.data.keyword.cloud_notm}} Projects service, see [Securing your data](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd_data_security&interface=ui). To learn more about regulatory compliance with the {{site.data.keyword.cloud_notm}} Projects service, see [Understanding tool integrations with {{site.data.keyword.IBM_notm}} for Financial Services](/docs/ContinuousDelivery?topic=ContinuousDelivery-integrations&interface=ui). |
 {: row-headers}
 {: caption="Table 4. Responsibilites for security and regulation compliance" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or IBM might be responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}

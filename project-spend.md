@@ -20,6 +20,8 @@ subcollection: secure-enterprise
 As a billing or FinOps manager, you need to track spending for teams in your organization and bill them back for the resources that they deploy. [Projects](#x2035151){: term} help with accounting by ensuring that all resources that are associated with a project can be tracked back to the project with tagging and resource usage reports.
 {: shortdesc}
 
+
+
 Resources in a project are automatically given service tags with the ID for the project and configuration that they're associated with. These tags are visible in usage reports or by using the command-line interface (CLI) or API. You can use these tags to filter your usage report and get a clear view of spending for projects. This way, it's easier to bill usage back to the teams that are deploying projects.
 
 The services themselves exclusively manage service tags. Users can't add or remove service tags. For more information, see [Tag types](/docs/account?topic=account-tag&interface=ui#tag-types).

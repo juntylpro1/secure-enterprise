@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-06-04"
 
 keywords:
 
@@ -16,6 +16,7 @@ subcollection: secure-enterprise
 {: #secure-software-supply-chain}
 
 With the [DevSecOps](#x9892260){: term} tools and services available through {{site.data.keyword.cloud}}, you can take advantage of using a verified secure software supply chain for developing and deploying your application code. Your agile development practices require rapid application deployment, but at the same time, you need to ensure that your applications are secure. Learn more about the background of [agile, DevOps, and DevSecOps](/docs/devsecops?topic=devsecops-devsecops_intro#devsecops-background).
+{: shortdesc}
 
 You can use the [DevSecOps Application Lifecycle Management](/docs/devsecops-alm?topic=devsecops-alm-devsecops-alm-overview) deployable architecture, which is a solution available from the {{site.data.keyword.cloud_notm}} catalog that uses {{site.data.keyword.contdelivery_short}} and others tools to help you automate the integration of security at every phase of the application software development lifecycle, from development through integration, testing, deployment, and software delivery. Evidence is also collected so that you can easily demonstrate to auditors that necessary controls are being met. By using DevSecOps Application Lifecycle Management, you can implement a shift-left approach by preventing new vulnerabilities from reaching production, ensuring frequent updates to production with quality and control, and collecting evidence for handling security audits.
 

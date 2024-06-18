@@ -15,10 +15,10 @@ subcollection: secure-enterprise
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Learn about IaC deployments with projects
+# Using projects for IaC deployments
 {: #understanding-projects}
 
-{{site.data.keyword.cloud}} projects are a named collection of configurations that are used to manage related resources and Infrastructure as Code (IaC) deployments across accounts. They enable teams to configure, deploy, and monitor deployments by using DevOps best practices. Each project includes tools to scan for potentially harmful resource changes, compliance, security, and cost, as well as tracking configuration versioning and governance. They're designed with an IaC and a compliance-first approach that helps to ensure that a project is managed, secure, and always compliant.
+{{site.data.keyword.cloud}} projects are a named collection of configurations that are used to manage related resources and deployments across accounts, embracing an Infrastracture as Code (IaC) approach to deployments. They enable teams to configure, deploy, and monitor deployments by using DevOps best practices. Each project includes tools to scan for potentially harmful resource changes, compliance, security, and cost, as well as tracking configuration versioning and governance. They're designed with an IaC and a compliance-first approach that helps to ensure that a project is managed, secure, and always compliant.
 
 ![The diagram shows the flow that a user would take when working with projects. The information is conveyed in the surrounding text.](images/projects-flow.svg){: caption="Figure 1. Understanding the projects workflow." caption-side="bottom"}
 
@@ -27,11 +27,11 @@ After choosing a [deployable architecture](#x10293733){: term} from the catalog,
 ## Benefits of projects
 {: #project-benefits}
 
-Projects help manage IaC at scale. They help ensure that the IaC and its configuration are always valid, secure, and compliant. Because a single project can deploy to different accounts, projects allow users to group related resources across accounts for better collaboration, organization, and user management. Users can get started more efficiently on {{site.data.keyword.cloud_notm}} by using projects to create resources by using deployable architectures that help build complex cloud infrastructures that are designed to meet high-availability, scalability, resiliency, and business continuity and disaster recovery (BC/DR) requirements. A project is a useful tool for many reasons.
+Projects help manage deployments at scale. They help ensure that your configured architectures are always valid, secure, and compliant. Because a single project can deploy to different accounts, projects allow users to group related resources across accounts for better collaboration, organization, and user management. Users can get started more efficiently on {{site.data.keyword.cloud_notm}} by using projects to create resources by using deployable architectures that help build complex cloud infrastructures that are designed to meet high-availability, scalability, resiliency, and business continuity and disaster recovery (BC/DR) requirements. A project is a useful tool for many reasons:
 
 * You can associate a set of deployable architectures, their configurations, and the resulting resources in a single interface. This helps you to manage your resources in a more secure and repeatable way, while simultaneously managing cost, status, and team activity.
 * Projects offer a secure solution supply chain by ensuring that only approved deployable architectures are used to deploy resources and by leveraging trusted profiles to provide secure authorization that doesn't require key rotation and can't be misplaced.
-* Projects provide governance over the configuration of IaC by ensuring that configuration changes are tracked, approved, and subject to automated validation and compliance checks.
+* Projects provide governance over your infrastructure by ensuring that configuration changes are tracked, approved, and subject to automated validation and compliance checks.
 * Projects help ensure that security and compliance issues are addressed by notifying project users of new versions and helping them get deployed in a timely manner.
 * Projects allow infrastructure to be managed as code across accounts, allowing all infrastructure that is related to a project to be managed from a single place. This makes it easy to monitor that development and test infrastructure is aligned with production infrastructure by avoiding surprises as applications move through to production.
 * Projects help with accounting and configuration management by ensuring that all resources that are associated with the project can be tracked back to the project by tagging and resource reports. Projects can also be tagged to provide a higher level of organization.
@@ -39,10 +39,10 @@ Projects help manage IaC at scale. They help ensure that the IaC and its configu
 ## Exploring popular use cases
 {: #project-use}
 
-Projects help organize and secure the configurations that you create from an IaC deployable architecture as well as the resulting resources. If you are a large organization or enterprise, there are several advantages to using {{site.data.keyword.cloud_notm}} projects. Explore these popular use cases to learn how you can adapt projects to your business needs.
+Projects help organize and secure the configurations that you create from a deployable architecture as well as the resulting resources. If you are a large organization or enterprise, there are several advantages to using {{site.data.keyword.cloud_notm}} projects. Explore these popular use cases to learn how you can adapt projects to your business needs.
 
 Shift-left compliance and governance
-:   As you deploy and operate shared infrastructure, projects help to organize and bundle the related configurations and deployments in a single location - even across different environments. Projects run predeployment security and compliance checks to ensure that your IaC deployable architecture still meets its claimed compliance at the point of deployment. A separate project administrator or editor must review and approve changes, providing an additional layer of governance.
+:   As you deploy and operate shared infrastructure, projects help to organize and bundle the related configurations and deployments in a single location - even across different environments. Projects run predeployment security and compliance checks to ensure that your deployable architecture still meets its claimed compliance at the point of deployment. A separate project administrator or editor must review and approve changes, providing an additional layer of governance.
 
 Automated deployment across accounts
 :   Projects can deploy to any account, which makes it much easier to isolate your environments in separate accounts. This enables you to organize and manage configurations across environments from a single view. Because projects deploy changes through automation, they reduce the chance of human error or deviations between environments. You can even lock down access to your most sensitive accounts and require changes to be made by using projects.
@@ -51,7 +51,7 @@ Tracking ongoing maintenance and updates
 :   Projects help you to manage architecture updates and maintain compliance. In addition to conducting continuous compliance scans, projects notify you of architecture version updates, validation failures, and required cluster updates. Because projects are integrated with {{site.data.keyword.cloud_notm}}’s {{site.data.keyword.en_short}} service, you can route project notifications to Slack, PagerDuty, and other third-party tools.
 
 Building and sharing custom architectures by using private catalogs
-:   Deployable architectures are built to be modular and flexible. You can create custom deployable architectures and share them with your team by using private catalogs by adding the IaC to a new project. The IaC prompts you to select your code (you can download a code bundle from the deployable architecture’s catalog page) and uploads it to any repo you specify. After it's deployed, the IaC creates CI and CD pipelines that check changes for compliance and allow you to publish directly into a private catalog. Private catalogs make it easy to consume and push version updates to your team.
+:   Deployable architectures are built to be modular and flexible. You can create custom deployable architectures and share them with your team by using private catalogs by adding the architecture to a new project. You can download a code bundle from the deployable architecture's catalog page, customize it if needed, and then upload it to any repo that you specify. After the custom architecture is deployed, CI and CD pipelines check any changes for compliance and allows you to share the architecture directly into a private catalog. Private catalogs make it easy to consume and push version updates to your team.
 
 Managing the lifecycle of your infrastructure
 :   Projects help you manage, track, and maintain your infrastructure from start to finish. As the lifecycle of your infrastructure changes, you can use projects to easily clean up the project resources that are no longer needed. If a project is complete and is no longer needed, the whole project and all associated resources in all envionments can be deleted. In addition, a project can be paused by deleting the associated resources while retaining the project and its configurations. This makes it easy to resume the project later.
@@ -67,14 +67,14 @@ Review the following concepts and processes to help you learn about working with
 ### Configurations
 {: #configuration-projects}
 
-A single project typically manages configurations for one or more IaC templates called deployable architectures in {{site.data.keyword.cloud_notm}}. The set of input values and the architecture that you are configuring together become a configuration. In addition to providing review and approval work flows, projects monitor each configuration for cost, compliance, and version updates from the catalog.
+A single project typically manages configurations for one or more templates called deployable architectures in {{site.data.keyword.cloud_notm}}. The set of input values and the architecture that you are configuring together become a configuration. In addition to providing review and approval work flows, projects monitor each configuration for cost, compliance, and version updates from the catalog.
 
 Typically, a project holds several configurations of each architecture. An architecture might have separate configurations for the development, test, and production environments, or for three separate regions, all of which are in the production environment.
 
 ### Deployable architectures
 {: #deployable-architectures}
 
-Projects provide governance and management for deployable architectures, which are infrastructure as code templates. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
+Projects provide governance and management for deployable architectures, which are templates designed to embrace an infrastructure as code approach to managing deployments. [Custom deployable architectures can be developed](/docs/secure-enterprise?topic=secure-enterprise-customize-from-catalog) by using the tooling of your choice and can be [added to a private catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da) in the {{site.data.keyword.cloud_notm}} console. You must select **Deployable Architecture** as the type of product that you are onboarding for it to be used with projects.
 
 ### Project tooling
 {: #tooling-projects}

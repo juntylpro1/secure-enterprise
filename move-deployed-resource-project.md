@@ -3,7 +3,8 @@
 copyright:
 
   years: 2023, 2024
-lastupdated: "2024-04-23"
+
+lastupdated: "2024-04-18"
 
 keywords: move schematics workspace, migrate schematics workspace, deployable architecture
 
@@ -26,8 +27,7 @@ Watch and learn the process of moving deployed resources to a project.
 ## Watch and learn
 {: #move-wks-da}
 
-![Moving a {{site.data.keyword.bpshort}} workspace into a project](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_ytu3tvzb){: video output="iframe" data-script="#move-wks-da-script" id="mediacenter-player" width="560" height="315" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
-
+![Moving a {{site.data.keyword.bpshort}} workspace into a project](https://cdnapisec.kaltura.com/html5/html5lib/v2.101/mwEmbedFrame.php/p/1773841/uiconf_id/27941801/entry_id/1_ytu3tvzb?wid=_1773841&iframeembed=true&entry_id=1_ytu3tvzb){: video output="iframe" data-script="#move-wks-da-script" id="mediacenter-player" width="560" height="315" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 ### Video transcript
 {: #move-wks-da-script}

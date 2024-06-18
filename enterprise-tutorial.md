@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-03-05"
+  years: 2019, 2024
+lastupdated: "2024-02-22"
 
 keywords: enterprise, enterprise account, create enterprise, set up enterprise, enterprise users, enterprise access, enterprise tutorial
 
@@ -21,7 +21,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-This tutorial walks you through how to set up an enterprise by department so you can manage and track usage costs for multiple {{site.data.keyword.Bluemix}} accounts. By completing this tutorial, you learn how to create an enterprise, add accounts, organize accounts in account groups, invite users, and explore subscriptions.
+This tutorial walks you through how to set up an enterprise by department so you can manage and track usage costs for multiple {{site.data.keyword.Bluemix}} accounts. By completing this tutorial, you learn how to create an enterprise, add accounts and organize them in account groups, invite users, and explore subscriptions.
 {: shortdesc}
 
 The tutorial uses a fictitious company that is called *Example Corp* that wants to create an enterprise with the following structure. As you complete the tutorial, adapt each step to match your organization's accounts and desired structure.
@@ -35,14 +35,14 @@ Read [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-wh
 
 Verify that you have the required access in a Subscription account or a [qualifying Pay-as-you-Go account](/docs/billing-usage?topic=billing-usage-billusagefaqs#paygo-enterprise), which serves as the base account from which you create the enterprise. To create an enterprise, you must be the account owner or have the Administrator role on the Billing account management service.
 
-Creating an enterprise from an account and importing existing accounts cannot be undone. This tutorial is an example of the steps you can follow to set up an enterprise by department, but you should carefully plan your enterprise structure around your organization's needs.
+Creating an enterprise from an account and importing existing accounts cannot be undone. This tutorial is provided as an example of the steps you can follow to set up an enterprise by department, but you should carefully plan your enterprise structure around your organization's needs.
 {: important}
 
 ## Create the enterprise
 {: #create_enterprise_tutorial}
 {: step}
 
-Enterprises are created from an existing Subscription account. When you create the enterprise, the account is added to the enterprise hierarchy. Billing transitions to being managed by the enterprise, but its users and resources remain the same and are completely unaffected. For a complete description of account impacts, see [Creating an enterprise](/docs/secure-enterprise?topic=secure-enterprise-create-enterprise).
+Enterprises are created from an existing Subscription or a qualifying Pay-as-you-Go account. When you create the enterprise, the account is added to the enterprise hierarchy. Billing transitions to being managed by the enterprise, but its users and resources remain the same and are completely unaffected. For a complete description of account impacts, see [Creating an enterprise](/docs/secure-enterprise?topic=secure-enterprise-create-enterprise).
 
 1. In the {{site.data.keyword.cloud}} console, go to **Manage** > **Enterprise**, and click **Create**.
 2. Enter the name of your company, such as Example Corp, to identify your enterprise.

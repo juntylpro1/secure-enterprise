@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-05-30"
+lastupdated: "2024-06-17"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -21,7 +21,7 @@ subcollection: secure-enterprise
 After you add a deployable architecture to your project, you can edit the input values to configure the architecture for deployment.
 {: shortdesc}
 
-Configurations can be generic, but many projects use a configuration, or a group of configurations, to deploy resources to different environments. For example, a group of configurations can be used to deploy resources to development, test, and production environments and set up common services outside of the environments. When you deploy your configuration, {{site.data.keyword.bplong}} uses Terraform to apply the underlying plan. 
+Configurations can be generic, but many projects use a configuration, or a group of configurations, to deploy resources to different environments. For example, a group of configurations can be used to deploy resources to development, test, and production environments and set up common services outside of the environments. When you deploy your configuration, {{site.data.keyword.bplong}} uses Terraform to apply the underlying plan. 
 
 Before you can deploy your project, the inputs, plan, compliance, and estimated cost for the deployable architecture must be validated. Any changes that are made to the configuration are validated to ensure that there aren't any issues or failures.
 {: note}
@@ -29,7 +29,7 @@ Before you can deploy your project, the inputs, plan, compliance, and estimated 
 ## Setting input values
 {: #project-input-values}
 
-Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings. 
+Input values are used to configure a deployable architecture to match your specific needs. The required inputs vary based on the deployable architecture that you choose. Depending on how the architecture was designed, some inputs might include a set of options that you can select, or you can enter values in fields as text strings.
 
 ### Referencing values
 {: #reference-values}
@@ -44,16 +44,16 @@ If you are using the API or CLI to configure a deployable architecture, and you 
 You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab.
 {: tip}
 
-#### Referencing values from a configuration 
+#### Referencing values from a configuration
 {: #reference-values-config}
 
-The general format to reference a value in a configuration is as follows: 
+The general format to reference a value in a configuration is as follows:
 
 `ref:/configs/<config_name>/inputs_or_outputs/<input_or_output_name>`.
 
 You can reference an input or an output from a configuration that has been deployed from your project. For example, the following reference points to an output that is named `cluster_id` within the `ProdCluster` configuration: `ref:/configs/ProdCluster/outputs/cluster_id`.
 
-You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so. 
+You can add a relative reference to another input within the configuration that you're currently editing. The configuration does not need to be deployed to do so.
 {: remember}
 
 #### Referencing values in a stack
@@ -65,12 +65,13 @@ If your configuration is part of a stacked deployable architecture, you can refe
 
 `ref:/configs/<stack_name>/members/<member_name>/inputs_or_outputs/<input_or_output_name>`
 
-If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level. 
+If you want to make a relative reference, you can do so. A relative reference between configurations that are members of the same stack would be formatted as `ref:../<member_name>/inputs_or_outputs/<input_or_output_name>`. But, if you are referencing a value at the stack level, it would be formatted as `ref:../../inputs/<input_name>` within the member configuration. Currently, members can't reference outputs from the stack level.
+
 
 #### Referencing inputs from an environment
 {: #reference-parameters-env}
 
-Since environments are created within a project, and not within a configuration, you don't need to include `/configs/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `environments` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./environments/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment. 
+Since environments are created within a project, and not within a configuration, you don't need to include `/configs/<configname>` if you want to reference a parameter in an environment. But you must include the name of the environment after the `environments` reference type. Then, specify `inputs` and provide the name of the input that you want to reference: `ref:./environments/<environment_name>/inputs/<name>`. You can't add a reference to an authentication parameter or a compliance profile from an environment.
 
 For example, the following reference points to an input parameter that is named `cluster_id` within the `Production` environment: `ref:./environments/Production/inputs/cluster_id`.
 
@@ -86,15 +87,15 @@ To create a customized configuration, complete the following steps:
     {: note}
 {: #cra-validate-failure}
 
-1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account. 
+1. During validation, a Code Risk Analyzer scan is run on your architecture. Select the controls that you want to use during validation. You can use the **Architecture default** controls, or the **Select from {{site.data.keyword.compliance_short}}** option if you have an attachment set up in your target account.
 
     If you select **Architecture default**:
     * The scan uses the default controls that the owner of the deployable architecture added when they onboarded it.
-    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin) are checked.
+    * Controls that the architecture owner added that are also included in the [supported set of {{site.data.keyword.compliance_short}} rules](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals) are checked.
     * Any extra controls that the architecture owner added that are not included in the list of supported rules are not checked when you validate your configuration.
     * If the owner of the deployable architecture didn't add compliance controls to their product, the full set of {{site.data.keyword.compliance_short}} rules is used.
 
-    To view the list of added controls, go the [{{site.data.keyword.cloud_notm}} catalog](/catalog){: external} and select the deployable architecture that you're configuring. The Security & compliance tab lists all of the controls that were added to the deployable architecture.
+    To view the list of added controls, go the [{{site.data.keyword.cloud}} catalog](/catalog){: external} and select the deployable architecture that you're configuring. The Security & compliance tab lists all of the controls that were added to the deployable architecture.
     {: tip}
 
     If you select **Select from {{site.data.keyword.compliance_short}}**, you must have an instance of the service and an attachment through {{site.data.keyword.compliance_short}} in the target account that you want to deploy to. For help creating an attachment, see [Evaluating resource configuration with {{site.data.keyword.compliance_long}}](/docs/secure-enterprise?topic=secure-enterprise-security-compliance-scanning).
@@ -106,8 +107,10 @@ To create a customized configuration, complete the following steps:
 
    If the validation fails, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures). Or, an administrator on the {{site.data.keyword.cloud_notm}} Projects service can review the results through the {{site.data.keyword.bpshort}} service and [override the failure and approve](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation) the configuration to deploy anyway. However, ensure that the pipeline failed due to the Code Risk Analyzer scan and not because of a validation or plan failure. It is not recommended to override a failure that is flagged due to a validation or plan failure as the configuration might not deploy successfully. For more information about security and compliance in projects, see [Achieving continuous compliance as an enterprise](/docs/secure-enterprise?topic=secure-enterprise-continuous-compliance).
 
-During the configuration and deployment process, monitor your [needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects). The widget reflects any issue that occurs in your configurations.
-{: remember}
+If you're configuring a deployable architecture stack, make sure to validate each architecture in the stack according to their dependencies.
+{: important}
+
+
 
 ## Approving configuration changes by using the console
 {: #approve-changes}
@@ -150,7 +153,7 @@ For more information about the command parameters, see [**`ibmcloud project conf
    {: codeblock}
 
    For more information about the command parameters, see [**`ibmcloud project config-validate`**](/docs/cli?topic=cli-projects-cli#project-cli-config-validate-command).
- 
+
 1. After validating your configuration, approve your configuration edits and merge them to the main configuration by running the following `ibmcloud project config-approve` command:
 
    ```sh
@@ -159,3 +162,5 @@ For more information about the command parameters, see [**`ibmcloud project conf
    {: codeblock}
 
    For more information about the command parameters, see [**`ibmcloud project config-approve`**](/docs/cli?topic=cli-projects-cli#project-cli-config-approve-command).
+
+

@@ -4,7 +4,7 @@ copyright:
 
   years: 2024
 
-lastupdated: "2024-02-16"
+lastupdated: "2024-06-04"
 
 keywords: manage project, deploy project, merge request, merge changes, deploy configuration, deploy architecture
 
@@ -90,3 +90,5 @@ You can also run the following `ibmcloud resource search` command to retrieve al
 ibmcloud resource search "service_tags:\"schematics::project_id:PROJECT_ID\""
 ```
 {: codeblock}
+
+
