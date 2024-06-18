@@ -4,7 +4,7 @@ copyright:
   years: 2023, 2024
 
 
-lastupdated: "2024-05-30"
+lastupdated: "2024-06-18"
 
 
 keywords: authorizing a project, add project to account, project secrets, project API key, authenticate, authentication for a project, target account
@@ -68,22 +68,19 @@ After you create an API key, complete the following steps to add it to {{site.da
 1. [Create a {{site.data.keyword.secrets-manager_short}} service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) in your {{site.data.keyword.cloud_notm}} account. To create a secret, you must have the Writer role or higher on the {{site.data.keyword.secrets-manager_short}} service.
 1. After you create your secret instance, make sure that you select **Other secret type** to add an arbitrary secret. For information about creating an arbitrary secret, see [Creating arbitrary secrets in the UI](/docs/secrets-manager?topic=secrets-manager-arbitrary-secrets&interface=ui). Your arbitrary secret must contain the API key. The API key must be created in the target account that you want to deploy to.
 
-## Using an existing secret
-{: #deploy-exisiting-secret}
 
-After you added your API key to {{site.data.keyword.secrets-manager_short}} as an arbitrary secret, you can use that secret to authorize your project to deploy. Complete the following steps:
+## Using a secret reference
+{: #deploy-secret-reference}
+
+After you create a secret, you can use that secret as a reference to authorize your project to deploy. For more information about references, see [Referencing values](/docs/secure-enterprise?topic=secure-enterprise-config-project&interface=ui#reference-values). To configure your deployable architecture with a secret reference, complete the following steps:
 
 1. In the {{site.data.keyword.cloud_notm}} console, sign in to the account that you want to deploy the project to.
 1. Go to **Menu** ![Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects**.
 1. Select the project that includes the deployable architecture configuration that you want to authorize.
 1. From the **Configurations** tab, select the configuration.
-1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions") > **Edit**
-1. In the required input section, go to the Authentication method. Make sure that **Use an existing secret** is set to **Yes**.
-1. Select **API key using {{site.data.keyword.secrets-manager_short}}**.
-1. Click **Select from {{site.data.keyword.secrets-manager_short}}**.
-1. Choose the service instance, secret group, and secret.
-1. Click **Save**.
+1. Click **Edit**
+1. In the Configure section, hover over the API key field, and select the **Key icon**.
+1. Choose the service instance and select the secret that you want to use and click **OK**.
 
-During the configuration process, you might decide to add the API key directly for experimental work. This option is not recommended, especially for deployments to your production account, because the API key displays in your `project.json` file and is visible to anyone who exports it.
-
-
+You can also use a trusted profile as a reference. In the Configure section, for the method, select **Trusted profile** and enter your trusted profile ID. For more information, see [Using trusted profiles](/docs-draft/secure-enterprise?topic=secure-enterprise-tp-project&interface=ui).
+{: note}
