@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-06-20"
 
 keywords:
 
@@ -153,7 +153,7 @@ See examples:
 ### Creating a catalog manifest file
 {: #create-manifest}
 
-The catalog manifest is a file in the root of your repository that is called the `ibm_catalog.json`. This file defines the required metadata for creating a tile in a catalog, for example the name, description, features, variation definitions that point to the underlying Terraform configuration, compliance claims that will be verified during onboarding by using {{site.data.keyword.compliance_short}}, and necessary IAM permissions for deploying the architecture. It also defines the configurations that you want to be selected by default when a user attempts to deploy your architecture from the catalog.
+The catalog manifest is a file in the root of your repository that is called the `ibm_catalog.json`. This file defines the required metadata for creating a tile in a catalog, for example the name, description, features, variation definitions that point to the underlying Terraform configuration, compliance claims that will be verified during onboarding by using {{site.data.keyword.compliance_short}}, and necessary IAM permissions for deploying the architecture. It also defines the configurations that you want to be selected by default when a user attempts to deploy your architecture from the catalog. For more information, see [mapping catalog details to the manifest file](/docs/secure-enterprise?topic=secure-enterprise-manifest-values&interface=ui#mapping-manifest).
 
 Check out the [example from the sample repo](https://github.com/terraform-ibm-modules/sample-deployable-architectures/blob/main/ibm_catalog.json){: external} that shows a fullstack and extension type variation.
 {: tip}
@@ -191,29 +191,6 @@ You can create your catalog manifest file by using two different methods:
    }
    ```
    {: codeblock}
-
-#### Mapping catalog details to the manifest file
-{: #mapping-manifest}
-
-To help visualize how the content added to the manifest file is displayed to users, see the following examples that show the relationship between the `ibm_catalog.json` and the catalog details page.
-
-Let's look at how the deployable architecture name, description, features, and variations are defined in the catalog manifest file and how the user sees the information on the catalog details page.
-
-![Deployable architecture title, description, features text mapping to the source file](images/da-basic-catalog-details-mapping.png "Deployable architecture title, description, features text mapping to the source file"){: caption="Figure 2. Deployable architecture title, description, features text mapping to the source file" caption-side="bottom"}
-
-Let's look at how the variation features list is used to help users compare variations based on how it's defined in the catalog manifest file.
-
-![Deployable architecture variation feature comparison](images/da-feature-highlights-mapping.png "Deployable architecture variation feature comparison"){: caption="Figure 3. Deployable architecture variation feature comparison" caption-side="bottom"}
-
-Let's look at where the permissions and architecture diagram details are specified in the catalog manifest file and how it's displayed on the catalog details page.
-
-![Deployable architecture permissions and architecture text mapping to the source file](images/da-arch-iam-details-mapping.png "Deployable architecture permissions and architecture text mapping to the source file"){: caption="Figure 4. Deployable architecture permissions and architecture text mapping to the source file" caption-side="bottom"}
-
-And, if your architecture meets a specific level of compliance that is verified with a scan by using the {{site.data.keyword.compliance_short}}, you can add a compliance claim per variation. You define how your architecture meets a certain level of compliance in the `ibm_catalog.json` file by specifying the {{site.data.keyword.compliance_short}} profile. You must also run a scan on the resources that your architecture creates before onboarding to {{site.data.keyword.cloud_notm}}. For more information, see [Managing compliance information for your deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-format-controls).
-
-See in the following example how the compliance information that is defined in the manifest file is displayed to users.
-
-![Deployable architecture compliance](images/da-compliance-mapping.png "Deployable architecture compliance"){: caption="Figure 5. Deployable architecture compliance" caption-side="bottom"}
 
 ## Creating a variation
 {: #create-variation}
