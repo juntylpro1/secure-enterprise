@@ -129,9 +129,9 @@ toc:
               label: Creating deployable architectures
               topics:
               - create-da.md
-              - catalog-manifest.md
+              - manual-customize.md
           - config-stack.md
-          - manual-customize.md
+          - catalog-manifest.md
           - scripts.md
           - topic: onboard-compliance-controls.md
             navtitle: Managing compliance information
