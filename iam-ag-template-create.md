@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-28"
+lastupdated: "2024-06-20"
 
 keywords: enterprise, enterprise account, multiple accounts, assign access, enterprise access, templates, enterprise managed, access, access group, migrate version, upgrade version, new version
 
@@ -115,7 +115,7 @@ You can create dynamic rules to automatically add federated users in child accou
 1. Select your access group template.
 1. Click **Dynamic rules > Add**.
 1. Give the dynamic rule a name that describes what kind of users the rule adds to the access group.
-1. Select **Users federated by IBMid** or **Users federated by IBM Cloud AppID** as the authentication method and input the identity prodiver (IdP).
+1. Select **Users federated by IBMid** or **Users federated by {{site.data.keyword.appid_long}}** as the authentication method and input the identity prodiver (IdP).
 1. Add conditions based on your IdP data to define which federated users are added to the group.
    1.  By clicking **Add a condition**, you can define multiple conditions. Federated users must meet all the conditions to gain membership in the access group. For more information about the fields that are used to create conditions, see [IAM condition properties](/docs/account?topic=account-iam-condition-properties).
 1. Set the session duration in hours.
