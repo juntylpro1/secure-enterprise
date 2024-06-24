@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-24"
 
 keywords:
 
@@ -107,7 +107,7 @@ In contrast, the standard version of the [{{site.data.keyword.redhat_openshift_n
 Make it easier for users to configure the deployable architecture's input variables by using the following best practices:
 
 Expose only commonly modified arguments
-:   Expose only the variables that most users will need to change, avoiding deployable architectures with a large number of input variables that would overwhelm users. For advanced users, consider providing a single JSON input field for further customization. As an example, the VPC Landing zone deployable architecture surfaces a single field named `override_json_string` that gives full control to advanced users on the deployed topology. For more information, see [the VPC Landing zone deployment guide](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-override-kms).
+:   Expose only the variables that most users will need to change, avoiding deployable architectures with a large number of input variables that would overwhelm users. For advanced users, consider providing a single JSON input field for further customization. As an example, the VPC Landing zone deployable architecture surfaces a single field that is named `override_json_string` that gives full control to advanced users on the deployed topology. For more information, see [the VPC Landing zone deployment guide](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-override-kms).
 
 Use clear and descriptive naming for existing resources
 :   When referring to existing resources, use names that clearly indicate what they refer to, such as `existing_cluster_name` instead of `cluster_name`, to avoid ambiguity.
