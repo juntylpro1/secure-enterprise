@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-26"
 
 keywords:
 
@@ -192,6 +192,8 @@ You can create your catalog manifest file by using two different methods:
    ```
    {: codeblock}
 
+
+
 ## Creating a variation
 {: #create-variation}
 
@@ -231,6 +233,7 @@ To create an additional variation of the deployable architecture that you alread
    {: tip}
 
 You can repeat these steps if you have additional variations to add. When you're done, you can create your Git release and start onboarding to a private catalog to create a catalog tile that you can share with others.
+
 
 
 ## Next steps: Onboard your deployable architecture to a private catalog
