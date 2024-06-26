@@ -130,7 +130,7 @@ toc:
               topics:
               - create-da.md
               - manual-customize.md
-          - config-stack.md
+          - config-stack.md    
           - catalog-manifest.md
           - scripts.md
           - topic: onboard-compliance-controls.md
