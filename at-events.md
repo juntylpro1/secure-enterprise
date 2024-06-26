@@ -76,6 +76,8 @@ For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [L
 | `project.config.delete` | Delete a project config.     |
 | `project.config.deploy` | Deploy a project config.     |
 | `project.config.undeploy` | Undeploy (destroy) a project config.     |
+| `project.config.manual-tag` | Add a tag to a config.     |
+| `project.config.export-stack-definition` | [Experimental]{: tag-purple} Add a deployable architecture stack to a private catalog.     |
 | `project.environment.create` | Create a project environment.     |
 | `project.environment.read` | Read a project environment.     |
 | `project.environment.list` | List all project environments under the account.     |
