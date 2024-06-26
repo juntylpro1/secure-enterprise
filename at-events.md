@@ -56,6 +56,8 @@ For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [L
 
 
 
+{{site.data.keyword.cloud_notm}} Projects supports the management events that are indicated in the following table. 
+
 | Action             | Description      |
 |--------------------|------------------|
 | `project.project.create` | Create a project.     |
