@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-28"
+lastupdated: "2024-06-27"
 
 subcollection: secure-enterprise
 
@@ -23,7 +23,7 @@ To learn more about organizing resources and assigning access in child accounts 
 ## How enterprise-managed IAM access works
 {: #how-enterprise-iam}
 
-Centrally manage identity and access management (IAM) for your organization by using IAM templates to assign access and manage security settings. Create templates for IAM resources in your [enterprise account](x9863395){: term} to standardize access groups, trusted profiles, and account security settings across accounts in your organization. After you assign an IAM template, the child accounts that you select are assigned an enterprise-managed IAM object with the associated attributes, like policies and action controls. Action controls determine whether administrators of IAM services in child accounts can modify the enterprise-managed object in their account.
+Centrally manage identity and access management (IAM) for your organization by using IAM templates to assign access and manage security settings. Create templates for IAM resources in your [enterprise account](x9863395){: term} to standardize access groups, trusted profiles, account security settings, and resource permissions across accounts in your organization. After you assign an IAM template, the child accounts that you select are assigned an enterprise-managed IAM object with the associated attributes, like policies and action controls. Action controls determine whether administrators of IAM services in child accounts can modify the enterprise-managed object in their account.
 
 Users in a child account can determine that an IAM resource comes from an enterprise-managed IAM template by the [enterprise-managed]{: tag-cyan} tag on the resource in the console. The API response for enterprise-managed IAM objects in child accounts includes a `“template”` section.
 
@@ -89,6 +89,15 @@ Spend less time on configuring individual policies and use access policy templat
 
 
 
+## Authorization policy templates
+{: #authorization-policy-templates}
+
+Authorization templates make it easy to create predefined permission sets that allow one service to access another. They also automatically authorize dependent services, ensuring that services have the access they need.
+
+In an authorization policy, the source service gains access to the target service based on assigned roles. While the target service is always within the account where the authorization is created, source services can be from the same or different accounts. Authorization templates standardize authorization policies across your enterprise, ensuring consistent and secure configurations while minimizing unauthorized access.
+
+ 
+
 ## Action controls
 {: #action-controls}
 
@@ -144,6 +153,36 @@ You can create policies with more granularity by using access management tags.
 
 For more information about IAM access and the available features, see [How {{site.data.keyword.cloud_notm}} IAM works](/docs/secure-enterprise?topic=secure-enterprise-iamoverview).
 
+
+## How can I grant permissions to satisfy service dependencies across my enterprise?
+{: #assign-authorization-policy-templates}
+
+Use IAM authorization policy templates to ensure that services in each account have access to the dependencies that they need to function. Review the following sample authorization policies to guide you in setting up these relationships.
+
+### Allow a centralized resource instance access to many sub-account resources
+{: #sample-policy-central}
+
+Create an authorization template to define the source account and targeted resources
+
+- Starting with the **Source** of the authorization set the **Source account** using **Specific account** to indicate the account that contains the centrally managed resource instance. The **Service** and **Service instance** should also be added to refine access granularity.
+- For the **Target** resource, set the **Service** and potentially the **Resource type** of the resource being accessed.
+- Lastly, select the **Roles** that grant the least privileged access the **Source** service instance needs against the **Target** resource.
+  
+Assigning the template results in the creation of the corresponding authorization policy in each assigned sub-accounts.
+
+### Set up pre-defined service to service access relationship within sub-accounts
+{: #sample-policy-s2s}
+
+Create an authorization template that specifies the target and source service and resources. You can omit any account IDs. This way, the unique account IDs of each assigned account is used in the policy.
+
+- Set the **Source account to Assigned accounts(s)**. 
+- Set the applicable **Service** and add any relevant **Resources** 
+- For the Target resource, set the Service and the Resource type of the resource being accessed.
+- Select the **Roles** that grant the least privileged access that the **Source** needs on the **Target** resource.
+  
+When you assign the authorization template to child accounts, you create a corresponding authorization policy in each assigned child account.
+
+
 ## Use cases for assigning enterprise-managed IAM templates
 {: #usecases-templates}
 
@@ -191,3 +230,12 @@ I create an access group template for each type of user that exists in child acc
 
 - Create an access group template for users who need to debug code. Assign a policy with a reader role on all IAM-enabled services. Scope the policy to specific resources by selecting the attribute for access management tags. Enter the tags `env:dev` and `resource:storage`, which gives child account users in the enterprise-managed access group reader access to `storage` resources in the development environment.
 - Create an access group template for users who need to push code to development and test environments. Assign a policy with a writer role on all IAM-enabled services. Scope the policy to specific resources by selecting the attribute for access management tags. Enter the tags `env:dev`, `env:test`, `resource:storage`, and `resource:containers`, which gives child account users in the enterprise-managed access group administrator access to `storage` and `containers` resources in development and test environments.
+
+### Allow a central backup service to backup Cloud Object Storage across your enterprise
+
+To allow an Enterprise administrator to centrally manage backups, child accounts must authorize the enterprise's central backup service to interact with their resources.
+
+- Create an authorization template that specifies the source service as a backup service instance in a particular enterprise account. Select **Source account > Specific account** and enter the account ID where you have the backup service instance.
+- Then go to **Service > Service instance** and select **IBM Cloud Backup for VPC** instance. For the Target set the resource as **Cloud Object Storage** without specifying a specific account.
+
+When this template is applied to child accounts, an authorization policy is automatically created in each, granting the **IBM Cloud Backup for VPC** instance access to all **Cloud Object Storage** resources. For a more detailed example, including role definitions, see [Establishing service-to-service authorizations for the Backup service.](/docs/vpc?topic=vpc-backup-s2s-auth&interface=ui) 
