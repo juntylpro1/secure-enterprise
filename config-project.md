@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-06-27"
+lastupdated: "2024-07-01"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -39,7 +39,7 @@ Configurations can be linked together by using the outputs of one configuration 
 In the console, you can add a reference in an architecture that you're configuring by hovering over an input and selecting the **Reference** icon ![Reference icon](../icons/link.svg "Reference").
 {: tip}
 
-If you are using the API or CLI to configure a deployable architecture and you want to include a reference, you can write one as a text string. References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed to reference another value within it.
+If you are using the API or CLI to configure a deployable architecture, or if you are [editing a deployable architecture stack definition](/docs/secure-enterprise?topic=secure-enterprise-stack-definition) and you want to include a reference, you can write one as a text string. References comply with the URL specification, but use a different `ref` protocol instead of `http`. Just like URLs on websites, you can write a reference that's relative to your current context. For example, if you're adding a reference to an input within the configuration that you're currently editing, then your current path is `/configs/<configname>` and you can write a reference relative to that path. For example, `ref:./inputs/region` adds a reference to the input that is named `region` within the same configuration. In this case, the configuration that you're editing does not need to be deployed to reference another value within it.
 
 You can find the name of an output to reference by opening a deployed configuration in your project and going to the **Outputs** tab.
 {: tip}
