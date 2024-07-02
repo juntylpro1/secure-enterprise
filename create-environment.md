@@ -4,7 +4,7 @@ copyright:
 
   years: 2023
 
-lastupdated: "2024-06-04"
+lastupdated: "2024-07-02"
 
 keywords: environment, add environment, deployment environment, production environment
 
@@ -134,9 +134,6 @@ For more information about the command parameters, see [**`ibmcloud project envi
 ## Creating an environment by using the API
 {: #create-env-api}
 {: api}
-
-Projects API is a beta release that is currently available for evaluation and testing purposes.
-{: beta}
 
 You can programmatically create an environment by calling the [Projects API](/apidocs/projects#create-project-environment){: external} as shown in the following sample request. The example creates an environment that is named `development` and has two input properties, one to define the resource group and one to define the region:
 
