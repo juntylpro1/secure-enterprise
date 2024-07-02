@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-06-17"
+lastupdated: "2024-07-02"
 
 keywords: target account, manage resources, enterprise architecture, administration account, resources, existing resources, organize resources
 
@@ -77,7 +77,7 @@ To add existing resources to a project, complete the following steps:
 1. In the Authenticate section, select an authentication method that you want to use to authenticate with the target account that contains your resources.
 1. In the Select resources section, select the resources that you want to organize in your project and click **Add**.
 
-   Resources that are in a {{site.data.keyword.bplong}} workspace or were already added to another configuration can’t be added and don't display in the list of resources. Some resources might not be included in the list if the authentication method was scoped to specific resources, as opposed to all of them.
+   Resources that are in an {{site.data.keyword.bplong}} workspace or were already added to another configuration can’t be added and don't display in the list of resources. Some resources might not be included in the list if the authentication method was scoped to specific resources, as opposed to all of them.
    {: note}
 
 The resources that you added to your project are listed on the Resources tab.
