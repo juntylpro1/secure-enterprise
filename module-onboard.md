@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-06-17"
+lastupdated: "2024-07-02"
 
 keywords: catalog, catalogs, private catalogs, account catalogs, catalog visibility, module visibility, import module, module registry, terraform module
 
@@ -163,8 +163,6 @@ Document the instructions for running your module in the readme file.
 {: ui}
 
 The validation process tests your Terraform template by running it from the {{site.data.keyword.bpshort}} service that you configure. A successful validation ensures that users can use your module with your default input variables. You must validate your module before you can share it. To monitor the progress of the validation process, click **View logs** from the **Actions** menu. The Schematics workspace is opened.
-
-
 
 ### Reviewing cost
 {: #onboard-modules-cost-ui}

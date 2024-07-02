@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-07-01"
+lastupdated: "2024-07-02"
 
 keywords: manage project, rename project, move project, deploy project, merge request, merge changes, deploy configuration
 
@@ -25,6 +25,8 @@ Configurations can be generic, but many projects use a configuration, or a group
 
 Before you can deploy your project, the inputs, plan, compliance, and estimated cost for the deployable architecture must be validated. Any changes that are made to the configuration are validated to ensure that there aren't any issues or failures.
 {: note}
+
+
 
 ## Setting input values
 {: #project-input-values}
@@ -109,8 +111,6 @@ To create a customized configuration, complete the following steps:
 
 If you're configuring a deployable architecture stack, make sure to validate each architecture in the stack according to their dependencies.
 {: important}
-
-
 
 ## Approving configuration changes by using the console
 {: #approve-changes}
