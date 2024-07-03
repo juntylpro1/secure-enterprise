@@ -36,7 +36,7 @@ Add and remove allowed locations by applying filters. The filter or combination 
 To set the location filters, complete the following steps:
 
 1. In the {{site.data.keyword.Bluemix_notm}} console, go to **Manage** > **Catalog** > **Locations**.
-1. Switch to the enterprise account, if applicable, by using the account switcher.
+1. Switch to the enterprise account, if applicable, by using the account switcher that's located in the console header.
    1. Keep the account group scoped to None to apply your allowlist to the entire enterprise.
    1. Click **Change** to scope the allowlist to a specific account group.
 
