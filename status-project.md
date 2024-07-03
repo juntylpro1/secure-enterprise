@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-06-04"
+lastupdated: "2024-07-03"
 
 keywords: project status, manage status, needs attention, partial deployment, deploy project, validate project, validate configuration, deploy configuration
 
@@ -12,7 +12,7 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Monitoring the status of a configuration and its resources
+# Monitoring the status of a configuration
 {: #monitor-status-projects}
 
 In a project, a configuration has one status: either draft or deployed. However, configurations go through many changes that you can track throughout the configuration's lifecycle. You can find more information about the detailed status of a configuration by opening the configuration within your project.
@@ -37,6 +37,6 @@ When you deploy a draft configuration, the status of the configuration changes t
 ## Understanding resource status
 {: #understand-resource-status}
 
-You can track resources that were created by a deployment from the Resources tab in your configuration. From there, you can destroy resources or view more information about the status of your resources. For more information, see [Destroying resources that are created by projects](/docs/secure-enterprise?topic=secure-enterprise-best-practices-projects#project-resources-destroy).
+You can track resources that were created by a deployment from the Resources tab in your configuration. From there, you can endeploy resources or view more information about the status of your resources. For more information, see [Undeploying resources](/docs/secure-enterprise?topic=secure-enterprise-remove-resources&interface=ui).
 
 If your changes failed to deploy, some or all of the resources weren't created by {{site.data.keyword.bplong}}. The Resources tab in your configuration does not include the resources that weren't created successfully.
