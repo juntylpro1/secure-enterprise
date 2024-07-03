@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-07-03"
 
 keywords:
 
@@ -76,6 +76,7 @@ Terraform is excellent at creating and managing infrastructure, whereas Ansible 
 {: caption="Table 4. Help me choose the configuration language to use" caption-side="bottom"}
 
 For more information about including pre- or post-scripts with your deployable architectures, see [Creating scripts for deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-understand-scripts).
+
 
 
 ## Next steps: Deciding where to publish
