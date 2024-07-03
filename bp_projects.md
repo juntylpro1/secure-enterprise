@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2023
 
 
-lastupdated: "2023-11-30"
+lastupdated: "2024-07-03"
 
 
 keywords: best practice projects, manage projects, project, environment
@@ -123,11 +123,11 @@ Tags are not case-sensitive, and the maximum length of a tag is 128 characters. 
 Resources in a project are automatically given service tags with the project ID and configuration ID with which they are associated. For more information, see [Tracking usage and spend for projects](/secure-enterprise?topic=secure-enterprise-project-usage-spend).
 {: note}
 
-## Destroying resources created by projects
+## Undeploying resources created by projects
 {: #project-resources-destroy}
 
 When you deploy your configuration, resources that are created can be managed as a group within your project. These resources are created based on the Terraform plan and can be managed individually in your {{site.data.keyword.bpshort}} workspace.
 
-Although you can destroy individual resources from the {{site.data.keyword.bpshort}} workspace, doing so is not recommended for resources that are created by using a project, as it leads to drift. Instead, you can destroy all of the resources that are associated with a configuration at once from the project UI with a single click. Doing so removes the deployment from whatever target environment that your configuration was deployed to. Destroying resources without deleting the configuration can be helpful if you need to deploy your configuration again in the future.
+Although you can destroy individual resources from the {{site.data.keyword.bpshort}} workspace, doing so is not recommended for resources that are created by using a project, as it leads to drift. Instead, you can undeploy all of the resources that are associated with a configuration at once from the project UI with a single click. Doing so removes the deployment from whatever target environment that your configuration was deployed to. Undeploying resources without deleting the configuration can be helpful if you need to deploy your configuration again in the future.
 
-By default, when you delete a project or a configuration, any resources that were deployed are destroyed automatically. It's recommended to keep this setting enabled, but you can disable it by opening your project and going to **Manage** > **Settings**. If you disable that setting, resources remain deployed when you delete a configuration or a project, but you lose the ability to easily manage those resources within the project. Deployed resources can continue accruing costs to your target account if they remain available after a project or configuration is deleted.
+By default, when you delete a project or a configuration, any resources that were deployed are undeployed automatically. It's recommended to keep this setting enabled, but you can disable it by opening your project and going to **Manage** > **Settings**. If you disable that setting, resources remain deployed when you delete a configuration or a project, but you lose the ability to easily manage those resources within the project. Deployed resources can continue accruing costs to your target account if they remain available after a project or configuration is deleted. For more information, see [Undeploying resources](/docs/secure-enterprise?topic=secure-enterprise-remove-resources&interface=ui).

@@ -4,7 +4,7 @@ copyright:
 
   years: 2023, 2024
 
-lastupdated: "2024-07-02"
+lastupdated: "2024-07-03"
 
 keywords: manage project, destroy resources, remove resources, resource, resources, delete resources, Terraform resources, Terraform workspace
 
@@ -14,10 +14,10 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Removing resources deployed by a project
+# Undeploying resources
 {: #remove-resources}
 
-Deploying an architecture creates resources that can incur costs in the target account that you deployed to. Undeploying the resources that were created destroys the resources and removes them from that target account, and can help reduce costs for your business. Undeploying the resources that were deployed by a configuration returns the configuration to draft status. You can deploy the architecture configuration again, if you need to.
+Deploying an architecture creates resources that can incur costs in the target account that you deployed to. Undeploying the resources that were created destroys the resources and removes them from that target account, and can help reduce costs for your business.
 {: shortdesc}
 
 Resources that were deployed by a configuration in your project can be undeployed following the steps here. Resources that were added to a project for organization and tracking purposes can be removed from the project, but they can't be destroyed in their target accounts by using a project. For more information, see [Organizing existing resources by using a project](/docs/secure-enterprise?topic=secure-enterprise-organize-resources).
@@ -27,7 +27,7 @@ Resources that were deployed by a configuration in your project can be undeploye
 {: #delete-resource-without-project}
 {: ui}
 
-You can undeploy resources without deleting the project or configuration that deployed those resources. Doing so can be useful if you no longer need the resources in the target account that you deployed to, but want to keep the project or configuration to use again for future deployments. Complete the following steps:
+You can undeploy resources without deleting the project or configuration that deployed those resources. Doing so can be useful if you no longer need the resources in the target account that you deployed to, but want to keep the project or configuration to use again for future deployments. After you undeploy the resources, the configuration returns to a draft status. Complete the following steps:
 
 1. In the {{site.data.keyword.cloud}} console, click the **Navigation menu** icon ![Navigation Menu icon](../icons/icon_hamburger.svg "Menu") > **Projects**.
 1. Select the project that contains the configuration that deployed the resources that you want to remove.

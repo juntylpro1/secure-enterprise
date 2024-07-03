@@ -154,7 +154,7 @@ toc:
                navtitle: Onboarding a module
              - catalog-enterprise-share.md
       - topicgroup:
-          label: Deploying architectures and managing resources with projects
+          label: Deploying architectures with projects
           topics:
           - create-project.md
           - topicgroup:
@@ -171,26 +171,26 @@ toc:
               - cost-estimate.md
               - override-failed-validations.md
               - deploy-project.md
-              - drift-detection.md
-          - topicgroup:
-              label: Managing existing resources
-              topics:
-              - topic: move-deployed-resource-project.md
-              - topic: manage-existing-resources.md
           - create-environment.md
+      - topicgroup: 
+          label: Managing deployments and resources
+          topics: 
           - topicgroup:
-              label: Managing your project lifecycle
-              topics:
-              - attention-items.md
-              - status-project.md
-          - delete-project.md
-          - removing-resources.md
+              label: Ensuring continuous compliance 
+              topics: 
+              - compliance-enterprise.md
+              - continuous-app-compliance.md  
+          - drift-detection.md
+          - attention-items.md
           - project-spend.md
-      - topicgroup:
-          label: Ensuring continuous compliance
-          topics:
-          - compliance-enterprise.md
-          - continuous-app-compliance.md
+          - status-project.md
+          - delete-project.md
+          - topicgroup:
+              label: Managing resources
+              topics:
+              - move-deployed-resource-project.md
+              - manage-existing-resources.md
+              - removing-resources.md
       - topicgroup:
           label: Logging and monitoring
           topics:
