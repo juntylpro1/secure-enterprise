@@ -134,9 +134,9 @@ toc:
               topics:
               - create-da.md
               - manual-customize.md
-          - topicgroup: 
+          - topicgroup:
               label: Creating deployable architecture stacks
-              topics: 
+              topics:
               - config-stack.md
               - stack-definition.md
           - create-variation-da.md
@@ -172,14 +172,15 @@ toc:
               - override-failed-validations.md
               - deploy-project.md
           - create-environment.md
-      - topicgroup: 
+      - topicgroup:
           label: Managing deployments and resources
-          topics: 
+          topics:
+          - locations-management.md
           - topicgroup:
-              label: Ensuring continuous compliance 
-              topics: 
+              label: Ensuring continuous compliance
+              topics:
               - compliance-enterprise.md
-              - continuous-app-compliance.md  
+              - continuous-app-compliance.md
           - drift-detection.md
           - attention-items.md
           - project-spend.md
