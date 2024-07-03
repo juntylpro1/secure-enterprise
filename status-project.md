@@ -12,7 +12,7 @@ subcollection: secure-enterprise
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Monitoring the status of a configuration
+# Monitoring the status of a configuration and its resources
 {: #monitor-status-projects}
 
 In a project, a configuration has one status: either draft or deployed. However, configurations go through many changes that you can track throughout the configuration's lifecycle. You can find more information about the detailed status of a configuration by opening the configuration within your project.
