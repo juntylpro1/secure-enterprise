@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024
-lastupdated: "2024-07-03"
+lastupdated: "2024-07-15"
 
 keywords:
 
@@ -47,6 +47,8 @@ The following table can help you decide whether to use a module, a deployable ar
 
 [{{site.data.keyword.cloud_notm}} projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) ensure that resources are deployed through deployable architectures from the catalog and operate within the security and compliance guardrails of the organization. They also ensure that these resources are kept up to date and do not drift.
 
+
+
 ## Terraform versus Ansible
 {: #terraform-ansible}
 
@@ -76,8 +78,6 @@ Terraform is excellent at creating and managing infrastructure, whereas Ansible 
 {: caption="Table 4. Help me choose the configuration language to use" caption-side="bottom"}
 
 For more information about including pre- or post-scripts with your deployable architectures, see [Creating scripts for deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-understand-scripts).
-
-
 
 ## Next steps: Deciding where to publish
 {: #decide-next-steps}
