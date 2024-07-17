@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-07-17"
 
 keywords: onboard, catalog management, private catalog, catalog manifest, software, automation, metadata
 
@@ -54,6 +54,9 @@ To edit your manifest locally, you can use the following steps.
 3. Add your preferred configurations into the file by using the example manifest as a guide. To learn more about each value, view the [available values](#available-values).
 4. Add the file into the root folder of your source code repository.
 5. [Add your deployable architecture to your catalog](/docs/secure-enterprise?topic=secure-enterprise-onboard-da).
+
+If your deployable architecture is already onboarded to a private catalog, you can [download the manifest](/docs/secure-enterprise?topic=secure-enterprise-onboard-da#download-manifest) from the console.
+{: tip}
 
 ## Example manifest file
 {: #example-manifest}
