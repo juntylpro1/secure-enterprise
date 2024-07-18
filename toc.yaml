@@ -157,6 +157,7 @@ toc:
           label: Deploying architectures with projects
           topics:
           - create-project.md
+          - create-environment.md
           - topicgroup:
               label: Authorizing deployments
               topics:
@@ -171,7 +172,6 @@ toc:
               - cost-estimate.md
               - override-failed-validations.md
               - deploy-project.md
-          - create-environment.md
       - topicgroup:
           label: Managing deployments and resources
           topics:
