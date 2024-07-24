@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1021 227.67">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 14px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: IBMPlexSans-Text, 'IBM Plex Sans';
+      }
+
+      .cls-2 {
+        font-size: 12px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect class="cls-3" x="630.5" y="45.835" width="368" height="130"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <rect class="cls-3" x="22.5" y="45.835" width="368" height="130"/>
+  </g>
+  <g id="Layer_6" data-name="Layer 6">
+    <text class="cls-1" transform="translate(109.1147 112.6381)"><tspan x="0" y="0">Deployable architecture A</tspan></text>
+  </g>
+  <g id="Layer_14" data-name="Layer 14">
+    <ellipse class="cls-3" cx="393" cy="176.335" rx="87.5" ry="26.5"/>
+    <ellipse class="cls-3" cx="612.5" cy="69.835" rx="114" ry="38"/>
+  </g>
+  <g id="Layer_9" data-name="Layer 9">
+    <text class="cls-1" transform="translate(734.2823 112.3187)"><tspan x="0" y="0">Deployable architecture B</tspan></text>
+  </g>
+  <g id="Layer_7" data-name="Layer 7">
+    <text class="cls-2" transform="translate(341.3185 179.0376)"><tspan x="0" y="0">A outputs resources</tspan></text>
+    <g>
+      <path d="M440.5,140.835c19.3333-16,38.6667-32,58-48"/>
+      <g>
+        <path class="cls-4" d="M440.5,140.835c17.4905-14.4749,34.981-28.9498,52.4715-43.4247"/>
+        <polygon points="495.0266 102.182 498.5 92.835 488.6683 94.4991 495.0266 102.182"/>
+      </g>
+    </g>
+  </g>
+  <g id="Layer_4" data-name="Layer 4">
+    <text class="cls-2" transform="translate(548.4296 75.2598)"><tspan x="0" y="0">B uses resources from A</tspan></text>
+  </g>
+</svg>
