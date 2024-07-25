@@ -4,7 +4,7 @@ copyright:
 
   years: 2022, 2024
 
-lastupdated: "2024-05-03"
+lastupdated: "2024-07-25"
 
 keywords: project access, iam projects, assigning project access, assign access, access project
 
@@ -57,7 +57,10 @@ It's a best practice to [assign access to an access group](/docs/secure-enterpri
 ## Granting access between the Projects service and other {{site.data.keyword.cloud_notm}} services
 {: #user-create-role}
 
-Before a project can validate or deploy configurations, the Projects service must be authorized in your account to communicate with other {{site.data.keyword.cloud_notm}} services. The following table lists the required authorizations. An IAM administrator or a user with the required roles on those services can automatically grant authorizations by creating a project in your account, or they can [create the service to service authorizations manually](/docs/secure-enterprise?topic=secure-enterprise-serviceauth&interface=ui). This authorization is only required once.
+Before a project can validate or deploy configurations, the Projects service must be authorized in your account to communicate with other {{site.data.keyword.cloud_notm}} services. The following table lists the required authorizations. This authorization is only required once.
+
+An IAM administrator or a user with the required roles on those services can automatically grant authorizations by creating a project in your account, or they can [create the service to service authorizations manually](/docs/secure-enterprise?topic=secure-enterprise-serviceauth&interface=ui). 
+{: tip}
 
 | Role | Source | Target | Source account |
 | ------------- | --------------------- | --------------------- | --------------------- |
